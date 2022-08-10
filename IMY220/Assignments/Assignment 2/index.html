@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IMY220 - Assignment 2</title>
+	<meta charset="utf-8" />
+	<!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" /> -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css" />
+
+
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 	crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+
+</head>
+<body>
+	<div class="container">
+		<br/><br/>
+		<section id="forms">
+			<div class="row">
+				<div class="col-12 col-md-6">
+					<div class="card">
+						<div class="card-header">Login</div>
+						<div class="card-body">
+							<form action="login.php" method="POST">
+								<fieldset>
+									<div class="row">
+										<div class="col-12 col-lg-6">
+											<label for="loginEmail">Email Address:</label>
+											<input type="email" id="loginEmail" class="form-control" placeholder="name@email.com" name="email">
+										</div>
+										<div class="col-12 col-lg-6">
+											<label for="loginPass">Password:</label>
+											<input type="password" id="loginPass" class="form-control" placeholder="******" name="pass">
+										</div>
+									</div>
+									<div class="row mt-3">
+										<div class="col-12">
+											<button type="submit" class="btn btn-dark">Login <i class="fa fa-angle-right"></i></button>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-6 mt-3 mt-md-0">
+					<div class="card">
+						<div class="card-header">Register</div>
+						<div class="card-body">
+							<form action="register.php" method="POST">
+								<fieldset>
+									<div class="row">
+										<div class="col-12 col-lg-6">
+											<label for="regName">First Name:</label>
+											<input type="text" id="regName" class="form-control" placeholder="John" name="fname">
+										</div>
+										<div class="col-12 col-lg-6">
+											<label for="regSurname">Last Name:</label>
+											<input type="text" id="regSurname" class="form-control" placeholder="Doe" name="lname">
+										</div>
+									</div>
+									<div class="row mt-3">
+										<div class="col-12 col-lg-6">
+											<label for="regEmail">Email Address:</label>
+											<input type="email" id="regEmail" class="form-control" placeholder="john.doe@gmail.com" name="email">
+										</div>
+										<div class="col-12 col-lg-6">
+											<label for="regBirthDate">Date of Birth:</label>
+											<input type="date" id="regBirthDate" class="form-control" name="date">
+										</div>
+									</div>
+									<div class="row mt-3">
+										<div class="col-12 col-lg-6">
+											<label for="regEmail">Create Password:</label>
+											<input type="password" id="pass1" class="form-control" placeholder="******" name="pass">
+										</div>
+										<div class="col-12 col-lg-6">
+											<label for="regEmail">Confirm Password:</label>
+											<input type="password" id="pass2" class="form-control" placeholder="******">
+										</div>
+									</div>
+									<div class="row mt-3">
+										<div class="col-12">
+											<button type="submit" class="btn btn-dark">Register <i class="fa fa-angle-right"></i></button>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</body>
+</html>

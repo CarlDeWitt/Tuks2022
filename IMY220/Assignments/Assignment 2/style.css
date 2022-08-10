@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Raleway');
+
+div.card-body{
+	font-family: 'Raleway', sans-serif;
+}
+
+div.card-header{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+div.row.eventsGallery img{
+	background-size: cover;
+	background-position: center center;
+	 height: 200px; 
+	/* width: 200px;  */
+}
+
+i.fa{
+	margin-left: 0.5em;
+}
+
+@media (min-width: 992px){
+	i.fa{
+		transition: all 0.5s;
+	}
+
+	button:hover i.fa{
+		margin-left: 1.5em;
+		transform: rotate(90deg);
+		transition: all 0.5s;
+	}
+}
