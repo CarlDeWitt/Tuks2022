@@ -13,7 +13,7 @@ private:
 
 public:
     Memento();
-    SquadMember *getState();
+    void getState();
     void setState(SquadMember *);
 };
 

@@ -22,6 +22,14 @@ void AdventureIsland::makeEns()
     j = jfac->createEnemy("claws", "speed");
 }
 
+void AdventureIsland::saveSquadMember()
+{
+    if (squad1)
+    {
+        squad1->savestate();
+    }
+}
+
 void AdventureIsland::playgame(int e)
 {
     if (e >= 1)
@@ -94,9 +102,9 @@ void AdventureIsland::nameEnemy(string type, string name)
     }
 }
 
-SquadMember AdventureIsland::cloneSquad()
+SquadMember *AdventureIsland::cloneSquad()
 {
-    SquadMember newsquad = squad1->Clone();
+    SquadMember *newsquad = squad1->Clone();
     return newsquad;
 }
 

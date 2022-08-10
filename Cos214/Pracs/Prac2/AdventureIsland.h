@@ -28,7 +28,8 @@ public:
     void nameEnemy(string, string);
     void makesquad(string, int, int);
     void playgame(int);
-    SquadMember cloneSquad();
+    SquadMember *cloneSquad();
+    void saveSquadMember();
     ~AdventureIsland();
 };
 

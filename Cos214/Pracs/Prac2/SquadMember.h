@@ -1,9 +1,7 @@
 #ifndef SQUADMEMBER_H
 #define SQUADMEMBER_H
-
 #include "string"
 #include "iostream"
-#include "Memento.h"
 
 using namespace std;
 
@@ -18,7 +16,7 @@ public:
     int HP;
     SquadMember(string name, int hp, bool alive, int damage);
     SquadMember();
-    SquadMember Clone(); // make pntr
+    SquadMember *Clone(); // make pntr
     bool isAlive();
     int getHP();
     void setHP(int);

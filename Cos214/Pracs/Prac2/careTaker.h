@@ -14,7 +14,7 @@ private:
 
 public:
     careTaker();
-    careTaker(SquadMember *state);
+    careTaker(SquadMember *);
     void backup();
     void undo();
     SquadMember *restore();

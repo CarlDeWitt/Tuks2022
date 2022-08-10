@@ -11,8 +11,10 @@ main:
 	g++ -c -std=c++11 GorillaFactory.cpp  
 	g++ -c -std=c++11 JaguarFactory.cpp  
 	g++ -c -std=c++11 CannibalFactory.cpp  
-	g++ -c -std=c++11 AdventureIsland.cpp             
-	g++ -o main Cannibal.o Enemy.o Gorilla.o Jaguar.o main.o Snake.o SquadMember.o EnemyFactory.o SnakeFactory.o GorillaFactory.o JaguarFactory.o CannibalFactory.o AdventureIsland.o
+	g++ -c -std=c++11 AdventureIsland.cpp  
+	g++ -c -std=c++11 Memento.cpp   
+	g++ -c -std=c++11 careTaker.cpp 	         
+	g++ -o main Cannibal.o Enemy.o Gorilla.o Jaguar.o main.o Snake.o SquadMember.o EnemyFactory.o SnakeFactory.o GorillaFactory.o JaguarFactory.o CannibalFactory.o AdventureIsland.o careTaker.o Memento.o
 	./main
 clean:
 	rm *.o main

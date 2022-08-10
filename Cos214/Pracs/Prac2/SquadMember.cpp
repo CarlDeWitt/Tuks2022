@@ -1,4 +1,5 @@
 #include "SquadMember.h"
+#include "Memento.h"
 
 SquadMember::SquadMember(string name, int hp, bool alive, int damage)
 {
@@ -6,7 +7,6 @@ SquadMember::SquadMember(string name, int hp, bool alive, int damage)
     this->HP = hp;
     this->alive = alive;
     this->damage = damage;
-    // mt = new Memento();
 }
 
 SquadMember::SquadMember()
@@ -49,20 +49,19 @@ void SquadMember::setDamage(int dam)
     this->damage = dam;
 }
 
-SquadMember SquadMember::Clone()
+SquadMember *SquadMember::Clone()
 {
     SquadMember *s = new SquadMember();
     s->name = this->name;
     s->damage = this->damage;
     s->alive = this->alive;
     s->HP = this->HP;
-
-    return *s;
+    return s;
 }
 
 void SquadMember::savestate()
 {
-    SquadMember ns = Clone();
+    SquadMember *ns = Clone();
     Memento *mt = new Memento();
-    mt->setState(&ns);
+    mt->setState(ns);
 }

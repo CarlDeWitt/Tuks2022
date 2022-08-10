@@ -5,7 +5,6 @@ careTaker::careTaker()
 }
 careTaker::careTaker(SquadMember *state)
 {
-    cout << "hello here" << endl;
     this->state = state;
     backup();
 }
@@ -20,7 +19,7 @@ void careTaker::undo()
 
 SquadMember *careTaker::restore()
 {
-    SquadMember *old = state;
+    SquadMember *old = this->state;
     undo();
     return old;
 }
