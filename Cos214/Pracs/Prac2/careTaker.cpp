@@ -7,6 +7,7 @@ careTaker::careTaker(SquadMember *state)
 {
     this->state = state;
     backup();
+    restore();
 }
 void careTaker::backup()
 {
@@ -17,9 +18,15 @@ void careTaker::undo()
     sm.pop_back();
 }
 
+SquadMember *careTaker::getState()
+{
+    return sm.front();
+}
+
 SquadMember *careTaker::restore()
 {
-    SquadMember *old = this->state;
+    SquadMember *old = getState();
+    cout << old->getName() << endl;
     undo();
     return old;
 }

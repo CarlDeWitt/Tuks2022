@@ -17,6 +17,7 @@ public:
     careTaker(SquadMember *);
     void backup();
     void undo();
+    SquadMember *getState();
     SquadMember *restore();
 };
 
