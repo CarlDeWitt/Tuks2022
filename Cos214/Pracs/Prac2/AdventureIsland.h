@@ -30,6 +30,7 @@ public:
     void playgame(int);
     SquadMember *cloneSquad();
     void saveSquadMember();
+    void restoreSquad();
     ~AdventureIsland();
 };
 

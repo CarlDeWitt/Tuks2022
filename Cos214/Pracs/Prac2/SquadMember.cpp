@@ -1,12 +1,15 @@
 #include "SquadMember.h"
 #include "Memento.h"
 
+Memento *mt = new Memento();
+
 SquadMember::SquadMember(string name, int hp, bool alive, int damage)
 {
     this->name = name;
     this->HP = hp;
     this->alive = alive;
     this->damage = damage;
+    // mt = new Memento();
 }
 
 SquadMember::SquadMember()
@@ -62,6 +65,15 @@ SquadMember *SquadMember::Clone()
 void SquadMember::savestate()
 {
     SquadMember *ns = Clone();
-    Memento *mt = new Memento();
-    mt->setState(ns);
+    mt->setMementoState(ns);
+}
+
+void SquadMember::restorestate()
+{
+    SquadMember *ns = mt->getState();
+    this->name = ns->name;
+    this->damage = ns->damage;
+    this->alive = ns->alive;
+    this->HP = ns->HP;
+    cout << HP << endl;
 }

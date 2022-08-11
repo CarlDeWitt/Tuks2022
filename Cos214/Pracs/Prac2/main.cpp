@@ -2,7 +2,6 @@
 #include "string"
 #include "AdventureIsland.h"
 #include "SquadMember.h"
-// #include "careTaker.h"
 
 using namespace std;
 
@@ -14,6 +13,7 @@ int main()
 
     island->makesquad("Carl", 50, 10);
     island->saveSquadMember();
+    island->restoreSquad();
 
     // mem = t->restore
 

@@ -2,6 +2,7 @@
 #define SQUADMEMBER_H
 #include "string"
 #include "iostream"
+// #include "Memento.h"
 
 using namespace std;
 
@@ -11,6 +12,7 @@ private:
     bool alive;
     int damage;
     string name;
+    // Memento *mt;
 
 public:
     int HP;
@@ -26,5 +28,6 @@ public:
     string getName();
     int getDamage();
     void savestate();
+    void restorestate();
 };
 #endif

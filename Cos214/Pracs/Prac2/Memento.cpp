@@ -2,12 +2,14 @@
 
 Memento::Memento()
 {
+    c = new careTaker();
 }
-void Memento::getState()
+SquadMember *Memento::getState()
 {
+    return c->getState();
 }
-void Memento::setState(SquadMember *state)
+void Memento::setMementoState(SquadMember *state)
 {
     this->state = state;
-    careTaker *c = new careTaker(state);
+    c->setState(state);
 }

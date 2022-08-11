@@ -115,3 +115,8 @@ AdventureIsland::~AdventureIsland()
     delete cfac;
     delete jfac;
 }
+
+void AdventureIsland::restoreSquad()
+{
+    squad1->restorestate();
+}
