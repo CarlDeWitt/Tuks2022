@@ -33,12 +33,19 @@ if (isset($_FILES['picToUpload']) && isset($_POST['eventDate']) && isset($_POST[
 	$name = $_POST["eventName"];
 	$description = $_POST["eventDescription"];
 	$date = $_POST["eventDate"];
-	// $uID = $_POST["uID"];
-	// echo $uID;
+	$uID = $_POST["uID"];
+	echo $uID;
 
-	$query = "INSERT INTO tbevents (user_id, name, description, date) VALUES (1,'$name', '$description','$date')";
-
-	$mysqli->query($query);
+	$queryCheck = "SELECT * FROM tbevents WHERE name = '$name'";
+	$mysqli->query($queryCheck);
+	$resCheck = $mysqli->query($queryCheck);
+	if (mysqli_num_rows($resCheck) > 0) {
+		echo ('Event Already exists');
+	} else {
+		$query = "INSERT INTO tbevents (user_id, name, description, date) VALUES ('$uID','$name', '$description','$date')";
+		$mysqli->query($query);
+		$queryImages = "INSERT INTO tbgallery (event_id, image_name) VALUES ('$eventID', '$uploadFile[name])";
+	}
 }
 
 ?>
@@ -106,6 +113,30 @@ if (isset($_FILES['picToUpload']) && isset($_POST['eventDate']) && isset($_POST[
 								<input type='submit' class='btn-standard' value='Upload event' name='submit' />
 							</div>
 					  	</form>";
+			$queryEvents = "SELECT * FROM tbevents WHERE user_id = '$userID'";
+
+
+			echo "<h2>Upcoming Events</h2>";
+			echo "<table class='row eventsGallery'>";
+			$resE = $mysqli->query($queryEvents);
+			while ($rowE = mysqli_fetch_array($resE)) {
+				$queryGallery = "SELECT * FROM tbgallery WHERE event_id = '$rowE[event_id]'";
+				$resG = $mysqli->query($queryGallery);
+				$rowG = mysqli_fetch_array($resG);
+				echo  "	<div class='col-3'>					
+							<div class='card'>
+								<div class='card-header'>
+									$rowE[date]
+								</div>
+								<div class='card-body'>
+									<img src='$rowG[image_name]' alt='$rowG[image_name]' class='card-img'>
+									<p class='card-text'>$rowE[name]</p>
+									<p class='card-text'>$rowE[description]</p>
+								</div>
+							</div>
+						</div>";
+			}
+			echo "</table>";
 		} //end if
 
 		else {
