@@ -1,0 +1,144 @@
+     1                                 %line 1+1 p2.asm
+     2                                 [segment .data]
+     3                                 
+     4 00000000 57656C636F6D652074-    welcome: dw "Welcome to ASM Integer Bank!", 0x0a
+     5 00000000 6F2041534D20496E74-
+     6 00000000 656765722042616E6B-
+     7 00000000 210A00             
+     8                                 welcomeLen: equ $-welcome
+     9 0000001E 42616C616E63653A20-    statement: dw "Balance: ", 0x0a
+    10 0000001E 000A00             
+    11                                 statementLen: equ $-statement
+    12 0000002A 506C65617365207365-    transtype1: dw "Please select your transaction type:", 0x0a
+    13 0000002A 6C65637420796F7572-
+    14 0000002A 207472616E73616374-
+    15 0000002A 696F6E20747970653A-
+    16 0000002A 0A00               
+    17                                 transtypeLen1: equ $-transtype1
+    18 00000050 312E20576974686472-    transtype2: dw "1. Withdraw R10", 0x0a
+    19 00000050 617720523130000A00 
+    20                                 transtypeLen2: equ $-transtype2
+    21 00000062 322E204465706F7369-    transtype3: dw "2. Deposit R5", 0x0a
+    22 00000062 74205235000A00     
+    23                                 transtypeLen3: equ $-transtype3
+    24 00000072 332E2045786974000A-    transtype4: dw "3. Exit", 0x0a
+    25 00000072 00                 
+    26                                 transtypeLen4: equ $-transtype4
+    27 0000007C 0A00                   rem: dw "", 0x0a
+    28 0000007E 31300A00               divs: dw "10", 0x0a
+    29 00000082 0C00000000000000       balance dq 12
+    30 0000008A 0A00                   nextLine dw 0x0a
+    31 0000008C 0000                   num1 dw 0
+    32 0000008E 0000                   num2 dw 0
+    33                                 
+    34                                 [section .text]
+    35                                 
+    36                                 NewLine:
+    37 00000000 48C7C001000000         mov rax, 1
+    38 00000007 48C7C701000000         mov rdi, 1
+    39 0000000E 48C7C6[00000000]       mov rsi, nextLine
+    40 00000015 BA01000000             mov edx, 1
+    41 0000001A 0F05                   syscall
+    42 0000001C C3                     ret
+    43                                 
+    44                                 asciiConversion:
+    45 0000001D 488B0425[00000000]     mov rax, [balance]
+    46 00000025 4883C200               add rdx, 0
+    47 00000029 48C7C10A000000         mov rcx, 10
+    48 00000030 48F7F9                 idiv rcx
+    49 00000033 4883C030               add rax, 48
+    50 00000037 48890425[00000000]     mov [num1], rax
+    51 0000003F 4883C230               add rdx, 48
+    52 00000043 48891425[00000000]     mov [num2], rdx
+    53                                 
+    54 0000004B 48C7C001000000         mov rax,1
+    55 00000052 48C7C201000000         mov rdx,1
+    56 00000059 48C7C6[00000000]       mov rsi, num1
+    57 00000060 48C7C201000000         mov rdx, 1
+    58 00000067 48C7C001000000         mov rax,1
+    59 0000006E 48C7C201000000         mov rdx,1
+    60 00000075 48C7C6[00000000]       mov rsi, num2
+    61 0000007C 48C7C201000000         mov rdx, 1
+    62 00000083 0F05                   syscall
+    63                                 
+    64 00000085 E871FFFFFF             call NewLine
+    65                                 
+    66 0000008A C3                     ret
+    67                                 
+    68                                 welcomeMSG:
+    69                                 
+    70 0000008B B801000000             mov eax, 1
+    71 00000090 BF01000000             mov edi, 1
+    72 00000095 BA1E000000             mov edx, welcomeLen
+    73 0000009A 488D3425[00000000]     lea rsi, [welcome]
+    74 000000A2 0F05                   syscall
+    75                                 
+    76 000000A4 B801000000             mov eax, 1
+    77 000000A9 BF01000000             mov edi, 1
+    78 000000AE BA0C000000             mov edx, statementLen
+    79 000000B3 488D3425[00000000]     lea rsi, [statement]
+    80 000000BB 0F05                   syscall
+    81                                 
+    82 000000BD B801000000             mov eax, 1
+    83 000000C2 BF01000000             mov edi, 1
+    84 000000C7 BA26000000             mov edx, transtypeLen1
+    85 000000CC 488D3425[00000000]     lea rsi, [transtype1]
+    86 000000D4 0F05                   syscall
+    87                                 
+    88 000000D6 B801000000             mov eax, 1
+    89 000000DB BF01000000             mov edi, 1
+    90 000000E0 BA12000000             mov edx, transtypeLen2
+    91 000000E5 488D3425[00000000]     lea rsi, [transtype2]
+    92 000000ED 0F05                   syscall
+    93                                 
+    94                                 
+    95 000000EF B801000000             mov eax, 1
+    96 000000F4 BF01000000             mov edi, 1
+    97 000000F9 BA10000000             mov edx, transtypeLen3
+    98 000000FE 488D3425[00000000]     lea rsi, [transtype3]
+    99 00000106 0F05                   syscall
+   100                                 
+   101 00000108 B801000000             mov eax, 1
+   102 0000010D BF01000000             mov edi, 1
+   103 00000112 BA0A000000             mov edx, transtypeLen4
+   104 00000117 488D3425[00000000]     lea rsi, [transtype4]
+   105 0000011F 0F05                   syscall
+   106 00000121 E8D5FEFFFF             call NewLine
+   107 00000126 C3                     ret
+   108                                 
+   109                                 inputcall:
+   110                                 
+   111 00000127 48C7C000000000         mov rax,0
+   112 0000012E 48C7C700000000         mov rdi,0
+   113 00000135 48C7C200000000         mov rdx,0
+   114 0000013C 48C7C600000000         mov rsi,0
+   115 00000143 0F05                   syscall
+   116                                 
+   117                                 
+   118                                 
+   119                                 
+   120                                 
+   121                                 
+   122                                 
+   123                                 
+   124                                 
+   125                                 
+   126                                 
+   127                                 
+   128                                 
+   129                                 
+   130                                 
+   131                                 
+   132                                 [global _start]
+   133                                 _start:
+   134                                 
+   135                                 
+   136 00000145 E8CEFEFFFF             call asciiConversion
+   137                                 
+   138                                 
+   139                                 
+   140                                 
+   141                                 exit:
+   142 0000014A B83C000000              mov eax, 60
+   143 0000014F 31FF                    xor edi, edi
+   144 00000151 0F05                    syscall
