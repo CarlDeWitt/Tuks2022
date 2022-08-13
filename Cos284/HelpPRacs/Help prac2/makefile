@@ -7,4 +7,4 @@ run:
 debug:
 	gdb p2
 clean:
-	rm -f p2.o p2 p2.lst
+	rm -f p2.o p2 p2.lst p2.out
