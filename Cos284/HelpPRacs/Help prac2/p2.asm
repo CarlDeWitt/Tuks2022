@@ -2,7 +2,7 @@ segment .data
 
 welcome: dw "Welcome to ASM Integer Bank!", 0x0a
 welcomeLen: equ $-welcome
-statement: dw "Balance: ", 0x0a
+statement: dw "Balance: "
 statementLen: equ $-statement
 transtype1: dw "Please select your transaction type:", 0x0a
 transtypeLen1: equ $-transtype1
@@ -14,7 +14,7 @@ transtype4: dw "3. Exit", 0x0a
 transtypeLen4: equ $-transtype4
 rem: dw "", 0x0a
 divs: dw "10", 0x0a
-balance dq  15
+balance dq  69
 nextLine dw 0x0a
 num1 dq 0
 num2 dq 0
@@ -34,7 +34,7 @@ ret
 balanceasciiConversion:
 ;--splits balance into 2 integers
 mov rax, [balance]; --prepare for divide
-add rdx, 0; --have to make 0 to div
+mov rdx, 0; --have to make 0 to div
 mov rcx, 10; --divisor
 idiv rcx
 ;--rax = quotient
@@ -70,11 +70,11 @@ syscall
 
 mov eax, 1
 mov edi, 1
-mov edx, statementLen
+mov edx, 9
 lea rsi, [statement]
 syscall
 
-;call balanceasciiConversion
+call balanceasciiConversion
 
 mov eax, 1
 mov edi, 1
@@ -139,7 +139,7 @@ ret
 global _start
 _start:
 
-;call welcomeMSG
+call welcomeMSG
 ;call balanceasciiConversion
 ;call testsplit
 call inputcall
