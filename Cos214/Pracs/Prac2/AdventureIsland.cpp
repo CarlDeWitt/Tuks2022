@@ -118,5 +118,5 @@ AdventureIsland::~AdventureIsland()
 
 void AdventureIsland::restoreSquad()
 {
-    squad1->restorestate();
+    this->squad1 = squad1->restorestate();
 }

@@ -68,12 +68,12 @@ void SquadMember::savestate()
     mt->setMementoState(ns);
 }
 
-void SquadMember::restorestate()
+SquadMember *SquadMember::restorestate()
 {
     SquadMember *ns = mt->getState();
+    cout << ns->getHP() << endl;
     this->name = ns->name;
     this->damage = ns->damage;
     this->alive = ns->alive;
     this->HP = ns->HP;
-    cout << HP << endl;
 }
