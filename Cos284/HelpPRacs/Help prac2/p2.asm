@@ -6,7 +6,7 @@ input: dw "", 0x0a
 input_lenght: equ $-input
 nextLine: dw "\n", 0x0a
 nextLine_lenght: equ $-nextLine
-balance: dq "10", 0x0a
+balance: dq 10, 0x0a
 balance_length: equ $-balance
 
 section .text
