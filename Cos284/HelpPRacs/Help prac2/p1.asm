@@ -15,7 +15,7 @@ _start:
 mov rax, 0
 mov rdi, 0
 mov rsi, input
-mov rdx,3
+mov rdx, 5
 syscall
 
 mov rax, 1
@@ -23,21 +23,6 @@ mov rdi, 0
 lea rsi, [input]
 mov rdx, 6
 syscall
-
-mov rbx, [n]
-mov r8,1
-
-for:
-cmp r8, rbx     ;compare counter to n
-jg end_for
-
-mov eax, 1
-mov edx, 13
-lea rsi, [msg1] ;Load effective address
-syscall
-inc r8          ;iterator increment
-jmp for
-end_for:
 
 mov eax, 60     ;exit
 
