@@ -19,7 +19,7 @@ nextLine dw 0x0a
 num1 dq 0
 num2 dq 0
 input: dw "", 0x0a
-text dw "wassup",
+text: dd "wassup",
 
 section .text
 
@@ -103,10 +103,15 @@ syscall
 ret
 
 testsplit:
+lea rsi, [text +0]
+mov rdx, 1
+mov [num1], rdx
+syscall
+
 mov rax,1
-mov rdi,1
-mov rsi, text
-mov rdx, 6
+mov rdx,1
+mov rsi, num1
+mov rdx, 1
 syscall
 
 call NewLine
@@ -121,11 +126,12 @@ mov rsi, input
 mov rdx, 1
 syscall
 
-mov rax, 1
+;mov rax, 1
 mov rdi, 1
 mov rsi, input
 mov rdx, 1
 syscall
+
 call NewLine
 ret
 
@@ -135,8 +141,8 @@ _start:
 
 ;call welcomeMSG
 ;call balanceasciiConversion
-call testsplit
-;call inputcall
+;call testsplit
+call inputcall
 
 exit:
   mov eax, 60
