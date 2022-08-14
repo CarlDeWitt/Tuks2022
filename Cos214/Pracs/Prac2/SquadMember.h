@@ -29,5 +29,6 @@ public:
     int getDamage();
     void savestate();
     SquadMember *restorestate();
+    ~SquadMember();
 };
 #endif

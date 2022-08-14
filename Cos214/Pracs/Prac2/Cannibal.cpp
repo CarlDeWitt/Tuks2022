@@ -6,7 +6,7 @@ Cannibal::Cannibal(int hp, string attack, int damage, string defensive, string p
 
 bool Cannibal::hitSquadMember(SquadMember *z)
 {
-    cout << "Cannibal " << name << " rushesh towards" << z->getName() << "with a " << this->primaryWeapon << endl;
+    cout << "Cannibal " << name << " rushesh towards " << z->getName() << " with a " << this->primaryWeapon << endl;
     int health = z->takeDamage(this->damage); // add take damage
     if (health <= 0)
         return true;
@@ -36,7 +36,6 @@ void Cannibal::setName(string name)
 {
     this->name = name;
 }
-// Cannibal::~Cannibal()
-// {
-//     cout << "Cannibal destuct" << endl;
-// }
+Cannibal::~Cannibal()
+{
+}

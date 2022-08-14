@@ -25,7 +25,7 @@ int SquadMember::getHP()
 }
 void SquadMember::die()
 {
-    cout << "squad died" << endl;
+    cout << "squadMember died" << endl;
 }
 string SquadMember::getName()
 {
@@ -78,4 +78,7 @@ SquadMember *SquadMember::restorestate()
     this->alive = ns->alive;
     this->HP = ns->HP;
     return ns;
+}
+SquadMember::~SquadMember()
+{
 }

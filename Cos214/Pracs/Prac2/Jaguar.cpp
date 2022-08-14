@@ -41,7 +41,6 @@ void Jaguar::setName(string name)
 {
     this->name = name;
 }
-// Jaguar::~Jaguar()
-// {
-//     cout << "Jaguar destuct" << endl;
-// }
+Jaguar::~Jaguar()
+{
+}

@@ -6,7 +6,7 @@ Gorilla::Gorilla(int hp, string attack, int damage, string defensive, string pri
 
 bool Gorilla::hitSquadMember(SquadMember *z)
 {
-    cout << "Gorilla " << name << " slams his fists on the ground, growls and hits" << z->getName() << "with " << this->primaryWeapon << endl;
+    cout << "Gorilla " << name << " slams his fists on the ground, growls and hits " << z->getName() << " with " << this->primaryWeapon << endl;
     int health = z->takeDamage(10); // add take damage
     if (health <= 0)
         return true;
@@ -36,7 +36,6 @@ void Gorilla::setName(string name)
 {
     this->name = name;
 }
-// Gorilla::~Gorilla()
-// {
-//     cout << "Gorilla destuct" << endl;
-// }
+Gorilla::~Gorilla()
+{
+}

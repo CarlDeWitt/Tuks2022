@@ -18,13 +18,13 @@ void Enemy::attack(SquadMember *n)
         {
             n->die();
             this->celebrate();
+            return;
         }
         else
         {
             if (this->getHit(n))
             {
                 this->die();
-                break;
             }
         }
     }

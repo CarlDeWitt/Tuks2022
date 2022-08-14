@@ -24,7 +24,7 @@ public:
     virtual bool getHit(SquadMember *z) = 0;
     virtual void die() = 0;
     virtual void setName(string name) = 0;
-    // virtual ~Enemy();
+    // virtual ~Enemy() = 0;
 };
 
 #endif

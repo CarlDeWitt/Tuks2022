@@ -41,6 +41,9 @@ void AdventureIsland::playgame(int e)
         while (s->isalive())
         {
             s->attack(squad1);
+            if(squad1->isAlive()){
+                return;
+            }
         }
     }
 
@@ -53,6 +56,9 @@ void AdventureIsland::playgame(int e)
         while (j->isalive())
         {
             j->attack(squad1);
+            if(squad1->isAlive()){
+                return;
+            }
         }
     }
 
@@ -65,6 +71,9 @@ void AdventureIsland::playgame(int e)
         while (g->isalive())
         {
             g->attack(squad1);
+            if(squad1->isAlive()){
+                return;
+            }
         }
     }
 
@@ -78,8 +87,12 @@ void AdventureIsland::playgame(int e)
         while (c->isalive())
         {
             c->attack(squad1);
+            if(squad1->isAlive()){
+                return;
+            }
         }
     }
+    return;
 }
 
 void AdventureIsland::nameEnemy(string type, string name)

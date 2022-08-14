@@ -36,7 +36,6 @@ void Snake::setName(string name)
 {
     this->name = name;
 }
-// Snake::~Snake()
-// {
-//     cout << "Snake destuct" << endl;
-// }
+Snake::~Snake()
+{
+}
