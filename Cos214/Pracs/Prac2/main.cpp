@@ -100,12 +100,29 @@ void runDynamic(){
     if(m == 0){
         string name;
         int damage, health;
+        bool b1 = true, b2 = true;
         cout << "Enter your name" << endl;
         cin >> name;
-        cout << "Enter your damage" << endl;
-        cin >> damage;
+        while(b1){
+            cout << "Enter your damage" << endl;
+            cin >> damage;
+            if(damage > 0){
+                
+                b1 = false;
+            }else{
+                cout << "Enter a number above 0" << endl;
+            }
+        }
+        while(b2){
         cout << "Enter your health" << endl;
         cin >> health;
+         if(health > 0){
+                
+                b2 = false;
+            }else{
+                cout << "Enter a number above 0" << endl;
+            }
+        }
         island->makesquad(name, health, damage);
         m++;
         printWlcm();
