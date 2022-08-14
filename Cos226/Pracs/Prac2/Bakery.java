@@ -25,16 +25,17 @@ public class Bakery implements Lock
 	public void lock() {
 		String s = Thread.currentThread().getName();
 		int i = Integer.parseInt(s.substring(s.length()-1));
-		flag[i] = true;
-		label[i] = max() + 1;
-		/*
-		for loop goes through every level to check if there is a thread in a higher level than the current thread
-		 this while loop will run through untill a the flag[i] that was raised is the samllest label
-		*/
-		for (int k = 0; k < size; k++) {
-			while ( flag[k] && ((label[k] < label[i]) || ((label[k] == label[i]) && k < i))) {
+			flag[i] = true;
+			label[i] = max() + 1;
+			/*
+			for loop goes through every level to check if there is a thread in a higher level than the current thread
+			 this while loop will run through untill a the flag[i] that was raised is the samllest label
+			*/
+			for (int k = 0; k < size; k++) {
+				while ( flag[k] && ((label[k] < label[i]) || ((label[k] == label[i]) && k < i))) {
+				}
 			}
-		}
+
 
 	}
 

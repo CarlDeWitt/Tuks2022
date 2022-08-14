@@ -8,8 +8,8 @@ import java.util.concurrent.locks.Lock;
 public class Filter implements Lock
 {
 	int size;
-	int[] victim;
-	int[] level;
+	volatile int[] victim;
+	volatile int[] level;
 
 	public Filter(int n){
 		size = n;
@@ -24,17 +24,15 @@ public class Filter implements Lock
 	public void lock() {
 		String s = Thread.currentThread().getName();
 		int i = Integer.parseInt(s.substring(s.length()-1));
-//		i = i +1;
-//		System.out.println(s);
-		for( int L =1; L < size; L++){
-			level[i] = L;
-			victim[L] = i;
-			for (int k = 0; k < size; k++) {
-				while ((k != i) && (level[k] >= L && victim[L] == i)) {
-					System.out.print("");
+			for( int L =1; L < size; L++){
+				level[i] = L;
+				victim[L] = i;
+				for (int k = 0; k < size; k++) {
+					while ((k != i) && (level[k] >= L && victim[L] == i)) {
+						System.out.print("");
+					}
 				}
 			}
-		}
 	}
 
 	public void lockInterruptibly() throws InterruptedException
