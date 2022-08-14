@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="freshwaterfish.com"
+xmlns:f="fish.com"
+xmlns:fw="freshwaterfish.com">
+<xs:import namespace="fish.com" schemaLocation="ns_f.xsd"></xs:import>
+<xs:include schemaLocation="ns_fw.xsd"></xs:include>
+<!-- Carl de Witt u21444928 -->
+
+<xs:element name="family" type="xs:string"/>
+
+<xs:element name="fishes">
+    <xs:complexType>
+        <xs:sequence maxOccurs="unbounded">
+
+            <!-- fich -->
+            <xs:element name="fish">
+                <xs:complexType>
+                    <xs:sequence>
+
+                        <!-- f:name -->
+                        <xs:element ref="f:name"/>
+
+                        <!-- f:diet -->
+                        <xs:element ref="f:diet"/>
+
+                        <!-- f:fam -->
+                        <xs:element ref="fw:family"/>
+
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+</xs:schema>

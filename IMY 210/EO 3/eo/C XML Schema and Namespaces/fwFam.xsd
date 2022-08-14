@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="fwFam.com">
+<!-- <xs:import namespace="saltwaterfish.com" schemaLocation= "ns_sw.xsd"></xs:import> -->
+
+<!-- <xs:element name="family" type="xs:string"/> -->
+
+</xs:schema>

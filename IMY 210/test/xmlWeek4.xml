@@ -1,0 +1,65 @@
+<food id="b102">
+<xs:element name="food" type="string">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:elementt ref="food"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+
+
+<xs:element name="food">
+            <xs:sequence>
+                <xs:complexType>
+                    <xs:element name="name" type="string">
+
+                    </xs:element>
+                    <xs:element name="cost">
+                        <xs:complexType>
+                            <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                    <xs:attribute ref="cur">
+                                </xs:extension>
+                            </xs:simpleContent>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+                <xs:attribute name="id" type="string">
+                </xs:attribute>
+            </xs:complexType>
+        </xs:element>
+
+<xs:attribute name="cur">//wrong
+  <xs:complexType>
+    <xs:choice>
+      <xs:element name="ZAR" type="string"/>
+      <xs:element name="USD" type="string"/>
+    </xs:choice>
+  </xs:complexType>
+</xs:element>
+
+<xs:simpleType name="cus_type">
+    <xs:restrictions base="xs:string">
+        <xs:enumeration value="ZAR"></xs:enumeration>
+        <xs:enumeration value="USD"></xs:enumeration>
+    </xs:restrictions>
+</xs:simpleType>
+
+
+
+</food>
+
+<xs:element name="cups">
+    <xs:complexType>
+        <xs:elemnt name="cupboard">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element name="cup" type="xs:string">
+
+                    </xs:element>
+                </xs:sequence>
+                <xs:element name="cup"></xs:element>
+            </xs:complexType>
+        </xs:elemnt>
+    </xs:complexType>
+</xs:element>

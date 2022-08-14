@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<animals publication="Animal Fact Guide" siteLogo="logo.jpg">
+<?xml-stylesheet type="text/xsl" href="p5.xsl" ?>
+    <animal image="african-elephant.jpg">
+      <name>African Elephant</name>
+      <sciName>Loxodonta africana</sciName>
+      <abstract more="http://www.animalfactguide.com/animal-facts/african-elephant/">
+        Weighing up to 6000 kg (6.6 tons) and measuring up to 3.3 m (10 ft.) at the shoulder, the African elephant is the world’s largest land mammal. It is characterized by its highly dexterous trunk, long curved tusks, and massive ears.
+
+        A combination of the upper lip and nose, an African elephant’s trunk...
+
+      </abstract>
+      <tags>
+        <tag>Big</tag>
+        <tag>Grey</tag>
+        <tag>Bald</tag>
+      </tags>
+    </animal>
+
+    <animal image="giraffe.jpg">
+      <name>Giraffe</name>
+      <sciName>Giraffa camelopardalis</sciName>
+      <abstract more="http://www.animalfactguide.com/animal-facts/giraffe/">
+        Characterized by its long legs, long neck, and distinctive spotted pattern, many people first believed the giraffe was a cross between a leopard and a camel, which is reflected in its scientific name, Giraffa camelopardalis.
+
+        Giraffes live primarily in savanna...
+      </abstract>
+      <tags>
+        <tag>Long</tag>
+        <tag>Tongues</tag>
+        <tag>Creepy</tag>
+      </tags>
+    </animal>
+
+    <animal image="panda.jpg">
+      <name>Giant Panda</name>
+      <sciName>Ailuropoda melanoleuca</sciName>
+      <abstract more="http://www.animalfactguide.com/animal-facts/giant-panda/">
+       One of the interesting evolutionary traits of the panda is their protruding wrist bone that acts like a thumb. This helps the pandas hold bamboo while they munch on it with their strong molar teeth. Bamboo makes up nearly the entire...
+      </abstract>
+      <tags>
+        <tag>Black</tag>
+        <tag>White</tag>
+        <tag>Asian</tag>
+      </tags>
+    </animal>
+</animals>

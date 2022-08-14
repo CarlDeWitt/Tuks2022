@@ -1,0 +1,7 @@
+<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ATTLIST to id CDATA #REQUIRED>
+<!ELEMENT from (#PCDATA)>
+<!ATTLIST from reminder (weekly | dayly | never) "never">
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aquarium xsi:noNamespaceSchemaLocation="validation.xsd" xmlns:fw="freshwaterfish.com" xmlns:sw="saltwaterfish.com" xmlns:f="fish.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<fish>
+		<f:name>Australian Stripey</f:name>
+		<f:diet>Omnivore</f:diet>
+		<sw:size unit="inches">6</sw:size>
+		<sw:type>Miscellaneous</sw:type>
+		<cost stock="3" unit="R">290</cost> 
+	</fish>
+	
+	<fish>
+		<f:name>Clanwilliam Yellowfish </f:name>
+		<f:diet>Omnivores</f:diet>
+		<fw:family>Cyprinidae</fw:family>
+		<cost stock="15" unit="R">190</cost> 
+	</fish>
+	
+	<fish>
+		<f:name>Speckled Carpet Shark</f:name>
+		<f:diet>Carnivore</f:diet>
+		<sw:size unit="foot">2</sw:size>
+		<sw:type>Shark</sw:type>
+		<cost stock="0">0</cost> 
+	</fish>
+
+	<fish>
+		<f:name>Little Spinefoot</f:name>
+		<f:diet>Herbivore</f:diet>
+		<sw:size unit="inches">8</sw:size>
+		<sw:type>Rabbitfish</sw:type>
+		<cost stock="4" unit="$">40</cost> 
+	</fish>
+	
+	<fish>
+		<f:name>Tank goby</f:name>
+		<f:diet>Carnivore</f:diet>
+		<fw:family>Gobiidae</fw:family>
+		<cost stock="50" unit="R">20</cost> 
+	</fish>
+
+</aquarium>

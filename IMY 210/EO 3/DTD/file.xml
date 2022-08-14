@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<!DOCTYPE note SYSTEM "val.dtd">
+<note>
+  <to id="69">Tove</to>
+  <from reminder="weekly">Jani</from>
+  <heading>Reminder</heading>
+  <body>Don't forget me this weekend!</body>
+</note>

@@ -1,0 +1,562 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+<character game="Diablo 3" source="www.icy-veins.com">
+	<class name="Demon Hunter">
+		<basic>
+			<name>Demon Hunter Rapid Fire Build with LoD</name>
+			<creator>Deadset</creator>
+			<update>February 30, 2000</update>
+			<tags>
+				<tag status="outdated">hardcore</tag>
+				<tag>top-tier</tag>
+				<tag status="outdated">speed-farming</tag>
+				<tag>solo</tag>
+				<tag>gr-pushing</tag>
+			</tags>
+		</basic>
+		<skills>
+			<skill type="active" image="demonhunter_rapidfire_large.png">
+				<name>Rapid Fire</name>
+				<requirements>
+					<level>5</level>
+					<equipment>Bow</equipment>
+				</requirements>
+				<cost unit="Hatred">20</cost>
+				<type>Secondary</type>
+				<description>Rapidly fire for 685% weapon damage as Physical.</description>
+				<rune image="a.png">
+					<name>Bombardment</name>
+					<level>56</level>
+					<description>Rapidly fire grenades that explode for 545% weapon damage as Fire to all enemies within a 8 yard radius.</description>
+				</rune>
+			</skill>
+
+			<skill type="active" image="demonhunter_shadowpower_large.png">
+				<name>Shadow Power</name>
+				<requirements>
+					<level>16</level>
+				</requirements>
+				<cost unit="discipline">14</cost>
+				<type>Defensive</type>
+				<description>Draw in the power of the shadows, gaining 26,821 Life per Hit for 5 seconds.  Life per Hit gained is increased by 25% of your Life per Kill.</description>
+				<rune image="c.png">
+					<name>Gloom</name>
+					<level>51</level>
+					<description>Reduce damage taken by 35% while Shadow Power is active.</description>
+				</rune>
+			</skill>
+
+			<skill type="active" image="demonhunter_smokescreen_large.png">
+				<name>Smoke Screen</name>
+				<requirements>
+					<level>8</level>
+					<equipment/>
+				</requirements>
+				<cost unit="discipline">14</cost>
+				<cost unit="cooldown">1.5</cost>
+				<type>Defensive</type>
+				<description>Vanish behind a wall of smoke, becoming momentarily invisible for 1 second.</description>
+				<rune image="a.png">
+					<name>Vanishing Powder</name>
+					<level>59</level>
+					<description>Remove the Discipline cost but increase the cooldown to 6 seconds.</description>
+				</rune>
+			</skill>
+
+			<skill type="active" image="demonhunter_fanofknives_large.png">
+				<name>Fan of Knives</name>
+				<requirements>
+					<level>14</level>
+				</requirements>
+				<cost unit="Cooldown">10</cost>
+				<type>Devices</type>
+				<description>Throw knives out in a spiral around you, dealing 620% weapon damage to all enemies within 20 yards. Your knives will also Slow the movement of enemies by 60% for 1 second.</description>
+				<rune image="e.png">
+					<name>Bladed Armor</name>
+					<level>32</level>
+					<description>Gain 40% additional armor for 6 seconds.  Fan of Knives' damage turns into Cold.
+					</description>
+				</rune>
+			</skill>
+
+			<skill type="active" image="x1_demonhunter_vengeance_large.png">
+				<name>Vengeance</name>
+				<requirements>
+					<level>61</level>
+					<equipment/>
+				</requirements>
+				<cost unit="Cooldown">90</cost>
+				<type>Devices</type>
+				<description>Turn into the physical embodiment of Vengeance for 20 seconds.
+				Side Guns: Gain 4 additional piercing shots for 60% weapon damage each on every attack.
+				Homing Rockets: Shoot 2 rockets at nearby enemies for 80% weapon damage each on every attack.
+				Vengeance: Gain 40% increased damage.
+				</description>
+				<rune image="d.png">
+					<name>Side Cannons</name>
+					<level>65</level>
+					<description>Instead of Homing Rockets, the side guns are powered up into slower-firing cannons that deal 225% weapon damage and heal you for 3.0% of maximum Life per enemy hit.</description>
+				</rune>
+			</skill>
+
+			<skill type="active" image="x1_demonhunter_companion_large.png">
+				<name>Companion</name>
+				<requirements>
+					<level>17</level>
+					<equipment/>
+				</requirements>
+				<cost unit="Cooldown">30</cost>
+				<type>Hunting</type>
+				<description>Active: Your raven deals an additional 500% damage on its next attack. 
+					Passive: Summons a raven companion that pecks at enemies for 100% of your weapon damage as Physical
+				</description>
+				<rune image="c.png">
+					<name>Wolf Companion</name>
+					<level>59</level>
+					<description>Active: Your wolf howls, granting you and your allies within 60 yards 15% increased damage for 10 seconds.
+					Passive: Summons a wolf companion that attacks enemies in front of him for 150% of your weapon damage as Physical.</description>
+				</rune>
+			</skill>
+
+			<skill type="passive" image="demonhunter_passive_culltheweak_large.png">
+				<name>Cull the Weak </name>
+				<requirements>
+					<level>20</level>
+				</requirements>
+				<description>
+					Increase damage against Slowed or Chilled enemies by 20%.
+				</description>
+			</skill>
+
+			<skill type="passive" image="demonhunter_passive_grenadier_large.png">
+				<name>Grenadier</name>
+				<requirements>
+					<level>45</level>
+				</requirements>
+				<description>
+					Increase the damage of grenades by 10%.
+					Increase the explosion size of grenades by 20%.
+					Upon death, you drop a giant grenade that explodes for 1000% weapon damage as Fire.
+				</description>
+			</skill>
+
+			<skill type="passive" image="x1_demonhunter_passive_ambush_large.png">
+				<name>Ambush </name>
+				<requirements>
+					<level>64</level>
+				</requirements>
+				<description>
+					You deal 40% additional damage to enemies above 75% health.
+				</description>
+			</skill>
+
+			<skill type="passive" image="demonhunter_passive_numbingtraps_large.png">
+				<name>Numbing Traps</name>
+				<requirements>
+					<level>30</level>
+				</requirements>
+				<description>
+					Enemies you Slow, Chill, or hit with Fan of Knives, Spike Trap, Caltrops, Grenades, and Sentry fire have their damage reduced by 25% for 5 seconds.
+				</description>
+			</skill>
+		</skills>
+
+		<paragon set="Core">
+			<priority weight="1">Movement Speed</priority>
+			<priority weight="2">Dexterity</priority>
+			<priority weight="3">Maximum Hatred</priority>
+			<priority weight="4">Vitality</priority>
+		</paragon>
+		<paragon set="Offense">
+			<priority weight="3">Critical Hit Chance</priority>
+			<priority weight="2">Critical Hit Damage</priority>
+			<priority weight="4">Attack Speed</priority>
+			<priority weight="1">Cooldown Reduction</priority>
+		</paragon>
+		<paragon set="Defense">
+			<priority weight="2">Life %</priority>
+			<priority weight="3">Armor</priority>
+			<priority weight="1">All Resistance</priority>
+			<priority weight="4">Life Regeneration</priority>
+		</paragon>
+		<paragon set="Utility">
+			<priority weight="1">Area Damage</priority>
+			<priority weight="2">Life on Hit</priority>
+			<priority weight="3">Resource Cost Reduction</priority>
+			<priority weight="4">Gold Find</priority>
+		</paragon>	
+
+		<items>
+			<item image="p4_unique_helm_103_demonhunter_male.png">
+				<name>Visage of Gunes</name>
+				<rarity set="Legendary">Orange</rarity> 
+				<set type="Head">Helm</set>
+				<requirements>
+					<level>34</level>
+				</requirements>
+				<stats>
+					<defense>
+						<armor>21 - 24</armor>
+					</defense>
+					<secondary>
+						<stat>Sockets (1) Vengeance gains the effect of the Dark Heart rune. (Demon Hunter Only)</stat>
+						<stat>One of 3 Magic Properties (varies)</stat>
+						<stat>+[626 - 750] Strength/Dexterity/Intelligence</stat>
+						<stat>+3 Random Magic Properties</stat>
+					</secondary>
+				</stats>
+			</item>
+
+			<item image="p4_unique_shoulder_103_demonhunter_male.png">
+				<name>Mantle of Channel</name>
+				<rarity set="Legendary">Orange</rarity> 
+				<set type="Shoulders">Shoulders</set>
+				<requirements>
+					<level>34</level>
+				</requirements>
+				<stats>
+					<defense>
+						<armor>58 - 68</armor>
+					</defense>
+					<primary>
+						<stat> +[416 - 500] Vitality</stat>
+					</primary>
+					<secondary>
+						<stat> While channeling Whirlwind, Rapid Fire, Strafe, Tempest Rush, Firebats, Arcane Torrent, Disintegrate, or Ray of Frost for at least 1 second, you deal 24% increased damage and take 25% reduced damage. [20 - 25]%</stat>
+						<stat>One of 3 Magic Properties (varies)</stat>
+						<stat>+[416 - 500] Strength/Dexterity/Intelligence</stat>
+						<stat>+3 Random Magic Properties</stat>
+					</secondary>
+				</stats>
+			</item>
+
+			<item image="p41_unique_gloves_014_demonhunter_male.png">
+				<name>Magefist</name>
+				<rarity set="Legendary">Orange</rarity> 
+				<set type="Hands">Gloves</set>
+				<requirements>
+					<level>34</level>
+				</requirements>
+				<stats>
+					<defense>
+						<armor>42 - 55</armor>
+					</defense>
+					<primary>
+						<stat>Critical Hit Chance Increased by [8.0 - 10.0]%</stat>
+					</primary>
+					<secondary>
+						<stat>Fire skills deal 19% increased damage. [15 - 20]%</stat>
+						<stat>One of 3 Magic Properties (varies)</stat>
+						<stat>+[626 - 750] Strength/Dexterity/Intelligence</stat>
+						<stat>+3 Random Magic Properties</stat>
+					</secondary>
+				</stats>
+			</item>
+
+			<item image="unique_chest_006_x1_demonhunter_male.png">
+				<name>Cindercoat</name>
+				<rarity set="Legendary">Orange</rarity> 
+				<set type="Torso">Chest Armor</set>
+				<requirements>
+					<level>34</level>
+				</requirements>
+				<stats>
+					<defense>
+						<armor>285 - 321</armor>
+					</defense>
+					<primary>
+						<stat> Fire skills deal [15 - 20]% more damage.</stat>
+					</primary>
+					<secondary>
+						<stat>Reduces the resource cost of Fire skills by 27%. [23 - 30]%</stat>
+						<stat>One of 3 Magic Properties (varies)</stat>
+						<stat>+[416 - 500] Strength/Dexterity/Intelligence</stat>
+						<stat>+3 Random Magic Properties</stat>
+					</secondary>
+				</stats>
+			</item>
+
+			<item image="p43_unique_belt_005_x1_demonhunter_male.png">
+				<name>Hellcat Waistguard</name>
+				<rarity set="Legendary">Orange</rarity> 
+				<set type="Waist">Belt</set>
+				<requirements>
+					<level>14</level>
+				</requirements>
+				<stats>
+					<defense>
+						<armor>265 - 314</armor>
+					</defense>
+					<secondary>
+						<stat>Grenades have a chance to bounce 4 times dealing an additional 50% damage on each bounce. This bonus is increased to 800% on the final bounce. (Demon Hunter Only) [3 - 5]</stat>
+						<stat>One of 3 Magic Properties (varies)</stat>
+						<stat>+[416 - 500] Strength/Dexterity/Intelligence</stat>
+						<stat>+4 Random Magic Properties</stat>
+					</secondary>
+				</stats>
+			</item>
+
+			<item image="p41_unique_pants_001_demonhunter_male.png">
+				<name>Swamp Land Waders</name>
+				<rarity set="Legendary">Orange</rarity> 
+				<set type="Legs">Pants</set>
+				<requirements>
+					<level>50</level>
+				</requirements>
+				<stats>
+					<defense>
+						<armor>217 - 246</armor>
+					</defense>
+					<secondary>
+						<stat>Sockets (2):Sacrifice deals 342% additional damage against enemies affected by Locust Swarm or Grasp of the Dead. (Witch Doctor Only) [300 - 400]%</stat>
+						<stat>One of 3 Magic Properties (varies)</stat>
+						<stat>+[416 - 500] Strength/Dexterity/Intelligence</stat>
+						<stat>One of 7 Magic Properties (varies)</stat>
+						<stat>Poison/Cold/Lightning/Physical/Holy/Arcane/Fire skills deal [15 - 20]% more damage.</stat>
+						<stat>+3 Random Magic Properties</stat>
+					</secondary>
+				</stats>
+			</item>
+
+			<item image="unique_boots_103_x1_demonhunter_male.png">
+				<name>Illusory Boots</name>
+				<rarity set="Legendary">Orange</rarity> 
+				<set type="Feet">Boots</set>
+				<requirements>
+					<level>15</level>
+				</requirements>
+				<stats>
+					<defense>
+						<armor>30 - 34</armor>
+					</defense>
+					<primary>
+						<stat>+[91 - 100] Resistance to All Elements</stat>
+						<stat>+[10 - 12]% Movement Speed</stat>
+					</primary>
+					<secondary>
+						<stat>You may move unhindered through enemies.</stat>
+						<stat>One of 3 Magic Properties (varies)</stat>
+						<stat>+[416 - 500] Strength/Dexterity/Intelligence</stat>
+						<stat>+2 Random Magic Properties</stat>
+					</secondary>
+				</stats>
+			</item>
+			
+			<item image="unique_bracer_106_x1_demonhunter_male.png">
+				<name>Nemesis Bracers</name>
+				<rarity set="Legendary">Orange</rarity> 
+				<set type="Wrists">Bracers</set>
+				<requirements>
+					<level>34</level>
+				</requirements>
+				<stats>
+					<defense>
+						<armor>10 - 12</armor>
+					</defense>
+					<secondary>
+						<stat>Shrines and Pylons will spawn an enemy champion.</stat>
+						<stat>One of 3 Magic Properties (varies) </stat>
+						<stat>+[416 - 500] Strength/Dexterity/Intelligence</stat>
+						<stat>+4 Random Magic Properties</stat>
+					</secondary>
+				</stats>
+			</item>
+
+			<item image="p66_unique_amulet_001_demonhunter_male.png">
+				<name>The Flavor of Time</name>
+				<rarity set="Legendary">Orange</rarity> 
+				<set type="Neck">Amulet</set>
+				<requirements>
+					<level>50</level>
+				</requirements>
+				<stats>
+					<primary>
+						<stat>Reduces cooldown of all skills by [5.0 - 8.0]%.</stat>
+						<stat>+[10 - 12]% Movement Speed</stat>
+					</primary>
+					<secondary>
+						<stat>Pylon effects last twice as long.</stat>
+						<stat>+4 Random Magic Properties</stat>
+					</secondary>
+				</stats>
+			</item>
+
+			<item image="p2_unique_ring_04_demonhunter_male.png">
+				<name>Convention of Elements</name>
+				<rarity set="Legendary">Orange</rarity> 
+				<set type="Finger">Ring</set>
+				<requirements>
+					<level>59</level>
+				</requirements>
+				<stats>
+					<primary>
+						<stat>Critical Hit Chance Increased by [4.5 - 6.0]%</stat>
+					</primary>
+					<secondary>
+						<stat>Sockets (1): Gain 179% increased damage to a single element for 4 seconds. This effect rotates through the elements available to your class in the following order: Arcane, Cold, Fire, Holy, Lightning, Physical, Poison. [150 - 200]%</stat>
+						<stat>One of 3 Magic Properties (varies)</stat>
+						<stat>+[416 - 500] Strength/Dexterity/Intelligence</stat>
+						<stat>+2 Random Magic Properties</stat>
+					</secondary>
+				</stats>
+			</item>
+
+			<item image="unique_ring_010_x1_demonhunter_male.png">
+				<name>Unity</name>
+				<rarity set="Legendary">Orange</rarity> 
+				<set type="Finger">Ring</set>
+				<requirements>
+					<level>60</level>
+				</requirements>
+				<stats>
+					<primary>
+						<stat>Critical Hit Chance Increased by [4.5 - 6.0]%</stat>
+						<stat>Increases damage against elites by [12.0 - 15.0]%</stat>
+					</primary>
+					<secondary>
+						<stat>All damage taken is split between wearers of this item.</stat>
+						<stat>One of 3 Magic Properties (varies)</stat>
+						<stat>+[416 - 500] Strength/Dexterity/Intelligence </stat>
+						<stat>+2 Random Magic Properties</stat>
+					</secondary>
+				</stats>
+			</item>
+
+			<item image="p4_unique_handxbow_001_demonhunter_male.png">
+				<name>Dawn</name>
+				<rarity set="Legendary">Orange</rarity> 
+				<set type="1-Hand Weapon">Hand Crossbow</set>
+				<requirements>
+					<level>60</level>
+				</requirements>
+				<stats>
+					<attack>
+						<dps>258.4</dps>
+						<damage>48-275</damage>
+						<aps>1.60</aps>
+					</attack>
+					<primary>
+						<stat>+[858 - 1049]-[1028 - 1304] Holy Damage</stat>
+						<stat>+[626 - 750] Dexterity</stat>
+					</primary>
+					<secondary>
+						<stat>Reduce the cooldown of Vengeance by 62%. (Demon Hunter Only) [50 - 65]%</stat>
+						<stat>+3 Random Magic Properties</stat>
+					</secondary>
+				</stats>
+			</item>
+
+			<item image="p65_unique_quiver_001_demonhunter_male.png">
+				<name>Sin Seekers</name>
+				<rarity set="Legendary">Orange</rarity> 
+				<set type="Off-Hand">Quiver</set>
+				<requirements>
+					<level>30</level>
+				</requirements>
+				<stats>
+					<primary>
+						<stat>Attack Speed Increased by [15.0 - 20.0]%</stat>
+						<stat>Critical Hit Chance Increased by [8.0 - 10.0]%</stat>
+						<stat>+[626 - 750] Dexterity</stat>
+					</primary>
+					<secondary>
+						<stat> Rapid Fire no longer has a channel cost and deals 250% increased damage. (Demon Hunter Only) [250 - 300]%</stat>
+						<stat>+3 Random Magic Properties</stat>
+					</secondary>
+				</stats>
+			</item>
+		</items>
+
+		<gems>
+			<gem image="g1.png">
+				<name>Bane of the Trapped</name>
+				<rarity set="Legendary">Orange</rarity> 
+				<stats>
+					<secondary>Increase damage against enemies under the effects of control-impairing effects by 15.00%. 15.00%</secondary>
+				</stats>
+			</gem>
+			<gem image="g2.png">
+				<name>Bane of the Stricken</name>
+				<rarity set="Legendary">Orange</rarity> 
+				<stats>
+					<secondary>Each attack you make against an enemy increases the damage it takes from your attacks by 0.80%. 0.80%</secondary>
+				</stats>
+			</gem>
+			<gem image="g4.png">
+				<name>Legacy of Dreams</name>
+				<rarity set="Legendary">Orange</rarity> 
+				<stats>
+					<secondary>While you have no set bonuses equipped every legendary item you have equipped increases your damage dealt by 3.75% and reduces your damage taken by 2%. 3.75%</secondary>
+				</stats>
+			</gem>
+		</gems>
+
+		<cubes>
+			<item image="p65_unique_xbow_102_demonhunter_male.png">
+				<name>Wojahnni</name>
+				<rarity set="Legendary">Orange</rarity> 
+				<set type="2-Hand Weapon">Crossbow</set>
+				<requirements>
+					<level>70</level>
+				</requirements>
+				<stats>
+					<attack>
+						<dps>948.2</dps>
+						<damage>779-945</damage>
+						<aps>1.10</aps>
+					</attack>
+					<primary>
+						<stat>+[626 - 750] Dexterity</stat>
+					</primary>
+					<secondary>
+						<stat>Rapid Fire increasingly deals 95% increased damage while channeling. Stacks up to 30 times. (Demon Hunter Only) [75 - 100]%</stat>
+						<stat>One of 7 Magic Properties</stat>
+						<stat>+[981 - 1199]-[1175 - 1490] Poison/Cold/Lightning/Physical/Holy/Arcane/Fire</stat>
+						<stat>+3 Random Magic Properties</stat>
+					</secondary>
+				</stats>
+			</item>
+
+			<item image="p66_unique_gloves_007_demonhunter_male.png">
+				<name>Stone Gauntlets</name>
+				<rarity set="Legendary">Orange</rarity> 
+				<set type="Hands">Glove</set>
+				<requirements>
+					<level>30</level>
+				</requirements>
+				<stats>
+					<defense>
+						<armor>192 - 209</armor>
+					</defense>
+					<secondary>
+						<stat>Getting hit increases your armor by 50%, but reduces your movement speed by 15% and attack speed by 20%. This effect stacks up to 5 times.</stat>
+						<stat>One of 4 Magic Properties</stat>
+						<stat>+[626 - 750] Strength/Dexterity/Intelligence</stat>
+						<stat>[10.0 - 20.0]% Chance to Immobilize on Hit</stat>
+						<stat>+4 Random Magic Properties</stat>
+					</secondary>
+				</stats>
+			</item>
+
+			<item image="p4_unique_ring_02_demonhunter_male.png">
+				<name>Elusive Ring</name>
+				<rarity set="Legendary">Orange</rarity> 
+				<set type="Finger">Ring</set>
+				<requirements>
+					<level>60</level>
+				</requirements>
+				<stats>
+					<primary>
+						<stat>Critical Hit Chance Increased by [4.5 - 6.0]%</stat>
+					</primary>
+					<secondary>
+						<stat>After casting Shadow Power, Smoke Screen, or Vault, take 50% reduced damage for 8 seconds. (Demon Hunter Only) [50 - 60]%</stat>
+						<stat>One of 3 Magic Properties:</stat> 
+						<stat>+[416 - 500] Strength/Dexterity/Intelligence</stat>
+						<stat>+3 Random Magic Properties</stat>
+					</secondary>
+				</stats>
+			</item>
+		</cubes>
+	</class>
+</character>

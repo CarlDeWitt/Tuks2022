@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rpsls SYSTEM "dtd-xml.dtd">
+<rpsls>
+	<rock beat="paper lizard"/>
+	<paper beat="scissors spock"/>
+	<scissors beat="rock lizard"/>
+	<lizard beat="paper spock"/>
+	<spock beat="rock scissors"/>
+</rpsls>
+
+

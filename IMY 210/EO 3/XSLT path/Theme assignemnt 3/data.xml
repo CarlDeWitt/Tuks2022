@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="TA.xsl"?>
+<up>
+	<library name="merensky">
+		<book isbn="9781603090254"/>
+		<book isbn="9781603090575"/>
+		<book isbn="9781603094504"/>
+		<book isbn="9781603093507"/>
+		<book isbn="9781603093958"/>
+		<book isbn="9781603090766"/>
+		<book isbn="9781603094061"/>
+		<book isbn="9781603094856">
+fok
+		</book>
+	</library>
+	<library name="klinikala">
+		<book isbn="9781603090254"/>
+		<book isbn="9781603090575"/>
+		<book isbn="9781603094504" status="out">
+fok
+		</book>
+		<book isbn="9781603094856"/>
+	</library>
+	<library name="music">
+		<book isbn="9781603090575"/>
+		<book isbn="9781603090254" status="out"/>
+		<book isbn="9781603090766" status="out"/>
+		<book isbn="9781603094061"/>
+	</library>
+</up>

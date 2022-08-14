@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- New XML document created with EditiX XML Editor (http://www.editix.com) at Wed Mar 23 14:36:25 CAT 2022 -->
+
+<root>
+
+<?xml-stylesheet href="my-style.css"?>
+
+<s id="s1">
+
+	s{ background-color: green};
+
+</s>
+</root>
