@@ -12,13 +12,13 @@ Enemy::Enemy(int hp, string attack, int damage, string defensive, string primary
 
 void Enemy::attack(SquadMember *n)
 {
-    while (n->HP > 0 && n->isAlive())
+    while (n->HP > 0 && this->HP > 0 && this->isalive() && n->isAlive())
     {
         if (this->hitSquadMember(n))
         {
             n->die();
             this->celebrate();
-            return;
+            break;
         }
         else
         {

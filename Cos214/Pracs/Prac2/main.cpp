@@ -92,8 +92,10 @@ void printops(){
     string msg2 = "To attack press 1";
     string msg3 = "To store you progress press 2";
     string msg4 = "To restore your progress press 3";
-     string msg5 = "To end your game press 4";
-    cout << endl << msg2 << endl << msg3 << endl << msg4 << endl << msg5 << endl;
+    string msg5 = "To end your game press 4";
+    cout << "===============================================" << endl;
+    cout << msg2 << endl << msg3 << endl << msg4 << endl << msg5 << endl;
+    cout << "===============================================" << endl;
 }
 
 void runDynamic(){
@@ -133,6 +135,7 @@ void runDynamic(){
     printops();
     cout << "Enter you next move=> ";
     cin >> input;
+    cout << "*=============================================*" << endl;
 
     if(input == "1"){
         int enemycount;

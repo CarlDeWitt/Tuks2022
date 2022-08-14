@@ -72,7 +72,9 @@ void SquadMember::savestate()
 SquadMember *SquadMember::restorestate()
 {
     SquadMember *ns = mt->getState();
+    cout << "---------------------------" << endl;
     cout <<"HP is restored to: " << ns->getHP() << " from: " << HP << endl << endl;
+    cout << "---------------------------" << endl;
     this->name = ns->name;
     this->damage = ns->damage;
     this->alive = ns->alive;

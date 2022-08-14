@@ -32,19 +32,14 @@ void AdventureIsland::saveSquadMember()
 
 void AdventureIsland::playgame(int e)
 {
+    makeEns();
     if (e >= 1)
     {
         s->setName(sfac->getName());
         cout << "You are attacking the snake now: " << endl;
+        cout << "The snake has " << s->isalive() << " health" << endl;
         s->attack(squad1);
         cout << endl;
-        while (s->isalive())
-        {
-            s->attack(squad1);
-            if(squad1->isAlive()){
-                return;
-            }
-        }
     }
 
     if (e >= 2)
@@ -53,13 +48,6 @@ void AdventureIsland::playgame(int e)
         cout << "You are attacking the jake now " << endl;
         j->attack(squad1);
         cout << endl;
-        while (j->isalive())
-        {
-            j->attack(squad1);
-            if(squad1->isAlive()){
-                return;
-            }
-        }
     }
 
     if (e >= 3)
@@ -68,13 +56,6 @@ void AdventureIsland::playgame(int e)
         cout << "You are attacking the gorilla now " << endl;
         g->attack(squad1);
         cout << endl;
-        while (g->isalive())
-        {
-            g->attack(squad1);
-            if(squad1->isAlive()){
-                return;
-            }
-        }
     }
 
     if (e >= 4)
@@ -84,13 +65,6 @@ void AdventureIsland::playgame(int e)
         cout << "You are attacking the cannibal now " << endl;
         c->attack(squad1);
         cout << endl;
-        while (c->isalive())
-        {
-            c->attack(squad1);
-            if(squad1->isAlive()){
-                return;
-            }
-        }
     }
     return;
 }
