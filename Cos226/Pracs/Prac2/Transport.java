@@ -1,7 +1,7 @@
 public class Transport extends Thread {
     Venue destination;
-	Filter fl;
-	Bakery bl;
+	public static Filter fl;
+	public static Bakery bl;
 
 	public Transport(Venue dest,Filter fl){
 		destination = dest;
