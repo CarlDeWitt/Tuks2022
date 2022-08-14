@@ -1,0 +1,128 @@
+# Version
+UPDATEVERSION = 9.7.1
+CHECKUPDATES = false
+
+# Paths
+INPUTPATH = C:/Users/carli/OneDrive/Documents/CarlieUniStuff2022/IMY210/cd.xml
+DATAPATH = C:\Users\carli\OneDrive\Desktop\tuks\year 2\IMY 210\programs\BaseX\
+WORKPATH = C:/Users/carli/OneDrive/Desktop/Carlie exam/
+PROJECTPATH = C:/Users/carli/OneDrive/Desktop/tuks/year 2/IMY 210/programs/BaseX/
+
+# Layout
+FONT = SansSerif
+MONOFONT = Consolas
+FONTTYPE = 0
+FONTSIZE = 15
+ONLYMONO = false
+COLORRED = 15
+COLORGREEN = 11
+COLORBLUE = 6
+
+# Windows
+VIEWS = V H V editor H text info - - folder map plot - H table tree explore - - 
+GUISIZE0 = 1934
+GUISIZE1 = 1039
+GUILOC0 = -125
+GUILOC1 = 133
+MAXSTATE = true
+SHOWBUTTONS = true
+SHOWINPUT = true
+SHOWSTATUS = true
+SHOWINFO = true
+SHOWMAP = true
+SHOWTABLE = false
+SHOWTEXT = true
+SHOWFOLDER = false
+SHOWEXPLORE = false
+SHOWPLOT = false
+SHOWEDITOR = true
+SHOWTREE = false
+SHOWPROJECT = true
+PREFTAB = 0
+LOOKANDFEEL = 
+LABELS = name,label,id
+SCROLLTABS = true
+MOUSEFOCUS = false
+XMLSUFFIXES = xml,xsd,svg,rdf,rss,rng,sch,xhtml
+ASCSORT = true
+CASESORT = true
+MERGEDUPL = false
+COLUMN = 1
+UNICODE = true
+SHOWMARGIN = true
+MARGIN = 80
+TABSPACES = true
+INDENT = 2
+SHOWINVISIBLE = true
+SHOWNL = false
+SHOWLINES = true
+MARKLINE = true
+SAVERUN = false
+PARSEPROJ = true
+AUTO = true
+FILES = *.xml, *.xq*
+SHOWHIDDEN = false
+SEARCHMODE = 0
+FILTERRT = false
+EXECRT = false
+DBNAME = cd
+LASTINSERT = 1
+
+# Visualizations
+MAPATTS = false
+MAPOFFSETS = 3
+MAPALGO = 0
+MAPWEIGHT = 0
+TREESLIM = true
+TREEATTS = false
+PLOTDOTS = 0
+PLOTXLOG = false
+PLOTYLOG = false
+MAXTEXT = 8388608
+MAXRESULTS = 500000
+
+# Search
+SEARCHED = 3
+SEARCHED1 = Picture book
+SEARCHED2 = the dock
+SEARCHED3 = picture
+REPLACED = 0
+
+# History
+COMMANDS = 0
+SEARCH = 0
+XQUERY = 0
+
+# Files
+EDITOR = 18
+EDITOR1 = C:/Users/carli/OneDrive/Desktop/Carlie exam/query.xq
+EDITOR2 = C:/Users/carli/OneDrive/Desktop/tuks/year 2/IMY 210/EO 3/eo/E XQuery/query.xq
+EDITOR3 = C:/Users/carli/OneDrive/Desktop/Carlie exam/query-result.html
+EDITOR4 = C:/Users/carli/OneDrive/Desktop/Carlie exam/query-xml-two.xml
+EDITOR5 = C:/Users/carli/OneDrive/Desktop/Carlie exam/query-xml-one.xml
+EDITOR6 = C:/Users/carli/OneDrive/Desktop/tuks/year 2/IMY 210/EO 3/eo/E XQuery/query-xml-two.xml
+EDITOR7 = C:/Users/carli/OneDrive/Desktop/tuks/year 2/IMY 210/EO 3/eo/E XQuery/query-xml-one.xml
+EDITOR8 = C:/Users/carli/OneDrive/Desktop/tuks/year 2/IMY 210/EO 3/eo/E XQuery/query-result.html
+EDITOR9 = C:/Users/carli/OneDrive/Desktop/tuks/year 2/IMY 210/EO 3/x Base/TA 5/q4.xq
+EDITOR10 = C:/Users/carli/OneDrive/Desktop/tuks/year 2/IMY 210/EO 3/x Base/TA 5/q3.xq
+EDITOR11 = C:/Users/carli/OneDrive/Desktop/tuks/year 2/IMY 210/EO 3/x Base/TA 5/q2.xq
+EDITOR12 = C:/Users/carli/OneDrive/Desktop/tuks/year 2/IMY 210/EO 3/x Base/TA 5/q1.xq
+EDITOR13 = C:/Users/carli/OneDrive/Desktop/tuks/year 2/IMY 210/EO 3/x Base/TA 5/cd2.xml
+EDITOR14 = C:/Users/carli/OneDrive/Desktop/tuks/year 2/IMY 210/EO 3/x Base/TA 5/cd.xml
+EDITOR15 = C:/Users/carli/OneDrive/Documents/CarlieUniStuff2022/IMY210/q3.xq
+EDITOR16 = C:/Users/carli/OneDrive/Documents/CarlieUniStuff2022/IMY210/q2.xq
+EDITOR17 = C:/Users/carli/OneDrive/Documents/CarlieUniStuff2022/IMY210/cd.xml
+EDITOR18 = C:/Users/carli/OneDrive/Documents/CarlieUniStuff2022/IMY210/q1.xq
+INPUTS = 2
+INPUTS1 = C:/Users/carli/OneDrive/Documents/CarlieUniStuff2022/IMY210/cd.xml
+INPUTS2 = C:/Users/carli/OneDrive/Desktop/tuks/year 2/IMY 210/Theme ass/Theme assignment 5/cd.xml
+OPEN = 4
+OPEN1 = C:/Users/carli/OneDrive/Desktop/Carlie exam/query-xml-one.xml
+OPEN2 = C:/Users/carli/OneDrive/Desktop/Carlie exam/query-xml-two.xml
+OPEN3 = C:/Users/carli/OneDrive/Desktop/Carlie exam/query-result.html
+OPEN4 = C:/Users/carli/OneDrive/Desktop/Carlie exam/query.xq
+PROJECTS = 0
+PROJFILES = 0
+PROJCONTS = 0
+
+# Local Options

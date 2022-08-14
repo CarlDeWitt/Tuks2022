@@ -27,7 +27,9 @@ void careTaker::undo()
 
 SquadMember *careTaker::getState()
 {
-    return sm.front();
+    SquadMember *s = sm.front();
+    undo();
+    return s;
 }
 
 SquadMember *careTaker::restore()

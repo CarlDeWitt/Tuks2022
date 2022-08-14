@@ -12,6 +12,7 @@ $email = isset($_POST["email"]) ? $_POST["email"] : null;
 $pass = isset($_POST["pass"]) ? $_POST["pass"] : null;
 // If email and/or pass POST values are set, set the variables to those values, otherwise make them false
 
+
 /**
  * delete
  */
@@ -60,6 +61,7 @@ if (
 	isset($_POST['eventName']) && $_POST['eventName'] != "" &&
 	isset($_POST['eventDescription']) && $_POST['eventDescription'] != ""
 ) {
+
 	/**
 	 * get the uplaoded file 
 	 */
@@ -70,8 +72,16 @@ if (
 	 * check if the file is correct
 	 */
 	for ($i = 0; $i < $uploadFileCount; $i++) {
-		if ($uploadFile["type"][$i] == "image/jpeg" || $uploadFile["type"][$i] == "image/pjpeg" && $uploadFile["size"][$i] < 1000) {
+		if ($uploadFile["type"][$i] == "image/jpeg" || $uploadFile["type"][$i] == "image/pjpeg" && $uploadFile["size"][$i] < 1000000) {
 			// echo "valid file";
+			/**
+			 * try to upload images to folder
+			 */
+			if ($uploadFile != "") {
+				$destinationPath = "gallery/";
+				$target_path = $destinationPath . $uploadFile['name'][0];
+				move_uploaded_file($uploadFile['tmp_name'][0], $target_path);
+			}
 		} else {
 			echo "There is a something wrong with your uploaded file";
 		}
@@ -194,8 +204,7 @@ if (
 
 
 			echo "<h2>Upcoming Events</h2>";
-			echo "<table class='row eventsGallery'>";
-
+			echo "<div class='container'><div class='row'>";
 			/**
 			 *  this loops through the events and displays them in a table
 			 */
@@ -229,7 +238,7 @@ if (
 							</div>
 						</div>";
 			}
-			echo "</table>";
+			echo "</div></div>";
 		} //end if
 
 		else {

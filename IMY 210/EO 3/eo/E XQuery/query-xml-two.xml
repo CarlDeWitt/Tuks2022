@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<modules>
+   <module code="COS216">
+      <name>Netcentric computer systems</name>
+      <credit>16</credit>
+   </module>
+   <module code="PUB210">
+      <name>Publishing: Copy-editing</name>
+      <credit>20</credit>
+   </module>
+   <module code="COS212">
+      <name>Data structures and algorithms</name>
+      <credit>16</credit>
+   </module>
+   <module code="COS226">
+      <name>Concurrent systems</name>
+      <credit>16</credit>
+   </module>
+   <module code="VIO202">
+      <name>Visual design</name>
+      <credit>24</credit>
+   </module>
+   <module code="IMY210">
+      <name>Multimedia: Advanced mark-up languages 1</name>
+      <credit>16</credit>
+   </module>
+   <module code="IMY220">
+      <name>Multimedia: Advanced mark-up languages 2</name>
+      <credit>16</credit>
+   </module>
+</modules>

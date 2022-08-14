@@ -28,6 +28,6 @@ public:
     string getName();
     int getDamage();
     void savestate();
-    void restorestate();
+    SquadMember *restorestate();
 };
 #endif

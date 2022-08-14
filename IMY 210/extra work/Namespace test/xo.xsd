@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- New XSD document created with EditiX XML Editor (http://www.editix.com) at Tue Mar 29 14:48:54 CAT 2022 -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="www.xo.com">
+	<xs:element name="cup">
+		<xs:complexType>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

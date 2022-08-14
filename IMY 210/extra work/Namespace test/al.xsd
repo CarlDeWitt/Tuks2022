@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="www.al.com">
+	<xs:element name="cup">
+		<xs:complexType>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

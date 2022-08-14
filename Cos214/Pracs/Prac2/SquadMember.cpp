@@ -35,6 +35,7 @@ string SquadMember::getName()
 int SquadMember::takeDamage(int damage)
 {
     HP = HP - damage;
+    cout << "HP is: " << HP << endl;
     return HP;
 }
 
@@ -68,12 +69,13 @@ void SquadMember::savestate()
     mt->setMementoState(ns);
 }
 
-void SquadMember::restorestate()
+SquadMember *SquadMember::restorestate()
 {
     SquadMember *ns = mt->getState();
+    cout <<"HP is restored to: " << ns->getHP() << " from: " << HP << endl << endl;
     this->name = ns->name;
     this->damage = ns->damage;
     this->alive = ns->alive;
     this->HP = ns->HP;
-    cout << HP << endl;
+    return ns;
 }

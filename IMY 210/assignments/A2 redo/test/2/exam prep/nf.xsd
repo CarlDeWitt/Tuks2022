@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://realbooks.cn/ns/1.0/nf"
+xmlns:as="https://realbooks.cn/ns/1.0/nf">
+<xs:import schemaLocation= "sample.xsd"></xs:import>
+	<xs:element name="book">
+        <xs:complexType>
+            <xs:sequence>
+
+            <!-- section1 -->
+            <xs:element name="section">
+                <xs:complexType>
+                    <xs:sequence>
+
+                        <!-- title -->
+                        <xs:element name="title" type="as:limit255"/>
+
+                        <!-- authors -->
+                        <xs:element name="authors">
+                            <xs:complexType>
+                                <xs:sequence minOccurs="1" maxOccurs="unbounded">
+                                    
+                                    <!-- author -->
+                                    <xs:element name="author" type="as:limit255"/>
+
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+
+                        <!-- publisher -->
+                        <xs:element name="publisher">
+                            <xs:complexType>
+                                <xs:simpleContent>
+                                    <xs:extension base="as:limit255">
+                                        <xs:attribute name="year" type="as:years" />                                        
+                                    </xs:extension>
+                                </xs:simpleContent>
+                            </xs:complexType>
+                        </xs:element>
+
+                    </xs:sequence>
+                </xs:complexType>   
+            </xs:element>
+
+            <!-- section2 -->
+            <xs:element name="section">
+                <xs:complexType>
+                    <xs:sequence>
+
+                        <!-- isbn -->
+                        <xs:element name="isbn">
+                            <xs:complexType>
+                                <xs:sequence maxOccurs="3">
+
+                                    <xs:element name="isbn" type="as:isbns"/>
+
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+
+                        <!-- notes -->
+                        <xs:element name="notes" type="xs:string"/>
+
+                        <!-- format -->
+                        <xs:element name="format" type="as:limit255"/>
+
+                        <!-- edition -->
+                        <xs:element name="edition">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:integer">
+                                    <xs:minInclusive value="0"/>
+                                    <xs:maxInclusive value="20"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+
+                        <!-- subjects -->
+                        <xs:element name="subjects">
+                            <xs:complexType>
+                                <xs:sequence minOccurs="1" maxOccurs="unbounded">
+                                    <xs:element name="subject" type="as:limit255"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+
+                    </xs:sequence>
+                </xs:complexType>
+
+            </xs:element>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+<xs:simpleType name="limit255">
+    <xs:restriction base="xs:string">
+        <xs:maxLength value="255"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="years">
+    <xs:restriction base="xs:integer">
+        <xs:minInclusive value="1900"/>
+        <xs:maxInclusive value="2100"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="isbns">
+    <xs:restriction base="xs:string">
+        <xs:minLength value="10"/>
+        <xs:maxLength value="13"/>
+    </xs:restriction>
+</xs:simpleType>
+</xs:schema>
+
+
+
+ 

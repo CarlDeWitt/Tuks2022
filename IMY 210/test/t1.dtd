@@ -1,0 +1,7 @@
+<!DOCTYPE meal[
+<!ELEMENT meal (food)+>
+<!ELEMENT food (name,cost)+>
+<!ELEMENT name (#PCDATA)
+<!ATTLIST food id ID #REQUIERD >
+<!ATTLIST cost cur (ZAR | USD) #REQUIERD >
+]>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE game SYSTEM "dtd-xml.dtd">
+<game icon="rpsls">
+	<game>
+		<rps game_id="GR01">
+			<rock/>
+		</rps>
+		
+		<rpsls game_id="GL01">
+			<spock/>
+		</rpsls>
+		
+		<rps game_id="GR02">
+			<paper/>
+		</rps>
+	</game>
+	
+	<result>
+		<status game_id="GR01">win</status>
+		<status game_id="GL01">lose</status>
+		<status game_id="GR02">lose</status>
+	</result>
+</game>
+

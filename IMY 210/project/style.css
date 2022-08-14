@@ -1,0 +1,9 @@
+.contain{
+    display: flex;flex-direction: column;justify-content: center;align-items: center;
+    background-color: #010312;
+}
+
+.all{
+    display: flex;justify-content: center;align-items: center;flex-direction: column;
+    background-color: #403ffb;
+}

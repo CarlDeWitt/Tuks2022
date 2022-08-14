@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="www.nf.com">
+    <xs:element name="book">
+        <xs:complexType>
+            <xs:element name="section">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="authors">
+                            <xs:complexType>
+                                <xs:element name="author" type="xs:string"></xs:element>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+                <xs:element name="publisher">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attribute name="year" type="xs:string"/>
+                            </xs:extension>
+                            </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+            </xs:element>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

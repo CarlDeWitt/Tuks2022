@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<schedule xmlns="https://www.w3schools.com"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="validate.xsd"
+user="DaddyLongLegs">
+	<!-- <schedule> can hold infinite <event> -->
+	<event id="A20131243">
+		<title>String no longer than 25 characters</title>
+		<type>A choice between three options: Event, Task, Appointment</type>
+		<date repeat="weekly">	
+			<day>Numeric value between 1 to 31</day>
+			<month>A choice between any of the twelve months</month>
+			<startingTime>5 character string followed by the text AM or PM</startingTime>
+			<endingTime>5 character string followed by the text AM or PM</endingTime>
+		</date>
+		<guests>
+			<guest>
+				<name>String no longer than 50 characters</name>
+				<email>String no longer than 50 characters</email>
+			</guest>
+		</guests>
+		<venue>String no longer than 25 characters</venue>
+		<description>String no longer than 255 characters</description>
+	</event>
+	<event id="A20131242">
+		<!-- @id should be a 9 character unique identifier and must appear -->
+		<title>Events must have one title</title>
+		<type>Events must have one type</type>
+		<date repeat="Monthly">	
+			<!-- @repeat is option but can only hold the value "daily","weekly" or "monthly"-->
+			<day>Day must appear once</day>
+			<month>Month must appear once </month>
+			<startingTime>StartingTime is optional</startingTime>
+			<endingTime>endingTime is optional</endingTime>
+		</date>
+		<guests>
+			<!-- <guests> can hold up to 10 <guest> -->
+			<guest>
+				<!-- Both <name> <email> are optional BUT at least one must exist in guest at all times  -->
+				<name></name>
+				<email></email>
+			</guest>
+		</guests>
+		<venue>Venue is option</venue>
+		<description>Description is optional</description>
+	</event>
+</schedule>

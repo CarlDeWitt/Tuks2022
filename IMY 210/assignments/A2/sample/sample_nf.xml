@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<nf:book xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="nf.xsd" xmlns:nf="www.no.com"/>
+	<!-- <book> can contain only two <section> element-->
+	<section>
+		<!-- <section> can follow one of two formats -->
+		<!-- All elements are required to appear in order formats: title, authors, publisher-->
+		<title>Interaction design : beyond human-computer interaction</title>
+			<!-- plain test, no longer than 255 character--> 
+		<authors>	
+			<!-- can hold infinite <author> elements, minimum being 1--> 
+			<author>Helen Sharp</author>
+			<!-- plain test, no longer than 255 character--> 
+			<author>Yvonne Rogers</author>
+			<author>Jenny Preece</author>
+		</authors>
+		<publisher year="2019">Wiley</publisher>
+			<!-- plain test, no longer than 255 character--> 
+	</section>
+	<section>
+		<!-- All elements are required to appear in order formats -->
+		<isbn>
+			<!-- <isbn> can either hold more <isbn> elements (maximum 3) or text -->
+			<isbn>1119547253</isbn>
+				<!-- <isbn> text can either be 10 or 13 characters-->
+			<isbn>9781119547259</isbn>
+		</isbn>
+		<notes>
+			<!-- plain text with no limitation on characters-->
+			What's Inside? xvii 1 What is Interaction Design?
+		</notes>
+		<format>Print book</format>
+			<!-- plain test, no longer than 255 character--> 
+		<edition>5</edition>
+			<!-- numberic value no larger than 20 -->
+		<subjects>
+			<!-- can hold infinite <subject> elements, minimum being 1--> 
+			<subject>Human-computer interaction</subject>
+				<!-- plain test, no longer than 255 character--> 
+		</subjects>
+	</section>
+</book>

@@ -1,0 +1,1 @@
+Download the images off clickUp and copy them into this folder, so that the files/folder "normal", "shiny", "to.png" and "000.png" are all located here. 

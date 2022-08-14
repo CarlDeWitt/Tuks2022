@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="www.imy.com/prjct-schema">
+	<xs:element name="schedule">
+		<xs:complexType>
+			<xs:sequence>
+				<!-- Events -->
+				
+				<xs:element name="schedule">
+					<xs:complexType>
+						<xs:sequence>
+							
+							<!-- Title -->
+							<xs:element name="Title">
+								<xs:simpleType>
+								    <xs:restriction base="xs:string">
+								      <xs:maxLength value="255" />
+								    </xs:restriction>
+								 </xs:simpleType>
+							</xs:element>	
+											
+							<!-- Type -->
+							<xs:element name="Type">
+							  <xs:complexType>
+							    <xs:choice>
+							      <xs:element name="Event" type="xs:string"/>
+							      <xs:element name="Task" type="xs:string"/>
+							      <xs:element name="Appointment" type="xs:string"/>
+							    </xs:choice>
+							  </xs:complexType>
+							</xs:element>
+							
+							<!-- Date -->
+							<xs:element name="Date">
+								<xs:complexType>
+									<xs:sequence>
+										
+										<!--Day-->
+										<xs:element name="Day">
+											
+												<xs:simpleType>
+											        <xs:restriction base="xs:integer">
+											           <xs:minInclusive value="1"/>
+											           <xs:maxInclusive value="31"/>
+											        </xs:restriction>
+											     </xs:simpleType>
+											
+										</xs:element>
+										
+										<!--month-->
+										<xs:element name="Month">
+											<xs:complexType>
+												<xs:choice minOccurs="0" maxOccurs="unbounded">
+													<xs:element name="January" type="xs:string"/>
+													<xs:element name="February" type="xs:string"/>
+													<xs:element name="March" type="xs:string"/>
+													<xs:element name="April" type="xs:string"/>
+													<xs:element name="May" type="xs:string"/>
+													<xs:element name="June" type="xs:string"/>
+													<xs:element name="July" type="xs:string"/>
+													<xs:element name="August" type="xs:string"/>
+													<xs:element name="September" type="xs:string"/>
+													<xs:element name="October" type="xs:string"/>
+													<xs:element name="November" type="xs:string"/>
+													<xs:element name="December" type="xs:string"/>													
+												</xs:choice>
+											</xs:complexType>
+										</xs:element>
+										
+										<!--startingTime-->
+										<xs:element name="startingTime">
+											<xs:simpleType>
+											    <xs:restriction base="xs:string">
+											      <xs:pattern value="[a-zA-Z]{5}(pm|am)"/>
+											    </xs:restriction>
+											  </xs:simpleType>
+										</xs:element>
+										
+										
+										<!--endingTime-->
+										<xs:element name="endingTime">
+											<xs:simpleType>
+											    <xs:restriction base="xs:string">
+											      <xs:pattern value="[a-zA-Z]{5}(pm|am)"/>
+											    </xs:restriction>
+											  </xs:simpleType>
+										</xs:element>
+										
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							
+							<!-- Guests -->
+							<xs:element name="Guests">
+								<xs:complexType>
+									<xs:sequence>
+										
+										<!--Name-->
+										<xs:element name="Name">
+											<xs:simpleType>
+											    <xs:restriction base="xs:string">
+											      <xs:maxLength value="50" />
+											    </xs:restriction>
+											 </xs:simpleType>
+										</xs:element>
+										
+										<!--Email-->
+										<xs:element name="Email">
+											<xs:simpleType>
+											    <xs:restriction base="xs:string">
+											      <xs:maxLength value="50" />
+											    </xs:restriction>
+											 </xs:simpleType>
+										</xs:element>
+										
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							
+							<!-- Venue -->
+							<xs:element name="Venue">
+								<xs:simpleType>
+								    <xs:restriction base="xs:string">
+								      <xs:maxLength value="255" />
+								    </xs:restriction>
+								 </xs:simpleType>
+							</xs:element>	
+							
+							<!-- Description -->
+							<xs:element name="Description">
+								<xs:simpleType>
+								    <xs:restriction base="xs:string">
+								      <xs:maxLength value="255" />
+								    </xs:restriction>
+								 </xs:simpleType>
+							</xs:element>	
+							
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				
+				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+
+</xs:schema>

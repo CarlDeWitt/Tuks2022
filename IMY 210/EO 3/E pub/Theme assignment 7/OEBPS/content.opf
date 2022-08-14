@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<package xmlns="http://www.idpf.org/2007/opf" xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:dcterms="http://purl.org/dc/terms/" version="3.0" xml:lang="en"
+	unique-identifier="pub-identifier">
+	<!-- u21444928 Carl de Witt -->
+	<metadata>
+		<dc:title id="pub-title">Into the void of no return</dc:title>
+		<dc:date id="pub-date">2022-05-17</dc:date>
+		<dc:language id="pub-language">English</dc:language>
+		<dc:creator id="pub-creator">Carl de Witt</dc:creator>
+		<dc:type id="pub-type">Poems</dc:type>
+		<dc:unique id="pub-unique">Void return poems version 1</dc:unique>
+		<dc:coverage id="pub-coverage">IMY 210 Poems With Carl and special guest Mr Yan</dc:coverage>
+		<!-- search for dublin core metadata tags and add 6 other tags-->
+		
+	</metadata>
+	<manifest>
+		<item id="htmltoc" properties="nav" media-type="application/xhtml+xml" href="toc.xhtml"/>
+		<item id="cover" href="cover.xhtml" media-type="application/xhtml+xml"/>
+		<item id="basic" href="basic.xhtml" media-type="application/xhtml+xml"/>
+		<item id="pm1" href="life.xhtml" media-type="application/xhtml+xml"/>
+		<item id="pm2" href="activites.xhtml" media-type="application/xhtml+xml"/>
+		<item id="pm3" href="living.xhtml" media-type="application/xhtml+xml"/>
+		<item id="pm4" href="sorrow.xhtml" media-type="application/xhtml+xml"/>
+		<item id="pm5" href="relationship.xhtml" media-type="application/xhtml+xml"/>
+		<!--Reference all content that will be used-->
+	</manifest>
+	<spine>
+		<itemref idref="cover" linear="no"/>
+		<itemref idref="htmltoc" linear="yes"/>
+		<itemref idref="basic"/>
+		<itemref idref="pm1"/>
+		<itemref idref="pm2"/>
+		<itemref idref="pm3"/>
+		<itemref idref="pm4"/>
+		<itemref idref="pm5"/>
+		<!--What order will the content be displayed?-->
+	</spine>
+</package>

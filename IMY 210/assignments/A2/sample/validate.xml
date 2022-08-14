@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xs:moNamespaceSchemaLocation="a2real.xsd">
+<!-- The schema rules -->
+<xs:element name="book">
+    <xs:element name="nf:book">
+        <xs:complexType>
+            <xs:element name="section">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="authors">
+                            <xs:complexType>
+                                <xs:element name="author" type="xs:string"></xs:element>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+                <xs:element name="publisher">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attribute name="year" type="xs:string"/>
+                            </xs:extension>
+                            </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+            </xs:section>
+        </xs:complexType>
+    </xs:element>
+</xs:element>
+
+<!--Sections Author attribute-->
+<xs:element name="sectionAuthor">
+    <xs:element name="title" type="string">
+        <xs:restriction ref="255char" base="xs:string"/>
+    </xs:element>
+    
+                <xs:element name="author">
+                    <xs:sequence maxOccurs="unbounded">
+                        <xs:simpleType name="author" type="string">
+                            <xs:restriction ref="255char" base="xs:string"/>
+                        </xs:simpleType>
+                    <xs:sequence>
+                </xs:element>
+                <xs:element name="publisher">
+                    <xs:attribute name="Year" type="xs:string"/>
+                    <xs:restriction ref="255char" base="xs:string"/>
+                </xs:element>
+</xs:element>
+
+<!--Sections ISBN attribute-->
+<xs:element name="sectionAuthor">
+    <xs:complexType>
+        <xs:element name="isbn" type="xs:decimal">
+            <xs:sequence maxOccurs="3">
+                <xs:simpleType name="isbn" type="xs:decimal">
+    
+                </xs:simpleType>
+            </xs:sequence>
+        </xs:element>
+    </xs:complexType>
+    <xs:element name="notes" type="xs:string"></xs:element>
+    <xs:element name="format" type="xs:string"></xs:element>
+    <xs:element name="edition"></xs:element>    
+</xs:element>
+
+<!--section rating-->
+<xs:element name="sectionRating">
+    <xs:complexType name="rating" type="xs:int">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="source" type="xs:string"/>
+                </xs:extension>
+                </xs:simpleContent>
+        </xs:complexType>
+    </xs:complexType>
+</xs:element>
+
+<!--section summary-->
+<xs:element name="sectionSum">
+    <xs:complexType>
+        <xs:element name="description">
+            <xs:complexType>
+                <xs:element name="pages" type="xs:int"></xs:element>
+                <xs:element name="dimensions" type="xs:int"></xs:element>
+                <xs:element name="format" type="xs:string"></xs:element>
+                <xs:element name="edition" type="xs:int"></xs:element>
+            </xs:complexType>
+        </xs:element>
+        <xs:element name="genres">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element name="genre" type="xs:string"></xs:element>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <xs:element name="summary" type="xs:string">
+
+        </xs:element>
+    </xs:complexType>
+</xs:element>
+
+<!--255 string restriction-->
+<xs:restriction name="255char" base="xs:string">
+    <xs:maxLength value="255" />
+</xs:restriction>
+</xs:schema>

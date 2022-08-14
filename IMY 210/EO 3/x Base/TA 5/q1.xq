@@ -1,0 +1,1 @@
+round(sum(for $cds in doc("cd.xml")/CATALOG/CD return data($cds/PRICE)), 2)
