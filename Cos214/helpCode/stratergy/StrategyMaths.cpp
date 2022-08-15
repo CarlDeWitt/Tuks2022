@@ -8,7 +8,7 @@ int  main() {
         Context* context[3];
         
         // Three contexts following different strategies
-        context[0] = new Context(new Add());
+        // context[0] = new Context(new Add());
         int resultA = context[0]->calculate(3,4);
 
     

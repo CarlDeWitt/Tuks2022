@@ -1,11 +1,11 @@
 #ifndef SUBTRACT_H
 #define SUBTRACT_H
-#include "Calculator.h"
-// class Calculator;
 
 using namespace std;
 #include <iostream>
 
+#include "Calculator.h"
+class Calculator;
 class Subtract : public Calculator {
 public:
     virtual int execute(int a, int b);

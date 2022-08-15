@@ -1,3 +1,5 @@
+#ifndef SUBTRACT_CPP
+#define SUBTRACT_CPP
 #include "Subtract.h"
 
 int Subtract::execute(int a, int b) {
@@ -8,3 +10,5 @@ int Subtract::execute(int a, int b) {
 Subtract::~Subtract() {
     cout << " Subtract deleting" << endl;
 }
+
+#endif
