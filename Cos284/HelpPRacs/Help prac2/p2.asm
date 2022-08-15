@@ -90,7 +90,7 @@ syscall
 
 mov eax, 1
 mov edi, 1
-mov edx, 9
+mov edx, statementLen
 lea rsi, [statement]
 syscall
 
