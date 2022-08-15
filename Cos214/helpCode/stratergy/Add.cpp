@@ -1,3 +1,5 @@
+#ifndef ADD_CPP
+#define ADD_CPP
 #include "Add.h"
 int Add::execute(int a, int b) {
     cout << "Called Add's execute()" << endl;
@@ -7,3 +9,4 @@ int Add::execute(int a, int b) {
 Add::~Add() {
     cout << " Add deleting" << endl;
 }
+#endif

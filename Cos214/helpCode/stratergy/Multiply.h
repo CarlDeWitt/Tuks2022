@@ -1,7 +1,7 @@
 #ifndef MULTIPLY_H
 #define MULTIPLY_H
 #include "Calculator.h"
-class Calculator;
+// class Calculator;
 using namespace std;
 #include <iostream>
 

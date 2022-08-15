@@ -9,17 +9,6 @@
         virtual ~Sweet() {};
     };
 
-	class Chocolate : public Sweet {
-    public:
-  		Chocolate();
-	  	virtual void wrap();
-    protected:
-      virtual void print();
-			int id_;
-      static int total_;
-    };
-
-
     class Barone : public Chocolate {
     public:
 			virtual void print();

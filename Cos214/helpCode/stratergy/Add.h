@@ -1,7 +1,6 @@
 #ifndef ADD_H
 #define ADD_H
 #include "Calculator.h"
-class Calculator;
 using namespace std;
 #include <iostream>
 

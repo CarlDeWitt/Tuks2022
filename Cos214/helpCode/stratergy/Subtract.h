@@ -1,7 +1,7 @@
 #ifndef SUBTRACT_H
 #define SUBTRACT_H
 #include "Calculator.h"
-class Calculator;
+// class Calculator;
 
 using namespace std;
 #include <iostream>
