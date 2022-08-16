@@ -5,12 +5,11 @@
 
 using namespace std;
 
-int m =0;
+int m = 0;
 int enemycount = 0;
 string input;
 AdventureIsland *island = new AdventureIsland();
 SquadMember *mem;
-
 
 void run1()
 {
@@ -83,45 +82,60 @@ void run4()
     delete island;
 }
 
-void printWlcm(){
+void printWlcm()
+{
     string msg = "Welcome to Adventure Island";
     cout << msg << endl;
 }
 
-void printops(){
+void printops()
+{
     string msg2 = "To attack press 1";
     string msg3 = "To store you progress press 2";
     string msg4 = "To restore your progress press 3";
     string msg5 = "To end your game press 4";
     cout << "===============================================" << endl;
-    cout << msg2 << endl << msg3 << endl << msg4 << endl << msg5 << endl;
+    cout << msg2 << endl
+         << msg3 << endl
+         << msg4 << endl
+         << msg5 << endl;
     cout << "===============================================" << endl;
 }
 
-void runDynamic(){
-    if(m == 0){
+void runDynamic()
+{
+    if (m == 0)
+    {
         string name;
         int damage, health;
         bool b1 = true, b2 = true;
         cout << "Enter your name" << endl;
         cin >> name;
-        while(b1){
+        while (b1)
+        {
             cout << "Enter your damage" << endl;
             cin >> damage;
-            if(damage > 0){
-                
+            if (damage > 0)
+            {
+
                 b1 = false;
-            }else{
+            }
+            else
+            {
                 cout << "Enter a number above 0" << endl;
             }
         }
-        while(b2){
-        cout << "Enter your health" << endl;
-        cin >> health;
-         if(health > 0){
-                
+        while (b2)
+        {
+            cout << "Enter your health" << endl;
+            cin >> health;
+            if (health > 0)
+            {
+
                 b2 = false;
-            }else{
+            }
+            else
+            {
                 cout << "Enter a number above 0" << endl;
             }
         }
@@ -137,32 +151,36 @@ void runDynamic(){
     cin >> input;
     cout << "*=============================================*" << endl;
 
-    if(input == "1"){
+    if (input == "1")
+    {
         int enemycount;
         cout << "How many enemies do you want to attack?" << endl;
         cin >> enemycount;
         island->playgame(enemycount);
         runDynamic();
     }
-    else if(input == "2"){
+    else if (input == "2")
+    {
         cout << "You have saved your progress" << endl;
         island->saveSquadMember();
         runDynamic();
     }
-    else if(input == "3"){
+    else if (input == "3")
+    {
         cout << "You have restored your progress" << endl;
         island->restoreSquad();
         runDynamic();
     }
-    else if(input == "4"){
+    else if (input == "4")
+    {
         cout << "You have ended your game" << endl;
         return;
     }
-    else{
+    else
+    {
         cout << "Invalid input" << endl;
         runDynamic();
     }
-    
 }
 
 int main()
