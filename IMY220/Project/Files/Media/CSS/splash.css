@@ -1,3 +1,22 @@
+:root {
+  --darkPurple: #461b93;
+  --medPurple: #6a3cbc;
+  --lightPurple: #8253d7;
+  --orange: #f78f1e;
+  --grey: #595959;
+  --medBorder: 8px;
+}
+
+/* FONTS */
+@font-face {
+  font-family: per;
+  src: url(./Media/Font/Perminant-Regular.ttf);
+}
+
+@font-face {
+  font-family: exo;
+  src: url(./Media/Font/Exo2-Regular.ttf);
+}
 label {
   display: block !important;
   margin: 10px 0;
@@ -41,6 +60,36 @@ button:hover i {
   align-items: center !important;
 } */
 
+.tab-content {
+  background-color: var(--lightPurple);
+  padding: 40px;
+  border-radius: var(--medBorder);
+}
+
+button .active {
+  background-color: var(--lightPurple);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: var(--grey); */
+  border-bottom: 10px solid var(--orange);
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.header-in {
+  margin: 0 100px;
+  font-size: 75pt;
+}
+
 .container {
-  border: 1px solid black;
+  margin-top: 500px;
+}
+
+img {
+  width: 300px;
 }
