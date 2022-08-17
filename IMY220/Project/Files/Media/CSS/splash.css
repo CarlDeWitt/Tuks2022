@@ -1,0 +1,46 @@
+label {
+  display: block !important;
+  margin: 10px 0;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(90deg);
+  }
+}
+
+label {
+  display: block !important;
+  margin: 10px 0;
+}
+
+input {
+  width: 100%;
+}
+
+button {
+  margin: 10px 0 !important;
+}
+
+i {
+  margin: 0 0 0 10px;
+  transition: all 0.5s;
+}
+
+button:hover i {
+  margin: 0 0 0 30px;
+  animation: spin 0.5s forwards;
+}
+
+/* body {
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+} */
+
+.container {
+  border: 1px solid black;
+}

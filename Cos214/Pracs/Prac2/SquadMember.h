@@ -19,13 +19,13 @@ public:
     SquadMember(string name, int hp, bool alive, int damage);
     SquadMember();
     SquadMember *Clone(); // make pntr
+    string getName();
     bool isAlive();
     int getHP();
     void setHP(int);
     void setDamage(int);
     void die();
     int takeDamage(int damage);
-    string getName();
     int getDamage();
     void savestate();
     SquadMember *restorestate();
