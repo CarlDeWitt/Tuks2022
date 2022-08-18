@@ -5,6 +5,10 @@
     <title>IMY220 - Project</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="Media/CSS/splash.css" />
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <!-- font Awesome -->
     <link
       rel="stylesheet"
@@ -61,7 +65,7 @@
                 type="button"
                 role="tab"
                 aria-controls="News"
-                aria-selected="false"
+                aria-selected="true"
               >
                 News
               </button>
@@ -75,7 +79,7 @@
                 type="button"
                 role="tab"
                 aria-controls="Login"
-                aria-selected="true"
+                aria-selected="false"
               >
                 Login
               </button>
@@ -97,7 +101,7 @@
           </ul>
           <div class="tab-content" id="myTabContent">
             <div
-              class="tab-pane fade show active"
+              class="tab-pane fade"
               id="Login"
               role="tabpanel"
               aria-labelledby="Login-tab"
@@ -215,16 +219,48 @@
               </div>
             </div>
             <div
-              class="tab-pane fade"
+              class="tab-pane fade show active"
               id="News"
               role="tabpanel"
               aria-labelledby="News-tab"
             >
-              this is news
+              <div id="weAre " class="text" data-aos="fade-left">
+                <h2>We are</h2>
+                We are a company that wants you to be most up to date with local
+                markets.
+                <br />
+                We have thus made it our goal for you to create, remind, join
+                and even collaborate with other people to making a market.
+                <br />
+                This website will keep you up to date with the newest markets in
+                your area and if you want more you can even look globally for
+                markets.
+                <br />
+                This will be you one stop site for markets, from food markets to
+                social markets to even wine tasting markets, every market can be
+                found here.
+              </div>
+              <div
+                id="newFet1"
+                class="text"
+                data-aos="fade-right"
+                data-aos-easing="ease-in-sine"
+              >
+                <h2>Create an account</h2>
+                We have made thing easy for you.
+                <br />
+                First click on the signup page if you are new around here.
+                <br />
+                If you are not so new and a returning customer click on the
+                login tab and log in.
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

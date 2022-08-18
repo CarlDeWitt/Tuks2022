@@ -1,25 +1,25 @@
 :root {
-  --darkPurple: #461b93;
-  --medPurple: #6a3cbc;
-  --lightPurple: #8253d7;
+  --darkPurple: #0b0434;
+  --medPurple: #7848f4;
+  --lightPurple: #e0d3fb;
   --orange: #f78f1e;
-  --grey: #595959;
+  --grey: #e9eaef;
+  --white: #e0d3fb;
   --medBorder: 8px;
+  --per: Permanent Marker;
+  --exo: "Exo 2";
+  --cater: "Carter One";
 }
 
 /* FONTS */
-@font-face {
-  font-family: per;
-  src: url(./Media/Font/Perminant-Regular.ttf);
-}
-
-@font-face {
-  font-family: exo;
-  src: url(./Media/Font/Exo2-Regular.ttf);
-}
+@import url("https://fonts.googleapis.com/css2?family=Carter+One&family=Exo+2&family=Permanent+Marker&display=swap");
 label {
   display: block !important;
   margin: 10px 0;
+}
+
+* {
+  font-family: var(--cater);
 }
 
 @keyframes spin {
@@ -61,7 +61,7 @@ button:hover i {
 } */
 
 .tab-content {
-  background-color: var(--lightPurple);
+  background-color: var(--medPurple);
   padding: 40px;
   border-radius: var(--medBorder);
 }
@@ -74,8 +74,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background-color: var(--grey); */
-  border-bottom: 10px solid var(--orange);
+  background-color: var(--grey);
+  border-bottom: 10px solid var(--darkPurple);
   position: fixed;
   top: 0;
   width: 100%;
@@ -84,6 +84,8 @@ header {
 .header-in {
   margin: 0 100px;
   font-size: 75pt;
+  color: var(--medPurple);
+  font-family: var(--exo);
 }
 
 .container {
@@ -92,4 +94,26 @@ header {
 
 img {
   width: 300px;
+}
+
+h2 {
+  font-family: var(--exo) !important;
+}
+
+.text {
+  background-color: var(--lightPurple);
+  padding: 20px;
+  border-radius: var(--medBorder);
+  margin: 20px 0;
+  font-size: 15pt;
+  color: var(--darkPurple);
+}
+
+.text h2 {
+  color: var(--darkPurple);
+  font-size: 40pt;
+}
+
+.btn-dark {
+  background-color: var(--darkPurple) !important;
 }
