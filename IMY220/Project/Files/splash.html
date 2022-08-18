@@ -9,6 +9,14 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+    <!-- Headroom -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.12.0/headroom.min.js"
+      integrity="sha512-9UsrKTYzS9smDm2E58MLs0ACtOki+UC4bBq4iK5wi7lJycwqcaiHxr1bdEsIVoK0l5STEzLUdYyDdFQ5OEjczw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
     <!-- font Awesome -->
     <link
       rel="stylesheet"
@@ -42,12 +50,14 @@
   </head>
   <body>
     <!-- This will be the LOGO NAME SLOGAN -->
-    <header>
+    <header id="navbar">
       <div class="header-in">
-        <img src="./Media/Images/logo.png" width="500" />
+        <img src="./Media/Images/logo_v2.png" width="500" />
       </div>
       <!-- Name -->
-      <div class="header-in">Never miss an Event</div>
+      <div class="header-in">
+        <i class="top fa-solid fa-calendar-check"></i>Never miss an Event
+      </div>
     </header>
     <!-- Logo & slogan -->
     <div class="container">
@@ -67,7 +77,7 @@
                 aria-controls="News"
                 aria-selected="true"
               >
-                News
+                <i class="top fa-solid fa-newspaper"></i>News
               </button>
             </li>
             <li class="nav-item" role="presentation">
@@ -81,7 +91,7 @@
                 aria-controls="Login"
                 aria-selected="false"
               >
-                Login
+                <i class="top fa-solid fa-arrow-right-to-bracket"></i>Login
               </button>
             </li>
             <li class="nav-item" role="presentation">
@@ -95,7 +105,7 @@
                 aria-controls="Signup"
                 aria-selected="false"
               >
-                Signup
+                <i class="top fa-solid fa-user-plus"></i>Signup
               </button>
             </li>
           </ul>
@@ -107,7 +117,7 @@
               aria-labelledby="Login-tab"
             >
               <!-- LOGIN -->
-              <div class="row">
+              <div class="row textCol">
                 <div class="col-12 col-lg-6">
                   <label for="loginEmail">Email Address:</label>
                   <input
@@ -128,12 +138,12 @@
                     name="pass"
                   />
                 </div>
-                <div class="row mt-3">
-                  <div class="col-12">
-                    <button type="submit" class="btn btn-dark">
-                      Login <i class="fa fa-angle-right"></i>
-                    </button>
-                  </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-12">
+                  <button type="submit" class="btn submt btn-dark">
+                    Login <i class="fa-solid fa-paper-plane"></i>
+                  </button>
                 </div>
               </div>
             </div>
@@ -145,7 +155,11 @@
             >
               <!-- SIGNUP -->
               <!-- NAME AND SURNAME -->
-              <div class="row">
+              <div
+                class="row textCol"
+                data-aos="fade-left"
+                data-aos-easing="ease-in-sine"
+              >
                 <div class="col-12 col-lg-6">
                   <label for="regName">First Name:</label>
                   <input
@@ -168,7 +182,11 @@
                 </div>
               </div>
               <!-- EMAIL AND DOB -->
-              <div class="row mt-3">
+              <div
+                class="row mt-3 textCol"
+                data-aos="fade-right"
+                data-aos-easing="ease-in-sine"
+              >
                 <div class="col-12 col-lg-6">
                   <label for="regEmail">Email Address:</label>
                   <input
@@ -189,7 +207,7 @@
                   />
                 </div>
               </div>
-              <div class="row mt-3">
+              <div class="row mt-3 textCol">
                 <div class="col-12 col-lg-6">
                   <label for="regEmail">Create Password:</label>
                   <input
@@ -212,8 +230,8 @@
               </div>
               <div class="row mt-3">
                 <div class="col-12">
-                  <button type="submit" class="btn btn-dark">
-                    Register <i class="fa fa-angle-right"></i>
+                  <button type="submit" class="btn submt btn-dark">
+                    Register <i class="fa-solid fa-paper-plane"></i>
                   </button>
                 </div>
               </div>
@@ -224,7 +242,12 @@
               role="tabpanel"
               aria-labelledby="News-tab"
             >
-              <div id="weAre " class="text" data-aos="fade-left">
+              <div
+                id="weAre "
+                class="text"
+                data-aos="fade-left"
+                data-aos-easing="ease-in-sine"
+              >
                 <h2>We are</h2>
                 We are a company that wants you to be most up to date with local
                 markets.
@@ -254,13 +277,53 @@
                 If you are not so new and a returning customer click on the
                 login tab and log in.
               </div>
+              <div
+                id="newFet1"
+                class="text"
+                data-aos="fade-right"
+                data-aos-easing="ease-in-sine"
+              >
+                <h2>We have socials</h2>
+                Yes if you want to go to our socials please click on out
+                socials! <br />
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <footer>
+      <div class="container-fluid">
+        <div class="row">
+          <div
+            class="col-md-3 offset-md-1 col-sm-5 offset-sm-1 col-lg-2 offset-lg-2"
+          >
+            <a href="https://www.instagram.com">
+              <i class="bottemI fa-brands fa-instagram"></i>Instagram
+            </a>
+          </div>
+          <div class="col-md-3 col-sm-5 col-lg-2">
+            <a href="https://twitter.com/?lang=en-za">
+              <i class="bottemI fa-brands fa-twitter"></i>Twitter
+            </a>
+          </div>
+          <div class="col-sm-5 offset-sm-1 col-md-3 offset-md-0 col-lg-2">
+            <a href="https://www.youtube.com">
+              <i class="bottemI fa-brands fa-youtube"></i>Youtube
+            </a>
+          </div>
+          <div class="col-md-3 offset-md-1 col-sm-5 col-lg-2 offset-lg-0">
+            <a href="https://www.facebook.com">
+              <i class="bottemI fa-brands fa-facebook"></i>Facebook
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script>
       AOS.init();
     </script>
+    <script src="./Media/Script/Splash.js"></script>
   </body>
 </html>
