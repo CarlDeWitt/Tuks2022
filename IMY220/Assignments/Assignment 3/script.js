@@ -1,4 +1,5 @@
 // year/month/day
+// U21444928 Carl de Witt
 export var events = [
   {
     name: "University expo",
