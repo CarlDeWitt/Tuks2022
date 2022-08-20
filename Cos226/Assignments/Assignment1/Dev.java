@@ -3,12 +3,17 @@ import java.util.Random;
 
 public class Dev extends Thread {
 
-    bakery lock;
-    process p;
-    Project project;
-    Component c;
-    int size;
-    boolean loop;
+    static bakery lock;
+    private process p;
+    private Project project;
+    private Component c;
+    private int size;
+    private boolean loop;
+    public static final String green = "\u001B[32m";
+    public static final String yellow = "\u001B[33m";
+    public static final String blue = "\u001B[34m";
+    public static final String RESET = "\033[0m";
+
 
     public Dev(bakery b, Project pr) {
         lock = b;
@@ -21,7 +26,7 @@ public class Dev extends Thread {
     @Override
     public void run() {
         while (loop) {
-            System.out.println(this.getName() + " is ready to develop a component");
+            System.out.println(blue + this.getName() + " is ready to develop a component" + RESET);
             lock.lock();
             try {
                 if (project.getDevelop().peek() != null) {
@@ -30,7 +35,7 @@ public class Dev extends Thread {
                     p.workoncomp(this, c, project);
                     if (c.developTime < 0) {
                         project.addtest(c);
-                        System.out.println(c.name + " is done dev");
+                        System.out.println(green + c.name + " is done dev" + RESET);
                     } else {
                         project.adddev(c);
                     }
@@ -39,15 +44,11 @@ public class Dev extends Thread {
                     loop=false;
                     break;
                 }
+                p.sleeping();
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             } finally {
                 lock.unlock();
-                try {
-                    p.sleeping();
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
             }
         }
     }

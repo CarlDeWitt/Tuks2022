@@ -5,8 +5,8 @@ public class Main {
         Project p = new Project();
 
 //        add devs
-        int devs = 5;
-        int testers = 5;
+        int devs = 3;
+        int testers = 3;
         Dev[] dev = new Dev[devs];
 
 //        add dev lock
