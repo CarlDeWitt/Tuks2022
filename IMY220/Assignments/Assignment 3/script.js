@@ -1,5 +1,5 @@
 // year/month/day
-var events = [
+export var events = [
   {
     name: "University expo",
     description: "Expo to showcase University degrees",
@@ -37,9 +37,3 @@ var events = [
     dateEnd: "2022/06/12",
   },
 ];
-
-var event = new EventHandler(events);
-// console.log(event.getEventsBetweenDates("2022/02/01", "2022/02/16"));
-// console.log(event.getByMonth("05"));
-console.log(event.getUniqueDateAndSort());
-// console.log(event.print());
