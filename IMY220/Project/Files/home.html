@@ -5,6 +5,15 @@
     <title>IMY220 - Project</title>
     <meta charset="utf-8" />
     <!-- font Awesome -->
+    <!-- Headroom -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.12.0/headroom.min.js"
+      integrity="sha512-9UsrKTYzS9smDm2E58MLs0ACtOki+UC4bBq4iK5wi7lJycwqcaiHxr1bdEsIVoK0l5STEzLUdYyDdFQ5OEjczw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
@@ -12,13 +21,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- PopperJS -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"
-      integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
     <!-- CSS only -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
@@ -27,30 +29,152 @@
       crossorigin="anonymous"
     />
     <!-- JavaScript Bundle with Popper -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="style.css" />
+    <script src="Media/Boot/bootstrap-5.2.0-dist/js/bootstrap.bundle.js"></script>
+
+    <link rel="stylesheet" href="Media/CSS/home.css" />
     <!-- Include Bootstrap and style.css here -->
   </head>
   <body>
     <div class="container">
-      <!-- This will be the LOGO NAME SLOGAN -->
-      <div class="row">
-        <!-- Logo & slogan -->
-        <div class="col-lg-6"></div>
-        <!-- Name -->
-        <div class="col-lg-6"></div>
+      <!-- Navigation -->
+      <div class="row headRow">
+        <div class="col-md-6">
+          <p>Event Sureley</p>
+        </div>
+        <div class="col-md-4 offset-md-2">
+          <div class="container-fluid navCont">
+            <div class="row">
+              <div class="col-md-4 navContT">Global</div>
+              <div class="col-md-4 navContT">Profile</div>
+              <div class="col-md-4 navContT">Logout</div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- This will be pills and tabs for the register and login page -->
+      <!-- images -->
       <div class="row">
-        <div class="col"></div>
+        <div class="col-12">
+          <img src="Media/Images/eventplacholder.jpg" />
+        </div>
       </div>
 
-      <!--  -->
+      <!-- Search -->
+      <div class="row">
+        <div class="col-10 offset-1">
+          <!-- inner container -->
+          <div class="container cont2">
+            <div class="row">
+              <!-- Name -->
+              <div class="col-md-4">
+                <label for="Ename">Event Name:</label>
+                <input
+                  type="text"
+                  id="Ename"
+                  class="form-control"
+                  placeholder="Hazelwood"
+                  name="Ename"
+                />
+              </div>
+
+              <!-- Date -->
+              <div class="col-md-4">
+                <label for="Edate">Event Date:</label>
+                <input
+                  type="date"
+                  id="Edate"
+                  class="form-control"
+                  name="Edate"
+                />
+              </div>
+
+              <!-- time -->
+              <div class="col-md-4">
+                <label for="Etime">Event Time:</label>
+                <input
+                  type="time"
+                  id="Etime"
+                  class="form-control"
+                  name="Etime"
+                />
+              </div>
+            </div>
+
+            <div class="row">
+              <!-- button -->
+              <div class="col-md-4 offset-md-8">
+                <button type="submit" class="createSub">
+                  Create <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p id="typeEvent">Local</p>
+        </div>
+      </div>
+
+      <!-- Data Elemets -->
+      <div class="row events">
+        <div class="col-md-4">
+          <div class="card" style="width: 18rem">
+            <img
+              src="Media/Images/eventplacholder.jpg"
+              class="card-img-top imgCont"
+              alt="Event img"
+            />
+            <i class="fa-solid fa-heart Rheart"></i>
+            <i class="fa-solid fa-plus Radd"></i>
+            <div class="Rdate">FEB 10</div>
+            <div class="card-body">
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card" style="width: 18rem">
+            <img
+              src="Media/Images/eventplacholder.jpg"
+              class="card-img-top imgCont"
+              alt="Event img"
+            />
+            <i class="fa-solid fa-heart Rheart"></i>
+            <i class="fa-solid fa-plus Radd"></i>
+            <div class="Rdate">FEB 10</div>
+            <div class="card-body">
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card" style="width: 18rem">
+            <img
+              src="Media/Images/eventplacholder.jpg"
+              class="card-img-top imgCont"
+              alt="Event img"
+            />
+            <i class="fa-solid fa-heart Rheart"></i>
+            <i class="fa-solid fa-plus Radd"></i>
+            <div class="Rdate">FEB 10</div>
+            <div class="card-body">
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <!-- JavaScript Bundle with Popper -->
   </body>
 </html>
