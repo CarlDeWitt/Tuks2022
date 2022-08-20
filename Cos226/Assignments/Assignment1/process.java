@@ -1,11 +1,10 @@
 import java.util.Random;
 
 public class process {
-    public static final String green = "\u001B[32m";
-    public static final String yellow = "\u001B[33m";
+    public static final String yellow = "\033[0;35m";
     public static final String blue = "\u001B[34m";
     public static final String RESET = "\033[0m";
-    public static final String purple = "\033[0;35m";
+    public static final String purple = "\033[0;31m";
 
     public process(){}
     public void workoncomp(Thread t,Component comp,Project p) throws InterruptedException {

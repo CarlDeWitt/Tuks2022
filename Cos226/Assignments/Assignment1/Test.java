@@ -9,10 +9,8 @@ public class Test extends Thread {
     private int size;
     private boolean loop;
     public static final String green = "\u001B[32m";
-    public static final String yellow = "\u001B[33m";
-    public static final String blue = "\u001B[34m";
+    public static final String yellow = "\033[0;35m";
     public static final String RESET = "\033[0m";
-
 
     public Test(bakeryT b, Project pr) {
         lock = b;
@@ -36,8 +34,7 @@ public class Test extends Thread {
                 System.out.println(yellow + this.getName() + " is ready to test a component" + RESET);
                 lock.lock();
                 try {
-                    if (project.getTesting().peek() == null ) {//&& (project.getDevelop().size() == 0 && project.getTesting().size() == project.getsize())
-                        loop = false;
+                    if (project.getTesting().peek() == null ) {
                         break;
                     }else {
                         c = project.getTesting().peek();

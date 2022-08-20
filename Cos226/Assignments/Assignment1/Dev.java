@@ -10,7 +10,6 @@ public class Dev extends Thread {
     private int size;
     private boolean loop;
     public static final String green = "\u001B[32m";
-    public static final String yellow = "\u001B[33m";
     public static final String blue = "\u001B[34m";
     public static final String RESET = "\033[0m";
 
