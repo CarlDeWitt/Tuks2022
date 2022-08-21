@@ -36,8 +36,6 @@
       integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="style.css" />
-    <!-- Include Bootstrap and style.css here -->
   </head>
   <body>
     <!-- This will be the LOGO NAME SLOGAN -->
@@ -108,35 +106,37 @@
               aria-labelledby="Login-tab"
             >
               <!-- LOGIN -->
-              <div class="row textCol">
-                <div class="col-12 col-lg-6">
-                  <label for="loginEmail">Email Address:</label>
-                  <input
-                    type="email"
-                    id="loginEmail"
-                    class="form-control"
-                    placeholder="name@email.com"
-                    name="email"
-                  />
+              <form action="./PHP/login.php" method="post">
+                <div class="row textCol">
+                  <div class="col-12 col-lg-6">
+                    <label for="loginEmail">Email Address:</label>
+                    <input
+                      type="email"
+                      id="loginEmail"
+                      class="form-control"
+                      placeholder="name@email.com"
+                      name="email"
+                    />
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <label for="loginPass">Password:</label>
+                    <input
+                      type="password"
+                      id="loginPass"
+                      class="form-control"
+                      placeholder="******"
+                      name="pass"
+                    />
+                  </div>
                 </div>
-                <div class="col-12 col-lg-6">
-                  <label for="loginPass">Password:</label>
-                  <input
-                    type="password"
-                    id="loginPass"
-                    class="form-control"
-                    placeholder="******"
-                    name="pass"
-                  />
+                <div class="row mt-3">
+                  <div class="col-12">
+                    <button type="submit" class="btn submt btn-dark">
+                      Login <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                  </div>
                 </div>
-              </div>
-              <div class="row mt-3">
-                <div class="col-12">
-                  <button type="submit" class="btn submt btn-dark">
-                    Login <i class="fa-solid fa-paper-plane"></i>
-                  </button>
-                </div>
-              </div>
+              </form>
             </div>
             <div
               class="tab-pane fade"
@@ -145,87 +145,89 @@
               aria-labelledby="Signup-tab"
             >
               <!-- SIGNUP -->
-              <!-- NAME AND SURNAME -->
-              <div
-                class="row textCol"
-                data-aos="fade-left"
-                data-aos-easing="ease-in-sine"
-              >
-                <div class="col-12 col-lg-6">
-                  <label for="regName">First Name:</label>
-                  <input
-                    type="text"
-                    id="regName"
-                    class="form-control"
-                    placeholder="John"
-                    name="fname"
-                  />
+              <form action="./PHP/register.php" method="post">
+                <!-- NAME AND SURNAME -->
+                <div
+                  class="row textCol"
+                  data-aos="fade-left"
+                  data-aos-easing="ease-in-sine"
+                >
+                  <div class="col-12 col-lg-6">
+                    <label for="regName">First Name:</label>
+                    <input
+                      type="text"
+                      id="regName"
+                      class="form-control"
+                      placeholder="John"
+                      name="fname"
+                    />
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <label for="regSurname">Last Name:</label>
+                    <input
+                      type="text"
+                      id="regSurname"
+                      class="form-control"
+                      placeholder="Doe"
+                      name="lname"
+                    />
+                  </div>
                 </div>
-                <div class="col-12 col-lg-6">
-                  <label for="regSurname">Last Name:</label>
-                  <input
-                    type="text"
-                    id="regSurname"
-                    class="form-control"
-                    placeholder="Doe"
-                    name="lname"
-                  />
+                <!-- EMAIL AND DOB -->
+                <div
+                  class="row mt-3 textCol"
+                  data-aos="fade-right"
+                  data-aos-easing="ease-in-sine"
+                >
+                  <div class="col-12 col-lg-6">
+                    <label for="regEmail">Email Address:</label>
+                    <input
+                      type="email"
+                      id="regEmail"
+                      class="form-control"
+                      placeholder="john.doe@gmail.com"
+                      name="email"
+                    />
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <label for="regBirthDate">Date of Birth:</label>
+                    <input
+                      type="date"
+                      id="regBirthDate"
+                      class="form-control"
+                      name="date"
+                    />
+                  </div>
                 </div>
-              </div>
-              <!-- EMAIL AND DOB -->
-              <div
-                class="row mt-3 textCol"
-                data-aos="fade-right"
-                data-aos-easing="ease-in-sine"
-              >
-                <div class="col-12 col-lg-6">
-                  <label for="regEmail">Email Address:</label>
-                  <input
-                    type="email"
-                    id="regEmail"
-                    class="form-control"
-                    placeholder="john.doe@gmail.com"
-                    name="email"
-                  />
+                <div class="row mt-3 textCol">
+                  <div class="col-12 col-lg-6">
+                    <label for="regEmail">Create Password:</label>
+                    <input
+                      type="password"
+                      id="pass1"
+                      class="form-control"
+                      placeholder="******"
+                      name="pass"
+                    />
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <label for="regEmail">Confirm Password:</label>
+                    <input
+                      type="password"
+                      id="pass2"
+                      class="form-control"
+                      placeholder="******"
+                    />
+                  </div>
                 </div>
-                <div class="col-12 col-lg-6">
-                  <label for="regBirthDate">Date of Birth:</label>
-                  <input
-                    type="date"
-                    id="regBirthDate"
-                    class="form-control"
-                    name="date"
-                  />
+                <div class="row mt-3">
+                  <div class="col-12">
+                    <button type="submit" class="btn submt btn-dark">
+                      Register <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                  </div>
                 </div>
-              </div>
-              <div class="row mt-3 textCol">
-                <div class="col-12 col-lg-6">
-                  <label for="regEmail">Create Password:</label>
-                  <input
-                    type="password"
-                    id="pass1"
-                    class="form-control"
-                    placeholder="******"
-                    name="pass"
-                  />
-                </div>
-                <div class="col-12 col-lg-6">
-                  <label for="regEmail">Confirm Password:</label>
-                  <input
-                    type="password"
-                    id="pass2"
-                    class="form-control"
-                    placeholder="******"
-                  />
-                </div>
-              </div>
-              <div class="row mt-3">
-                <div class="col-12">
-                  <button type="submit" class="btn submt btn-dark">
-                    Register <i class="fa-solid fa-paper-plane"></i>
-                  </button>
-                </div>
-              </div>
+              </form>
             </div>
             <div
               class="tab-pane fade show active"

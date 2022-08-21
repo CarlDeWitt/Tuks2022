@@ -14,6 +14,10 @@
 
 /* FONTS */
 @import url("https://fonts.googleapis.com/css2?family=Carter+One&family=Exo+2&family=Rock+Salt&display=swap");
+@font-face {
+  font-family: "nice";
+  src: url("../Font/Caveat-Regular.ttf") format("ttf");
+}
 label {
   display: block !important;
   margin: 10px 0;
@@ -24,6 +28,39 @@ body {
   background-image: url("../Images/Background.png");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.navActive {
+  background-color: var(--medPurple);
+  border-radius: var(--medBorder);
+}
+
+#NavBtn1,
+#NavBtn2,
+#NavBtn3 {
+  cursor: pointer;
+}
+
+#NavBtn1 i,
+#NavBtn2 i,
+#NavBtn3 i {
+  margin-right: 10px;
+}
+
+.click {
+  animation: clicked 0.2s;
+}
+
+@keyframes clicked {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .container {
@@ -55,7 +92,7 @@ body {
 }
 
 .createSub {
-  margin: 20px 0 0 0;
+  margin: 20px 0 20px 0;
   background-color: var(--medPurple);
   width: 100%;
   font-size: 24pt;
@@ -151,10 +188,65 @@ button:hover i {
 #typeEvent {
   margin-top: 50px;
   font-size: 50pt;
-  font-family: "Rock Salt", cursive;
+  font-family: var(--cater);
   width: 100% !important;
   text-align: center;
   background-color: var(--medPurple);
   border-radius: var(--medBorder);
   padding: 10px;
+}
+
+.createRows {
+  background-color: var(--grey);
+  border-radius: var(--medBorder);
+  margin: 20px;
+  padding: 20px;
+}
+
+.Dsnone {
+  display: none;
+}
+
+.animationOpacity {
+  animation: opacity 1s forwards;
+}
+
+@keyframes opacity {
+  0% {
+    margin-top: -100px;
+  }
+  100% {
+    margin-top: 0px;
+  }
+}
+.EB {
+  background-color: var(--darkPurple);
+}
+.Ecard {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* align-items: center; */
+}
+
+.Ename {
+  font-size: 30pt;
+  font-family: var(--exo);
+  color: var(--grey);
+}
+.innerbody {
+  background-color: var(--grey);
+  padding: 10px;
+  border-radius: var(--medBorder);
+  font-size: 15pt;
+  font-family: var(--exo);
+  color: var(--darkPurple);
+}
+
+.Ehas {
+  color: var(--medPurple);
+}
+
+p {
+  margin: 0;
 }

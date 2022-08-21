@@ -4,9 +4,7 @@
   <head>
     <title>IMY220 - Project</title>
     <meta charset="utf-8" />
-    <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <!-- font Awesome -->
     <link
       rel="stylesheet"
@@ -15,6 +13,13 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- PopperJS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"
+      integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <!-- CSS only -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
@@ -23,8 +28,14 @@
       crossorigin="anonymous"
     />
     <!-- JavaScript Bundle with Popper -->
-    <script src="Media/Boot/bootstrap-5.2.0-dist/js/bootstrap.bundle.js"></script>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="Media/CSS/home.css" />
     <!-- Include Bootstrap and style.css here -->
   </head>
@@ -35,12 +46,18 @@
         <div class="col-md-6">
           <p>Event Sureley</p>
         </div>
-        <div class="col-md-4 offset-md-2">
+        <div class="col-md-5 offset-md-1">
           <div class="container-fluid navCont">
             <div class="row">
-              <div class="col-md-4 navContT">Global</div>
-              <div class="col-md-4 navContT">Profile</div>
-              <div class="col-md-4 navContT">Logout</div>
+              <div id="NavBtn1" class="col-md-4 navContT navActive">
+                <i class="fa-solid fa-earth-americas"></i>Global
+              </div>
+              <div id="NavBtn2" class="col-md-4 navContT">
+                <i class="fa-solid fa-bars"></i>Profile
+              </div>
+              <div id="NavBtn3" class="col-md-4 navContT">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>Logout
+              </div>
             </div>
           </div>
         </div>
@@ -104,7 +121,7 @@
             </div>
 
             <!-- Name and Location -->
-            <div class="row createRows Dsnone" data-aos="fade-down">
+            <div class="row createRows Dsnone">
               <div class="col-md-6">
                 <label for="Ename">Event Name:</label>
                 <input
@@ -128,7 +145,7 @@
             </div>
 
             <!-- date and hastags -->
-            <div class="row createRows Dsnone" data-aos="fade-down">
+            <div class="row createRows Dsnone">
               <div class="col-md-6">
                 <label for="Edate">Date:</label>
                 <input
@@ -151,7 +168,7 @@
             </div>
 
             <!-- img and description -->
-            <div class="row createRows Dsnone" data-aos="fade-down">
+            <div class="row createRows Dsnone">
               <div class="col-md-6">
                 <label for="Edescription">Description:</label>
                 <input
@@ -182,63 +199,13 @@
       </div>
 
       <!-- Data Elemets -->
-      <div class="row events">
-        <div class="col-md-4">
-          <div class="card" style="width: 18rem">
-            <img
-              src="Media/Images/eventplacholder.jpg"
-              class="card-img-top imgCont"
-              alt="Event img"
-            />
-            <i class="fa-solid fa-heart Rheart"></i>
-            <i class="fa-solid fa-plus Radd"></i>
-            <div class="Rdate">FEB 10</div>
-            <div class="card-body">
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card" style="width: 18rem">
-            <img
-              src="Media/Images/eventplacholder.jpg"
-              class="card-img-top imgCont"
-              alt="Event img"
-            />
-            <i class="fa-solid fa-heart Rheart"></i>
-            <i class="fa-solid fa-plus Radd"></i>
-            <div class="Rdate">FEB 10</div>
-            <div class="card-body">
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card" style="width: 18rem">
-            <img
-              src="Media/Images/eventplacholder.jpg"
-              class="card-img-top imgCont"
-              alt="Event img"
-            />
-            <i class="fa-solid fa-heart Rheart"></i>
-            <i class="fa-solid fa-plus Radd"></i>
-            <div class="Rdate">FEB 10</div>
-            <div class="card-body">
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
-        </div>
+      <div class="row">  
+        <?php 
+        include 'PHP/display.php';
+        ?>
       </div>
     </div>
     <script src="Media/Script/Home.js"></script>
+
   </body>
 </html>
