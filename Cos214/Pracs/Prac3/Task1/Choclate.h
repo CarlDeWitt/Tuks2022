@@ -8,6 +8,7 @@ class Choclate : public Confectionery {
     public:
         Choclate(string, double, bool);
         void getDescription();
+        // virtual ~Choclate();
 };  
 
 #endif

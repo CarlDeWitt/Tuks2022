@@ -5,7 +5,9 @@ using namespace std;
 #include <string>
 
 class DiaryMilk : public Choclate{
-   DiaryMilk();
+   public:
+   DiaryMilk(bool);
+   // ~DiaryMilk();
 };
 
 #endif

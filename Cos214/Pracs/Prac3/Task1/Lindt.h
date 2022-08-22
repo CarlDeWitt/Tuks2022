@@ -1,12 +1,13 @@
-#ifndef LINDOR_H
-#define LINDOR_H
+#ifndef Lindt_H
+#define Lindt_H
 #include "Choclate.h"
 using namespace std;
 #include <string>
 
-class Lindor : public Choclate {
+class Lindt : public Choclate {
     public:
-        Lindor();
+        Lindt(bool);
+        // ~Lindt();
 };
 
 #endif

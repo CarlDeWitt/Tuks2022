@@ -1,5 +1,5 @@
 #include "DiaryMilkBubbly.h"
 
-DiaryMilkBubbly::DiaryMilkBubbly(): AeratedChocolate("DiaryMilkBubbly", 5.00, 1) {
+DiaryMilkBubbly::DiaryMilkBubbly(int bbps): AeratedChocolate("DiaryMilkBubbly", 5.00, bbps) {
     cout << "an DiaryMilkBubbly was created " << endl;
 }

@@ -9,6 +9,6 @@ void Choclate::getDescription(){
     std::ostringstream ss1;
     ss1 << this->price;
     string typeInfo = slab ? "slab" : "mini choclate";
-    string str = this->manufacturer + " created a Choclate for the price of:" + ss1.str() + " and is a " + typeInfo;
+    string str = this->manufacturer + " created a Choclate for the price of R" + ss1.str() + " and is a " + typeInfo;
     cout << str << endl;
 }

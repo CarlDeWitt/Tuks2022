@@ -1,5 +1,5 @@
 #include "Areo.h"
 
-Areo::Areo(): AeratedChocolate("Areo", 9.00, 1) {
-    cout << "an Areo was created " << endl;
+Areo::Areo(int bbps): AeratedChocolate("Areo", 9.00, bbps) {
+    cout << "Areo constructor" << endl;
 }

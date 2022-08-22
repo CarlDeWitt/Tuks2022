@@ -6,7 +6,8 @@ using namespace std;
 
 class Areo : public AeratedChocolate {
     public:
-        Areo();
+        Areo(int);
+        // ~Areo();
 };
 
 #endif

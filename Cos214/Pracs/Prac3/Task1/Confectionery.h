@@ -10,9 +10,9 @@ class Confectionery {
         double price;
         string type;
         int id;
-    public:
         Confectionery(string, double, string);
         virtual void getDescription() = 0;
+        // virtual ~Confectionery();
 };
 
 #endif

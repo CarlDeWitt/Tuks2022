@@ -4,9 +4,10 @@
 using namespace std;
 #include <string>
 
-class MilkyBar : Choclate {
+class MilkyBar : public Choclate {
     public:
-        MilkyBar();
+        MilkyBar(bool);
+        // ~MilkyBar();
 };
 
 #endif
