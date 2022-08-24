@@ -56,7 +56,7 @@ body {
     transform: scale(1);
   }
   50% {
-    transform: scale(0.8);
+    transform: scale(0.9);
   }
   100% {
     transform: scale(1);
@@ -164,6 +164,29 @@ button:hover i {
   font-size: 15pt;
 }
 
+.sendBTN {
+  background-color: var(--medPurple);
+  border-radius: var(--medBorder);
+  padding: 10px;
+  font-size: 25pt;
+}
+
+.searchBTN {
+  background-color: var(--medPurple);
+  border-radius: var(--medBorder);
+  padding: 5px 5px 5px 20px;
+  width: 100%;
+  font-size: 20pt;
+  text-align: left;
+}
+
+.searchBTNParent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .Rdate {
   background-color: var(--grey);
   padding: 7px;
@@ -226,7 +249,22 @@ button:hover i {
   display: flex !important;
   flex-direction: column;
   justify-content: flex-start;
-  /* align-items: center; */
+}
+
+.imgCont {
+  border-top-left-radius: var(--medBorder) !important;
+  border-top-right-radius: var(--medBorder) !important;
+}
+
+.card {
+  border-radius: var(--medBorder) !important;
+  margin-top: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+
+.card-body {
+  border-bottom-left-radius: var(--medBorder) !important;
+  border-bottom-right-radius: var(--medBorder) !important;
 }
 
 .Ename {
@@ -245,8 +283,170 @@ button:hover i {
 
 .Ehas {
   color: var(--medPurple);
+  background-color: var(--medPurple);
+  padding: 5px;
+  border-radius: var(--medBorder);
+  color: var(--grey);
+}
+
+.descHide {
+  display: none;
 }
 
 p {
   margin: 0;
+}
+
+img {
+  overflow: hidden;
+}
+
+footer {
+  background-color: var(--grey);
+  padding: 20px;
+  font-size: 20pt;
+  font-family: var(--exo);
+}
+
+a {
+  text-decoration: none !important;
+  color: var(--darkPurple) !important;
+}
+
+.bottemI {
+  margin: 0 20px 0 0;
+}
+
+/*modal*/
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+}
+
+/* Modal Content */
+.modal-content {
+  position: fixed;
+  bottom: 0;
+  background-color: #fefefe;
+  width: 100%;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: var(--darkPurple);
+  color: white;
+  font-family: var(--exo);
+}
+
+.modal-body {
+  padding: 2px 16px;
+  background-color: var(--medPurple);
+  background-image: url("../Images/Background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: -1px;
+}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: var(--darkPurple);
+  color: white;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.rowlist {
+  background-color: var(--grey);
+  padding: 20px;
+  border-radius: var(--medBorder);
+  font-family: var(--exo);
+  font-size: 15pt;
+  color: var(--darkPurple);
+}
+
+.listCont {
+  background-color: var(--darkPurple);
+  padding: 50px !important;
+}
+
+.listhead {
+  font-size: 20pt;
+}
+
+#Mylist {
+  margin: 10px 0;
+}
+
+.cardName {
+  text-align: center;
 }

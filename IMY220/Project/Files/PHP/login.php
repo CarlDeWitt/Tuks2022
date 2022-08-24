@@ -10,12 +10,10 @@ if(isset($_POST["pass"]) && $_POST["pass"] != "" && isset($_POST["email"]) && $_
     if(mysqli_num_rows($result) == 1){
         $row = mysqli_fetch_assoc($result);
         $_SESSION["UserIndex"] = $row["id"];
-        header('Location: ../home.html');
+        header('Location: ../home.php');
         exit;
     }
 }
-session_unset();
-session_destroy();
 header('Location: ../splash.html');
 exit;
 

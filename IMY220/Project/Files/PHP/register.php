@@ -35,7 +35,7 @@ if($bool){
     $data = mysqli_fetch_assoc($result);
     $_SESSION["UserIndex"] = $data["id"];
 
-    header('Location: ../home.html');
+    header('Location: ../home.php');
     exit;
 }
 ?>

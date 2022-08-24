@@ -5,7 +5,7 @@ $_SESSION["UserIndex"] = 2;
 
 if(isset($_SESSION["UserIndex"])){
     $userid = $_SESSION["UserIndex"];
-    $query = $S_e_events . " WHERE user_id = $userid ;";
+    $query = $S_e_events . " WHERE user_id = $userid ORDER BY date ASC;";
     $result = mysqli_query($mysqli, $query);
 
 
@@ -19,7 +19,7 @@ if(isset($_SESSION["UserIndex"])){
 
 function Helpdisplay($data){
     echo "<div class='col-md-4'>
-    <div class='card' style='width: 18rem'>
+    <div class='card' style='width: 18rem' onclick=(desc(this))>
       <img
         src='Media/Images/eventplacholder.jpg'
         class='card-img-top imgCont'
@@ -27,11 +27,11 @@ function Helpdisplay($data){
       />
       <i
         class='fa-solid fa-heart Rheart'
-        onclick='heart(\"$data[name]\",this)'
+        onclick='heart(\"$data[id]\",this)'
       ></i>
       <i
         class='fa-solid fa-plus Radd'
-        onclick='add(\"$data[name]\",this)'
+        onclick='add(\"$data[id]\",this)'
       ></i>
       <div class='Rdate'>$data[date]</div>
       <div class='card-body EB'>
@@ -39,7 +39,7 @@ function Helpdisplay($data){
           <h2 class='Ename'>$data[name]</h2>
           <div class='innerbody'>
             <p class='Eloaction'>$data[location]</p>
-            <p class='description'>$data[description]</p>
+            <p class='description descHide'>$data[description]</p>
             <p class='Ehas'>$data[hastags]</p>
           </div>
         </div>

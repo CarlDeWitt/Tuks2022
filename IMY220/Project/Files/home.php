@@ -14,12 +14,7 @@
       referrerpolicy="no-referrer"
     />
     <!-- PopperJS -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"
-      integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- CSS only -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
@@ -37,6 +32,9 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="Media/CSS/home.css" />
+
+
+
     <!-- Include Bootstrap and style.css here -->
   </head>
   <body>
@@ -100,20 +98,16 @@
               </div>
 
               <!-- time -->
-              <div class="col-md-4">
-                <label for="Etime">Event Time:</label>
-                <input
-                  type="time"
-                  id="Etime"
-                  class="form-control"
-                  name="Etime"
-                />
+              <div class="col-md-4 searchBTNParent">
+                <button type="submit" class="searchBTN">
+                  Search <i class="fa-solid fa-paper-plane"></i>
+                </button>
               </div>
             </div>
 
             <div class="row">
               <!-- button -->
-              <div class="col-md-4 offset-md-8">
+              <div class="col-md-4 offset-md-4">
                 <button type="submit" class="createSub">
                   Create <i class="fa-solid fa-paper-plane"></i>
                 </button>
@@ -121,74 +115,85 @@
             </div>
 
             <!-- Name and Location -->
-            <div class="row createRows Dsnone">
-              <div class="col-md-6">
-                <label for="Ename">Event Name:</label>
-                <input
-                  type="text"
-                  id="Ename"
-                  class="form-control"
-                  placeholder="Spoeg wolf"
-                  name="Ename"
-                />
+            <form action="./PHP/createEvent.php" method="POST">
+              <div class="row createRows Dsnone">
+                <div class="col-md-6">
+                  <label for="Ename">Event Name:</label>
+                  <input
+                    type="text"
+                    id="Ename"
+                    class="form-control"
+                    placeholder="Spoeg wolf"
+                    name="Ename"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="Elocaction">Location:</label>
+                  <input
+                    type="text"
+                    id="Elocaction"
+                    class="form-control"
+                    placeholder="33 lynwood road"
+                    name="Elocaction"
+                  />
+                </div>
               </div>
-              <div class="col-md-6">
-                <label for="Elocaction">Location:</label>
-                <input
-                  type="text"
-                  id="Elocaction"
-                  class="form-control"
-                  placeholder="33 lynwood road"
-                  name="Elocaction"
-                />
-              </div>
-            </div>
 
-            <!-- date and hastags -->
-            <div class="row createRows Dsnone">
-              <div class="col-md-6">
-                <label for="Edate">Date:</label>
-                <input
-                  type="date"
-                  id="Edate"
-                  class="form-control"
-                  name="Edate"
-                />
+              <!-- date and hastags -->
+              <div class="row createRows Dsnone">
+                <div class="col-md-6">
+                  <label for="Edate">Date:</label>
+                  <input
+                    type="date"
+                    id="Edate"
+                    class="form-control"
+                    name="Edate"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="Ehastags">Hastags:</label>
+                  <input
+                    type="text"
+                    id="Ehastags"
+                    class="form-control"
+                    placeholder="#goodVibes"
+                    name="Ehastags"
+                  />
+                </div>
               </div>
-              <div class="col-md-6">
-                <label for="Ehastags">Hastags:</label>
-                <input
-                  type="text"
-                  id="Ehastags"
-                  class="form-control"
-                  placeholder="#goodVibes"
-                  name="Ehastags"
-                />
-              </div>
-            </div>
 
-            <!-- img and description -->
-            <div class="row createRows Dsnone">
-              <div class="col-md-6">
-                <label for="Edescription">Description:</label>
-                <input
-                  type="text"
-                  id="Edescription"
-                  class="form-control"
-                  placeholder="Description of the event"
-                  name="Edescription"
-                />
+              <!-- img and description -->
+              <div class="row createRows Dsnone">
+                <div class="col-md-6">
+                  <label for="Edescription">Description:</label>
+                  <input
+                    type="text"
+                    id="Edescription"
+                    class="form-control"
+                    placeholder="Description of the event"
+                    name="Edescription"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="Eimg">Event Image:</label>
+                  <input
+                    type="file"
+                    class="form-control"
+                    name="Eimg"
+                    id="Eimg"
+                  /><br />
+                </div>
               </div>
-              <div class="col-md-6">
-                <label for="Eimg">Event Image:</label>
-                <input
-                  type="file"
-                  class="form-control"
-                  name="Eimg"
-                  id="Eimg"
-                /><br />
-              </div>
-            </div>
+
+                <!-- submitbutton -->                
+                <div class="row createRows Dsnone">
+                <div class="col-md-6">
+                  </div>
+                    <button type="submit" class="sendBTN">
+                      Submit <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                  </div>
+            </form>
           </div>
         </div>
       </div>
@@ -197,15 +202,77 @@
           <p id="typeEvent">Local</p>
         </div>
       </div>
+      <div id="myModal" class="modal">
 
+  <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Your Lists</h2>
+        </div>
+        <div class="modal-body">
+          <div class="container listCont">
+            <div class="row rowlist">
+              <div class="col-md-6 col-12">
+                <form action="./PHP/createList.php" method="post">
+                <label for="listName" class="listhead">List Name:</label>
+                <input type="text" id="listName" name="listName" class="form-control" placeholder="List Name" />
+                <input type="submit" value="Create List" class="createSub" />
+                </form> 
+              </div>
+              <div class="col-md-6 col-12">
+                <p class="listhead" id="Mylist" >My Lists</p>
+                <?php
+                  require "./PHP/list.php";
+                ?>
+              </div>
+            </div>
+          </div>
+          
+          
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+
+</div>
       <!-- Data Elemets -->
       <div class="row">  
         <?php 
-        include 'PHP/display.php';
+        require 'PHP/display.php';
         ?>
       </div>
+      
     </div>
     <script src="Media/Script/Home.js"></script>
+    <footer>
+      <div class="container-fluid">
+        <div class="row">
+          <div
+            class="col-md-3 offset-md-1 col-sm-5 offset-sm-1 col-lg-2 offset-lg-2"
+          >
+            <a href="https://www.instagram.com">
+              <i class="bottemI fa-brands fa-instagram"></i>Instagram
+            </a>
+          </div>
+          <div class="col-md-3 col-sm-5 col-lg-2">
+            <a href="https://twitter.com/?lang=en-za">
+              <i class="bottemI fa-brands fa-twitter"></i>Twitter
+            </a>
+          </div>
+          <div class="col-sm-5 offset-sm-1 col-md-3 offset-md-0 col-lg-2">
+            <a href="https://www.youtube.com">
+              <i class="bottemI fa-brands fa-youtube"></i>Youtube
+            </a>
+          </div>
+          <div class="col-md-3 offset-md-1 col-sm-5 col-lg-2 offset-lg-0">
+            <a href="https://www.facebook.com">
+              <i class="bottemI fa-brands fa-facebook"></i>Facebook
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
   </body>
 </html>
