@@ -2,6 +2,10 @@
 
 #include "Pokemon.h"
 #include <string>
+#include "Battlestate.h"
+#include "AgileBattleState.h"
+#include "NormalBattleState.h"
+#include "StrongBattleState.h"
 using namespace std;
 
 class Pokemon
@@ -11,10 +15,10 @@ private:
     string name;
     int HP;
     int damage;
-    BattleState state;
+    BattleState *state;
 
 public:
-    Pokemon();
-    void selectBattleState();
+    Pokemon(string, int, int);
+    void selectBattleState(string);
     ~Pokemon();
 };
