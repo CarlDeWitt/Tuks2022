@@ -7,6 +7,8 @@ BoxChockies::BoxChockies(string boxname, string boxDescription)
 }
 void BoxChockies::addItem(Basket *name)
 {
+    cout << "hello" << endl;
+
     ChockBox.push_back(name);
 }
 void BoxChockies::removeItem()

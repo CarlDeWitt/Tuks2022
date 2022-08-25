@@ -1,15 +1,15 @@
 public class Main {
 
     public static void main(String args[]) {
-//        add project
+        // add project
         Project p = new Project();
 
-//        add devs
-        int devs = 3;
-        int testers = 3;
+        // add devs
+        int devs = 5;
+        int testers = 5;
         Dev[] dev = new Dev[devs];
 
-//        add dev lock
+        // add dev lock
         bakery dbd = new bakery(devs);
         bakeryT bdt = new bakeryT(testers, devs);
 
@@ -17,11 +17,11 @@ public class Main {
             dev[i] = new Dev(dbd, p);
         }
 
-//        start dev process
+        // start dev process
         for (Dev d : dev) {
             d.start();
         }
-//        add testers
+        // add testers
         Test[] tst = new Test[testers];
 
         for (int i = 0; i < testers; i++) {
