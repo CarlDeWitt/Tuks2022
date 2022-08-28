@@ -164,7 +164,7 @@ void initilizeComp()
     cout << "Hamper name: ";
     cin >> str;
     cout << "Description of " << str << ": ";
-    cin.getline(str2, 100);
+    cin >> str;
     h = new Hamper(str, str2);
 }
 
