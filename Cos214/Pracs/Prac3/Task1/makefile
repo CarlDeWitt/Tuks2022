@@ -5,3 +5,6 @@ main:
 	./main
 	rm *.o main
 all:
+
+clean:
+	rm *.o main

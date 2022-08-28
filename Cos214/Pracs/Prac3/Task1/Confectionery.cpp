@@ -8,6 +8,6 @@ Confectionery::Confectionery(string manufacturer, double price, string type)
     this->id = index++;
 }
 
-// Confectionery::Confectionery()
-// {
-// }
+Confectionery::Confectionery()
+{
+}

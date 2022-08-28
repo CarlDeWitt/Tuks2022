@@ -8,9 +8,10 @@ class Confectionery
 {
 public:
     string manufacturer;
-    double price;
     string type;
+    double price;
     int id;
+    Confectionery();
     Confectionery(string, double, string);
     virtual void getDescription() = 0;
     // virtual ~Confectionery();

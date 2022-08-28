@@ -1,38 +1,35 @@
-#include "BoxChockies.h"
+#include "Hamper.h"
 using namespace std;
-BoxChockies::BoxChockies(string boxname, string boxDescription)
+Hamper::Hamper(string boxname, string boxDescription) : Confectionery()
 {
-    this->boxname = boxname;
-    this->boxDescription = boxDescription;
+    this->name = boxname;
+    this->description = boxDescription;
 }
-void BoxChockies::addItem(Basket *name)
+void Hamper::addItem(Confectionery *name)
 {
-    cout << "hello" << endl;
-
     ChockBox.push_back(name);
 }
-void BoxChockies::removeItem()
+string Hamper::getBoxName()
 {
-    ChockBox.pop_back();
+    return this->name;
 }
-string BoxChockies::getBoxName()
+string Hamper::getBoxDescription()
 {
-    return this->boxname;
+    return this->description;
 }
-string BoxChockies::getBoxDescription()
+void Hamper::chockInfo()
 {
-    return this->boxDescription;
-}
-void BoxChockies::chockInfo()
-{
-    cout << "Basket Name: " + getBoxName() + " Description: " + getBoxDescription() << endl;
+    Confectionery *chock = ChockBox.back();
 
-    vector<Basket *>::iterator ptr;
+    cout << "|************HAMPER******************|" << endl;
+    cout << "Basket Name: " + getBoxName() << endl
+         << "Description: " + getBoxDescription() << endl;
+    cout << "|------------CONTAINS----------------|" << endl;
 
-    for (ptr = ChockBox.begin(); ptr < ChockBox.end(); ptr++)
-    {
-        Basket *chock = *ptr;
-        chock->chockInfo();
-    }
+    chock->getDescription();
+    cout << "|************HAMPER******************|" << endl;
 }
-// BoxChockies::~BoxChockies() {}
+
+void Hamper::getDescription()
+{
+}

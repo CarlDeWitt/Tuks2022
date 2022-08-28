@@ -120,7 +120,17 @@ void run()
 
 void runcomposite()
 {
-    Hamper *h = new Hamper()
+
+    cout << "hello" << endl;
+    ConfectioneryFactory *n = new CadburyFactory();
+    Confectionery *chock1 = n->createChocolate(true);
+    Confectionery *chock2 = n->createAeratedChocolate(10);
+    Hamper *h = new Hamper("All chcockies", "this box has all the chockies");
+    Hamper *h1 = new Hamper("Aerated chocklate", "Aerated");
+    h1->addItem(chock2);
+    h->addItem(h1);
+    h->addItem(chock1);
+    h->chockInfo();
 }
 
 int main()
