@@ -5,9 +5,8 @@
 #include "Basket.h"
 #include <iostream>
 #include "string"
-#include "BoxChockies.h"
 #include "Checkout.h"
-#include "SingleChockie.h"
+#include "Hamper.h"
 
 using namespace std;
 
@@ -121,44 +120,12 @@ void run()
 
 void runcomposite()
 {
-    Basket *basket1 = new BoxChockies("aeratedBox", "This box is full of areated choclates");
-    // Basket *smallbasket = new BoxChockies("smallbox", "this is a small box for gran");
-
-    // smallbasket->addItem(new SingleChockie("fet klap", 420, "fucking noob bitch ass donkey 🦌"));
-
-    // basket1->addItem(smallbasket);
-
-    Confectionery *confext1ons = new CadburyFactory();
-    basket1->addItem(new SingleChockie("Lindt", 47, "strip"));
-    // basket1->addItem(new SingleChockie("top Deck", 42, "pack"));
-
-    // Basket *BigBasket = new BoxChockies("BigBox", "All the chockies are in here");
-
-    // BigBasket->addItem(basket1);
-    // BigBasket->addItem(new SingleChockie("areo", 69, "slab"));
-
-    // Checkout *checks = new Checkout(BigBasket);
-    // checks->displayItmes();
+    Hamper *h = new Hamper()
 }
 
 int main()
 {
 
-    // Confectionery *areo = new Areo();
-    //  Confectionery *lindt = new Lindor();
-
-    // areo->getDescription();
-    // lindt->getDescription();
-
-    // delete areo;
-
-    // TASK 2
-
-    // ConfectioneryFactory *cadburyFactory = new CadburyFactory();
-    // Confectionery*c = cadburyFactory->createChocolate(false);
-    // c->getDescription();
-    // initilize();
-    // run();
     runcomposite();
 
     return 0;

@@ -4,19 +4,15 @@
 #include <vector>
 #include <iterator> // for iterators
 
-class BoxChockies : public Confectionery
+class Hamper : public Confectionery
 {
 private:
     vector<Confectionery *> ChockBox;
-    string boxname;
-    string boxDescription;
 
 public:
-    BoxChockies(string, string);
+    Hamper();
     string getBoxName();
     string getBoxDescription();
     void addItem(Confectionery *chockName);
-    void removeItem();
     void chockInfo();
-    // ~BoxChockies();
 };
