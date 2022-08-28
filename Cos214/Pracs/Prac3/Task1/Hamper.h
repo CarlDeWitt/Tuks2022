@@ -18,4 +18,5 @@ public:
     void addItem(Confectionery *chockName);
     void chockInfo();
     void getDescription();
+    vector<Confectionery *> getChockbox();
 };

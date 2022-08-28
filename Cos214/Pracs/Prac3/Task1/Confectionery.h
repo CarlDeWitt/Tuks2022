@@ -14,6 +14,7 @@ public:
     Confectionery();
     Confectionery(string, double, string);
     virtual void getDescription() = 0;
+    double getPrice();
     // virtual ~Confectionery();
 };
 

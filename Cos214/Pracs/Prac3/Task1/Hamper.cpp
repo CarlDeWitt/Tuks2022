@@ -20,14 +20,24 @@ string Hamper::getBoxDescription()
 void Hamper::chockInfo()
 {
     Confectionery *chock = ChockBox.back();
+    int size = 0;
+    cout << ChockBox.size() << endl;
 
     cout << "|************HAMPER******************|" << endl;
     cout << "Basket Name: " + getBoxName() << endl
          << "Description: " + getBoxDescription() << endl;
     cout << "|------------CONTAINS----------------|" << endl;
 
-    chock->getDescription();
+    for (Confectionery *e : ChockBox)
+    {
+        e->getDescription();
+    }
     cout << "|************HAMPER******************|" << endl;
+}
+
+vector<Confectionery *> Hamper::getChockbox()
+{
+    return ChockBox;
 }
 
 void Hamper::getDescription()
