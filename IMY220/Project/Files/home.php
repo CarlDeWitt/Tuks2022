@@ -1,3 +1,8 @@
+<?php 
+  session_start();
+  echo  $_SESSION["UserIndex"];
+?>
+
 <!-- 38 Carl de Witt u21444928 -->
 <!DOCTYPE html>
 <html>
@@ -33,8 +38,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="Media/CSS/home.css" />
 
-
-
     <!-- Include Bootstrap and style.css here -->
   </head>
   <body>
@@ -47,13 +50,10 @@
         <div class="col-md-5 offset-md-1">
           <div class="container-fluid navCont">
             <div class="row">
-              <div id="NavBtn1" class="col-md-4 navContT navActive">
-                <i class="fa-solid fa-earth-americas"></i>Global
-              </div>
-              <div id="NavBtn2" class="col-md-4 navContT">
+              <div id="NavBtn2" class="col-md-6 navContT navActive">
                 <i class="fa-solid fa-bars"></i>Profile
               </div>
-              <div id="NavBtn3" class="col-md-4 navContT">
+              <div id="NavBtn3" class="col-md-6 navContT">
                 <i class="fa-solid fa-arrow-right-from-bracket"></i>Logout
               </div>
             </div>
@@ -63,8 +63,7 @@
 
       <!-- images -->
       <div class="row">
-        <div class="col-12">
-          <img src="Media/Images/eventplacholder.jpg" />
+        <div class="col-12"  id="coverImg">
         </div>
       </div>
 
@@ -185,64 +184,146 @@
                 </div>
               </div>
 
-                <!-- submitbutton -->                
-                <div class="row createRows Dsnone">
-                <div class="col-md-6">
-                  </div>
-                    <button type="submit" class="sendBTN">
-                      Submit <i class="fa-solid fa-paper-plane"></i>
-                    </button>
-                  </div>
+              <!-- submitbutton -->
+              <div class="row createRows Dsnone">
+                <div class="col-md-6"></div>
+                <button type="submit" class="sendBTN">
+                  Submit <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </div>
             </form>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-12">
-          <p id="typeEvent">Local</p>
-        </div>
+      <div class="row choiceTab">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <div class="col-md-4 col-12">
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link active"
+                id="Local-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#Local"
+                type="button"
+                role="tab"
+                aria-controls="Local"
+                aria-selected="true"
+              >
+              <i class="fa-solid fa-location-dot bottemM"></i>Local
+              </button>
+            </li>
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="Global-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#Global"
+                type="button"
+                role="tab"
+                aria-controls="Global"
+                aria-selected="false"
+              >
+              <i class="fa-solid fa-earth-africa bottemM"></i>Global
+              </button>
+            </li>
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="Lists-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#Lists"
+                type="button"
+                role="tab"
+                aria-controls="Lists"
+                aria-selected="false"
+              >
+              <i class="fa-solid fa-list bottemM"></i>Lists
+              </button>
+            </li>
+          </div>
+        </ul>
       </div>
-      <div id="myModal" class="modal">
 
-  <!-- Modal content -->
-      <div class="modal-content">
-        <div class="modal-header">
-          <span class="close">&times;</span>
-          <h2>Your Lists</h2>
-        </div>
-        <div class="modal-body">
-          <div class="container listCont">
-            <div class="row rowlist">
-              <div class="col-md-6 col-12">
-                <form action="./PHP/createList.php" method="post">
-                <label for="listName" class="listhead">List Name:</label>
-                <input type="text" id="listName" name="listName" class="form-control" placeholder="List Name" />
-                <input type="submit" value="Create List" class="createSub" />
-                </form> 
-              </div>
-              <div class="col-md-6 col-12">
-                <p class="listhead" id="Mylist" >My Lists</p>
-                <?php
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Your Lists</h2>
+          </div>
+          <div class="modal-body">
+            <div class="container listCont">
+              <div class="row rowlist">
+                <div class="col-md-6 col-12">
+                  <form action="./PHP/createList.php" method="post">
+                    <label for="listName" class="listhead">List Name:</label>
+                    <input
+                      type="text"
+                      id="listName"
+                      name="listName"
+                      class="form-control"
+                      placeholder="List Name"
+                    />
+                    <input
+                      type="submit"
+                      value="Create List"
+                      class="createSub"
+                    />
+                  </form>
+                </div>
+                <div class="col-md-6 col-12">
+                  <p class="listhead" id="Mylist">My Lists</p>
+                  <?php
                   require "./PHP/list.php";
-                ?>
+                  ?>
+                </div>
               </div>
             </div>
           </div>
-          
-          
-        </div>
-        <div class="modal-footer">
+          <div class="modal-footer"></div>
         </div>
       </div>
-
-</div>
       <!-- Data Elemets -->
-      <div class="row">  
-        <?php 
-        require 'PHP/display.php';
-        ?>
+      <div class="tab-content" id="myTabContent">
+        <div
+          class="tab-pane fade show active"
+          id="Local"
+          role="tabpanel"
+          aria-labelledby="Local-tab"
+        >
+          <div class="row evenstDisp">
+            <?php 
+            require 'PHP/display.php';
+            ?>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="Global"
+          role="tabpanel"
+          aria-labelledby="Global-tab"
+        >
+          <div class="row evenstDisp">
+            <?php 
+            require 'PHP/displayGlobal.php';
+            ?>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="Lists"
+          role="tabpanel"
+          aria-labelledby="Lists-tab"
+        >
+          <?php 
+              require 'PHP/displayList.php';
+          ?>
+        </div>
       </div>
-      
     </div>
     <script src="Media/Script/Home.js"></script>
     <footer>
@@ -273,6 +354,5 @@
         </div>
       </div>
     </footer>
-
   </body>
 </html>

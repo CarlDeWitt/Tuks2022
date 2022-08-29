@@ -1,6 +1,6 @@
 <?php
     require 'master.php';
-    $id=2;
+    $id =  $_SESSION["UserIndex"];
 
     $query = $S_list . " WHERE user_id = '$id';";
     $result = mysqli_query($mysqli, $query);

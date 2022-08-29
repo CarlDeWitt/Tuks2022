@@ -30,6 +30,16 @@ body {
   background-size: cover;
 }
 
+#coverImg {
+  border-radius: var(--medBorder);
+  object-fit: scale-down;
+  width: 100%;
+  height: 800px;
+  background-image: url("../Images/eventplacholder.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .navActive {
   background-color: var(--medPurple);
   border-radius: var(--medBorder);
@@ -116,7 +126,7 @@ button i {
 
 button:hover i {
   margin: 0 0 0 30px;
-  animation: spin 0.5s forwards;
+  /* animation: spin 0.5s forwards; */
 }
 
 .headRow div {
@@ -129,10 +139,57 @@ button:hover i {
 .headRow div:first-child {
   font-size: 50pt;
 }
-
-/* Navigation */
-.navCont {
+.choiceTab {
+  background-color: var(--medPurple) !important;
+  margin: 50px 0 0 0 !important;
+  padding: 30px !important;
+  font-size: 40px;
+  border-radius: var(--medBorder);
+  font-family: var(--exo);
 }
+
+.bottemM {
+  margin-right: 20px;
+}
+
+.nav-tabs {
+  border: 0 !important;
+}
+
+.nav-link {
+  width: 100% !important;
+  border: 0 !important;
+  color: var(--darkPurple);
+  border-radius: var(--medBorder) !important;
+}
+.active {
+  background-color: var(--grey) !important;
+}
+.nav-link:hover {
+  color: var(--darkPurple) !important;
+}
+
+.tab-pane {
+  background-color: rgba(255, 255, 255, 0) !important;
+}
+
+.ListHead {
+  background-color: var(--darkPurple);
+  color: var(--grey);
+  padding: 20px;
+  font-size: 40px;
+  border-radius: var(--medBorder);
+  text-align: center;
+  font-family: var(--exo);
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.nav-link:onclick {
+  animation: clicked 0.2s !important;
+}
+/* Navigation */
+
 .navContT {
   font-size: 20pt !important;
 }
@@ -151,6 +208,18 @@ button:hover i {
   position: absolute;
   top: 5%;
   left: 5%;
+}
+.Rdel {
+  background-color: var(--darkPurple);
+  padding: 10px;
+  border-radius: 50%;
+  color: var(--grey);
+  font-size: 15pt;
+  margin: 10px 0;
+}
+
+.delHide {
+  display: none;
 }
 
 .Radd {
@@ -274,7 +343,7 @@ button:hover i {
 }
 .innerbody {
   background-color: var(--grey);
-  padding: 10px;
+  padding: 20px;
   border-radius: var(--medBorder);
   font-size: 15pt;
   font-family: var(--exo);
@@ -284,7 +353,7 @@ button:hover i {
 .Ehas {
   color: var(--medPurple);
   background-color: var(--medPurple);
-  padding: 5px;
+  padding: 10px;
   border-radius: var(--medBorder);
   color: var(--grey);
 }

@@ -15,6 +15,6 @@ $S_list = "SELECT * FROM `list`";
 $I_list = "INSERT INTO `list`";
 
 // list Events
-$S_list_events = "SELECT * FROM `list-events`";
-$I_list_events = "INSERT INTO `list-events`";
+$S_list_events = "SELECT * FROM `list_events`";
+$I_list_events = "INSERT INTO `list_events`";
 ?>

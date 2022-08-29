@@ -16,22 +16,14 @@ const navButton1 = document.querySelector("#NavBtn1"); //global variable
 const navButton2 = document.querySelector("#NavBtn2"); //Profile
 const navButton3 = document.querySelector("#NavBtn3"); //Logout
 
-navButton1.onclick = function () {
-  navButton1.classList.add("navActive");
-  navButton2.classList.remove("navActive");
-  navButton3.classList.remove("navActive");
-};
-
 navButton2.onclick = function () {
   navButton2.classList.add("navActive");
-  navButton1.classList.remove("navActive");
   navButton3.classList.remove("navActive");
 };
 
 navButton3.onclick = function () {
   navButton3.classList.add("navActive");
   navButton2.classList.remove("navActive");
-  navButton1.classList.remove("navActive");
 };
 /*--------END Nav bar ----------*/
 
@@ -106,7 +98,37 @@ function getListName(userID, listID, element) {
 //diplay Description
 function desc(element) {
   var x = element.querySelector(".description");
+  var y = element.querySelector(".Rdel");
   x.classList.toggle("descHide");
+  y.classList.toggle("delHide");
+}
+
+function deleteEvent(eventid, element, userid) {
+  console.log(eventid, userid);
+  $.ajax({
+    type: "POST", // Method type GET/POST
+    url: "./PHP/deleteEvent.php", //Ajax Action url
+    data: { UID: userid, EID: eventid }, //Form Data
+    success: function (data, textStatus, jqXHR) {
+      console.log(data);
+    },
+  });
 }
 
 //likeBTN
+//List delete
+function showList(element) {
+  element.querySelector(".fa-trash-can").classList.toggle("delHide");
+}
+
+function deleteList(listid) {
+  // console.log(listid);
+  $.ajax({
+    type: "POST", // Method type GET/POST
+    url: "./PHP/deleteList.php", //Ajax Action url
+    data: { LID: listid }, //Form Data
+    success: function (data, textStatus, jqXHR) {
+      console.log(data);
+    },
+  });
+}

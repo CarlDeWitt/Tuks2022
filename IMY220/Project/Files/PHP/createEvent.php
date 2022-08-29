@@ -1,6 +1,7 @@
 <?php
     require "master.php";
-    $UID = 2;
+    session_start();
+    $UID = $_SESSION['UserIndex'];
     print_r($_POST);
 
     if(isset($_POST["Ename"]) && $_POST["Ename"] != "" &&
