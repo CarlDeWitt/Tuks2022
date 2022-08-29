@@ -24,7 +24,7 @@ public class Test extends Thread {
     public void run() {
 
         while (loop) {
-            if(project.getsize() == project.getFinished().size()){
+            if (project.getsize() == project.getFinished().size()) {
                 loop = false;
                 break;
             }
@@ -34,15 +34,15 @@ public class Test extends Thread {
                 System.out.println(yellow + this.getName() + " is ready to test a component" + RESET);
                 lock.lock();
                 try {
-                    if (project.getTesting().peek() == null ) {
+                    if (project.getTesting().peek() == null) {
                         break;
-                    }else {
+                    } else {
                         c = project.getTesting().peek();
                         project.removeTest();
                         p.workoncompTest(this, c, project);
                         if (c.testTime < 0) {
                             project.addfin(c);
-                            System.out.println(green + c.name + " is done testing" +RESET);
+                            System.out.println(green + c.name + " is done testing" + RESET);
                         } else {
                             project.addtest(c);
                         }
@@ -58,5 +58,3 @@ public class Test extends Thread {
         }
     }
 }
-
-

@@ -7,7 +7,7 @@ public class Venue {
 		System.out.println("BUS " + t.getName() + " is dropping-off: Load " + count);
 		Random r = new Random();
 		int num = r.nextInt(1000 - 200) + 200;
-		// Thread.currentThread().sleep(num);
+		Thread.currentThread().sleep(num);
 		System.out.println("BUS " + t.getName() + " has left: Load " + count);
 	}
 }
