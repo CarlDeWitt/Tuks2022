@@ -3,12 +3,13 @@
   --medPurple: #7848f4;
   --lightPurple: #e0d3fb;
   --orange: #f78f1e;
-  --grey: #e9eaefc3;
+  --grey: #e9eaeff6;
   --white: #e0d3fb;
   --medBorder: 10px;
   --per: Permanent Marker;
   --exo: "Exo 2";
   --cater: "Carter One";
+  --cur: "Pacifico";
 }
 
 /* FONTS */
@@ -99,9 +100,14 @@ footer {
 
 .header-in {
   margin: 0 100px;
-  font-size: 50pt;
+  font-size: 60pt;
   color: var(--darkPurple);
-  font-family: var(--exo);
+  font-family: var(--cur);
+}
+#myTab {
+  border: 0 !important;
+  margin-bottom: -2px !important;
+  padding-left: 50px;
 }
 
 .container {
@@ -110,7 +116,7 @@ footer {
   padding: 80px !important;
   font-size: larger;
   border-radius: var(--medBorder);
-  z-index: 10 !important;
+  z-index: 10000000000 !important;
 }
 
 img {
@@ -142,6 +148,7 @@ a {
 .active {
   background-color: var(--medPurple) !important;
   color: var(--darkPurple) !important;
+  border: 0 !important;
 }
 
 .text {
@@ -160,4 +167,27 @@ a {
 
 .btn-dark {
   background-color: var(--darkPurple) !important;
+}
+.fa-calendar-check {
+  margin-left: 50px;
+}
+
+/* Responsive design */
+@media only screen and (max-width: 990px) {
+  .container {
+    padding: 40px !important;
+  }
+}
+
+@media only screen and (min-width: 450) {
+  body {
+    font-size: 20px !important;
+  }
+  .fa-calendar-check {
+    display: none;
+  }
+}
+
+.nav-link:hover {
+  border: 0 !important;
 }

@@ -20,7 +20,7 @@ if(isset($_POST["fname"]) && $_POST["fname"] != "" &&
         $bool = true;
     }else{
         echo "Email already exists";
-        header('Location: ../splash.html');
+        header('Location: ../Index.html');
         exit;
     }
 }

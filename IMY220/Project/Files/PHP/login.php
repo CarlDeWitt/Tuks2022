@@ -14,7 +14,7 @@ if(isset($_POST["pass"]) && $_POST["pass"] != "" && isset($_POST["email"]) && $_
         exit;
     }
 }
-header('Location: ../splash.html');
+header('Location: ../Index.html');
 exit;
 
 ?>

@@ -1,0 +1,323 @@
+:root {
+  --darkPurple: #0b0434;
+  --medPurple: #7848f4;
+  --lightPurple: #e0d3fb;
+  --orange: #f78f1e;
+  --grey: #e9eaeff6;
+  --white: #e9eaeff6;
+  --medBorder: 10px;
+  --per: Permanent Marker;
+  --exo: "Exo 2";
+  --sat: "Rock Salt";
+  --cater: "Carter One";
+  --cur: "Pacifico";
+}
+
+body {
+  font-family: var(--cater);
+  background-image: url("../Images/Background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: var(--exo) !important;
+  font-size: 25px !important;
+  color: var(--darkPurple);
+}
+
+.outer {
+  background-color: var(--darkPurple);
+  border-radius: var(--medBorder);
+  padding: 60px !important;
+  padding-top: 0 !important;
+  position: relative;
+  margin-top: 100px !important;
+  margin-bottom: 100px;
+}
+
+.row {
+  padding: 15px;
+}
+/* div {
+  border: 1px solid red;
+} */
+
+i {
+  margin-right: 15px;
+  color: var(--darkPurple);
+}
+
+.data {
+  background-color: var(--grey);
+  padding: 20px;
+  border-radius: var(--medBorder);
+}
+.name {
+  font-family: var(--cur);
+  font-size: 100px;
+  color: var(--medPurple);
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0) !important;
+  padding: 10px;
+}
+
+.rowlist {
+  background-color: rgba(245, 245, 245, 0) !important;
+}
+
+.listcol {
+  background-color: var(--grey);
+  border-radius: var(--medBorder);
+  padding: 15px !important;
+}
+#img {
+  /* background-color: var(--white); */
+  border-radius: var(--medBorder);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  background-size: cover !important;
+  width: 820px;
+  border-radius: var(--medBorder);
+}
+
+.inner {
+  margin-top: 5px;
+}
+
+.desc {
+  margin-top: 40px !important;
+}
+
+.buttons {
+  background-color: #ffffff00;
+}
+
+.buttons i {
+  color: var(--medPurple);
+  margin-right: 40px;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.buttons i:hover {
+  animation: smallshow 0.2s;
+}
+
+.listhead {
+  margin: 20px 0;
+  font-size: 30px !important;
+}
+
+.fc2 {
+  margin: 20px 0;
+  font-size: 20px !important;
+  padding: 15px !important;
+}
+
+#Mylist {
+  margin: 20px 0;
+}
+
+#listName {
+  border-radius: var(--medBorder);
+}
+
+.cardName {
+  text-align: center;
+  font-size: 20pt;
+  padding: 10px !important;
+}
+
+#createSub3 {
+  margin-top: 0 !important;
+  padding: 8px !important;
+  margin: 20px 0 20px 0;
+  background-color: var(--medPurple);
+  width: 100%;
+  font-size: 24pt;
+  border: 0 !important;
+  border-radius: var(--medBorder);
+  padding: 7px 20px !important;
+  text-align: left;
+}
+
+.YourLists {
+  text-align: center !important;
+}
+
+/* .buttons i:active {
+  animation: click 0.2s;
+} */
+
+@keyframes smallshow {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.95);
+  }
+}
+
+@keyframes click {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+#logo {
+  width: 100px;
+  position: absolute;
+  top: 9%;
+}
+
+.bounce {
+  animation: bounce 0.8s;
+}
+
+@keyframes bounce {
+  0% {
+    scale: 0.8;
+  }
+  80% {
+    scale: 1.3;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+}
+
+/* Modal Content */
+.modal-content {
+  position: fixed;
+  bottom: 0;
+  background-color: #fefefe;
+  width: 100%;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--medPurple);
+  color: var(--darkPurple);
+  font-family: var(--exo);
+}
+.YourLists {
+  display: inline;
+  font-size: 20pt;
+}
+
+.modal-body {
+  padding: 20px 16px;
+  background-color: var(--darkPurple);
+  margin-top: -1px;
+}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: var(--medPurple) !important;
+  border: 0 !important;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.exit {
+  animation: hover 0.8s infinite;
+}
+
+@keyframes hover {
+  0% {
+    transform: scale(1);
+  }
+  33% {
+    transform: scale(1.1);
+  }
+  66% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

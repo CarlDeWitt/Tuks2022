@@ -25,6 +25,25 @@ createButton.onclick = function () {
 };
 /*--------END create functionallity ----------*/
 
+// description stuff
+let click2 = true;
+
+// function descAnimation(e) {
+//   if (click2) {
+//     e.classList.add("animationOpacity");
+//   } else {
+//     e.classList.remove("animationOpacity");
+//     e.classList.add("animationOpacity2");
+//     setTimeout(function () {
+//       e.classList.remove("animationOpacity2");
+//     }, 800);
+//   }
+//   click2 ? (click2 = false) : (click2 = true);
+// }
+{
+  /* <a href=\"DSE.html?EID=@$rowE2[id]\"> */
+}
+
 /*--------Nav bar ----------*/
 const navButton1 = document.querySelector("#NavBtn1"); //global variable
 const navButton2 = document.querySelector("#NavBtn2"); //Profile
@@ -111,11 +130,13 @@ function getListName(userID, listID, element) {
 }
 
 //diplay Description
-function desc(element) {
-  var x = element.querySelector(".description");
-  var y = element.querySelector(".Rdel");
-  x.classList.toggle("descHide");
-  y.classList.toggle("delHide");
+function red(e) {
+  // var x = element.querySelector(".description");
+  // var y = element.querySelector(".Rdel");
+  // x.classList.toggle("descHide");
+  // y.classList.toggle("delHide");
+  console.log(e);
+  window.location.replace("DSE.php?EID=" + e);
 }
 
 function deleteEvent(eventid, element, userid) {
@@ -150,3 +171,9 @@ function deleteList(listid) {
   });
   location.reload();
 }
+
+const srchBtn = document.querySelector(".srchtxt");
+
+srchBtn.onclick = () => {
+  console.log("search does not work yet");
+};

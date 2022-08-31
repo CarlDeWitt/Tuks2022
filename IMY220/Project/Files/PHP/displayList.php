@@ -38,14 +38,14 @@ require "master.php";
                         onclick='add(\"$rowE2[id]\",this)'
                       ></i>
                       <div class='Rdate'>$rowE2[date]</div>
-                      <div class='card-body EB' onclick=(desc(this))>
+                      <div class='card-body EB' onclick=(red($rowE2[id]))>
                         <div class='card-text Ecard'>
                           <h2 class='Ename'>$rowE2[name]</h2>
                           <div class='innerbody'>
-                            <p class='Eloaction'><i style=\"margin:0 10px 0 0\" class=\"fa-solid fa-location-arrow\"></i>$rowE2[location]</p>
+                            <p class='Eloaction'><i style=\"margin:0 10px 0 0\" class=\"fa-solid fa-map-pin\"></i>$rowE2[location]</p>
                             <p class='description descHide'><i style=\"margin:0 10px 0 0\" class=\"fa-solid fa-angles-right\"></i>$rowE2[description]</p>
                             <i class=\"fa-solid fa-trash-can Rdel delHide\" style=\"margin:10px 0 10px 0px;\" onclick='deleteEvent(\"$rowE2[id]\",this,$_SESSION[UserIndex])'></i>
-                            <p class='Ehas'>$rowE2[hastags]</p>
+                            <p class='Ehas'>$rowE2[hastags]</p>                  
                           </div>
                         </div>
                       </div>

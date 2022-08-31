@@ -1,6 +1,6 @@
 <?php
 session_start();
-echo  $_SESSION["UserIndex"];
+// echo  $_SESSION["UserIndex"];
 ?>
 
 <!-- 38 Carl de Witt u21444928 -->
@@ -13,6 +13,10 @@ echo  $_SESSION["UserIndex"];
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Exo+2&family=Roboto:wght@100&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> 
 
   <link rel="apple-touch-icon" sizes="180x180" href="Media/Fav/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="Media/Fav/favicon-32x32.png" />
@@ -67,7 +71,10 @@ echo  $_SESSION["UserIndex"];
       <div class="col-10 offset-1">
         <!-- inner container -->
         <div class="container cont2">
-          <div class="row">
+          <div class="row srcrow">
+            <!-- <div class="col-12 srchtxt">
+              Search
+            </div> -->
             <!-- Name -->
             <div class="col-md-4">
               <label for="Ename">Event Name:</label>
@@ -81,19 +88,15 @@ echo  $_SESSION["UserIndex"];
             </div>
 
             <!-- time -->
-            <div class="col-md-4 searchBTNParent">
-              <button type="submit" class="searchBTN">
-                Search <i class="fa-solid fa-paper-plane"></i>
-              </button>
+            <div class="col-md-4 searchBTNParent srchtxt btns">
+              <p>Search</p>
             </div>
           </div>
 
           <div class="row">
             <!-- button -->
-            <div class="col-md-4 offset-md-4">
-              <button type="submit" class="createSub">
-                Create <i class="fa-solid fa-paper-plane"></i>
-              </button>
+            <div class="col-lg-4 col-md-12 offset-lg-4 offset-md-0 createSub btns">
+              <p>Create</p>
             </div>
           </div>
 
@@ -150,21 +153,21 @@ echo  $_SESSION["UserIndex"];
         <div class="col-md-4 col-12">
           <li class="nav-item" role="presentation">
             <button class="nav-link active" id="Local-tab" data-bs-toggle="tab" data-bs-target="#Local" type="button" role="tab" aria-controls="Local" aria-selected="true">
-              <i class="fa-solid fa-location-dot bottemM"></i>Local
+              Local<i class="fa-solid fa-location-dot bottemM"></i>
             </button>
           </li>
         </div>
         <div class="col-md-4 col-sm-12">
           <li class="nav-item" role="presentation">
             <button class="nav-link" id="Global-tab" data-bs-toggle="tab" data-bs-target="#Global" type="button" role="tab" aria-controls="Global" aria-selected="false">
-              <i class="fa-solid fa-earth-africa bottemM"></i>Global
+              Global<i class="fa-solid fa-earth-africa bottemM"></i>
             </button>
           </li>
         </div>
         <div class="col-md-4 col-sm-12">
           <li class="nav-item" role="presentation">
             <button class="nav-link" id="Lists-tab" data-bs-toggle="tab" data-bs-target="#Lists" type="button" role="tab" aria-controls="Lists" aria-selected="false">
-              <i class="fa-solid fa-list bottemM"></i>Lists
+              Lists<i class="fa-solid fa-list bottemM"></i>
             </button>
           </li>
         </div>
@@ -175,20 +178,20 @@ echo  $_SESSION["UserIndex"];
       <!-- Modal content -->
       <div class="modal-content">
         <div class="modal-header close">
-          <div class="YourLists">Your Lists</div>
+          <div class="YourLists">Make Lists:</div>
         </div>
         <div class="modal-body">
           <div class="container listCont">
             <div class="row rowlist">
-              <div class="col-md-6 col-12">
+              <div class="col-md-5 col-12 listcol">
                 <form action="./PHP/createList.php" method="post">
-                  <label for="listName" class="listhead">List Name:</label>
+                  <label for="listName" class="listhead2" id="lh2">List Name:</label>
                   <input type="text" id="listName" name="listName" class="form-control fc2" placeholder="List Name" />
-                  <input type="submit" value="Create List" class="createSub"></input>
+                  <input type="submit" value="Create List" class="createSub2"></input>
                 </form>
               </div>
-              <div class="col-md-6 col-12">
-                <p class="listhead" id="Mylist">My Lists</p>
+              <div class="col-md-5 offset-md-1 col-12 offset-0 listcol">
+                <p class="listhead2" id="Mylist">Youre Lists:</p>
                 <?php
                 require "./PHP/list.php";
                 ?>

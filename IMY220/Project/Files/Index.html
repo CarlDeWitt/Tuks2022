@@ -1,0 +1,353 @@
+<!-- 38 Carl de Witt u21444928 -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IMY220 - Project</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="Media/CSS/splash.css" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="Media/Fav/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="Media/Fav/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="Media/Fav/favicon-16x16.png"
+    />
+    <link rel="manifest" href="Media/Fav/site.webmanifest" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2&family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- PopperJS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"
+      integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- This will be the LOGO NAME SLOGAN -->
+    <header id="navbar">
+      <div class="header-in">
+        <img src="./Media/Images/logo_v2.png" width="500" />
+      </div>
+      <!-- Name -->
+      <div class="header-in">Never miss an Event</div>
+    </header>
+    <!-- Logo & slogan -->
+    <div class="container">
+      <!-- This will be pills and tabs for the register and login page -->
+      <div class="row">
+        <div class="col-12">
+          <!-- Pills and tabs for login and register -->
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link active"
+                id="News-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#News"
+                type="button"
+                role="tab"
+                aria-controls="News"
+                aria-selected="true"
+              >
+                <i class="top fa-solid fa-newspaper"></i>News
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="Login-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#Login"
+                type="button"
+                role="tab"
+                aria-controls="Login"
+                aria-selected="false"
+              >
+                <i class="top fa-solid fa-arrow-right-to-bracket"></i>Login
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="Signup-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#Signup"
+                type="button"
+                role="tab"
+                aria-controls="Signup"
+                aria-selected="false"
+              >
+                <i class="top fa-solid fa-user-plus"></i>Signup
+              </button>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div
+              class="tab-pane fade"
+              id="Login"
+              role="tabpanel"
+              aria-labelledby="Login-tab"
+            >
+              <!-- LOGIN -->
+              <form action="./PHP/login.php" method="post">
+                <div class="row textCol">
+                  <div class="col-12 col-lg-6">
+                    <label for="loginEmail">Email Address:</label>
+                    <input
+                      type="email"
+                      id="loginEmail"
+                      class="form-control"
+                      placeholder="name@email.com"
+                      name="email"
+                    />
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <label for="loginPass">Password:</label>
+                    <input
+                      type="password"
+                      id="loginPass"
+                      class="form-control"
+                      placeholder="******"
+                      name="pass"
+                    />
+                  </div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col-12">
+                    <button type="submit" class="btn submt btn-dark">
+                      Login <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="Signup"
+              role="tabpanel"
+              aria-labelledby="Signup-tab"
+            >
+              <!-- SIGNUP -->
+              <form action="./PHP/register.php" method="post">
+                <!-- NAME AND SURNAME -->
+                <div
+                  class="row textCol"
+                  data-aos="fade-left"
+                  data-aos-easing="ease-in-sine"
+                >
+                  <div class="col-12 col-lg-6">
+                    <label for="regName">First Name:</label>
+                    <input
+                      type="text"
+                      id="regName"
+                      class="form-control"
+                      placeholder="John"
+                      name="fname"
+                    />
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <label for="regSurname">Last Name:</label>
+                    <input
+                      type="text"
+                      id="regSurname"
+                      class="form-control"
+                      placeholder="Doe"
+                      name="lname"
+                    />
+                  </div>
+                </div>
+                <!-- EMAIL AND DOB -->
+                <div
+                  class="row mt-3 textCol"
+                  data-aos="fade-right"
+                  data-aos-easing="ease-in-sine"
+                >
+                  <div class="col-12 col-lg-6">
+                    <label for="regEmail">Email Address:</label>
+                    <input
+                      type="email"
+                      id="regEmail"
+                      class="form-control"
+                      placeholder="john.doe@gmail.com"
+                      name="email"
+                    />
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <label for="regBirthDate">Date of Birth:</label>
+                    <input
+                      type="date"
+                      id="regBirthDate"
+                      class="form-control"
+                      name="date"
+                    />
+                  </div>
+                </div>
+                <div class="row mt-3 textCol">
+                  <div class="col-12 col-lg-6">
+                    <label for="regEmail">Create Password:</label>
+                    <input
+                      type="password"
+                      id="pass1"
+                      class="form-control"
+                      placeholder="******"
+                      name="pass"
+                    />
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <label for="regEmail">Confirm Password:</label>
+                    <input
+                      type="password"
+                      id="pass2"
+                      class="form-control"
+                      placeholder="******"
+                    />
+                  </div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col-12">
+                    <button type="submit" class="btn submt btn-dark">
+                      Register <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div
+              class="tab-pane fade show active"
+              id="News"
+              role="tabpanel"
+              aria-labelledby="News-tab"
+            >
+              <div
+                id="weAre "
+                class="text"
+                data-aos="fade-left"
+                data-aos-easing="ease-in-sine"
+              >
+                <h2>We are</h2>
+                We are a company that wants you to be most up to date with local
+                markets.
+                <br />
+                We have thus made it our goal for you to create, remind, join
+                and even collaborate with other people to making a market.
+                <br />
+                This website will keep you up to date with the newest markets in
+                your area and if you want more you can even look globally for
+                markets.
+                <br />
+                This will be you one stop site for markets, from food markets to
+                social markets to even wine tasting markets, every market can be
+                found here.
+              </div>
+              <div
+                id="newFet1"
+                class="text"
+                data-aos="fade-right"
+                data-aos-easing="ease-in-sine"
+              >
+                <h2>Create an account</h2>
+                We have made thing easy for you.
+                <br />
+                First click on the signup page if you are new around here.
+                <br />
+                If you are not so new and a returning customer click on the
+                login tab and log in.
+              </div>
+              <div
+                id="newFet1"
+                class="text"
+                data-aos="fade-right"
+                data-aos-easing="ease-in-sine"
+              >
+                <h2>We have socials</h2>
+                Yes if you want to go to our socials please click on out
+                socials! <br />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container-fluid">
+        <div class="row">
+          <div
+            class="col-md-3 offset-md-1 col-sm-5 offset-sm-1 col-lg-2 offset-lg-2"
+          >
+            <a href="https://www.instagram.com">
+              <i class="bottemI fa-brands fa-instagram"></i>Instagram
+            </a>
+          </div>
+          <div class="col-md-3 col-sm-5 col-lg-2">
+            <a href="https://twitter.com/?lang=en-za">
+              <i class="bottemI fa-brands fa-twitter"></i>Twitter
+            </a>
+          </div>
+          <div class="col-sm-5 offset-sm-1 col-md-3 offset-md-0 col-lg-2">
+            <a href="https://www.youtube.com">
+              <i class="bottemI fa-brands fa-youtube"></i>Youtube
+            </a>
+          </div>
+          <div class="col-md-3 offset-md-1 col-sm-5 col-lg-2 offset-lg-0">
+            <a href="https://www.facebook.com">
+              <i class="bottemI fa-brands fa-facebook"></i>Facebook
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      AOS.init();
+    </script>
+    <script src="./Media/Script/Splash.js"></script>
+  </body>
+</html>

@@ -3,13 +3,14 @@
   --medPurple: #7848f4;
   --lightPurple: #e0d3fb;
   --orange: #f78f1e;
-  --grey: #e9eaefc3;
+  --grey: #e9eaeff6;
   --white: #e0d3fb;
   --medBorder: 10px;
   --per: Permanent Marker;
   --exo: "Exo 2";
   --sat: "Rock Salt";
   --cater: "Carter One";
+  --cur: "Pacifico";
 }
 
 /* FONTS */
@@ -38,6 +39,10 @@ body {
   background-image: url("../Images/eventplacholder.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.headRow div p {
+  font-family: var(--cur);
 }
 
 .navActive {
@@ -75,7 +80,7 @@ body {
 
 .container {
   background-color: var(--grey);
-  padding: 0px 80px 80px 80px !important;
+  padding: 20px 80px 80px 80px !important;
   border-radius: var(--medBorder);
   margin: 50px auto;
 }
@@ -85,7 +90,6 @@ body {
   flex-direction: row;
   justify-content: space-between;
 }
-
 .cont2 {
   margin: -50px 0 0 0;
   background-color: var(--darkPurple);
@@ -93,6 +97,7 @@ body {
   font-family: var(--exo);
   font-size: 1.5rem;
   padding: 20px 40px 0 40px !important;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
 }
 
 .cont2 .row:first-child {
@@ -101,14 +106,38 @@ body {
   border-radius: var(--medBorder);
 }
 
+.btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.btns i {
+  font-size: 50px;
+  margin-right: 10px;
+}
+
 .createSub {
+  font-family: var(--cur);
+  font-size: 70pt;
+  color: var(--grey);
+  text-align: center;
+  padding: 20px;
+}
+
+.createSub:hover {
+  animation: smallshow 0.2s;
+  cursor: pointer;
+}
+
+.createSub2 {
   margin: 20px 0 20px 0;
   background-color: var(--medPurple);
   width: 100%;
   font-size: 24pt;
   border: 0 !important;
   border-radius: var(--medBorder);
-  padding: 5px 20px;
+  padding: 7px 20px !important;
   text-align: left;
 }
 
@@ -137,17 +166,25 @@ button:hover i {
   justify-content: center;
   align-items: center;
 }
+.headRow {
+  margin-bottom: 20px;
+}
+
+.headRow p {
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4);
+}
 
 .headRow div:first-child {
   font-size: 50pt;
 }
 .choiceTab {
   background-color: var(--medPurple) !important;
-  margin: 50px 0 0 0 !important;
+  margin: 50px 0 50px 0 !important;
   padding: 30px !important;
   font-size: 40px;
   border-radius: var(--medBorder);
   font-family: var(--exo);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
 }
 
 .bottemM {
@@ -163,6 +200,7 @@ button:hover i {
   border: 0 !important;
   color: var(--darkPurple);
   border-radius: var(--medBorder) !important;
+  font-family: var(--cur);
 }
 .active {
   background-color: var(--grey) !important;
@@ -179,14 +217,34 @@ button:hover i {
   background-color: var(--darkPurple);
   color: var(--grey);
   padding: 20px;
-  font-size: 40px;
+  font-size: 50px;
   border-radius: var(--medBorder);
   text-align: center;
   font-family: var(--exo);
-  margin-top: 40px;
+  /* margin: 40px 0 0 0 !important; */
+  margin-top: 40px !important;
   margin-bottom: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
 }
 
+.ListHead:hover {
+  animation: smallshow 0.2s !important;
+}
+
+.ListHead2 {
+  /* background-color: var(--darkPurple); */
+  color: var(--darkPurple);
+  padding: 20px 0;
+  font-size: 30px;
+  border-radius: var(--medBorder);
+  text-align: left;
+  font-family: var(--exo);
+  margin: 20px 0 !important;
+}
+
+#lh2 {
+  margin-top: 40px !important;
+}
 .nav-link:onclick {
   animation: clicked 0.2s !important;
 }
@@ -205,16 +263,6 @@ button:hover i {
   width: 100% !important;
 }
 
-.card .Rheart {
-  position: absolute;
-  top: 5%;
-  right: 5%;
-}
-.card .Rdate {
-  position: absolute;
-  top: 5%;
-  left: 5%;
-}
 .Rdel {
   background-color: var(--darkPurple);
   padding: 10px;
@@ -228,6 +276,10 @@ button:hover i {
   display: none;
 }
 
+.set {
+  position: relative;
+}
+
 .Radd {
   position: absolute;
   top: 5%;
@@ -237,6 +289,102 @@ button:hover i {
   border-radius: 50%;
   color: var(--darkPurple);
   font-size: 15pt;
+}
+
+.card .Rheart {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
+.card .Rdate {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
+
+@media screen and (max-width: 1400px) {
+  .card .Rheart {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+  }
+  .card .Rdate {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+  }
+  .Radd {
+    position: absolute;
+    top: 16%;
+    right: 5.5%;
+    background-color: var(--grey);
+    padding: 10px;
+    border-radius: 50%;
+    color: var(--darkPurple);
+    font-size: 15pt;
+  }
+}
+
+@media screen and (max-width: 995px) {
+  .Radd {
+    position: absolute;
+    top: 5%;
+    right: 13%;
+    background-color: var(--grey);
+    padding: 10px;
+    border-radius: 50%;
+    color: var(--darkPurple);
+    font-size: 15pt;
+  }
+
+  .card .Rheart {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    display: block;
+  }
+  .card .Rdate {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+  }
+  .srcrow {
+    font-size: 15px !important;
+  }
+  .srchtxt {
+    font-size: 35px !important;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .Radd {
+    position: absolute;
+    top: 5%;
+    right: 13%;
+    background-color: var(--grey);
+    padding: 10px;
+    border-radius: 50%;
+    color: var(--darkPurple);
+    font-size: 15pt;
+  }
+
+  .card .Rheart {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    display: block;
+  }
+  .card .Rdate {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+  }
+  .Radd {
+    right: 18%;
+  }
+  .srchtxt {
+    font-size: 45px !important;
+  }
 }
 
 .sendBTN {
@@ -370,6 +518,10 @@ button:hover i {
   border-bottom-left-radius: var(--medBorder) !important;
   border-bottom-right-radius: var(--medBorder) !important;
   padding: 10px 20px 20px 20px !important;
+}
+
+input {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
 }
 
 .Ename {
@@ -569,12 +721,17 @@ a {
 }
 
 .rowlist {
-  background-color: var(--grey);
+  /* background-color: var(--grey); */
   padding: 20px;
   border-radius: var(--medBorder);
   font-family: var(--exo);
   font-size: 15pt;
   color: var(--darkPurple);
+}
+
+.listcol {
+  background-color: var(--grey);
+  border-radius: var(--medBorder);
 }
 
 .form-control {
@@ -584,6 +741,7 @@ a {
 .fc2 {
   padding: 10px;
   font-size: 20pt;
+  border-radius: var(--medBorder);
 }
 
 .listCont {
@@ -603,9 +761,23 @@ a {
 .cardName {
   text-align: center;
   font-size: 20pt;
-  padding: 10px;
+  padding: 10px !important;
 }
 
 .Eloaction {
   margin-bottom: 10px;
+}
+
+.srchtxt {
+  text-align: center;
+  font-family: var(--cur);
+  font-size: 40pt;
+}
+
+.srchtxt {
+  cursor: pointer;
+}
+
+.srchtxt:hover {
+  animation: smallshow 0.2s !important;
 }
