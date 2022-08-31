@@ -2,12 +2,26 @@
 const createButton = document.querySelector(".createSub");
 const rows = document.querySelectorAll(".createRows");
 
-createButton.onclick = function () {
-  rows.forEach((e) => {
-    e.classList.toggle("Dsnone");
+let click = true;
 
-    e.classList.toggle("animationOpacity");
-  });
+createButton.onclick = function () {
+  if (click) {
+    rows.forEach((e) => {
+      e.classList.toggle("Dsnone");
+
+      e.classList.add("animationOpacity");
+    });
+  } else {
+    rows.forEach((e) => {
+      e.classList.remove("animationOpacity2");
+      e.classList.add("animationOpacity2");
+      setTimeout(function () {
+        e.classList.remove("animationOpacity2");
+        e.classList.toggle("Dsnone");
+      }, 800);
+    });
+  }
+  click ? (click = false) : (click = true);
 };
 /*--------END create functionallity ----------*/
 
@@ -93,6 +107,7 @@ function getListName(userID, listID, element) {
       console.log(data);
     },
   });
+  location.reload();
 }
 
 //diplay Description
@@ -113,12 +128,14 @@ function deleteEvent(eventid, element, userid) {
       console.log(data);
     },
   });
+  location.reload();
 }
 
 //likeBTN
 //List delete
 function showList(element) {
   element.querySelector(".fa-trash-can").classList.toggle("delHide");
+  element.querySelector(".fa-angle-down").classList.toggle("delHide");
 }
 
 function deleteList(listid) {
@@ -131,4 +148,5 @@ function deleteList(listid) {
       console.log(data);
     },
   });
+  location.reload();
 }

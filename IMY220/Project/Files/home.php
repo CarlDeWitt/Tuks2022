@@ -174,9 +174,8 @@ echo  $_SESSION["UserIndex"];
     <div id="myModal" class="modal">
       <!-- Modal content -->
       <div class="modal-content">
-        <div class="modal-header">
-          <span class="close">&times;</span>
-          <h2>Your Lists</h2>
+        <div class="modal-header close">
+          <div class="YourLists">Your Lists</div>
         </div>
         <div class="modal-body">
           <div class="container listCont">
@@ -184,8 +183,8 @@ echo  $_SESSION["UserIndex"];
               <div class="col-md-6 col-12">
                 <form action="./PHP/createList.php" method="post">
                   <label for="listName" class="listhead">List Name:</label>
-                  <input type="text" id="listName" name="listName" class="form-control" placeholder="List Name" />
-                  <input type="submit" value="Create List" class="createSub" />
+                  <input type="text" id="listName" name="listName" class="form-control fc2" placeholder="List Name" />
+                  <input type="submit" value="Create List" class="createSub"></input>
                 </form>
               </div>
               <div class="col-md-6 col-12">

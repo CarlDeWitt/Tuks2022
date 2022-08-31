@@ -11,7 +11,7 @@ require "master.php";
             // echo print_r($rowE);
             $Lid = $rowE["id"]; 
             $LN = $rowE["ListName"];
-            echo "<div onclick='showList(this)' class=\"col-6 offset-3 ListHead\" >$LN <i class=\"fa-solid fa-trash-can delHide\" style=\"margin:0 0 0 10px;\" onclick='deleteList($Lid)'></i></div>";
+            echo "<div onclick='showList(this)' class=\"col-6 offset-3 ListHead\" >$LN <i class=\"fa-solid fa-angle-down\"></i><i class=\"fa-solid fa-trash-can delHide\" style=\"margin:0 0 0 10px;\" onclick='deleteList($Lid)'></i></div>";
             echo "<div class=\"row evenstDisp\">";
             $query3 = $S_list_events . " WHERE list_id = '$Lid' AND user_id = '$userid'";   
             $result3 = mysqli_query($mysqli, $query3);

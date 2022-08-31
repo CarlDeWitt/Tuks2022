@@ -92,7 +92,7 @@ body {
   color: var(--darkPurple);
   font-family: var(--exo);
   font-size: 1.5rem;
-  padding: 20px 40px !important;
+  padding: 20px 40px 0 40px !important;
 }
 
 .cont2 .row:first-child {
@@ -106,10 +106,12 @@ body {
   background-color: var(--medPurple);
   width: 100%;
   font-size: 24pt;
+  border: 0 !important;
   border-radius: var(--medBorder);
   padding: 5px 20px;
   text-align: left;
 }
+
 button i {
   margin: 0 0 0 10px;
   transition: all 0.5s;
@@ -194,6 +196,10 @@ button:hover i {
   font-size: 20pt !important;
 }
 
+.navContT:hover {
+  animation: smallshow 0.2s !important;
+}
+
 .card {
   position: relative !important;
   width: 100% !important;
@@ -238,10 +244,12 @@ button:hover i {
   border-radius: var(--medBorder);
   padding: 10px;
   font-size: 25pt;
+  border: 0 !important;
 }
 
 .searchBTN {
   background-color: var(--medPurple);
+  border: 0 !important;
   border-radius: var(--medBorder);
   padding: 5px 5px 5px 20px;
   width: 100%;
@@ -295,6 +303,11 @@ button:hover i {
   padding: 20px;
 }
 
+.createRows:last-child {
+  background-color: var(--darkPurple);
+  padding: 0 20px 20px 20px;
+}
+
 .Dsnone {
   display: none;
 }
@@ -303,14 +316,36 @@ button:hover i {
   animation: opacity 1s forwards;
 }
 
+.animationOpacity2 {
+  animation: opacityback 0.8s forwards;
+}
+
 @keyframes opacity {
   0% {
     margin-top: -100px;
+    scale: 0.8;
+    opacity: 0;
   }
   100% {
     margin-top: 0px;
+    opacity: 1;
+    scale: 1;
   }
 }
+
+@keyframes opacityback {
+  0% {
+    margin-top: 0px;
+    scale: 1;
+    opacity: 1;
+  }
+  100% {
+    margin-top: -150px;
+    scale: 0.8;
+    opacity: 0;
+  }
+}
+
 .EB {
   background-color: var(--darkPurple);
 }
@@ -334,12 +369,14 @@ button:hover i {
 .card-body {
   border-bottom-left-radius: var(--medBorder) !important;
   border-bottom-right-radius: var(--medBorder) !important;
+  padding: 10px 20px 20px 20px !important;
 }
 
 .Ename {
   font-size: 30pt;
   font-family: var(--exo);
   color: var(--grey);
+  margin-bottom: 10px;
 }
 .innerbody {
   background-color: var(--grey);
@@ -349,11 +386,43 @@ button:hover i {
   font-family: var(--exo);
   color: var(--darkPurple);
 }
+.innerbody:hover {
+  animation: smallshow 0.2s !important;
+  cursor: pointer;
+}
+.Radd:hover {
+  animation: medshow 0.2s !important;
+  cursor: pointer;
+}
+
+.Rheart:hover {
+  animation: medshow 0.2s !important;
+  cursor: pointer;
+}
+
+@keyframes medshow {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+@keyframes smallshow {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.98);
+  }
+}
 
 .Ehas {
   color: var(--medPurple);
   background-color: var(--medPurple);
   padding: 10px;
+  padding-left: 20px;
   border-radius: var(--medBorder);
   color: var(--grey);
 }
@@ -432,18 +501,23 @@ a {
 }
 
 .modal-header {
-  padding: 2px 16px;
-  background-color: var(--darkPurple);
-  color: white;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--medPurple);
+  color: var(--darkPurple);
   font-family: var(--exo);
+}
+.YourLists {
+  display: inline;
+  font-size: 20pt;
 }
 
 .modal-body {
-  padding: 2px 16px;
-  background-color: var(--medPurple);
-  background-image: url("../Images/Background.png");
-  background-repeat: no-repeat;
-  background-size: cover;
+  padding: 20px 16px;
+  background-color: var(--darkPurple);
   margin-top: -1px;
 }
 
@@ -503,6 +577,15 @@ a {
   color: var(--darkPurple);
 }
 
+.form-control {
+  padding: 10px;
+}
+
+.fc2 {
+  padding: 10px;
+  font-size: 20pt;
+}
+
 .listCont {
   background-color: var(--darkPurple);
   padding: 50px !important;
@@ -510,12 +593,19 @@ a {
 
 .listhead {
   font-size: 20pt;
+  cursor: pointer;
 }
 
 #Mylist {
-  margin: 10px 0;
+  margin: 40px 0 20px 0;
 }
 
 .cardName {
   text-align: center;
+  font-size: 20pt;
+  padding: 10px;
+}
+
+.Eloaction {
+  margin-bottom: 10px;
 }
