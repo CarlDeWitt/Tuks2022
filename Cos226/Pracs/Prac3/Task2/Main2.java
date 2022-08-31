@@ -7,11 +7,10 @@ public class Main2 {
          * numThreads = Enter the number of threads you want to run.
          * numLock = the lock you want to acquire. 0 for TAS, 1 for TATAS, 2 for EB.
          */
-        int numThreads = 5;
+        int numThreads = 50;
         int numLock = 0;
         for (int i = 0; i < numThreads; i++) {
             TestThread t = new TestThread(tas, tatas, eb, numLock);
-
             t.start();
         }
 
