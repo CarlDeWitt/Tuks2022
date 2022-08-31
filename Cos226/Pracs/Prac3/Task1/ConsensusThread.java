@@ -1,19 +1,20 @@
 public class ConsensusThread extends Thread {
 	private Consensus<Integer> consensus;
-	Sleep slp;
 
 	ConsensusThread(Consensus<Integer> consensusObject) {
 		consensus = consensusObject;
-		slp = new Sleep();
 	}
 
-	public void run() {
+	public synchronized void run() {
 		for (int i = 0; i < 5; i++) {
 
-			// System.out.println("");
 			consensus.propose(randomnum(200, 100));
 			consensus.decide();
-//			 System.out.println("");
+			try {
+				Thread.currentThread().sleep(randomnum(100, 50));
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 

@@ -13,6 +13,11 @@ public class RMWConsensus<T> extends ConsensusProtocol<T> {
         int i = Integer.parseInt(s.substring(s.indexOf('-') + 1));
         proposed[i] = value;
         System.out.println("Thread " + i + " proposed the value: R" + value);
+        try {
+            Thread.currentThread().sleep(randomnum(100, 50));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public void decide() {
@@ -23,5 +28,10 @@ public class RMWConsensus<T> extends ConsensusProtocol<T> {
         } else {
             System.out.println("\u001B[34mThread " + i + " Decided the value of: R" + proposed[r.get()] + "\u001B[0m");
         }
+    }
+
+    private int randomnum(int max, int min) {
+        double i = Math.random() * (max - min) + min;
+        return (int) i;
     }
 }

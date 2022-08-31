@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <title>jquery</title>
+  </head>
+  <body>
+    <h1 id="head">ADD IT TO THE LIST</h1>
+    <ul id="list">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </body>
+  <script>
+    let num = 4;
+
+    $(document).ready(function () {
+      $("#head").click(function () {
+        let str = `<li>new Item ${num++}</li>`;
+        $("#list").append(str);
+      });
+    });
+  </script>
+</html>
