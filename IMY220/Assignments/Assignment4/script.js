@@ -1,4 +1,5 @@
 $("document").ready(function(){
+   let id = 0;
     $(".submit").on("click", function(){
         /**
          * @description: Task 1
@@ -34,9 +35,9 @@ $("document").ready(function(){
             and select share. You will see an option for “embed” and it will provide you with the code for an 
             iframe.
          * 
-         * @Bonus 
+         * @Bonus multiple
          */
-        const msg = $("#message").val();   
+        const msg = $("#message").val() + " ";   
         const pattern = /https:\/\/www.youtube.com/;
         if(msg.match(pattern)){
             const startPosition = msg.search("https://www.youtube.com/");
@@ -46,11 +47,44 @@ $("document").ready(function(){
             let msg2 = msg1.substring(0, endPosition);//has  the youtube link in here
             // console.log(msg2);
             msg2 = msg2.replace("watch?v=", "embed/");       
-            console.log(msg2);
-             
+            // console.log(msg2);
 
-            $(".messages.row").prepend("<div class='col-md-4 offset-4 msgs'>" + msg + "<iframe width='100%' height='315' src='" + msg2 + "' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div>");   
-                
+            
+            
+            
+            
+            
+            $(".messages.row").prepend("<div class='col-4 offset-4 msgs" + id++ + "'>" + msg + "<iframe width='100%' height='315' src='" + msg2 + "' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div>");   
+            
+            const msg3 = msg.substring(endPosition + 1, msg.length);
+
+            if(msg3.match(pattern)){
+               create2(msg3);
+            }
+               
+            function create2(msgnew){
+               console.log(msgnew);
+               
+               const msgN = msgnew + "";
+               const startPosition = msgN.search("https://www.youtube.com/");
+               // console.log('position: ' + position);
+               const msg1 = msgN.substring(startPosition);
+               const endPosition = msg1.search(" ");
+               let msg2 = msg1.substring(0, endPosition);//has  the youtube link in here
+               // console.log(msg2);
+               msg2 = msg2.replace("watch?v=", "embed/");
+               const number = id -1;
+               const idstr = "msgs" + number;
+               console.log(idstr);
+               
+                $(".idstr").append("<iframe width='100%' height='315' src='" + msg2 + "' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>");
+                const msg3 = msgN.substring(endPosition + 1, msg.length);
+
+                if(msg3.match(pattern)){
+                   create2(msg3);
+                }
+            }
+            
         }else{
             if(msg !== ""){    
                 $(".messages.row").prepend("<div class='col-4 offset-4 msgs'>" + msg + "</div>");  
