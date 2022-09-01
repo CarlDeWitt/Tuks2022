@@ -1,16 +1,16 @@
 <?php
 require "master.php";
 
-    $query = $S_e_events . " ORDER BY date ASC;";
-    $result = mysqli_query($mysqli, $query);
+$query = $S_e_events . " ORDER BY date ASC;";
+$result = mysqli_query($mysqli, $query);
 
-    // display data
-   
-    while ($rowE = mysqli_fetch_array($result)) {
-      echo "<div class='col-md-4'>
+// display data
+
+while ($rowE = mysqli_fetch_array($result)) {
+  echo "<div class='col-md-4'>
                     <div class='card' style='width: 18rem'>
                       <img
-                        src='Media/Images/eventplacholder.jpg'
+                        src='Media/Images/$rowE[img]'
                         class='card-img-top imgCont'
                         alt='Event img'
                       />
@@ -36,6 +36,4 @@ require "master.php";
                       </div>
                     </div>
                   </div>";
-    }
-    
-?>
+}

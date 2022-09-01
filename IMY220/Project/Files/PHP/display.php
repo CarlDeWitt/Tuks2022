@@ -1,25 +1,25 @@
-<?php 
+<?php
 require 'master.php';
 
-if(isset($_SESSION["UserIndex"])){
-    $userid = $_SESSION["UserIndex"];
-    $query = $S_e_events . " WHERE user_id = $userid ORDER BY date ASC;";
-    $result = mysqli_query($mysqli, $query);
+if (isset($_SESSION["UserIndex"])) {
+  $userid = $_SESSION["UserIndex"];
+  $query = $S_e_events . " WHERE user_id = $userid ORDER BY date ASC;";
+  $result = mysqli_query($mysqli, $query);
 
 
-    // display data
-   
-    while ($rowE = mysqli_fetch_array($result)) {
-        Helpdisplay($rowE);            
-    }
-     
+  // display data
+
+  while ($rowE = mysqli_fetch_array($result)) {
+    Helpdisplay($rowE);
+  }
 }
 
-function Helpdisplay($data){
+function Helpdisplay($data)
+{
   echo "<div class='col-lg-4 col-md-12'>
   <div class='card set' style='width: 18rem'>
     <img
-      src='Media/Images/eventplacholder.jpg'
+      src='Media/Images/$data[img]'
       class='card-img-top imgCont'
       alt='Event img'
     />
@@ -46,7 +46,3 @@ function Helpdisplay($data){
   </div>
 </div>";
 }
-
-
-
-?>

@@ -172,7 +172,9 @@ img {
 #logo {
   width: 100px;
   position: absolute;
-  top: 9%;
+  top: 8%;
+  font-size: 50px;
+  color: var(--medPurple);
 }
 
 .bounce {
