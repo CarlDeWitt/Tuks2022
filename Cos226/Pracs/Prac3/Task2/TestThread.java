@@ -25,9 +25,6 @@ public class TestThread extends Thread {
                  */
                 tas.lock();
                 try {
-
-                    System.out.println("Thread " + this.getName() + " acquired TAS lock and has counter: " + count++);
-
                 } finally {
                     tas.unlock();
                 }
@@ -38,15 +35,28 @@ public class TestThread extends Thread {
                 }
 
             } else if (lock == 1) {
-                /**
-                 * TATAS Lock
-                 */
+                tatas.lock();
+                try {
+                } finally {
+                    tatas.unlock();
+                }
+                try {
+                    Thread.sleep(randomnum(100, 100));
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
 
             } else if (lock == 2) {
-                /**
-                 * EB Lock
-                 */
-
+                eb.lock();
+                try {
+                } finally {
+                    eb.unlock();
+                }
+                try {
+                    Thread.sleep(randomnum(100, 100));
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
