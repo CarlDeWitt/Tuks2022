@@ -11,7 +11,6 @@ public class TestThread extends Thread {
         this.tatas = tatas;
         this.eb = eb;
         this.lock = lock;
-
     }
 
     volatile int count = 0;
@@ -20,11 +19,10 @@ public class TestThread extends Thread {
         for (int m = 0; m < 5; m++) {
 
             if (lock == 0) {
-                /**
-                 * TAS Lock
-                 */
+
                 tas.lock();
                 try {
+                    // System.out.println("here");
                 } finally {
                     tas.unlock();
                 }
@@ -37,6 +35,7 @@ public class TestThread extends Thread {
             } else if (lock == 1) {
                 tatas.lock();
                 try {
+
                 } finally {
                     tatas.unlock();
                 }

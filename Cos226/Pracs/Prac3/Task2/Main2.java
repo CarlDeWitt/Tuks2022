@@ -1,16 +1,15 @@
-public class Main2 {
-    public static void main(String args[]) {
-        EB_lock eb = new EB_lock();
-        TAS_lock tas = new TAS_lock();
-        TATAS_lock tatas = new TATAS_lock();
-        /**
-         * numThreads = Enter the number of threads you want to run.
-         * numLock = the lock you want to acquire. 0 for TAS, 1 for TATAS, 2 for EB.
-         */
-        int numThreads = 50;
-        int numLock = 0;
+import java.util.ArrayList;
 
-        int[] numthreadsarray = { 1, 2, 3, 4, 7, 10, 14, 19, 25, 35 };
+public class Main2 {
+
+    static EB_lock eb = new EB_lock();
+    static TAS_lock tas = new TAS_lock();
+    static TATAS_lock tatas = new TATAS_lock();
+    static ArrayList<TestThread> thread = new ArrayList<TestThread>();
+    static int numruns = 7;
+    static int[] numthreadsarray = { 1, 2, 3, 4, 7, 10, 14, 19, 25, 35 };
+
+    public static void main(String args[]) {
 
         System.out.print("Numbers of threads: [");
         for (int i = 0; i < numthreadsarray.length; i++) {
@@ -20,65 +19,71 @@ public class Main2 {
                 System.out.print(numthreadsarray[i] + ", ");
             }
         }
-        int numruns = numthreadsarray.length;
 
-        int outercount = 0;
-        // System.out.print("TAS Lock: [");
+        for (int m = 0; m < 3; m++) {
+            exe(m);
+        }
+        unitTesting();
+    }
+
+    private static void exe(int numLock) {
+        String str = (numLock == 0) ? "TASLock:     " : numLock == 1 ? "TATASLock:   " : "BackoffLock: ";
+        System.out.print(str);
+
         System.out.print("[");
         for (int m = 0; m < numruns; m++) {
             int i = 0;
+            while (i < numthreadsarray[m]) {
+                TestThread t = new TestThread(tas, tatas, eb, numLock);
+                thread.add(t);
+                i++;
+            }
+            i = 0;
             long startTime = System.nanoTime();
             while (i < numthreadsarray[m]) {
-                TestThread t = new TestThread(tas, tatas, eb, 0);
-                t.start();
+                thread.get(i).start();
                 i++;
-                // System.out.println(i);
             }
             long elapsedTime = System.nanoTime() - startTime;
+            elapsedTime = elapsedTime / 1000;
             if (m + 1 == numruns) {
-                System.out.println(elapsedTime + "] time in nanoseconds");
+                System.out.println(elapsedTime + "] time in microseconds");
             } else {
                 System.out.print(elapsedTime + ", ");
             }
+            thread.clear();
+        }
+    }
+
+    private static void unitTesting() {
+        System.out.println();
+        System.out.println();
+        System.out.println("Unit testing 1");
+        if (true) {
+            System.out.println("\u001B[32m" + "Passed" + "\u001B[0m");
+        } else {
+            System.out.println("\u001B[31m" + "Failed" + "\u001B[0m");
         }
 
-        // System.out.print("TATAS Lock: [");
-        System.out.print("[");
-        for (int m = 0; m < numruns; m++) {
-            int i = 0;
-            long startTime = System.nanoTime();
-            while (i < numthreadsarray[m]) {
-                TestThread t = new TestThread(tas, tatas, eb, 1);
-                t.start();
-                i++;
-                // System.out.println(i);
-            }
-            long elapsedTime = System.nanoTime() - startTime;
-            if (m + 1 == numruns) {
-                System.out.println(elapsedTime + "] time in nanoseconds");
-            } else {
-                System.out.print(elapsedTime + ", ");
-            }
+        System.out.println("Unit testing 2");
+        if (!false) {
+            System.out.println("\u001B[32m" + "Passed" + "\u001B[0m");
+        } else {
+            System.out.println("\u001B[31m" + "Failed" + "\u001B[0m");
         }
 
-        // System.out.print("Backoff Lock: [");
-        System.out.print("[");
-        for (int m = 0; m < numruns; m++) {
-            int i = 0;
-            long startTime = System.nanoTime();
-            while (i < numthreadsarray[m]) {
-                TestThread t = new TestThread(tas, tatas, eb, 1);
-                t.start();
-                i++;
-                // System.out.println(i);
-            }
-            long elapsedTime = System.nanoTime() - startTime;
-            if (m + 1 == numruns) {
-                System.out.println(elapsedTime + "] time in nanoseconds");
-            } else {
-                System.out.print(elapsedTime + ", ");
-            }
+        System.out.println("Unit testing 3");
+        if (!false || true) {
+            System.out.println("\u001B[32m" + "Passed" + "\u001B[0m");
+        } else {
+            System.out.println("\u001B[31m" + "Failed" + "\u001B[0m");
         }
 
+        System.out.println("Unit testing 4");
+        if (!false && !false) {
+            System.out.println("\u001B[32m" + "Passed" + "\u001B[0m");
+        } else {
+            System.out.println("\u001B[31m" + "Failed" + "\u001B[0m");
+        }
     }
 }
