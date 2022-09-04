@@ -30,12 +30,7 @@ int main()
     n1->add(new JAVAfiles("main", "This is the main file"));
     n1->add(new HTMLfiles("index", "this is index file"));
     n1->add(n2);
-
-    // n1->list();
-    // n5->run();
     n6->run();
-
-    // n6->clearContent();
 
     delete n1;
     delete n2;
