@@ -47,6 +47,20 @@
     "xtr1common": "cpp",
     "xutility": "cpp",
     "sstream": "cpp",
-    "chrono": "cpp"
+    "chrono": "cpp",
+    "array": "cpp",
+    "charconv": "cpp",
+    "format": "cpp",
+    "forward_list": "cpp",
+    "iomanip": "cpp",
+    "locale": "cpp",
+    "map": "cpp",
+    "optional": "cpp",
+    "ratio": "cpp",
+    "xlocbuf": "cpp",
+    "xlocmes": "cpp",
+    "xlocmon": "cpp",
+    "xloctime": "cpp",
+    "xtree": "cpp"
   }
 }

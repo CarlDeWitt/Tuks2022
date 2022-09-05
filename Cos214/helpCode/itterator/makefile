@@ -7,4 +7,4 @@ main:
 all:
 
 clean:
-	rm *.o
+	rm *.o main

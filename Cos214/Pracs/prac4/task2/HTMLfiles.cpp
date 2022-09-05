@@ -1,6 +1,6 @@
 #include "HTMLfiles.h"
 
-HTMLfiles::HTMLfiles(string name, string content) : File(name, content)
+HTMLfiles::HTMLfiles(string name, string content) : File(name, content, "file")
 {
 	this->type = ".html";
 }

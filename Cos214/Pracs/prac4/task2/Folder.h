@@ -16,12 +16,11 @@ private:
 
 public:
 	Folder(string name);
-
 	void add(Node *arg);
-
 	void remove(Node *arg);
 	void run();
 	void list();
+	vector<Node *> getDirectory();
 	~Folder();
 };
 

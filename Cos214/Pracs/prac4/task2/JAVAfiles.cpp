@@ -1,6 +1,6 @@
 #include "JAVAfiles.h"
 
-JAVAfiles::JAVAfiles(string name, string content) : File(name, content)
+JAVAfiles::JAVAfiles(string name, string content) : File(name, content, "file")
 {
 	this->type = ".java";
 }
