@@ -11,7 +11,7 @@ Node *DirectoryIterator::first()
 }
 Node *DirectoryIterator::next()
 {
-    return directoryCopy[it++];
+    return directoryCopy[++it];
 }
 
 bool DirectoryIterator::hasNext()
@@ -32,7 +32,7 @@ bool DirectoryIterator::hasNext()
     {
         return false;
     }
-    return false;
+    // return false;
 }
 Node *DirectoryIterator::current()
 {
@@ -46,10 +46,7 @@ bool DirectoryIterator::listDirectory()
         directoryCopy[it]->list();
         return true;
     }
-    else
-    {
-        return false;
-    }
+    return false;
 }
 bool DirectoryIterator::isEmpty()
 {

@@ -22,7 +22,6 @@ void Folder::list()
 {
 	// cout << "-----Folder " << name << "-----" << endl;
 	// cout << "---------------------" << endl;
-	// cout << name << endl;
 
 	// vector<Node *>::iterator it = this->directory.begin();
 
@@ -40,10 +39,17 @@ void Folder::list()
 	// 	// }
 	// 	it++;
 	// }
+	// if (this->type == "folder")
+	// {
+	// 	cout << " -" << this->name << endl;
+	// }
 
 	for (int i = 0; i < this->directory.size(); i++)
 	{
-		this->directory[i]->list();
+		if (this->directory[i]->type == "folder")
+		{
+			cout << " /" << directory[i]->name << endl;
+		}
 	}
 }
 

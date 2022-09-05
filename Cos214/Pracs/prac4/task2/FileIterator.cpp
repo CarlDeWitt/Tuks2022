@@ -32,7 +32,7 @@ bool FileIterator::hasNext()
     {
         return false;
     }
-    return false;
+    // return false;
 }
 Node *FileIterator::current()
 {
@@ -45,19 +45,7 @@ bool FileIterator::isEmpty()
 }
 bool FileIterator::listFile()
 {
-    while (directoryCopy[it] != *directoryCopy.end())
-    {
-        if (directoryCopy[it]->type == "file")
-        {
-            directoryCopy[it++]->list();
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-    return false;
+    return this->isEmpty();
 }
 void FileIterator::addFile(File *f)
 {

@@ -19,50 +19,61 @@ int main()
     Node *n3 = new Folder("IMY220 prac");
     Node *n4 = new Folder("IMY220 assignment");
     Node *n5 = new Folder("COS226");
+    Node *n6 = new Folder("COS284");
 
-    // Node *n5 = new HTMLfiles("IMY220 assignment", "Hello World");
-    // Node *n6 = new JAVAfiles("COS226 assignment", "Hello World");
-    // n2->add(n3);
+    n1->add(new HTMLfiles("index", "<p>Hello World</p>"));
+    n1->add(new HTMLfiles("about", "<p>About</p>"));
 
-    n3->add(new HTMLfiles("splash", "this is index file"));
-    n3->add(new HTMLfiles("about", "this is about file"));
+    n3->add(new HTMLfiles("login", "<p>login</p>"));
+    n3->add(new HTMLfiles("signup", "<p>signup</p>"));
 
-    // n2->add(n4);
-    // n4->add(new HTMLfiles("ass1", "this is index file"));
-    // n4->add(n5);
+    n4->add(new HTMLfiles("splash", "<p>Splash</p>"));
+    n4->add(new HTMLfiles("home", "<p>Home</p>"));
 
-    // n1->add(new JAVAfiles("main", "This is the main file"));
+    n5->add(new JAVAfiles("Main", "public class Main "));
+    n5->add(new JAVAfiles("thread", "public class thread "));
+
+    n6->add(new JAVAfiles("asm", "lol get wrecked"));
+    n6->add(new JAVAfiles("asm2", "lol get wrecked again"));
+    n6->add(new JAVAfiles("asm3", "lol get wrecked again again"));
+    n6->add(new JAVAfiles("asm4", "lol get wrecked again again again"));
+    n6->add(new JAVAfiles("asm5", "lol get wrecked again again again again"));
+    n6->add(new JAVAfiles("asm6", "lol get wrecked again again again again again"));
     n1->add(n2);
-    n1->add(new HTMLfiles("index", "this is index file"));
-    n1->add(n3);
-    n1->add(n4);
-    n3->add(n5);
+    n1->add(n5);
+    n1->add(n6);
+    n2->add(n3);
+    n2->add(n4);
 
-    // NodeIterator *it = new DirectoryIterator(n1->getDirectory());
+    n2->add(new Folder("COS226 prac"));
+    n5->add(new Folder("COS226 prac"));
+
+    NodeIterator *Fodlerit = new DirectoryIterator(n1->getDirectory());
+    NodeIterator *fileIT = new FileIterator(n1->getDirectory());
     // // n6->run();
     // it->addDirectory(new Folder("COS226"));
     // // it->removeDirectory();
 
-    // while (it->hasNext())
-    // {
-    //     // it->listDirectory();
-    //     cout << it->next()->name << endl;
-    // }
-
-    NodeIterator *fileIT = new FileIterator(n3->getDirectory());
-    while (fileIT->hasNext())
+    while (Fodlerit->hasNext())
     {
-        fileIT->listFile();
-        // cout << fileIT->next()->name << endl;
+        cout << Fodlerit->current()->name << endl;
+        Fodlerit->listDirectory();
+        // cout << Fodlerit->next() << endl;
+        Fodlerit->next();
     }
-    // n1->list();
-    // cout << n1->type << endl;
-    // cout << n6->type << endl;
+
+    // while (fileIT->hasNext())
+    // {
+    //     fileIT->current()->list();
+    //     fileIT->next();
+    // }
 
     delete n1;
     delete n2;
     delete n3;
     delete n4;
+    delete n5;
+    delete n6;
 
     return 0;
 }

@@ -3,7 +3,7 @@
 #include "NodeIterator.h"
 #include "Folder.h"
 
-class DirectoryIterator : NodeIterator
+class DirectoryIterator : public NodeIterator
 {
 private:
 	Folder *f;
