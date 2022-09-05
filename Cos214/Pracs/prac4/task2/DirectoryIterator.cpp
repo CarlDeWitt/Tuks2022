@@ -27,13 +27,12 @@ bool DirectoryIterator::hasNext()
             it++;
             hasNext();
         }
-        // cout << directoryCopy[it]->type << endl;
-        // return true;
     }
     else
     {
         return false;
     }
+    return false;
 }
 Node *DirectoryIterator::current()
 {
@@ -56,10 +55,6 @@ bool DirectoryIterator::isEmpty()
 {
     return directoryCopy.size() == 0;
 }
-bool DirectoryIterator::listFile()
-{
-    return false;
-}
 void DirectoryIterator::addDirectory(Folder *f)
 {
     directoryCopy.push_back(f);
@@ -67,14 +62,6 @@ void DirectoryIterator::addDirectory(Folder *f)
 void DirectoryIterator::removeDirectory()
 {
     directoryCopy.pop_back();
-}
-void DirectoryIterator::addFile(File *f)
-{
-    return;
-}
-void DirectoryIterator::removeFile()
-{
-    return;
 }
 
 DirectoryIterator::~DirectoryIterator()

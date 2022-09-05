@@ -2,9 +2,8 @@
 #define DIRECTORYITERATOR_H
 #include "NodeIterator.h"
 #include "Folder.h"
-#include "File.h"
 
-class DirectoryIterator : public NodeIterator
+class DirectoryIterator : NodeIterator
 {
 private:
 	Folder *f;
@@ -19,11 +18,8 @@ public:
 	bool hasNext();
 	bool listDirectory();
 	bool isEmpty();
-	bool listFile();
 	void addDirectory(Folder *);
 	void removeDirectory();
-	void addFile(File *);
-	void removeFile();
 	~DirectoryIterator();
 };
 

@@ -16,11 +16,8 @@ public:
     Node *next();
     Node *current();
     bool hasNext();
-    bool listDirectory();
     bool isEmpty();
     bool listFile();
-    void addDirectory(Folder *);
-    void removeDirectory();
     void addFile(File *);
     void removeFile();
     ~FileIterator();

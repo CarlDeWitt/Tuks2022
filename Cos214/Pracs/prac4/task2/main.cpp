@@ -49,7 +49,7 @@ int main()
     //     cout << it->next()->name << endl;
     // }
 
-    NodeIterator *fileIT = new FileIterator(n1->getDirectory());
+    NodeIterator *fileIT = new FileIterator(n3->getDirectory());
     while (fileIT->hasNext())
     {
         fileIT->listFile();
