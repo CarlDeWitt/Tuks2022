@@ -8,6 +8,8 @@
 #include "NodeIterator.h"
 #include "DirectoryIterator.h"
 #include "FileIterator.h"
+#include "Root.h"
+#include "Caretaker.h"
 
 using namespace std;
 
@@ -54,19 +56,70 @@ int main()
     // it->addDirectory(new Folder("COS226"));
     // // it->removeDirectory();
 
-    while (Fodlerit->hasNext())
+    // while (Fodlerit->hasNext())
+    // {
+    //     cout << Fodlerit->current()->name << endl;
+    //     Fodlerit->listDirectory();
+    //     // cout << Fodlerit->next() << endl;
+    //     Fodlerit->next();
+    // }
+
+    /*memento*/
+    Caretaker *caretaker = new Caretaker();
+
+    while (fileIT->hasNext())
     {
-        cout << Fodlerit->current()->name << endl;
-        Fodlerit->listDirectory();
-        // cout << Fodlerit->next() << endl;
-        Fodlerit->next();
+        fileIT->current()->list();
+        fileIT->next();
     }
 
-    // while (fileIT->hasNext())
-    // {
-    //     fileIT->current()->list();
-    //     fileIT->next();
-    // }
+    caretaker->doo(n1->create());
+
+    n1->add(new JAVAfiles("asm6", "lol get wrecked again again again again again"));
+
+    cout << "" << endl;
+    fileIT = new FileIterator(n1->getDirectory());
+
+    while (fileIT->hasNext())
+    {
+        fileIT->current()->list();
+        fileIT->next();
+    }
+
+    caretaker->doo(n1->create());
+
+    n1->add(new JAVAfiles("asm420", "lol get wrecked again again again again again"));
+
+    cout << "" << endl;
+    fileIT = new FileIterator(n1->getDirectory());
+
+    while (fileIT->hasNext())
+    {
+        fileIT->current()->list();
+        fileIT->next();
+    }
+
+    n1->restrore(caretaker->undo());
+    cout << "" << endl;
+
+    fileIT = new FileIterator(n1->getDirectory());
+
+    while (fileIT->hasNext())
+    {
+        fileIT->current()->list();
+        fileIT->next();
+    }
+
+    n1->restrore(caretaker->undo());
+    cout << "" << endl;
+
+    fileIT = new FileIterator(n1->getDirectory());
+
+    while (fileIT->hasNext())
+    {
+        fileIT->current()->list();
+        fileIT->next();
+    }
 
     delete n1;
     delete n2;
@@ -74,6 +127,5 @@ int main()
     delete n4;
     delete n5;
     delete n6;
-
     return 0;
 }

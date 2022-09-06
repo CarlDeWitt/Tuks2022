@@ -25,6 +25,7 @@ bool DirectoryIterator::hasNext()
         else
         {
             it++;
+
             hasNext();
         }
     }

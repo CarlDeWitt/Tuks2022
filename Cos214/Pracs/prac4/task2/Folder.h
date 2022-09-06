@@ -6,6 +6,8 @@
 #include <iostream>
 using namespace std;
 
+class Node;
+
 class Folder : public Node
 {
 
@@ -21,6 +23,10 @@ public:
 	void run();
 	void list();
 	vector<Node *> getDirectory();
+	void setDirectory(vector<Node *>);
+	Root *create();
+	void restrore(Root *r);
+	void clear();
 	~Folder();
 };
 

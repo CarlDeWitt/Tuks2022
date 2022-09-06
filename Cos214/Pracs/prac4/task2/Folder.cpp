@@ -63,6 +63,23 @@ vector<Node *> Folder::getDirectory()
 	return directory;
 }
 
+void Folder::setDirectory(vector<Node *> direc)
+{
+	this->directory = direc;
+}
+Root *Folder::create()
+{
+	return new Root(getDirectory());
+}
+void Folder::restrore(Root *r)
+{
+	this->directory = r->getState();
+}
+void Folder::clear()
+{
+	// r->clear();
+}
+
 Folder::~Folder()
 {
 }

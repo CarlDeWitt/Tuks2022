@@ -30,6 +30,7 @@ bool FileIterator::hasNext()
     }
     else
     {
+        it = 0;
         return false;
     }
     // return false;

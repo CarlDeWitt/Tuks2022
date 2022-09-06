@@ -4,9 +4,13 @@
 #include <ctime>
 #include "string"
 #include "vector"
+#include "Root.h"
 using namespace std;
+class Root;
+
 class Node
 {
+private:
 public:
 	string type;
 	string name;
@@ -16,6 +20,10 @@ public:
 	virtual void list() = 0;
 	virtual ~Node();
 	virtual vector<Node *> getDirectory();
+	virtual void setDirectory(vector<Node *>);
+	virtual Root *create();
+	virtual void restrore(Root *r);
+	virtual void clear();
 };
 
 #endif
