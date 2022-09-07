@@ -28,6 +28,16 @@ void Node::clear()
 {
 }
 
+void Node::setMacfee(Macfee *m)
+{
+    this->macfeeptr = m;
+}
+
+string Node::getContent()
+{
+    return "";
+}
+
 Node::~Node()
 {
 }

@@ -18,6 +18,11 @@ string HTMLfiles::getType()
 {
 	return type;
 }
+// void HTMLfiles::renameFile(string n)
+// {
+// 	name = n;
+// 	notifyAll();
+// }
 
 HTMLfiles::~HTMLfiles()
 {

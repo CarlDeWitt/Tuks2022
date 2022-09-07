@@ -14,6 +14,7 @@ public:
 	DirectoryIterator(vector<Node *> directory);
 	Node *first();
 	Node *next();
+	Node *nextl();
 	Node *current();
 	bool hasNext();
 	bool listDirectory();

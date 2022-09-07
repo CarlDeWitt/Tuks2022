@@ -11,7 +11,6 @@ public class TAS_lock implements Lock {
         while (state.getAndSet(true)) {
         }
         ;
-        Thread.yield();
     }
 
     @Override

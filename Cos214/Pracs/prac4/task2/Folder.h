@@ -25,6 +25,8 @@ public:
 	vector<Node *> getDirectory();
 	void setDirectory(vector<Node *>);
 	Root *create();
+	void notifyAll();
+	void rename(string);
 	void restrore(Root *r);
 	void clear();
 	~Folder();

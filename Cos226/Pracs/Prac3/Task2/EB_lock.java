@@ -5,8 +5,8 @@ import java.util.concurrent.locks.Lock;
 
 public class EB_lock implements Lock {
     private AtomicBoolean state = new AtomicBoolean(false);
-    private static final int MIN_DELAY = 50;
-    private static final int MAX_DELAY = 100;
+    private static final int MIN_DELAY = 69;
+    private static final int MAX_DELAY = 420;
 
     @Override
     public void lock() {
