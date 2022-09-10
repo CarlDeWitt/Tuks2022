@@ -1,0 +1,5 @@
+[
+    {"time": "1pm - 3pm", "location": "Brooklyn" ,"weather": "Clear"},
+    {"time": "8am - 4pm", "location": "Drakensberg", "weather": "Cloudy"},
+    {"time": "8am - 6pm", "location": "Hatfield", "weather": "Sunny"}
+]
