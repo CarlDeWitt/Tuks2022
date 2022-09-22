@@ -1,3 +1,4 @@
+import java.nio.IntBuffer;
 import java.util.ArrayList;
 
 public class Main2 {
@@ -5,8 +6,7 @@ public class Main2 {
     static EB_lock eb = new EB_lock();
     static TAS_lock tas = new TAS_lock();
     static TATAS_lock tatas = new TATAS_lock();
-    static ArrayList<TestThread> thread = new ArrayList<TestThread>();
-    static int numruns = 7;
+    static int numruns = 5;
     static int[] numthreadsarray = { 1, 2, 3, 4, 7, 10, 14, 19, 25, 35 };
 
     public static void main(String args[]) {
@@ -27,27 +27,36 @@ public class Main2 {
     }
 
     private static void exe(int numLock) {
+
         String str = (numLock == 0) ? "TASLock:     " : numLock == 1 ? "TATASLock:   " : "BackoffLock: ";
         System.out.print(str);
 
         System.out.print("[");
-        for (int m = 0; m < numruns; m++) {
-            int i = 0;
-            while (i < numthreadsarray[m]) {
+        for (int i = 0; i < numruns; i++) {
+            ArrayList<TestThread> thread = new ArrayList<TestThread>();
+            // System.out.println(numthreadsarray[i]);
+            for (int m = 0; m < numthreadsarray[i]; m++) {
                 TestThread t = new TestThread(tas, tatas, eb, numLock);
                 thread.add(t);
-                i++;
             }
-            i = 0;
+
             long startTime = System.nanoTime();
-            while (i < numthreadsarray[m]) {
-                thread.get(i).start();
-                i++;
+            for (int m = 0; m < numthreadsarray[i]; m++) {
+                thread.get(m).start();
+
+                try {
+                    for (int j = 0; j < numthreadsarray[i]; j++) {
+                        thread.get(j).join();
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
             long elapsedTime = System.nanoTime() - startTime;
-            elapsedTime = elapsedTime / 1000;
-            if (m + 1 == numruns) {
-                System.out.println(elapsedTime + "] time in microseconds");
+            elapsedTime = elapsedTime / 1000000;
+
+            if (i + 1 == numruns) {
+                System.out.println(elapsedTime + "] time in nanoseconds");
             } else {
                 System.out.print(elapsedTime + ", ");
             }

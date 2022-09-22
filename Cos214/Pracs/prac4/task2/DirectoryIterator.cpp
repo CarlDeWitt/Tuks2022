@@ -16,7 +16,7 @@ Node *DirectoryIterator::next()
 
 bool DirectoryIterator::hasNext()
 {
-    if (directoryCopy[it] != *directoryCopy.end())
+    if (directoryCopy[it + 1] != *directoryCopy.end())
     {
         if (directoryCopy[it]->type == "folder")
         {
@@ -25,7 +25,6 @@ bool DirectoryIterator::hasNext()
         else
         {
             it++;
-
             hasNext();
         }
     }
@@ -34,6 +33,15 @@ bool DirectoryIterator::hasNext()
         return false;
     }
     // return false;
+}
+
+Node *DirectoryIterator::nextl()
+{
+    if (directoryCopy[it + 1] == *directoryCopy.end())
+    {
+        it = -1;
+    }
+    return directoryCopy[++it];
 }
 Node *DirectoryIterator::current()
 {

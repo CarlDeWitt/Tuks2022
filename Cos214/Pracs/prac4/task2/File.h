@@ -11,7 +11,6 @@ class File : public Node
 {
 
 private:
-	string name;
 	string content;
 	int time;
 
@@ -19,7 +18,7 @@ public:
 	File(string name, string content, string type);
 	void run();
 	void clearContent();
-	void renameFile(string name);
+	void rename(string name);
 	void addContent(string content);
 	void list();
 	void add(Node *arg);
@@ -27,6 +26,8 @@ public:
 	virtual void Open() = 0;
 	virtual void Close() = 0;
 	virtual string getType() = 0;
+	string getContent();
+	void notifyAll();
 	virtual ~File();
 };
 

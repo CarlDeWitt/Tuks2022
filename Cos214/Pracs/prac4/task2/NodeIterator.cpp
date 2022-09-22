@@ -12,6 +12,11 @@ Node *NodeIterator::next()
 {
     return NULL;
 }
+
+Node *NodeIterator::nextl()
+{
+    return NULL;
+}
 bool NodeIterator::hasNext()
 {
     return false;

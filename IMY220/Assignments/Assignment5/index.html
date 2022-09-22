@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IMY 220 - Assignment 5</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Carl de Witt" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mt-3 mb-5">IMY 220 - Assignment 5</h1>
+      <div id="eventList">
+        <!--Reference Event-->
+        <div class="card mb-3">
+          <div class="card-header">Event title</div>
+          <div class="card-body">
+            <p>Description of event</p>
+            <b>2022/05/01</b>
+            <p>Will you be attending?</p>
+            <div class="form-check" data-correct="true">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="eventAttendance1"
+                id="event1Attending1"
+              />
+              <label class="form-check-label" for="event1Attending1">
+                Yes
+              </label>
+            </div>
+
+            <div class="form-check" data-correct="false">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="eventAttendance1"
+                id="event1Attending2"
+              />
+              <label class="form-check-label" for="event1Attending2">
+                No
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script
+        src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+        crossorigin="anonymous"
+      ></script>
+      <script src="script.js"></script>
+    </div>
+  </body>
+</html>

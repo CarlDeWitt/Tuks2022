@@ -1,10 +1,10 @@
-p3: p3.o
-	ld -o p3 p3.o
-p3.o:
-	yasm -f elf64 -g dwarf2 p3.asm
+p2: p2.o
+	ld -o p2 p2.o
+p2.o:
+	yasm -f elf64 -g dwarf2 p2.asm
 run:
-	./p3
+	./p2
 debug:
-	gdb p3
+	gdb p2
 clean:
-	rm -f p3.o p3 p3.lst p3.out
+	rm -f p2.o p2 p2.lst p2.out

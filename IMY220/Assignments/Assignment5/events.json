@@ -1,0 +1,50 @@
+[
+	{
+		"title": "Picnic in the park",
+		"description": "Going for a picnic in the park with my friends",
+		"date": "2022/05/05",
+		"attending": 
+		[
+			{
+				"going": "yes",
+				"correct": true
+			},
+			{
+				"going": "no",
+				"correct": false
+			}
+		]
+	},
+	{
+		"title": "One day roadtrip",
+		"description": "Roadtrip with my friends to do some sight seeing",
+		"date": "2022/05/09",
+		"attending": 
+		[
+			{
+				"going": "yes",
+				"correct": true
+			},
+			{
+				"going": "no",
+				"correct": false
+			}
+		]
+	},
+	{
+		"title": "Rock Concert",
+		"description": "Concert in the botanical gardens with rock artists performing",
+		"date": "2022/03/12",
+		"attending": 
+		[
+			{
+				"going": "yes",
+				"correct": true
+			},
+			{
+				"going": "no",
+				"correct": false
+			}
+		]
+	}
+]

@@ -16,7 +16,7 @@ public class TestThread extends Thread {
     volatile int count = 0;
 
     public void run() {
-        for (int m = 0; m < 5; m++) {
+        for (int m = 0; m < 1; m++) {
 
             if (lock == 0) {
 
@@ -27,7 +27,7 @@ public class TestThread extends Thread {
                     tas.unlock();
                 }
                 try {
-                    Thread.sleep(randomnum(100, 100));
+                    Thread.sleep(100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -40,7 +40,7 @@ public class TestThread extends Thread {
                     tatas.unlock();
                 }
                 try {
-                    Thread.sleep(randomnum(100, 100));
+                    Thread.sleep(100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -52,16 +52,11 @@ public class TestThread extends Thread {
                     eb.unlock();
                 }
                 try {
-                    Thread.sleep(randomnum(100, 100));
+                    Thread.sleep(100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
         }
-    }
-
-    private int randomnum(int max, int min) {
-        double i = Math.random() * (max - min) + min;
-        return (int) i;
     }
 }

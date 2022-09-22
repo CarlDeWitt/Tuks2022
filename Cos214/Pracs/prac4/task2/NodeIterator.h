@@ -12,6 +12,7 @@ public:
 	NodeIterator();
 	virtual Node *first();
 	virtual Node *next();
+	virtual Node *nextl();
 	virtual bool hasNext();
 	virtual Node *current();
 	virtual bool listDirectory();

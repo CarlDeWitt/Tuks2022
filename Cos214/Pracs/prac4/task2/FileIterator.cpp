@@ -16,6 +16,8 @@ Node *FileIterator::next()
 
 bool FileIterator::hasNext()
 {
+    cout << "Jake is a 🤡 and a big 📦" << endl;
+
     if (directoryCopy[it] != *directoryCopy.end())
     {
         if (directoryCopy[it]->type == "file")
@@ -35,8 +37,31 @@ bool FileIterator::hasNext()
     }
     // return false;
 }
+Node *FileIterator::nextl()
+{
+    if (directoryCopy[it] != *directoryCopy.end())
+    {
+        if (directoryCopy[it]->type == "file")
+        {
+            return directoryCopy[++it];
+        }
+        else
+        {
+            it++;
+            hasNext();
+        }
+    }
+    else
+    {
+        it = -1;
+        nextl();
+    }
+    return directoryCopy[++it];
+}
 Node *FileIterator::current()
 {
+    cout << "Jake is a 🤡 and a big 📦" << endl;
+
     return directoryCopy[it];
 }
 

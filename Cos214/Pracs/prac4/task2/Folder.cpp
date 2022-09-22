@@ -17,6 +17,15 @@ void Folder::remove(Node *arg)
 {
 	throw "Not yet implemented";
 }
+void Folder::notifyAll()
+{
+}
+
+void Folder::rename(string name)
+{
+	this->name = name;
+	notifyAll();
+}
 
 void Folder::list()
 {

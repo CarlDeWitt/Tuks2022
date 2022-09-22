@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IMY 220 - Prac 5</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Carl de Witt" />
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      .active {
+        background-color: aquamarine;
+      }
+
+      .unactive {
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="my-3">Prac 5</h1>
+      <div class="row" id="events">
+        <div class="col-4 border unactive" id="Picnic">Picnic</div>
+        <div class="col-4 border unactive" id="Hike">Hike</div>
+        <div class="col-4 border unactive" id="Festival">Festival</div>
+      </div>
+      <br />
+      <div id="event">Click on an event above to find out more</div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

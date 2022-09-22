@@ -15,6 +15,7 @@ public:
     Node *first();
     Node *next();
     Node *current();
+    Node *nextl();
     bool hasNext();
     bool isEmpty();
     bool listFile();
