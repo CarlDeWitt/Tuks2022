@@ -28,16 +28,30 @@ public class VotingStation {
 			}
 		} else {
 			for (int i = 1; i <= 5; i++) {
-				t.tryLock();
+				t.lock();
 				try {
 					System.out.println(
 							"[" + Thread.currentThread().getName() + "]" + "[" + i + "] entered the voting station");
 					System.out.println("[" + Thread.currentThread().getName() + "]" + "[" + i + "] cast a vote");
-					printlist();
+					// printlistTO();
+					// error here
 				} finally {
 					t.unlock();
 				}
 			}
+		}
+	}
+
+	private void printlistTO() {
+		QNode n = l.getMyNode();
+		while (n != null) {
+			if (n.pred == null) {
+				System.out.print("{" + n.name + ": Person " + n.number + "}");
+				System.out.println();
+			} else
+				System.out.print("{" + n.name + ": Person " + n.number + "} -> ");
+
+			n = n.pred;
 		}
 	}
 
@@ -48,7 +62,7 @@ public class VotingStation {
 				System.out.print("{" + n.name + ": Person " + n.number + "}");
 				System.out.println();
 			} else
-				System.out.print("{" + n.name + ": Person " + n.number + "} ->");
+				System.out.print("{" + n.name + ": Person " + n.number + "} -> ");
 
 			n = n.next;
 		}

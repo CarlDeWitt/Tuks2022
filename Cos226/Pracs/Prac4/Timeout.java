@@ -59,7 +59,7 @@ public class Timeout implements Lock {
         QNode qnode = myNode.get();
         if (!tail.compareAndSet(qnode, null))
             qnode.pred = AVAILABLE;
-
+        qnode.number++;
     }
 
     @Override
