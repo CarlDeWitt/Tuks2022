@@ -183,68 +183,68 @@ int main()
     // }
 
     /*memento*/
-    Caretaker *caretaker = new Caretaker();
+    // Caretaker *caretaker = new Caretaker();
 
-    while (fileIT->hasNext())
-    {
-        fileIT->current()->list();
-        fileIT->next();
-    }
+    // while (fileIT->hasNext())
+    // {
+    //     fileIT->current()->list();
+    //     fileIT->next();
+    // }
 
-    caretaker->doo(n1->create());
+    // caretaker->doo(n1->create());
 
-    n1->add(new JAVAfiles("asm6", "lol get wrecked again again again again again"));
+    // n1->add(new JAVAfiles("asm6", "lol get wrecked again again again again again"));
 
-    cout << "" << endl;
-    fileIT = new FileIterator(n1->getDirectory());
+    // cout << "" << endl;
+    // fileIT = new FileIterator(n1->getDirectory());
 
-    while (fileIT->hasNext())
-    {
-        fileIT->current()->list();
-        fileIT->next();
-    }
+    // while (fileIT->hasNext())
+    // {
+    //     fileIT->current()->list();
+    //     fileIT->next();
+    // }
 
-    caretaker->doo(n1->create());
+    // caretaker->doo(n1->create());
 
-    n1->add(new JAVAfiles("asm420", "lol get wrecked again again again again again"));
+    // n1->add(new JAVAfiles("asm420", "lol get wrecked again again again again again"));
 
-    cout << "" << endl;
-    fileIT = new FileIterator(n1->getDirectory());
+    // cout << "" << endl;
+    // fileIT = new FileIterator(n1->getDirectory());
 
-    while (fileIT->hasNext())
-    {
-        fileIT->current()->list();
-        fileIT->next();
-    }
+    // while (fileIT->hasNext())
+    // {
+    //     fileIT->current()->list();
+    //     fileIT->next();
+    // }
 
-    n1->restrore(caretaker->undo());
-    cout << "" << endl;
+    // n1->restrore(caretaker->undo());
+    // cout << "" << endl;
 
-    fileIT = new FileIterator(n1->getDirectory());
+    // fileIT = new FileIterator(n1->getDirectory());
 
-    while (fileIT->hasNext())
-    {
-        fileIT->current()->list();
-        fileIT->next();
-    }
+    // while (fileIT->hasNext())
+    // {
+    //     fileIT->current()->list();
+    //     fileIT->next();
+    // }
 
-    n1->restrore(caretaker->undo());
-    cout << "" << endl;
+    // n1->restrore(caretaker->undo());
+    // cout << "" << endl;
 
-    fileIT = new FileIterator(n1->getDirectory());
+    // fileIT = new FileIterator(n1->getDirectory());
 
-    while (fileIT->hasNext())
-    {
-        fileIT->current()->list();
-        fileIT->next();
-    }
+    // while (fileIT->hasNext())
+    // {
+    //     fileIT->current()->list();
+    //     fileIT->next();
+    // }
 
-    delete n1;
-    delete n2;
-    delete n3;
-    delete n4;
-    delete n5;
-    delete n6;
+    // delete n1;
+    // delete n2;
+    // delete n3;
+    // delete n4;
+    // delete n5;
+    // delete n6;
 
     /**
      * @brief Testing memento
