@@ -12,11 +12,13 @@
 #include "Caretaker.h"
 #include <vector>
 
+using namespace std;
+
 vector<Node *> nodes;
 Node *cur;
 Caretaker *caretaker = new Caretaker();
+int dirCount = 0, fileCount = 0;
 
-using namespace std;
 void list();
 void addFile();
 void addFolder();
@@ -24,6 +26,7 @@ void bk();
 void rt();
 void cd();
 void dir();
+void file();
 
 void createHome()
 {
@@ -33,21 +36,6 @@ void createHome()
     Node *home = new Folder(name);
     nodes.push_back(home);
     cur = home;
-}
-void printoptions()
-{
-    cout << endl
-         << "-------MENU-------" << endl;
-    cout << "ls: to list all directory" << endl;
-    cout << "afile: to add a file" << endl;
-    cout << "adir: to add a folder" << endl;
-    cout << "cd: to choose current directory" << endl;
-    cout << "bk: to save current directory" << endl;
-    cout << "rt: to restore current directory" << endl;
-    cout << "file: to interact with file" << endl;
-    cout << "dir: to interact with directory" << endl;
-    cout << "ex: to exit" << endl
-         << endl;
 }
 
 int choice(string inpt)
@@ -100,6 +88,21 @@ int choice(string inpt)
     return 0;
 }
 
+void printoptions()
+{
+    cout << endl
+         << "-------MENU-------" << endl;
+    cout << "ls: to list all directory" << endl;
+    cout << "afile: to add a file" << endl;
+    cout << "adir: to add a folder" << endl;
+    cout << "cd: to choose current directory" << endl;
+    cout << "bk: to save current directory" << endl;
+    cout << "rt: to restore current directory" << endl;
+    cout << "file: to interact with file" << endl;
+    cout << "dir: to interact with directory" << endl;
+    cout << "ex: to exit" << endl
+         << endl;
+}
 void program()
 {
     if (nodes.size() == 0)
@@ -119,158 +122,46 @@ void program()
     program();
 }
 
-vector<Node *> nodes;
-Node *cur;
-Caretaker *caretaker = new Caretaker();
-int dirCount = 0, fileCount = 0;
-
-void list();
-void addFile();
-void addFolder();
-void bk();
-void rt();
-void cd();
-void dir();
-void file();
-
-void createHome()
-{
-    string name;
-    cout << "Hello there plz create your home directory" << endl;
-    cin >> name;
-    Node *home = new Folder(name);
-    nodes.push_back(home);
-    cur = home;
-}
-void printoptions()
-{
-    cout << endl
-         << "-------MENU-------" << endl;
-    cout << "ls: to list all directory" << endl;
-    cout << "afile: to add a file" << endl;
-    cout << "adir: to add a folder" << endl;
-    cout << "cd: to choose current directory" << endl;
-    cout << "bk: to save current directory" << endl;
-    cout << "rt: to restore current directory" << endl;
-    cout << "file: to interact with file" << endl;
-    cout << "dir: to interact with directory" << endl;
-    cout << "ex: to exit" << endl
-         << endl;
-}
-
-int choice(string inpt)
-{
-    if (inpt == "ls")
-    {
-        cout << "-------listing-------" << endl;
-        list();
-    }
-    else if (inpt == "mn" || inpt == "help")
-    {
-        printoptions();
-    }
-    else if (inpt == "afile")
-    {
-        cout << "-------Create file-------" << endl;
-        addFile();
-    }
-    else if (inpt == "adir")
-    {
-        cout << "-------creating a file-------" << endl;
-        addFolder();
-    }
-    else if (inpt == "cd")
-    {
-        cout << "-------change directory-------" << endl;
-        cd();
-    }
-    else if (inpt == "bk")
-    {
-        cout << "-------backup-------" << endl;
-        bk();
-    }
-    else if (inpt == "rt")
-    {
-        cout << "-------restore-------" << endl;
-        rt();
-    }
-    else if (inpt == "file")
-    {
-        fileCount = 0;
-        file();
-    }
-    else if (inpt == "dir")
-    {
-        dirCount = 0;
-        dir();
-    }
-    else if (inpt == "ex")
-    {
-        cout << "-------exit-------" << endl;
-
-        return -1;
-    }
-    return 0;
-}
-
-void program()
-{
-    if (nodes.size() == 0)
-    {
-        createHome();
-    }
-    // printoptions();
-    string input;
-    cout << "\033[32mroot@LAPTOP-58ND6B0H:/mnt/c/Users/" << cur->name << "\033[0m ";
-    cin >> input;
-    int i = choice(input);
-    if (i == -1)
-    {
-        return;
-    }
-    program();
-}
-
 int main()
 {
-    program();
+    // program();
 
-    // Node *n1 = new Folder("Home");
-    // Node *n2 = new Folder("IMY220");
-    // Node *n3 = new Folder("IMY220 prac");
-    // Node *n4 = new Folder("IMY220 assignment");
-    // Node *n5 = new Folder("COS226");
-    // Node *n6 = new Folder("COS284");
+    Node *n1 = new Folder("Home");
+    Node *n2 = new Folder("IMY220");
+    Node *n3 = new Folder("IMY220 prac");
+    Node *n4 = new Folder("IMY220 assignment");
+    Node *n5 = new Folder("COS226");
+    Node *n6 = new Folder("COS284");
 
-    // n1->add(new HTMLfiles("index", "<p>Hello World</p>"));
-    // n1->add(new HTMLfiles("about", "<p>About</p>"));
+    n1->add(new HTMLfiles("index", "<p>Hello World</p>"));
+    n1->add(new HTMLfiles("about", "<p>About</p>"));
 
-    // n3->add(new HTMLfiles("login", "<p>login</p>"));
-    // n3->add(new HTMLfiles("signup", "<p>signup</p>"));
+    n3->add(new HTMLfiles("login", "<p>login</p>"));
+    n3->add(new HTMLfiles("signup", "<p>signup</p>"));
 
-    // n4->add(new HTMLfiles("splash", "<p>Splash</p>"));
-    // n4->add(new HTMLfiles("home", "<p>Home</p>"));
+    n4->add(new HTMLfiles("splash", "<p>Splash</p>"));
+    n4->add(new HTMLfiles("home", "<p>Home</p>"));
 
-    // n5->add(new JAVAfiles("Main", "public class Main "));
-    // n5->add(new JAVAfiles("thread", "public class thread "));
+    n5->add(new JAVAfiles("Main", "public class Main "));
+    n5->add(new JAVAfiles("thread", "public class thread "));
 
-    // n6->add(new JAVAfiles("asm", "lol get wrecked"));
-    // n6->add(new JAVAfiles("asm2", "lol get wrecked again"));
-    // n6->add(new JAVAfiles("asm3", "lol get wrecked again again"));
-    // n6->add(new JAVAfiles("asm4", "lol get wrecked again again again"));
-    // n6->add(new JAVAfiles("asm5", "lol get wrecked again again again again"));
-    // n6->add(new JAVAfiles("asm6", "lol get wrecked again again again again again"));
-    // n1->add(n2);
-    // n1->add(n5);
-    // n1->add(n6);
-    // n2->add(n3);
-    // n2->add(n4);
+    n6->add(new JAVAfiles("asm", "lol get wrecked"));
+    n6->add(new JAVAfiles("asm2", "lol get wrecked again"));
+    n6->add(new JAVAfiles("asm3", "lol get wrecked again again"));
+    n6->add(new JAVAfiles("asm4", "lol get wrecked again again again"));
+    n6->add(new JAVAfiles("asm5", "lol get wrecked again again again again"));
+    n6->add(new JAVAfiles("asm6", "lol get wrecked again again again again again"));
+    n1->add(n2);
+    n1->add(n5);
+    n1->add(n6);
+    n2->add(n3);
+    n2->add(n4);
 
-    // n2->add(new Folder("COS226 prac"));
-    // n5->add(new Folder("COS226 prac"));
+    n2->add(new Folder("COS226 prac"));
+    n5->add(new Folder("COS226 prac"));
 
     // NodeIterator *Fodlerit = new DirectoryIterator(n1->getDirectory());
-    // NodeIterator *fileIT = new FileIterator(n1->getDirectory());
+    NodeIterator *fileIT = new FileIterator(n1->getDirectory());
     // // n6->run();
     // it->addDirectory(new Folder("COS226"));
     // // it->removeDirectory();
@@ -292,68 +183,74 @@ int main()
     // }
 
     /*memento*/
-    // Caretaker *caretaker = new Caretaker();
+    Caretaker *caretaker = new Caretaker();
 
-    // while (fileIT->hasNext())
-    // {
-    //     fileIT->current()->list();
-    //     fileIT->next();
-    // }
+    while (fileIT->hasNext())
+    {
+        fileIT->current()->list();
+        fileIT->next();
+    }
 
-    // caretaker->doo(n1->create());
+    caretaker->doo(n1->create());
 
-    // n1->add(new JAVAfiles("asm6", "lol get wrecked again again again again again"));
+    n1->add(new JAVAfiles("asm6", "lol get wrecked again again again again again"));
 
-    // cout << "" << endl;
-    // fileIT = new FileIterator(n1->getDirectory());
+    cout << "" << endl;
+    fileIT = new FileIterator(n1->getDirectory());
 
-    // while (fileIT->hasNext())
-    // {
-    //     fileIT->current()->list();
-    //     fileIT->next();
-    // }
+    while (fileIT->hasNext())
+    {
+        fileIT->current()->list();
+        fileIT->next();
+    }
 
-    // caretaker->doo(n1->create());
+    caretaker->doo(n1->create());
 
-    // n1->add(new JAVAfiles("asm420", "lol get wrecked again again again again again"));
+    n1->add(new JAVAfiles("asm420", "lol get wrecked again again again again again"));
 
-    // cout << "" << endl;
-    // fileIT = new FileIterator(n1->getDirectory());
+    cout << "" << endl;
+    fileIT = new FileIterator(n1->getDirectory());
 
-    // while (fileIT->hasNext())
-    // {
-    //     fileIT->current()->list();
-    //     fileIT->next();
-    // }
+    while (fileIT->hasNext())
+    {
+        fileIT->current()->list();
+        fileIT->next();
+    }
 
-    // n1->restrore(caretaker->undo());
-    // cout << "" << endl;
+    n1->restrore(caretaker->undo());
+    cout << "" << endl;
 
-    // fileIT = new FileIterator(n1->getDirectory());
+    fileIT = new FileIterator(n1->getDirectory());
 
-    // while (fileIT->hasNext())
-    // {
-    //     fileIT->current()->list();
-    //     fileIT->next();
-    // }
+    while (fileIT->hasNext())
+    {
+        fileIT->current()->list();
+        fileIT->next();
+    }
 
-    // n1->restrore(caretaker->undo());
-    // cout << "" << endl;
+    n1->restrore(caretaker->undo());
+    cout << "" << endl;
 
-    // fileIT = new FileIterator(n1->getDirectory());
+    fileIT = new FileIterator(n1->getDirectory());
 
-    // while (fileIT->hasNext())
-    // {
-    //     fileIT->current()->list();
-    //     fileIT->next();
-    // }
+    while (fileIT->hasNext())
+    {
+        fileIT->current()->list();
+        fileIT->next();
+    }
 
-    // delete n1;
-    // delete n2;
-    // delete n3;
-    // delete n4;
-    // delete n5;
-    // delete n6;
+    delete n1;
+    delete n2;
+    delete n3;
+    delete n4;
+    delete n5;
+    delete n6;
+
+    /**
+     * @brief Testing memento
+     *
+     */
+
     return 0;
 }
 
