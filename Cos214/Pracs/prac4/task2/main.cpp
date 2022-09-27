@@ -11,14 +11,11 @@
 #include "Root.h"
 #include "Caretaker.h"
 #include <vector>
-<<<<<<< HEAD
 
 vector<Node *> nodes;
 Node *cur;
 Caretaker *caretaker = new Caretaker();
 
-=======
->>>>>>> 42de4c9bb6bc794522d207a2159d5bf68ced7127
 using namespace std;
 void list();
 void addFile();
@@ -245,7 +242,6 @@ int main()
     // Node *n5 = new Folder("COS226");
     // Node *n6 = new Folder("COS284");
 
-<<<<<<< HEAD
     // n1->add(new HTMLfiles("index", "<p>Hello World</p>"));
     // n1->add(new HTMLfiles("about", "<p>About</p>"));
 
@@ -278,56 +274,6 @@ int main()
     // // n6->run();
     // it->addDirectory(new Folder("COS226"));
     // // it->removeDirectory();
-=======
-    n2->add(n3);
-    n2->add(n4);
-    n1->add(n2);
-    n1->add(n5);
-    n1->add(n6);
-    n1->add(new HTMLfiles("index", "<p>Hello World</p>"));
-    n1->add(new HTMLfiles("about", "<p>About</p>"));
-
-    nodes.push_back(n1);
-    nodes.push_back(n2);
-    nodes.push_back(n3);
-    nodes.push_back(n4);
-    nodes.push_back(n5);
-    nodes.push_back(n6);
-
-    cur = n1;
-
-    program();
-
-    // n3->add(new HTMLfiles("login", "<p>login</p>"));
-    // n3->add(new HTMLfiles("signup", "<p>signup</p>"));
-
-    // n4->add(new HTMLfiles("splash", "<p>Splash</p>"));
-    // n4->add(new HTMLfiles("home", "<p>Home</p>"));
-
-    // n5->add(new JAVAfiles("Main", "public class Main "));
-    // n5->add(new JAVAfiles("thread", "public class thread "));
-
-    // n6->add(new JAVAfiles("asm", "lol get wrecked"));
-    // n6->add(new JAVAfiles("asm2", "lol get wrecked again"));
-    // n6->add(new JAVAfiles("asm3", "lol get wrecked again again"));
-    // n6->add(new JAVAfiles("asm4", "lol get wrecked again again again"));
-    // n6->add(new JAVAfiles("asm5", "lol get wrecked again again again again"));
-    // n6->add(new JAVAfiles("asm6", "lol get wrecked again again again again again"));
-    // n1->add(n2);
-    // n1->add(n5);
-    // n1->add(n6);
-    // n2->add(n3);
-    // n2->add(n4);
-
-    // n2->add(new Folder("COS226 prac"));
-    // n5->add(new Folder("COS226 prac"));
-
-    // NodeIterator *Fodlerit = new DirectoryIterator(cur->getDirectory());
-    // NodeIterator *fileIT = new FileIterator(cur->getDirectory());
-    // n6->run();
-    // Fodlerit->addDirectory(new Folder("COS226"));
-    // it->removeDirectory();
->>>>>>> 42de4c9bb6bc794522d207a2159d5bf68ced7127
 
     // while (Fodlerit->hasNext())
     // {
@@ -497,7 +443,6 @@ void cd()
     cout << "\033[33mcurrent DIR is: " << cur->name << "\033[0m" << endl;
 }
 
-<<<<<<< HEAD
 void dir()
 {
     cout << "\033[33mcurrent DIR is: \033[0m" << cur->name << endl;
@@ -525,175 +470,3 @@ public:
     virtual T *current() = 0;
     virtual ~AbstractIterator();
 };
-=======
-void dirMenu()
-{
-    cout << "-------DIR MENU-------" << endl;
-    cout << "lsd:   to list folder under current DIR" << endl;
-    cout << "lsa:   to list all DIR's" << endl;
-    cout << "adir:  to add a DIR" << endl;
-    cout << "adirc: to add a DIR to current DIR" << endl;
-    cout << "n:     move to next directory" << endl;
-    cout << "rm:    remove DIR" << endl;
-    cout << "rnm:   rename DIR" << endl;
-    cout << "nm:    DIR name" << endl;
-    cout << "ex:    to exit DIR menu" << endl;
-}
-
-DirectoryIterator *dit;
-void dir()
-{
-    if (dirCount == 0)
-    {
-        dit = new DirectoryIterator(cur->getDirectory());
-        dirCount++;
-    }
-    cout << "\033[33mDIR mode root@LAPTOP-58ND6B0H:/mnt/c/Users/" << dit->current()->name << "\033[0m ";
-    string inpt;
-    cin >> inpt;
-    if (inpt == "lsd")
-    {
-        dit->listDirectory();
-    }
-    else if (inpt == "lsa")
-    {
-        // cout << dit.size() << endl;
-        while (dit->hasNext())
-        {
-
-            cout << dit->current()->name << endl;
-            dit->listDirectory();
-            // cout << dit->next() << endl;
-
-            dit->next();
-        }
-    }
-    else if (inpt == "adir")
-    {
-        string inpt2 = "temp";
-        cout << "Enter name of folder: ";
-        cin >> inpt2;
-        dit->addDirectory(new Folder(inpt2));
-    }
-    else if (inpt == "adirc")
-    {
-        string inpt2 = "temp";
-        cout << "Enter name of folder: ";
-        cin >> inpt2;
-        dit->current()->add(new Folder(inpt2));
-    }
-    else if (inpt == "n")
-    {
-        // dit->hasNext();
-        dit->nextl();
-        // cout << "\033[36m CURRENT DIR => " << dit->current()->name << "\033[0m" << endl;
-    }
-    else if (inpt == "rm")
-    {
-        dit->removeDirectory();
-    }
-    else if (inpt == "rnm")
-    {
-        string inpt2 = "temp";
-        cout << "Enter new name of folder: ";
-        cin >> inpt2;
-        dit->current()->rename(inpt2);
-    }
-    else if (inpt == "nm")
-    {
-        cout << dit->current()->name << endl;
-    }
-    else if (inpt == "ex")
-    {
-        cout << "\033[31mexiting DIR menu\033[0m" << endl;
-        return;
-    }
-    else if (inpt == "help" || inpt == "mn")
-    {
-        dirMenu();
-    }
-    dir();
-}
-
-void fileMenu()
-{
-    cout << "-------FILE MENU-------" << endl;
-    cout << "lsf:   to list files under current DIR" << endl;
-    cout << "adf:  to add a file" << endl;
-    cout << "n:    move to next file" << endl;
-    cout << "rm:   remove file" << endl;
-    cout << "rnm:  rename file" << endl;
-    cout << "nm:   file name" << endl;
-    cout << "ex:   to exit FILE menu" << endl;
-}
-NodeIterator *fileIT;
-void file()
-{
-    if (fileCount = 0)
-    {
-        fileIT = new FileIterator(cur->getDirectory());
-        fileCount++;
-    }
-
-    cout << "\033[35mFILE mode root@LAPTOP-58ND6B0H:/mnt/c/Users/" << cur->name << "\033[0m ";
-    string inpt;
-    cin >> inpt;
-    if (inpt == "lsf")
-    {
-        while (fileIT->hasNext())
-        {
-            fileIT->current()->list();
-            fileIT->next();
-        }
-    }
-    else if (inpt == "adf")
-    {
-        string inpt2 = "temp", inpt3, inpt4;
-        cout << "Enter name of file: ";
-        cin >> inpt2;
-        cout << "Enter file content: ";
-        cin >> inpt3;
-        cout << "Enter file type: ";
-        cin >> inpt4;
-        Node *n;
-        if (inpt4 == "html")
-        {
-            n = new HTMLfiles(inpt2, inpt3);
-        }
-        else
-        {
-            n = new JAVAfiles(inpt2, inpt3);
-        }
-        cur->add(n);
-    }
-    else if (inpt == "n")
-    {
-        fileIT->nextl();
-    }
-    else if (inpt == "rm")
-    {
-        fileIT->removeFile();
-    }
-    else if (inpt == "rnm")
-    {
-        string inpt2 = "temp";
-        cout << "Enter new name of file: ";
-        cin >> inpt2;
-        fileIT->current()->rename(inpt2);
-    }
-    else if (inpt == "nm")
-    {
-        cout << fileIT->current()->name << endl;
-    }
-    else if (inpt == "ex")
-    {
-        cout << "\033[31mexiting FILE menu\033[0m" << endl;
-        return;
-    }
-    else if (inpt == "help" || inpt == "mn")
-    {
-        fileMenu();
-    }
-    file();
-}
->>>>>>> 42de4c9bb6bc794522d207a2159d5bf68ced7127
