@@ -1,0 +1,145 @@
+:root {
+  --darkPurple: #0b0434;
+  --medPurple: #7848f4;
+  --lightPurple: #e0d3fb;
+  --orange: #f78f1e;
+  --grey: #e9eaeff6;
+  --white: #e9eaeff6;
+  --medBorder: 10px;
+  --per: Permanent Marker;
+  --exo: "Exo 2";
+  --sat: "Rock Salt";
+  --cater: "Carter One";
+  --cur: "Pacifico";
+}
+/* general */
+
+body {
+  font-family: var(--cater);
+  background-image: url("../Images/Background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+hr {
+  border: 10px solid var(--medPurple);
+  width: 80%;
+}
+
+/* Containers */
+
+.outside {
+  background-color: var(--darkPurple) !important;
+  margin: 50px;
+  padding: 50px 50px !important;
+  border-radius: var(--medBorder);
+}
+
+.leftside {
+  background-color: var(--white);
+}
+
+.rightside {
+  background-color: red;
+}
+
+.pannel {
+  border-radius: var(--medBorder);
+}
+
+/* image HERE */
+
+.profileImg {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: var(--darkPurple) solid 5px;
+}
+
+.imgDiv {
+  padding: 20px;
+}
+
+.centerDiv {
+  display: flex;
+  justify-content: center;
+}
+
+/* user INFO */
+
+.leftBottem {
+  margin: 50px 0;
+  background-color: var(--medPurple);
+}
+.UserName {
+  font-family: var(--per);
+  font-size: 70px;
+  color: var(--darkPurple);
+}
+
+.UserDescription {
+  font-family: var(--exo);
+  font-size: 20px;
+  color: var(--darkPurple);
+}
+
+/* User info halfs */
+
+.userInfoHalfs {
+  background-color: var(--white);
+  margin: 30px 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px 20px 20px;
+  border-radius: var(--medBorder);
+
+  /* border: var(--darkPurple) solid 5px; */
+}
+
+.title {
+  font-family: var(--per);
+  font-size: 30px;
+  color: var(--darkPurple);
+}
+
+.value {
+  /* background-color: var(--darkPurple); */
+  font-family: var(--exo);
+  font-size: 20px;
+  color: var(--darkPurple);
+}
+
+/* friends section*/
+
+.friendscont {
+  margin: 50px 0 !important;
+}
+
+.friendspfp {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.outerCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0 !important;
+  padding: 10px;
+}
+
+.friendsName {
+  margin-left: 10px;
+  font-family: var(--exo);
+  font-size: 20px;
+}
+
+.friendTitle {
+  font-size: 50px;
+  /* border-bottom: var(--darkPurple) solid 5px; */
+  font-family: var(--per);
+  padding: 10px;
+}

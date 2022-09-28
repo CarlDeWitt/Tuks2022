@@ -30,13 +30,13 @@ public class VotingStation {
 			}
 		} else {
 			for (int i = 1; i <= 5; i++) {
-				t.tryLock(500, TimeUnit.NANOSECONDS);
+				t.tryLock(200, TimeUnit.MILLISECONDS);
 				try {
 					System.out.println(
 							"[" + Thread.currentThread().getName() + "]" + "[" + i + "] entered the voting station");
 					System.out.println("[" + Thread.currentThread().getName() + "]" + "[" + i + "] cast a vote");
-					Thread.sleep(random(100, 200));
 					printlistTO();
+					Thread.sleep(random(100, 200));
 					// error here
 				} finally {
 					t.unlock();

@@ -152,3 +152,8 @@ attend = (eventid, userid) => {
     },
   });
 };
+
+// go to profile page
+GoToProfile = () => {
+  location.href = "./profilePage.php";
+};

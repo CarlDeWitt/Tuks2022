@@ -29,6 +29,12 @@ public class Timeout implements Lock {
 
     }
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see java.util.concurrent.locks.Lock#tryLock(long,
+     * java.util.concurrent.TimeUnit)
+     */
     @Override
     public boolean tryLock(long time, TimeUnit unit) throws InterruptedException {
         long startTime = System.currentTimeMillis();
@@ -44,7 +50,6 @@ public class Timeout implements Lock {
         while (System.currentTimeMillis() - startTime < patience) {
             QNode predPred = myPred.pred;
             if (predPred == AVAILABLE) {
-                // System.out.println("here");
                 return true;
             } else if (predPred != null) {
                 myPred = predPred;
@@ -78,7 +83,7 @@ public class Timeout implements Lock {
     public QNode getMyNode() {
         QNode t = tail.get();
         // System.out.println("----" + t.pred);
-        return tail.get();
+        return myNode.get();
     }
 
 }

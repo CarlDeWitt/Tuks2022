@@ -1,44 +1,89 @@
 <!-- 38 Carl de Witt u21444928 -->
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Profile</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="Media/CSS/ProfilePage.css" />
 
-<head>
-  <title>Profile</title>
-  <meta charset="utf-8" />
-  <link rel="stylesheet" href="Media/CSS/home.css" />
-  <link rel="stylesheet" href="Media/CSS/DSE.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
 
-  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="Media/Fav/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="Media/Fav/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="Media/Fav/favicon-16x16.png"
+    />
+    <link rel="manifest" href="Media/Fav/site.webmanifest" />
 
-  <link rel="apple-touch-icon" sizes="180x180" href="Media/Fav/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="Media/Fav/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="Media/Fav/favicon-16x16.png" />
-  <link rel="manifest" href="Media/Fav/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2&family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Exo+2&family=Roboto:wght@100&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Exo+2&family=Roboto:wght@100&display=swap" rel="stylesheet" />
-  <!-- AOS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <!-- font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- PopperJS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
-  <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-</head>
-<?php
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2&family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- PopperJS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"
+      integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <?php
 session_start();
 require './PHP/master.php';
 
@@ -58,14 +103,112 @@ if(isset($UID) && $UID != ""){
 
 ?>
 
-<body>
-  
-  <h1>HELLO <?php echo $name ?></h1>
+  <body>
+    <h1>
+      HELLO
+      <?php echo $name ?>
+    </h1>
 
-</body>
+    <div class="container outside">
+      <div class="row">
+        <!-- left side -->
+        <div class="col-md-6 col-sm-12">
+          <div class="container leftside pannel">
+            <!-- profile Img -->
+            <div class="row">
+              <div class="col-12 imgDiv centerDiv">
+                <img
+                  src="Media/Images/ph10.jpg"
+                  alt="Profile Image"
+                  class="profileImg"
+                />
+              </div>
+            </div>
+
+            <hr />
+            <!-- user Info -->
+            <div class="row">
+              <!-- Name -->
+              <div class="col-12 UserName centerDiv">
+                <?php echo $name ?>
+              </div>
+
+              <hr />
+              <!-- description -->
+              <div class="col-12 UserDescription centerDiv">
+                add description here
+              </div>
+            </div>
+          </div>
+          <!-- Left bottem -->
+          <div class="container leftside leftBottem pannel">
+          <div class="row">
+            <hr />
+            <!-- Num events -->
+            <div class="col-4 NumEvents centerDiv">
+              <div class="userInfoHalfs">
+                <div class="title">Events</div>
+                <div class="value">69</div>
+              </div>
+            </div>
+
+            <!-- Num friends -->
+            <div class="col-4 NumFriends centerDiv">
+              <div class="userInfoHalfs">
+                <div class="title">Followers</div>
+                <div class="value">420</div>
+              </div>
+            </div>
+          
+
+          <!-- Num friends -->
+          <div class="col-4 NumFriends centerDiv">
+              <div class="userInfoHalfs">
+                <div class="title">Following</div>
+                <div class="value">420</div>
+              </div>
+            </div>
+        </div>
+        </div>
+        
+        <!-- frinds -->
+        <div class="container leftside pannel ">
+          <div class="row">
+
+            <div class="col-12 friends friendTitle centerDiv">
+              Friends
+            </div>
+              <div class="col-lg-6 col-md-12 outerCenter">
+                <img src="./Media/Images/pfp.jpg" class="friendspfp" alt="pfp">
+                <p class="friendsName">Friends Name</p>
+            </div>
+            <div class="col-lg-6 col-md-12 outerCenter">
+                <img src="./Media/Images/pfp.jpg" class="friendspfp" alt="pfp">
+                <p class="friendsName">Friends Name</p>
+            </div>
+            <div class="col-lg-6 col-md-12 outerCenter">
+                <img src="./Media/Images/pfp.jpg" class="friendspfp" alt="pfp">
+                <p class="friendsName">Friends Name</p>
+            </div>
+            <div class="col-lg-6 col-md-12 outerCenter">
+                <img src="./Media/Images/pfp.jpg" class="friendspfp" alt="pfp">
+                <p class="friendsName">Friends Name</p>
+            </div>
+              
+            </div>
+        </div>
+      </div>
+        
+
+        <!-- right side -->
+        <div class="col-md-6 col-sm-12">
+          <div class="container rightside pannel">lefttttttttttttt</div>
+        </div>
+      </div>
+    </div>
+  </body>
   <script>
     AOS.init();
   </script>
-  <!-- <script src="./Media/Script/DSE.js"></script> -->
-
+  <script src="./Media/Script/ProfilePage.js"></script>
 </html>

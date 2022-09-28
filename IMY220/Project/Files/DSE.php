@@ -71,8 +71,8 @@ $row2 = mysqli_fetch_assoc($result2);
         <div class="container-fluid inner">
           <!-- user name -->
           <div class="row">
-            <div class="col-10 offset-1 data">
-              <i class="fa-solid fa-user spacer"></i><?php echo $row2["name"] ?>
+            <div class="col-10 offset-1 data" onclick="GoToProfile()">
+            <i class="fa-solid fa-user spacer"></i><?php echo $row2["name"] ?>
             </div>
           </div>
           <!-- date -->
