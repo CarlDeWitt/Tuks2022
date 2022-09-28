@@ -41,7 +41,6 @@ body {
 } */
 
 i {
-  margin-right: 15px;
   color: var(--darkPurple);
 }
 
@@ -96,7 +95,7 @@ img {
 
 .buttons i {
   color: var(--medPurple);
-  margin-right: 40px;
+  margin-right: 26px;
   font-size: 40px;
   cursor: pointer;
 }
@@ -322,4 +321,8 @@ img {
   100% {
     transform: scale(1);
   }
+}
+
+.spacer {
+  margin-right: 15px;
 }

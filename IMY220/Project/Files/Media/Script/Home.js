@@ -139,18 +139,18 @@ function red(e) {
   window.location.replace("DSE.php?EID=" + e);
 }
 
-function deleteEvent(eventid, element, userid) {
-  console.log(eventid, userid);
-  $.ajax({
-    type: "POST", // Method type GET/POST
-    url: "./PHP/deleteEvent.php", //Ajax Action url
-    data: { UID: userid, EID: eventid }, //Form Data
-    success: function (data, textStatus, jqXHR) {
-      console.log(data);
-    },
-  });
-  location.reload();
-}
+// function deleteEvent(eventid, element, userid) {
+//   console.log(eventid, userid);
+//   $.ajax({
+//     type: "POST", // Method type GET/POST
+//     url: "./PHP/deleteEvent.php", //Ajax Action url
+//     data: { UID: userid, EID: eventid }, //Form Data
+//     success: function (data, textStatus, jqXHR) {
+//       console.log(data);
+//     },
+//   });
+//   location.reload();
+// }
 
 //likeBTN
 //List delete

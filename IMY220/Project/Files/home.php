@@ -8,7 +8,7 @@ session_start();
 <html>
 
 <head>
-  <title>IMY220 - Project</title>
+  <title>Home</title>
   <meta charset="utf-8" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,7 +50,7 @@ session_start();
         <div class="container-fluid navCont">
           <div class="row">
             <div id="NavBtn2" class="col-md-6 navContT navActive">
-              <i class="fa-solid fa-bars"></i>Profile
+              <i class="fa-solid fa-bars"></i><a href="./profilePage.php">Profile</a>
             </div>
             <div id="NavBtn3" class="col-md-6 navContT">
               <i class="fa-solid fa-arrow-right-from-bracket"></i>Logout

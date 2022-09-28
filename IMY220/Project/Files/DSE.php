@@ -3,7 +3,7 @@
 <html>
 
 <head>
-  <title>IMY220 - Project</title>
+  <title>Event</title>
   <meta charset="utf-8" />
   <link rel="stylesheet" href="Media/CSS/home.css" />
   <link rel="stylesheet" href="Media/CSS/DSE.css" />
@@ -72,26 +72,26 @@ $row2 = mysqli_fetch_assoc($result2);
           <!-- user name -->
           <div class="row">
             <div class="col-10 offset-1 data">
-              <i class="fa-solid fa-user"></i><?php echo $row2["name"] ?>
+              <i class="fa-solid fa-user spacer"></i><?php echo $row2["name"] ?>
             </div>
           </div>
           <!-- date -->
           <div class="row">
             <div class="col-10 offset-1 data">
-              <i class="fa-solid fa-calendar-days"></i><?php echo $row["date"] ?>
+              <i class="fa-solid fa-calendar-days spacer"></i><?php echo $row["date"] ?>
             </div>
           </div>
           <!-- location -->
           <div class="row">
             <div class="col-10 offset-1 data">
-              <i class="fa-solid fa-map-pin"></i><?php echo $row["location"] ?>
+              <i class="fa-solid fa-map-pin spacer"></i><?php echo $row["location"] ?>
             </div>
           </div>
 
           <!-- # -->
           <div class="row">
             <div class="col-10 offset-1 data">
-              <i class="fa-solid fa-hashtag"></i></i><?php
+              <i class="fa-solid fa-hashtag spacer"></i></i><?php
                                                       $str =  $row["hastags"];
                                                       echo substr($str, 1, strlen($str));
                                                       ?>
@@ -102,13 +102,15 @@ $row2 = mysqli_fetch_assoc($result2);
           <div class="row">
             <div class="col-10 offset-1 data buttons">
               <i class="fa-solid fa-heart" onclick="heart()"></i><i class="fa-solid fa-clipboard-user" onclick="addlist(<?php echo $EID; ?>)"></i>
+              <i class="fa-solid fa-trash" onclick="Del(<?php echo $EID;?>,<?php echo $_SESSION['UserIndex'];?>)"></i>
+              <i class="fa-solid fa-bell-concierge" onclick="attend(<?php echo $EID;?>,<?php echo $_SESSION['UserIndex'];?>)"></i>
             </div>
           </div>
         </div>
       </div>
       <!-- description -->
       <div class="col-md-12 data desc">
-        <i class="fa-solid fa-comment-dots"></i><?php echo $row["description"] ?>
+        <i class="fa-solid fa-comment-dots spacer"></i><?php echo $row["description"] ?>
       </div>
     </div>
   </div>

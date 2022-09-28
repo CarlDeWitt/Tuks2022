@@ -65,3 +65,90 @@ const h = document.querySelector(".exit");
 setTimeout(function () {
   h.classList.toggle("exit");
 }, 10000);
+
+//DElete Event
+Del = (eventid, userid) => {
+  // function deleteEvent(eventid, element, userid) {
+  console.log(eventid, userid);
+  $.ajax({
+    type: "POST", // Method type GET/POST
+    url: "./PHP/deleteEvent.php", //Ajax Action url
+    data: { UID: userid, EID: eventid }, //Form Data
+    success: function (data, textStatus, jqXHR) {
+      console.log(data);
+    },
+  });
+  location.reload();
+  location.href = "./home.php";
+  // }
+};
+
+// Attend Function
+attend = (eventid, userid) => {
+  // console.log(eventid, userid);
+  const icon = document.querySelector(".fa-bell-concierge");
+  if (icon.style.color == "gold") {
+    icon.style.color = "#7848f4";
+  } else {
+    icon.style.color = "gold";
+    icon.classList.add("bounce");
+    setTimeout(function () {
+      icon.classList.remove("bounce");
+    }, 800);
+  }
+  $.ajax({
+    type: "POST", // Method type GET/POST
+    url: "./PHP/attendingEvents.php", //Ajax Action url
+    data: { action: "getAttending", EID: eventid },
+    success: function (data, textStatus, jqXHR) {
+      let insertAttending = true;
+      if (data != "[]") {
+        //make into json
+        data = JSON.parse(data);
+        // only take the first element since there will only be one
+        data = data[0].user_ids;
+        insertAttending = false;
+      }
+
+      // make the object a json object
+      data = JSON.parse(data);
+      // console.log(data);
+
+      // check if data contains -1
+      if (data.includes(-1)) {
+        data.splice(data.indexOf(-1), 1);
+      }
+
+      // check if the user is already attending
+      if (data.includes(userid)) {
+        // remove the user from the list
+        for (let i = 0; i < data.length; i++) {
+          if (data[i] == userid) {
+            data.splice(i, 1);
+          }
+        }
+        if (data.length == 0) {
+          data.push(-1);
+        }
+      } else {
+        // add the user to the list
+        data.push(userid);
+      }
+
+      $.ajax({
+        type: "POST", // Method type GET/POST
+        url: "./PHP/attendingEvents.php", //Ajax Action url
+        data: {
+          action: `${insertAttending == true ? "insert" : "set"}Attending`,
+          EID: eventid,
+          data: data,
+        },
+        success: function (data, textStatus, jqXHR) {
+          console.log(data);
+        },
+      });
+
+      // get the array then add the user id to it then send it back to the database
+    },
+  });
+};
