@@ -8,6 +8,11 @@ public class Marshal extends Thread {
 
 	@Override
 	public void run() {
-		vs.castBallot();
+		try {
+			vs.castBallot();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

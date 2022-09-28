@@ -35,31 +35,33 @@ public class Timeout implements Lock {
         long patience = TimeUnit.MILLISECONDS.convert(time, unit);
         QNode qnode = new QNode();
         myNode.set(qnode);
-        qnode.pred = null;
+        // qnode.pred = null;
         QNode myPred = tail.getAndSet(qnode);
+        qnode.pred = myPred;
         if (myPred == null || myPred.pred == AVAILABLE) {
             return true;
         }
         while (System.currentTimeMillis() - startTime < patience) {
             QNode predPred = myPred.pred;
             if (predPred == AVAILABLE) {
+                // System.out.println("here");
                 return true;
             } else if (predPred != null) {
                 myPred = predPred;
             }
         }
-        if (!tail.compareAndSet(qnode, myPred))
+        if (!tail.compareAndSet(qnode, myPred)) {
             qnode.pred = myPred;
+        }
         return false;
-
     }
 
     @Override
     public void unlock() {
         QNode qnode = myNode.get();
+        qnode.number++;
         if (!tail.compareAndSet(qnode, null))
             qnode.pred = AVAILABLE;
-        qnode.number++;
     }
 
     @Override
@@ -70,12 +72,13 @@ public class Timeout implements Lock {
 
     @Override
     public boolean tryLock() {
-        // TODO Auto-generated method stub
         return false;
     }
 
     public QNode getMyNode() {
-        return myNode.get();
+        QNode t = tail.get();
+        // System.out.println("----" + t.pred);
+        return tail.get();
     }
 
 }

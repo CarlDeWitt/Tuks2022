@@ -1,3 +1,4 @@
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 
 public class VotingStation {
@@ -12,7 +13,7 @@ public class VotingStation {
 		t = lock;
 	}
 
-	public void castBallot() {
+	public void castBallot() throws InterruptedException {
 
 		if (l != null) {
 			for (int i = 1; i <= 5; i++) {
@@ -21,6 +22,7 @@ public class VotingStation {
 					System.out.println(
 							"[" + Thread.currentThread().getName() + "]" + "[" + i + "] entered the voting station");
 					System.out.println("[" + Thread.currentThread().getName() + "]" + "[" + i + "] cast a vote");
+					Thread.sleep(random(100, 200));
 					printlist();
 				} finally {
 					l.unlock();
@@ -28,12 +30,13 @@ public class VotingStation {
 			}
 		} else {
 			for (int i = 1; i <= 5; i++) {
-				t.lock();
+				t.tryLock(500, TimeUnit.NANOSECONDS);
 				try {
 					System.out.println(
 							"[" + Thread.currentThread().getName() + "]" + "[" + i + "] entered the voting station");
 					System.out.println("[" + Thread.currentThread().getName() + "]" + "[" + i + "] cast a vote");
-					// printlistTO();
+					Thread.sleep(random(100, 200));
+					printlistTO();
 					// error here
 				} finally {
 					t.unlock();
@@ -42,8 +45,12 @@ public class VotingStation {
 		}
 	}
 
+	private int random(int min, int max) {
+		return (int) (Math.random() * (max - min + 1) + min);
+	}
+
 	private void printlistTO() {
-		QNode n = l.getMyNode();
+		QNode n = t.getMyNode();
 		while (n != null) {
 			if (n.pred == null) {
 				System.out.print("{" + n.name + ": Person " + n.number + "}");
