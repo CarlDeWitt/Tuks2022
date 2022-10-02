@@ -6,11 +6,11 @@ public class Main {
 
         // // MCS LOCK
         // // Arhers
-        VotingStation vs1 = new VotingStation(mcs);
+        // VotingStation vs1 = new VotingStation(mcs);
 
         // TIMEOUT LOCK
         // Arhers
-        // VotingStation vs1 = new VotingStation(tmt);
+        VotingStation vs1 = new VotingStation(tmt);
 
         // Archers Marshall
         Marshal msh1 = new Marshal(vs1);

@@ -1,3 +1,6 @@
+// console.log(EID);
+openAttending(EID);
+
 heart = () => {
   const heart = document.querySelector(".fa-heart");
   if (heart.style.color == "red") {
@@ -86,16 +89,7 @@ Del = (eventid, userid) => {
 // Attend Function
 attend = (eventid, userid) => {
   // console.log(eventid, userid);
-  const icon = document.querySelector(".fa-bell-concierge");
-  if (icon.style.color == "gold") {
-    icon.style.color = "#7848f4";
-  } else {
-    icon.style.color = "gold";
-    icon.classList.add("bounce");
-    setTimeout(function () {
-      icon.classList.remove("bounce");
-    }, 800);
-  }
+
   $.ajax({
     type: "POST", // Method type GET/POST
     url: "./PHP/attendingEvents.php", //Ajax Action url
@@ -135,6 +129,8 @@ attend = (eventid, userid) => {
         data.push(userid);
       }
 
+      checkifAttending(userid, data);
+
       $.ajax({
         type: "POST", // Method type GET/POST
         url: "./PHP/attendingEvents.php", //Ajax Action url
@@ -144,7 +140,7 @@ attend = (eventid, userid) => {
           data: data,
         },
         success: function (data, textStatus, jqXHR) {
-          console.log(data);
+          // console.log(data);
         },
       });
 
@@ -153,7 +149,42 @@ attend = (eventid, userid) => {
   });
 };
 
+checkifAttending = (UID, data) => {
+  const icon = document.querySelector(".fa-bell-concierge");
+  if (data.includes(UID)) {
+    icon.style.color = "gold";
+    icon.classList.add("bounce");
+    setTimeout(function () {
+      icon.classList.remove("bounce");
+    }, 800);
+  } else {
+    icon.style.color = "#7848f4";
+    icon.classList.add("bounce");
+    setTimeout(function () {
+      icon.classList.remove("bounce");
+    }, 800);
+  }
+};
+
+// userOpens page check if they are attending
+
+function openAttending(eventid) {
+  $.ajax({
+    type: "POST", // Method type GET/POST
+    url: "./PHP/attendingEvents.php", //Ajax Action url
+    data: { action: "getAttending", EID: eventid },
+    success: function (data, textStatus, jqXHR) {
+      data = JSON.parse(data);
+      data = JSON.parse(data[0].user_ids);
+      3;
+      // console.log(data);
+      checkifAttending(UID, data);
+    },
+  });
+}
+
 // go to profile page
-GoToProfile = () => {
-  location.href = "./profilePage.php";
+GoToProfile = (userid) => {
+  // console.log(userid);
+  location.href = "./profilePage.php?UID=" + userid;
 };

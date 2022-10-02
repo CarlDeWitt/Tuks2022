@@ -25,6 +25,11 @@ createButton.onclick = function () {
 };
 /*--------END create functionallity ----------*/
 
+// LOGOUT
+Logout = () => {
+  location.href = "./PHP/logout.php";
+};
+
 // description stuff
 let click2 = true;
 
@@ -176,4 +181,11 @@ const srchBtn = document.querySelector(".srchtxt");
 
 srchBtn.onclick = () => {
   console.log("search does not work yet");
+};
+
+// goToProfile
+
+GoToProfile = (userid) => {
+  console.log(userid);
+  location.href = "./profilePage.php?UID=" + userid;
 };

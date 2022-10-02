@@ -87,7 +87,9 @@
 session_start();
 require './PHP/master.php';
 
-$UID = $_SESSION['UserIndex'];
+// $UID = $_SESSION['UserIndex'];
+$actualUID = $_SESSION['UserIndex'];
+$UID = $_GET['UID'];
 if(isset($UID) && $UID != ""){
   
 
@@ -104,28 +106,34 @@ if(isset($UID) && $UID != ""){
 ?>
 
   <body>
-    <h1>
-      HELLO
-      <?php echo $name ?>
-    </h1>
-
     <div class="container outside">
       <div class="row">
         <!-- left side -->
-        <div class="col-md-6 col-sm-12">
+        <div class="col-md-6 col-sm-12 leftCont">
           <div class="container leftside pannel">
             <!-- profile Img -->
-            <div class="row">
+            <div class="row backbtn">
               <div class="col-12 imgDiv centerDiv">
+                <a id="Alogo" onclick="history.back()" class="hoverClass"
+                  ><i class="fa-solid fa-arrow-left" id="logo"></i
+                ></a>
+                <i
+                  class="fa-solid fa-house hoverClass"
+                  onclick="window.location.href = './home.php'"
+                  id="homeBTN"
+                ></i>
+                <!-- <i class="fa-solid fa-user-pen" ></i> -->
+                <!-- <i class="fa-solid fa-pen"id="editBTN"></i> -->
                 <img
-                  src="Media/Images/ph10.jpg"
+                  src="Media/Images/profile/pfp.jpg"
                   alt="Profile Image"
                   class="profileImg"
                 />
               </div>
             </div>
 
-            <hr />
+            <!-- HR TAG -->
+            <div class="col-10 offset-1 hrTag"></div>
             <!-- user Info -->
             <div class="row">
               <!-- Name -->
@@ -133,7 +141,22 @@ if(isset($UID) && $UID != ""){
                 <?php echo $name ?>
               </div>
 
-              <hr />
+              <!-- HR TAG -->
+              <div class="col-10 offset-1 hrTag"></div>
+
+              <div class="col-12 btns">
+                <button type="button" id="chatOut">
+                  <i id="chatBTN" class="fa-regular hoverClass fa-comment"></i
+                  >chat
+                </button>
+                <button type="button" id="followOut">
+                  <i id="followBTN" class="fa-solid hoverClass fa-tag"></i>
+                  <p id="followtxt">Follow</p>
+                  <p></p>
+                </button>
+              </div>
+
+              <div class="col-10 offset-1 hrTag"></div>
               <!-- description -->
               <div class="col-12 UserDescription centerDiv">
                 add description here
@@ -142,73 +165,59 @@ if(isset($UID) && $UID != ""){
           </div>
           <!-- Left bottem -->
           <div class="container leftside leftBottem pannel">
-          <div class="row">
-            <hr />
-            <!-- Num events -->
-            <div class="col-4 NumEvents centerDiv">
-              <div class="userInfoHalfs">
-                <div class="title">Events</div>
-                <div class="value">69</div>
+            <div class="row">
+              <!-- Num events -->
+
+              <!-- Num friends -->
+              <div class="col-md-5 col-sm-12 offset-md-1 NumFriends centerDiv">
+                <div class="userInfoHalfs">
+                  <div class="title">Followers</div>
+                  <div id="followers" class="value">420</div>
+                </div>
+              </div>
+
+              <!-- Num friends -->
+              <div class="col-md-5 col-sm-12 NumFriends centerDiv">
+                <div class="userInfoHalfs">
+                  <div class="title">Following</div>
+                  <div id="following" class="value">420</div>
+                </div>
               </div>
             </div>
+          </div>
 
-            <!-- Num friends -->
-            <div class="col-4 NumFriends centerDiv">
-              <div class="userInfoHalfs">
-                <div class="title">Followers</div>
-                <div class="value">420</div>
-              </div>
-            </div>
-          
-
-          <!-- Num friends -->
-          <div class="col-4 NumFriends centerDiv">
-              <div class="userInfoHalfs">
-                <div class="title">Following</div>
-                <div class="value">420</div>
-              </div>
-            </div>
+          <!-- friends -->
+          <div class="container leftside pannel">
+            <div class="row appendFriends"></div>
+          </div>
         </div>
-        </div>
-        
-        <!-- frinds -->
-        <div class="container leftside pannel ">
-          <div class="row">
-
-            <div class="col-12 friends friendTitle centerDiv">
-              Friends
-            </div>
-              <div class="col-lg-6 col-md-12 outerCenter">
-                <img src="./Media/Images/pfp.jpg" class="friendspfp" alt="pfp">
-                <p class="friendsName">Friends Name</p>
-            </div>
-            <div class="col-lg-6 col-md-12 outerCenter">
-                <img src="./Media/Images/pfp.jpg" class="friendspfp" alt="pfp">
-                <p class="friendsName">Friends Name</p>
-            </div>
-            <div class="col-lg-6 col-md-12 outerCenter">
-                <img src="./Media/Images/pfp.jpg" class="friendspfp" alt="pfp">
-                <p class="friendsName">Friends Name</p>
-            </div>
-            <div class="col-lg-6 col-md-12 outerCenter">
-                <img src="./Media/Images/pfp.jpg" class="friendspfp" alt="pfp">
-                <p class="friendsName">Friends Name</p>
-            </div>
-              
-            </div>
-        </div>
-      </div>
-        
 
         <!-- right side -->
         <div class="col-md-6 col-sm-12">
-          <div class="container rightside pannel">lefttttttttttttt</div>
+          <div class="container rightside pannel">
+            <div class="row appendCE">
+              <!-- created events header-->
+              <div class="col-12 rightsideHead">Created Events</div>
+              <!-- created events -->
+            </div>
+          </div>
+
+          <div class="container rightside pannel AEPannel">
+            <div class="row appendAE">
+              <!-- created events header-->
+              <div class="col-12 rightsideHead">Attending Events</div>
+              <!-- created events -->
+            </div>            
+          </div>
+          
         </div>
       </div>
     </div>
   </body>
   <script>
     AOS.init();
+    const UID = <?php echo $UID ?>;
+    const actualUID = <?php echo $actualUID ?>;
   </script>
   <script src="./Media/Script/ProfilePage.js"></script>
 </html>

@@ -35,6 +35,9 @@ if($bool){
     $data = mysqli_fetch_assoc($result);
     $_SESSION["UserIndex"] = $data["id"];
 
+    $qry = $I_pfp . "(pfpImg,followers,following,userID,friends,description,UserName) VALUES ('pfp.jpg','0','0','$data[id]','[]','','$name');";
+    mysqli_query($mysqli, $qry);
+
     header('Location: ../home.php');
     exit;
 }

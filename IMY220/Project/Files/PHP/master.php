@@ -25,3 +25,9 @@ $I_list_events = "INSERT INTO `list_events`";
 $S_attending_events = "SELECT * FROM `attending`";
 $I_attending_events = "INSERT INTO `attending`";
 $U_attending_events = "UPDATE `attending`";
+
+
+// PFP
+$S_pfp = "SELECT * FROM `profilepage`";
+$I_pfp = "INSERT INTO `profilepage`";
+$U_pfp = "UPDATE `profilepage`";

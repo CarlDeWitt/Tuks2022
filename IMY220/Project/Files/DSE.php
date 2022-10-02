@@ -45,6 +45,7 @@ require './PHP/master.php';
 // /
 
 // echo $_GET['EID'];
+$UID = $_SESSION['UserIndex'];
 $EID = $_GET['EID'];
 $query = $S_e_events . " WHERE id = " . $EID;
 $result = mysqli_query($mysqli, $query);
@@ -58,20 +59,21 @@ $row2 = mysqli_fetch_assoc($result2);
 
 <body>
   <div class="container outer">
-    <a href="home.php"><i class="fa-solid fa-arrow-left" id="logo"></i></a>
+    <i class="fa-solid fa-arrow-left" id="logo" onclick="history.back()"></i>
+    <i class="fa-solid fa-house hoverClass" onclick="window.location.href = './home.php'" id="homeBTN"></i>
     <div class="row imgTxt">
       <!-- name -->
       <div class="col-12 data name"><?php echo $row["name"] ?></div>
       <!-- img -->
       <div class="col-lg-8 col-sm-12" id="img">
-        <img src="Media/Images/<?php echo $row["img"] ?>" />
+        <img src="Media/Images/events/<?php echo $row["img"] ?>" />
       </div>
       <!-- contaienr name -->
       <div class="col-lg-4 col-sm-12">
         <div class="container-fluid inner">
           <!-- user name -->
           <div class="row">
-            <div class="col-10 offset-1 data" onclick="GoToProfile()">
+            <div class="col-10 offset-1 data hoverClass" onclick="GoToProfile(<?php echo $row2['id']?>)">
             <i class="fa-solid fa-user spacer"></i><?php echo $row2["name"] ?>
             </div>
           </div>
@@ -115,6 +117,33 @@ $row2 = mysqli_fetch_assoc($result2);
     </div>
   </div>
 
+  <div class="container reviewsCont">
+    <div class="row">
+      <div class="col-12 ReviewsHead">Reviews<i class="fa-solid fa-square-plus AddReview"></i></div>
+      
+      <div class="col-lg-6 col-md-12 ReviewsEvent">
+        <div class="ReviewL">
+          <img src="Media/Images/reviews/rev1.jpg" class="ReviewsIMG"/>
+          <div class="ReviewsRating"><i class="fa-solid fa-star STR1"></i><i class="fa-solid fa-star STR2"></i><i class="fa-solid fa-star STR4"></i><i class="fa-solid fa-star STR4"></i><i class="fa-solid fa-star STR5"></i></div>
+        </div>
+        <div class="ReviewR">
+          <div class="ReviewName">Carl</div>
+          <div class="Reviewtext">BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH</div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-12 ReviewsEvent">
+      <div class="ReviewL">  
+        <img src="Media/Images/reviews/rev1.jpg" class="ReviewsIMG"/>
+        <div class="ReviewsRating"><i class="fa-solid fa-star STR1"></i><i class="fa-solid fa-star STR2"></i><i class="fa-solid fa-star STR4"></i><i class="fa-solid fa-star STR4"></i><i class="fa-solid fa-star STR5"></i></div>
+      </div>
+      <div class="ReviewR">
+        <div class="ReviewName">Carl</div>
+        <div class="Reviewtext">Was A good ONE dammm</div>
+      </div>
+      </div>
+    </div>
+  </div>
+
   <div id="myModal" class="modal">
     <!-- Modal content -->
     <div class="modal-content">
@@ -146,6 +175,8 @@ $row2 = mysqli_fetch_assoc($result2);
 
   <script>
     AOS.init();
+    const EID = <?php echo $EID; ?>;
+    const UID = <?php echo $UID; ?>;
   </script>
   <script src="./Media/Script/DSE.js"></script>
 </body>

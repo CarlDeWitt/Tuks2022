@@ -25,7 +25,7 @@ if (isset($_SESSION["UserIndex"])) {
         echo "<div class='col-md-4'>
                     <div class='card' style='width: 18rem'>
                       <img
-                        src='Media/Images/$rowE2[img]'
+                        src='Media/Images/events/$rowE2[img]'
                         class='card-img-top imgCont'
                         alt='Event img'
                       />

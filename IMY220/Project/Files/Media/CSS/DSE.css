@@ -39,9 +39,28 @@ body {
 /* div {
   border: 1px solid red;
 } */
+#homeBTN {
+  font-size: 30px;
+  color: var(--medPurple);
+  position: absolute;
+  top: 15%;
+  text-decoration: none;
+}
+
+#logo {
+  width: 100px;
+  position: absolute;
+  top: 8%;
+  font-size: 50px;
+  color: var(--medPurple);
+}
 
 i {
   color: var(--darkPurple);
+}
+
+.hoverClass:hover {
+  animation: smallshow 0.2s !important;
 }
 
 .data {
@@ -166,14 +185,6 @@ img {
   100% {
     transform: scale(0.9);
   }
-}
-
-#logo {
-  width: 100px;
-  position: absolute;
-  top: 8%;
-  font-size: 50px;
-  color: var(--medPurple);
 }
 
 .bounce {
@@ -325,4 +336,75 @@ img {
 
 .spacer {
   margin-right: 15px;
+}
+
+/* ---------------------------------------REVIEWS -------------------------------------- */
+
+.reviewsCont {
+  background-color: var(--darkPurple);
+}
+
+.ReviewsHead {
+  font-size: 70px;
+  text-align: center;
+  font-family: var(--per);
+  color: var(--medPurple);
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.AddReview {
+  color: var(--medPurple);
+  position: absolute;
+  right: 10%;
+  top: 20%;
+}
+
+.ReviewsEvent {
+  background-color: var(--white);
+  border-radius: var(--medBorder);
+  padding: 30px !important;
+  /* margin: 0 5px; */
+  display: flex;
+  flex-direction: row;
+}
+
+.ReviewsIMG {
+  width: 200px;
+  height: 200px;
+}
+
+.ReviewL,
+.ReviewR {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.ReviewL {
+  margin-right: 30px;
+}
+
+.ReviewsRating {
+  font-size: 30px;
+  margin: 0 5px;
+  margin-top: 20px;
+}
+
+.Reviewtext {
+  font-family: var(--exo);
+  font-size: 20px;
+}
+
+.ReviewName {
+  font-family: var(--per);
+  font-size: 40px;
+  color: var(--medPurple);
+}
+
+.STR1,
+.STR2,
+.STR3 {
+  color: var(--medPurple);
 }

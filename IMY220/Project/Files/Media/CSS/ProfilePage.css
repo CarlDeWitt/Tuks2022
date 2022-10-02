@@ -14,6 +14,23 @@
 }
 /* general */
 
+@keyframes smallshow {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.98);
+  }
+}
+
+/* .hoverClass {
+  animation: smallshow 0.5s;
+} */
+
+.hovAn {
+  animation: smallshow 0.5s;
+}
+
 body {
   font-family: var(--cater);
   background-image: url("../Images/Background.png");
@@ -21,9 +38,39 @@ body {
   background-size: cover;
 }
 
-hr {
-  border: 10px solid var(--medPurple);
-  width: 80%;
+/* back */
+#logo {
+  font-size: 30px;
+  color: var(--darkPurple);
+}
+
+#homeBTN {
+  font-size: 30px;
+  color: var(--darkPurple);
+  position: absolute;
+  right: 10%;
+  top: 10%;
+  text-decoration: none;
+}
+
+#editBTN {
+  font-size: 30px;
+  color: var(--darkPurple);
+  position: absolute;
+  right: 45%;
+  top: 70%;
+  text-decoration: none;
+}
+
+#Alogo {
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  text-decoration: none;
+}
+
+.backbtn {
+  position: relative;
 }
 
 /* Containers */
@@ -37,10 +84,17 @@ hr {
 
 .leftside {
   background-color: var(--white);
+  padding: 20px;
+  margin-left: 50px;
 }
 
 .rightside {
-  background-color: red;
+  background-color: var(--white);
+  padding: 20px;
+}
+
+.rightside:first-child {
+  margin-bottom: 50px;
 }
 
 .pannel {
@@ -53,6 +107,7 @@ hr {
   width: 200px;
   height: 200px;
   border-radius: 50%;
+  position: relative;
   border: var(--darkPurple) solid 5px;
 }
 
@@ -83,7 +138,51 @@ hr {
   color: var(--darkPurple);
 }
 
+.hrTag {
+  background-color: var(--darkPurple);
+  padding: 2px;
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+  /* margin: 20px 0 !important; */
+}
+
 /* User info halfs */
+
+.btns {
+  display: flex;
+  justify-content: space-around;
+  font-size: 30px;
+  font-family: var(--exo);
+}
+
+.btns button {
+  /* background-color: var(--medPurple); */
+  padding: 10px;
+  border-radius: var(--medBorder);
+  border: none;
+  color: var(--white);
+  /* font-size: 20px; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#followOut {
+  background-color: var(--medPurple);
+}
+
+#chatOut {
+  background-color: var(--medPurple);
+}
+
+.active {
+  background-color: gold !important;
+  color: var(--darkPurple) !important;
+}
+
+.btns i {
+  margin-right: 10px;
+}
 
 .userInfoHalfs {
   background-color: var(--white);
@@ -118,23 +217,37 @@ hr {
 }
 
 .friendspfp {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
+  border: var(--darkPurple) solid 5px;
+  margin-left: 20px;
 }
 
 .outerCenter {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
   align-items: center;
-  margin: 10px 0 !important;
+  margin: 10px 0px !important;
   padding: 10px;
+  background-color: var(--medPurple);
+  border-radius: var(--medBorder);
+  padding: 20px;
+}
+
+.friendsTiles {
+  scale: 0.9;
+}
+
+.appendFriends {
+  margin: 0 20px !important;
 }
 
 .friendsName {
-  margin-left: 10px;
+  margin-left: 20px !important;
   font-family: var(--exo);
-  font-size: 20px;
+  color: var(--white);
+  font-size: 30px;
 }
 
 .friendTitle {
@@ -142,4 +255,50 @@ hr {
   /* border-bottom: var(--darkPurple) solid 5px; */
   font-family: var(--per);
   padding: 10px;
+}
+
+/* right Side More */
+.rightsideHead {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--per);
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.AEPannel {
+  margin: 30px 0;
+}
+
+/* EVENTS */
+.Events {
+  margin: 20px 0;
+  background-color: var(--white);
+  border-radius: var(--medBorder);
+  padding: 20px;
+  background-color: var(--medPurple);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.Events p {
+  font-family: var(--exo);
+  font-size: 30px;
+  color: var(--white);
+  margin-left: 20px !important;
+}
+
+.eventImg {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: var(--darkPurple) solid 5px;
+  margin-left: 20px !important;
+}
+
+p {
+  margin: 0 !important;
 }

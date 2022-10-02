@@ -16,10 +16,10 @@ if (isset($_SESSION["UserIndex"])) {
 
 function Helpdisplay($data)
 {
-  echo "<div class='col-lg-4 col-md-12'>
+  echo "<div class='col-lg-4 col-md-12' >
   <div class='card set' style='width: 18rem'>
     <img
-      src='Media/Images/$data[img]'
+      src='Media/Images/events/$data[img]'
       class='card-img-top imgCont'
       alt='Event img'
     />

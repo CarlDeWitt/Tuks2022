@@ -1,6 +1,7 @@
 <?php
 session_start();
 // echo  $_SESSION["UserIndex"];
+$UID = $_SESSION['UserIndex'];
 ?>
 
 <!-- 38 Carl de Witt u21444928 -->
@@ -49,11 +50,11 @@ session_start();
       <div class="col-md-5 offset-md-1">
         <div class="container-fluid navCont">
           <div class="row">
-            <div id="NavBtn2" class="col-md-6 navContT navActive">
-              <i class="fa-solid fa-bars"></i><a href="./profilePage.php">Profile</a>
+            <div id="NavBtn2" class="col-md-6 navContT navActive" >
+              <i class="fa-regular fa-user" onclick="GoToProfile(<?php echo $UID; ?>)"></i>Profile
             </div>
             <div id="NavBtn3" class="col-md-6 navContT">
-              <i class="fa-solid fa-arrow-right-from-bracket"></i>Logout
+              <i class="fa-solid fa-arrow-right-from-bracket "onclick="Logout()"></i>Logout
             </div>
           </div>
         </div>
@@ -101,7 +102,7 @@ session_start();
           </div>
 
           <!-- Name and Location -->
-          <form action="./PHP/createEvent.php" method="POST">
+          <form action="./PHP/createEvent.php" method="POST" enctype="multipart/form-data">
             <div class="row createRows Dsnone">
               <div class="col-md-6">
                 <label for="Ename">Event Name:</label>
@@ -132,8 +133,8 @@ session_start();
                 <input type="text" id="Edescription" class="form-control" placeholder="Description of the event" name="Edescription" />
               </div>
               <div class="col-md-6">
-                <label for="Eimg">Event Image:</label>
-                <input type="file" class="form-control" name="Eimg" id="Eimg" /><br />
+                <label for="fileToUpload">Event Image:</label>
+                <input type="file" class="form-control" name="fileToUpload" id="fileToUpload" /><br />
               </div>
             </div>
 
