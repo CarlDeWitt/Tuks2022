@@ -31,3 +31,8 @@ $U_attending_events = "UPDATE `attending`";
 $S_pfp = "SELECT * FROM `profilepage`";
 $I_pfp = "INSERT INTO `profilepage`";
 $U_pfp = "UPDATE `profilepage`";
+
+// Review
+$S_review = "SELECT * FROM `review`";
+$I_review = "INSERT INTO `review`";
+$U_review = "UPDATE `review`";

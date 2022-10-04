@@ -1,5 +1,6 @@
 // console.log(EID);
 openAttending(EID);
+getReviews();
 
 heart = () => {
   const heart = document.querySelector(".fa-heart");
@@ -188,3 +189,62 @@ GoToProfile = (userid) => {
   // console.log(userid);
   location.href = "./profilePage.php?UID=" + userid;
 };
+
+// Create review MODAL
+var modal2 = document.getElementById("myModal2");
+
+// Get the button that opens the modal
+var btn2 = document.getElementById("myBtn2");
+
+// Get the <span> element that closes the modal
+var span2 = document.getElementsByClassName("close2")[0];
+
+// When the user clicks the button, open the modal
+btn2.onclick = function () {
+  modal2.style.display = "block";
+};
+
+// When the user clicks on <span> (x), close the modal
+span2.onclick = function () {
+  modal2.style.display = "none";
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == modal2) {
+    modal2.style.display = "none";
+  }
+};
+
+// DISPLAY REVIEWS
+
+function getReviews() {
+  $.ajax({
+    type: "POST",
+    url: "./PHP/getReview.php",
+    data: { EID: EID },
+    success: function (data, textStatus, jqXHR) {
+      data = JSON.parse(data);
+      if (data.length != 0) {
+        for (let i = 0; i < data.length; i++) {
+          let review = data[i].description;
+          let rating = data[i].rating;
+          let user = data[i].user_id;
+          let img = data[i].review_img;
+
+          $(`.appendReview`)
+            .append(`<div class="col-lg-6 col-md-12 ReviewsEvent">
+          <div class="ReviewL">  
+            <img src="Media/Images/reviews/${img}" class="ReviewsIMG"/>
+            <div class="ReviewsRating"><i class="fa-solid fa-star STR1"></i><i class="fa-solid fa-star STR2"></i><i class="fa-solid fa-star STR4"></i><i class="fa-solid fa-star STR4"></i><i class="fa-solid fa-star STR5"></i></div>
+          </div>
+          <div class="ReviewR">
+            <div class="ReviewName">${user}</div>
+            <div class="Reviewtext">${review}</div>
+          </div>
+          </div>`);
+        }
+      }
+    },
+  });
+}

@@ -118,10 +118,54 @@ $row2 = mysqli_fetch_assoc($result2);
   </div>
 
   <div class="container reviewsCont">
-    <div class="row">
-      <div class="col-12 ReviewsHead">Reviews<i class="fa-solid fa-square-plus AddReview"></i></div>
+    <div class="row appendReview">
+      <div class="col-12 ReviewsHead">Reviews<i id="myBtn2" class="fa-solid fa-square-plus AddReview"></i></div>
+            <div id="myModal2" class="modal2">
+
+        <!-- Modal content -->
+        <div class="modal-content2">
+          <span class="close2">&times;</span>
+          <div class="container CreateReview">
+            <div class="row">
+              <div class="col-12 CRHead">Create Review</div>
+
+              <form action="./PHP/createReview.php" method="POST" enctype="multipart/form-data">
+                <input type="hidden" id="EID" name="EID" value="<?php echo $EID;?>">
+                <input type="hidden" id="UID" name="UID" value="<?php echo $UID;?>">
+
+                <div class="col-6 offset-3 CRInput">
+                  <label for="Rating">Rating:</label>
+                  <input type="text" id="Rating" name="Rating" placeholder="3"/>
+                </div>
+                
+                <div class="col-6 offset-3 CRInput">
+                  
+                  <label for="Decsription">Description:</label>
+                  <input type="text" id="Decsription" name="Decsription" placeholder="was a good event"/>
+                  
+                </div>
+                
+                <div class="col-6 offset-3 CRInput">
+                  
+                  <label for="Rateimg">Review Image:</label>
+                  <input type="file" class="form-control" name="Rateimg" id="fileToUpload" />
+                  
+                </div>
+                
+                <div class="col-3 offset-3 CRSub">
+                  
+                  <button type="submit" class="sendBTN">
+                    Submit <i class="fa-solid fa-paper-plane"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
       
-      <div class="col-lg-6 col-md-12 ReviewsEvent">
+      <!-- <div class="col-lg-6 col-md-12 ReviewsEvent">
         <div class="ReviewL">
           <img src="Media/Images/reviews/rev1.jpg" class="ReviewsIMG"/>
           <div class="ReviewsRating"><i class="fa-solid fa-star STR1"></i><i class="fa-solid fa-star STR2"></i><i class="fa-solid fa-star STR4"></i><i class="fa-solid fa-star STR4"></i><i class="fa-solid fa-star STR5"></i></div>
@@ -130,8 +174,8 @@ $row2 = mysqli_fetch_assoc($result2);
           <div class="ReviewName">Carl</div>
           <div class="Reviewtext">BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH</div>
         </div>
-      </div>
-      <div class="col-lg-6 col-md-12 ReviewsEvent">
+      </div> -->
+      <!-- <div class="col-lg-6 col-md-12 ReviewsEvent">
       <div class="ReviewL">  
         <img src="Media/Images/reviews/rev1.jpg" class="ReviewsIMG"/>
         <div class="ReviewsRating"><i class="fa-solid fa-star STR1"></i><i class="fa-solid fa-star STR2"></i><i class="fa-solid fa-star STR4"></i><i class="fa-solid fa-star STR4"></i><i class="fa-solid fa-star STR5"></i></div>
@@ -140,7 +184,7 @@ $row2 = mysqli_fetch_assoc($result2);
         <div class="ReviewName">Carl</div>
         <div class="Reviewtext">Was A good ONE dammm</div>
       </div>
-      </div>
+      </div> -->
     </div>
   </div>
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 03, 2022 at 10:09 PM
+-- Generation Time: Oct 04, 2022 at 06:41 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -165,6 +165,28 @@ INSERT INTO `profilepage` (`id`, `pfpImg`, `followers`, `following`, `userID`, `
 (2, 'pfp1.png', 2, 1, 2, '[1,3]', 'I own lewis ', 'Max'),
 (3, 'pfp.jpg', 1, 3, 3, '[1]', '', 'Ida');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `review`
+--
+
+CREATE TABLE `review` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `event_id` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `review_img` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `review`
+--
+
+INSERT INTO `review` (`id`, `user_id`, `event_id`, `rating`, `description`, `review_img`) VALUES
+(1, 3, 15, 5, 'nice job', 'pic.jpg');
+
 --
 -- Indexes for dumped tables
 --
@@ -206,6 +228,12 @@ ALTER TABLE `profilepage`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `review`
+--
+ALTER TABLE `review`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -244,6 +272,12 @@ ALTER TABLE `list_events`
 --
 ALTER TABLE `profilepage`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `review`
+--
+ALTER TABLE `review`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

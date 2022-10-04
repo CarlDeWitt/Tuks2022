@@ -408,3 +408,68 @@ img {
 .STR3 {
   color: var(--medPurple);
 }
+
+/* MODAL to create a review*/
+.modal2 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content */
+.modal-content2 {
+  background-color: var(--darkPurple);
+  border-radius: var(--medBorder);
+  padding: 50px;
+  border: 0px;
+  width: 100%;
+}
+
+/* The Close Button */
+.close2 {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close2:hover,
+.close2:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.CRHead {
+  font-size: 70px;
+  text-align: center;
+  font-family: var(--per);
+  color: var(--medPurple);
+}
+
+.CRInput {
+  background-color: var(--medPurple);
+  border: 0px;
+  border-radius: var(--medBorder);
+  color: var(--darkPurple);
+  font-family: var(--exo);
+  font-size: 30px;
+  padding: 10px 30px 30px 30px !important;
+  margin: 10px 0;
+}
+
+.CRInput input {
+  width: 100%;
+  border: 0px;
+  border-radius: var(--medBorder);
+  padding: 10px;
+}
+
+.CRSub {
+  padding: 0 !important;
+}
