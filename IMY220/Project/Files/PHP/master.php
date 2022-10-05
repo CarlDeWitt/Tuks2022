@@ -12,6 +12,7 @@ $I_e_users = "INSERT INTO e_users";
 // event query
 $S_e_events = "SELECT * FROM e_event";
 $I_e_events = "INSERT INTO e_event";
+$U_e_events = "UPDATE e_event";
 
 //List query
 $S_list = "SELECT * FROM `list`";

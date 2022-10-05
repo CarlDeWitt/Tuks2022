@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.19.3/babel.js"></script>
+
+    <script type="text/babel" async defer>
+      class Person extends React.Component {
+        render() {
+          return (
+            <li>
+              {`${this.props.person.name[0]}. ${this.props.person.surname} age is ${this.props.person.age}`}
+            </li>
+          );
+        }
+      }
+
+      class AddPersonForm extends React.Component {
+        constructor(props) {
+          super(props);
+          this.submit = this.submit.bind(this);
+          this.nameInput = React.createRef();
+          this.surnameInput = React.createRef();
+          this.ageInput = React.createRef();
+        }
+
+        submit(e) {
+          e.preventDefault();
+          let name = this.nameInput.current.value;
+          let surname = this.surnameInput.current.value;
+          let age = this.ageInput.current.value;
+          this.props.onNewPerson(name, surname, age);
+        }
+
+        render() {
+          return (
+            <form onSubmit={this.submit}>
+              <input type="text" ref={this.nameInput} /> <br />
+              <input type="text" ref={this.surnameInput} /> <br />
+              <input type="text" ref={this.ageInput} /> <br />
+              <input type="submit" value="Add" />
+            </form>
+          );
+        }
+      }
+
+      class PersonList extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = { people: this.props.people };
+          this.addPerson = this.addPerson.bind(this);
+        }
+
+        addPerson(name, surname, age) {
+          let people = this.state.people;
+          people.push({ name, surname, age });
+          this.setState(people);
+        }
+
+        render() {
+          return (
+            <div className="container">
+              <h1>
+                {this.state.people.length ? this.state.people.length : "No"}
+                {this.state.people.length == 1 ? " person" : " people"} in the
+                list:
+              </h1>
+              <ul>
+                {this.state.people.map((person, index) => (
+                  <Person key={index} person={person} />
+                ))}
+              </ul>
+              <div>
+                <AddPersonForm onNewPerson={this.addPerson} />
+              </div>
+            </div>
+          );
+        }
+      }
+
+      let peopleList1 = [
+        { name: "John", surname: "Doe", age: "45" },
+        { name: "Jane", surname: "Doe", age: "16" },
+      ];
+
+      const someElement = document.getElementById("element");
+
+      ReactDOM.render(
+        <PersonList people={peopleList1} />,
+        document.getElementById("root")
+      );
+      if (someElement) {
+      }
+    </script>
+  </body>
+</html>

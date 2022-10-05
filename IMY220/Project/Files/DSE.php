@@ -51,9 +51,12 @@ $query = $S_e_events . " WHERE id = " . $EID;
 $result = mysqli_query($mysqli, $query);
 $row = mysqli_fetch_assoc($result);
 
+
 $query2 = $S_e_users . " WHERE id = " . $row['user_id'];
 $result2 = mysqli_query($mysqli, $query2);
 $row2 = mysqli_fetch_assoc($result2);
+$eventCreator = $row2['id'];
+// echo $row2['id'];
 // echo $row["name"] ;
 ?>
 
@@ -61,6 +64,7 @@ $row2 = mysqli_fetch_assoc($result2);
   <div class="container outer">
     <i class="fa-solid fa-arrow-left" id="logo" onclick="history.back()"></i>
     <i class="fa-solid fa-house hoverClass" onclick="window.location.href = './home.php'" id="homeBTN"></i>
+    <i class="fa-solid fa-pen editBTN" onclick="edit()"></i>
     <div class="row imgTxt">
       <!-- name -->
       <div class="col-12 data name"><?php echo $row["name"] ?></div>
@@ -218,12 +222,73 @@ $row2 = mysqli_fetch_assoc($result2);
     </div>
   </div>
 
+  <div id="myModal3" class="modal3">
+
+<!-- Modal content -->
+<div class="modal-content3">
+  <span class="close3">&times;</span>
+  <div class="container CreateReview">
+    <div class="row">
+      <div class="col-12 CRHead">Update Event</div>
+      <form action="./PHP/UpdateEvent.php" method="POST" enctype="multipart/form-data">
+        <input type="hidden" id="EID" name="EID" value="<?php echo $EID;?>">
+
+        <div class="col-6 offset-3 CRInput">
+          <label for="Name">Name:</label>
+          <input type="text" id="Name" name="Name" placeholder="Name"/>
+        </div>
+        
+        <div class="col-6 offset-3 CRInput">
+          
+          <label for="Decsription">Description:</label>
+          <input type="text" id="Decsription" name="Decsription" placeholder="was a good event"/>
+          
+        </div>
+
+        <div class="col-6 offset-3 CRInput">
+          
+          <label for="Date">date:</label>
+          <input type="date" id="Date" name="Date"/>
+          
+        </div>
+
+        <div class="col-6 offset-3 CRInput">
+          
+          <label for="Location">Location:</label>
+          <input type="text" id="Location" name="Location" placeholder="was a good event"/>
+          
+        </div>
+
+        <div class="col-6 offset-3 CRInput">
+          
+          <label for="hashtag">Hashtag:</label>
+          <input type="text" id="hashtag" name="hashtag" placeholder="was a good event"/>
+          
+        </div>
+        
+        
+        <div class="col-3 offset-3 CRSub">
+          
+          <button type="submit" class="sendBTN">
+            Submit <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </div>
+      </form>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
 
 
   <script>
     AOS.init();
     const EID = <?php echo $EID; ?>;
     const UID = <?php echo $UID; ?>;
+    const creatorID = <?php echo $eventCreator; ?>;
   </script>
   <script src="./Media/Script/DSE.js"></script>
 </body>

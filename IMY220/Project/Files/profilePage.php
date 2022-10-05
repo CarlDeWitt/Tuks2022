@@ -122,8 +122,9 @@ if(isset($UID) && $UID != ""){
                   onclick="window.location.href = './home.php'"
                   id="homeBTN"
                 ></i>
+                
                 <!-- <i class="fa-solid fa-user-pen" ></i> -->
-                <!-- <i class="fa-solid fa-pen"id="editBTN"></i> -->
+                <i class="fa-solid fa-pen"id="editBTN" onclick="editBTN()"></i>
                 <img
                   src="Media/Images/profile/pfp.jpg"
                   alt="Profile Image"
@@ -213,6 +214,46 @@ if(isset($UID) && $UID != ""){
         </div>
       </div>
     </div>
+
+    <!-- MODAL -->
+
+    <div id="myModal2" class="modal2">
+
+        <!-- Modal content -->
+        <div class="modal-content2">
+          <span class="close2">&times;</span>
+          <div class="container CreateReview">
+            <div class="row">
+              <div class="col-12 CRHead">Edit Profile</div>
+              <form action="./PHP/updatePF.php" method="POST" enctype="multipart/form-data">
+                <input type="hidden" id="UID" name="UID" value="<?php echo $UID;?>">
+                
+                <div class="col-6 offset-3 CRInput">
+                  
+                  <label for="Decsription">Description:</label>
+                  <input type="text" id="Decsription" name="Decsription" placeholder="was a good event"/>
+                  
+                </div>
+                
+                <div class="col-6 offset-3 CRInput">
+                  
+                  <label for="Rateimg">Profile Image:</label>
+                  <input type="file" class="form-control" name="Rateimg" id="fileToUpload" />
+                  
+                </div>
+                
+                <div class="col-3 offset-3 CRSub">
+                  
+                  <button type="submit" class="sendBTN">
+                    Submit <i class="fa-solid fa-paper-plane"></i>
+                  </button>
+                </div>
+              </form>
+
+              
+            </div>
+          </div>
+        </div>
   </body>
   <script>
     AOS.init();

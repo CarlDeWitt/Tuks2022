@@ -453,7 +453,7 @@ img {
   position: absolute;
   font-size: 60px;
   top: 10%;
-  left: 10% !important;
+  left: 25% !important;
   font-weight: bold;
 }
 
@@ -492,4 +492,88 @@ img {
 .CRSub {
   margin-top: 30px !important;
   padding: 0 !important;
+}
+
+.editBTN {
+  position: absolute;
+  right: 5%;
+  top: 10%;
+  color: var(--medPurple);
+  font-size: 30px;
+}
+
+/* MODAL 3 */
+
+.modal3 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 8px;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content */
+.modal-content3 {
+  /* background-color: var(--darkPurple); */
+  /* border-radius: var(--medBorder); */
+  border: 0px;
+  padding: 50px;
+}
+
+/* The Close Button */
+.close3 {
+  color: var(--medPurple);
+  position: absolute;
+  font-size: 60px;
+  top: 10%;
+  left: 20% !important;
+  font-weight: bold;
+}
+
+.close3:hover,
+.close3:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.CRHead {
+  font-size: 70px;
+  text-align: center;
+  font-family: var(--per);
+  color: var(--medPurple);
+}
+
+.CRInput {
+  background-color: var(--white);
+  border: 0px;
+  border-radius: var(--medBorder);
+  color: var(--darkPurple);
+  font-family: var(--exo);
+  font-size: 30px;
+  padding: 10px 30px 30px 30px !important;
+  margin-top: 30px !important;
+}
+
+.CRInput input {
+  width: 100%;
+  border: 0px;
+  border-radius: var(--medBorder);
+  padding: 10px;
+}
+
+.CRSub {
+  margin-top: 30px !important;
+  padding: 0 !important;
+}
+
+.editBTN {
+  position: absolute;
+  right: 5%;
+  top: 10%;
+  color: var(--medPurple);
+  font-size: 30px;
 }

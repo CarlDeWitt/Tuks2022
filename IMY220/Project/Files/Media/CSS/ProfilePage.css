@@ -59,8 +59,8 @@ body {
   font-size: 30px;
   color: var(--darkPurple);
   position: absolute;
-  right: 45%;
-  top: 70%;
+  right: 10%;
+  top: 35%;
   text-decoration: none;
 }
 
@@ -304,4 +304,85 @@ body {
 
 p {
   margin: 0 !important;
+}
+
+/* MODAL */
+
+/* MODAL to create a review*/
+.modal2 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 8px;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content */
+.modal-content2 {
+  /* background-color: var(--darkPurple);
+  border-radius: var(--medBorder); */
+  border: 0px;
+  padding: 50px;
+}
+.CreateReview {
+  background-color: var(--darkPurple);
+  border-radius: var(--medBorder);
+  padding: 20px;
+}
+
+/* The Close Button */
+.close2 {
+  color: var(--medPurple);
+  position: absolute;
+  font-size: 60px;
+  top: 10%;
+  left: 25% !important;
+  font-weight: bold;
+}
+
+.close2:hover,
+.close2:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.CRHead {
+  font-size: 70px;
+  text-align: center;
+  font-family: var(--per);
+  color: var(--medPurple);
+}
+
+.CRInput {
+  background-color: var(--white);
+  border: 0px;
+  border-radius: var(--medBorder);
+  color: var(--darkPurple);
+  font-family: var(--exo);
+  font-size: 30px;
+  padding: 10px 30px 30px 30px !important;
+  margin-top: 30px !important;
+}
+
+.CRInput input {
+  width: 100%;
+  border: 0px;
+  border-radius: var(--medBorder);
+  padding: 10px;
+}
+
+.CRSub {
+  margin-top: 30px !important;
+  padding: 0 !important;
+}
+
+.sendBTN {
+  background-color: var(--medPurple);
+  border-radius: var(--medBorder);
+  padding: 20px;
+  font-size: 30px;
 }
