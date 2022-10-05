@@ -20,7 +20,7 @@ label {
 }
 
 body {
-  font-family: var(--cater);
+  font-family: var(--exo);
   background-image: url("../Images/Background.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -124,7 +124,7 @@ img {
 }
 
 h2 {
-  font-family: var(--exo) !important;
+  font-family: var(--per) !important;
 }
 label,
 button {

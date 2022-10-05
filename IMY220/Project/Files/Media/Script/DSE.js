@@ -1,6 +1,6 @@
 // console.log(EID);
 openAttending(EID);
-getReviews();
+getReviews(EID);
 
 heart = () => {
   const heart = document.querySelector(".fa-heart");
@@ -218,33 +218,97 @@ window.onclick = function (event) {
 
 // DISPLAY REVIEWS
 
-function getReviews() {
+function getReviews(EID) {
   $.ajax({
     type: "POST",
     url: "./PHP/getReview.php",
-    data: { EID: EID },
+    data: { TYPE: "GR", EID: EID },
     success: function (data, textStatus, jqXHR) {
+      if (data == "No reviews") {
+        return;
+      }
       data = JSON.parse(data);
-      if (data.length != 0) {
+      console.log(typeof data);
+      if (data.length > 0) {
         for (let i = 0; i < data.length; i++) {
           let review = data[i].description;
           let rating = data[i].rating;
           let user = data[i].user_id;
-          let img = data[i].review_img;
-
+          getUserName(user).then((name) => {
+            console.log(name);
+            // var username =
+            // console.log("after getUserName");
+            let imgstrGold = "";
+            for (let i = 1; i <= 5; i++) {
+              if (rating >= i) {
+                imgstrGold += `<i class="fa-solid fa-star STR${i}"></i>`;
+              } else {
+                imgstrGold += `<i class="fa-solid fa-star"></i>`;
+              }
+            }
+            let img = data[i].review_img;
+            $(`.appendReview`)
+              .append(`<div class="col-lg-5 col-md-12 ReviewsEvent">
+            <div class="ReviewL">  
+            <img src="Media/Images/reviews/${img}" class="ReviewsIMG"/>
+            <div class="ReviewsRating">${imgstrGold}</div>
+            </div>
+            <div class="ReviewR">
+            <div class="ReviewName">${name}</div>
+            <div class="Reviewtext">${review}</div>
+            <i class="fa-solid fa-trash ReviewDel" onclick="DelReview(${data[i].id})"></i>
+            </div>
+            </div>`);
+          });
+        }
+      } else if (typeof data == "object") {
+        let review = data.description;
+        let rating = data.rating;
+        let user = data.user_id;
+        getUserName(user).then((name) => {
+          let img = data.review_img;
           $(`.appendReview`)
             .append(`<div class="col-lg-6 col-md-12 ReviewsEvent">
           <div class="ReviewL">  
-            <img src="Media/Images/reviews/${img}" class="ReviewsIMG"/>
-            <div class="ReviewsRating"><i class="fa-solid fa-star STR1"></i><i class="fa-solid fa-star STR2"></i><i class="fa-solid fa-star STR4"></i><i class="fa-solid fa-star STR4"></i><i class="fa-solid fa-star STR5"></i></div>
+          <img src="Media/Images/reviews/${img}" class="ReviewsIMG"/>
+          <div class="ReviewsRating"><i class="fa-solid fa-star STR1"></i><i class="fa-solid fa-star STR2"></i><i class="fa-solid fa-star STR4"></i><i class="fa-solid fa-star STR4"></i><i class="fa-solid fa-star STR5"></i></div>
           </div>
           <div class="ReviewR">
-            <div class="ReviewName">${user}</div>
-            <div class="Reviewtext">${review}</div>
+          <div class="ReviewName">${name}</div>
+          <div class="Reviewtext">${review}</div>
+          <i class="fa-solid fa-trash ReviewDel" onclick="DelReview(${data.id})"></i>
           </div>
           </div>`);
-        }
+        });
       }
     },
   });
 }
+
+function getUserName(UID) {
+  return new Promise((resolve, reject) => {
+    $.ajax({
+      type: "POST",
+      url: "./PHP/getReview.php",
+      data: { TYPE: "GU", UID: UID },
+      success: function (data, textStatus, jqXHR) {
+        data = JSON.parse(data);
+        data = data.name;
+        // console.log(data);
+        resolve(data);
+      },
+    });
+  });
+}
+
+DelReview = (RID) => {
+  console.log(RID);
+  $.ajax({
+    type: "POST",
+    url: "./PHP/getReview.php",
+    data: { TYPE: "DR", RID: RID },
+    success: function (data, textStatus, jqXHR) {
+      location.reload();
+    },
+  });
+};

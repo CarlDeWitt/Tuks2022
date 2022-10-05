@@ -364,14 +364,26 @@ img {
   background-color: var(--white);
   border-radius: var(--medBorder);
   padding: 30px !important;
-  /* margin: 0 5px; */
+  margin: 20px 20px !important;
   display: flex;
   flex-direction: row;
+  position: relative;
 }
 
 .ReviewsIMG {
   width: 200px;
   height: 200px;
+}
+
+.ReviewDel {
+  position: absolute !important;
+  right: 5% !important;
+  top: 7% !important;
+  animation: smallshow 0.2s !important;
+}
+
+.CreateReview {
+  background-color: var(--darkPurple);
 }
 
 .ReviewL,
@@ -380,6 +392,10 @@ img {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+}
+
+.ReviewR {
+  width: 100%;
 }
 
 .ReviewL {
@@ -405,7 +421,9 @@ img {
 
 .STR1,
 .STR2,
-.STR3 {
+.STR3,
+.STR4,
+.STR5 {
   color: var(--medPurple);
 }
 
@@ -414,27 +432,28 @@ img {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  left: 0;
+  left: 8px;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
+  width: 100%;
+  height: 100%;
   overflow: auto; /* Enable scroll if needed */
 }
 
 /* Modal Content */
 .modal-content2 {
-  background-color: var(--darkPurple);
-  border-radius: var(--medBorder);
-  padding: 50px;
+  /* background-color: var(--darkPurple); */
+  /* border-radius: var(--medBorder); */
   border: 0px;
-  width: 100%;
+  padding: 50px;
 }
 
 /* The Close Button */
 .close2 {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
+  color: var(--medPurple);
+  position: absolute;
+  font-size: 60px;
+  top: 10%;
+  left: 10% !important;
   font-weight: bold;
 }
 
@@ -453,14 +472,14 @@ img {
 }
 
 .CRInput {
-  background-color: var(--medPurple);
+  background-color: var(--white);
   border: 0px;
   border-radius: var(--medBorder);
   color: var(--darkPurple);
   font-family: var(--exo);
   font-size: 30px;
   padding: 10px 30px 30px 30px !important;
-  margin: 10px 0;
+  margin-top: 30px !important;
 }
 
 .CRInput input {
@@ -471,5 +490,6 @@ img {
 }
 
 .CRSub {
+  margin-top: 30px !important;
   padding: 0 !important;
 }

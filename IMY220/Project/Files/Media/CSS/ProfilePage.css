@@ -23,13 +23,15 @@
   }
 }
 
-/* .hoverClass {
+.hoverClass {
+  /* animation: smallshow 0.5s; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px !important;
+}
+
+/* .hovAn {
   animation: smallshow 0.5s;
 } */
-
-.hovAn {
-  animation: smallshow 0.5s;
-}
 
 body {
   font-family: var(--cater);
@@ -282,6 +284,7 @@ body {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px;
 }
 
 .Events p {

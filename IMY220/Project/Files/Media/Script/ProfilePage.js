@@ -114,7 +114,7 @@ function UserAttendingEvents() {
                 $(`.appendAE`).append(`
                 <div class="col-10 offset-1 Events hoverClass" data-aos="fade-left" onclick="DSEJump(${data.id})">
                     <img src="Media/Images/events/${data.img}"
-                    alt="Profile Image" class="eventImg"/>  
+                    alt="Profile Image" class="eventImg"/>
                     <p>${data.name}</p>
                 </div>
                 `);
@@ -133,7 +133,7 @@ DSEJump = (EID) => {
 
 JumpToUser = (UID) => {
   // console.log(UID);
-  window.location.href = `./ProfilePage.php?UID=${UID}`;
+  window.location.href = `./profilePage.php?UID=${UID}`;
 };
 
 // Check if user if following
@@ -253,3 +253,11 @@ function getFriends() {
     });
   }
 }
+
+$(`#chatBTN`).on("click", function () {
+  if (UID == actualUID) {
+    return;
+  } else {
+    window.location.href = `./chat.php?UID=${UID}`;
+  }
+});

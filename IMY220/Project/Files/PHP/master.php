@@ -36,3 +36,4 @@ $U_pfp = "UPDATE `profilepage`";
 $S_review = "SELECT * FROM `review`";
 $I_review = "INSERT INTO `review`";
 $U_review = "UPDATE `review`";
+$D_review = "DELETE FROM `review`";

@@ -128,7 +128,6 @@ $row2 = mysqli_fetch_assoc($result2);
           <div class="container CreateReview">
             <div class="row">
               <div class="col-12 CRHead">Create Review</div>
-
               <form action="./PHP/createReview.php" method="POST" enctype="multipart/form-data">
                 <input type="hidden" id="EID" name="EID" value="<?php echo $EID;?>">
                 <input type="hidden" id="UID" name="UID" value="<?php echo $UID;?>">
@@ -159,6 +158,8 @@ $row2 = mysqli_fetch_assoc($result2);
                   </button>
                 </div>
               </form>
+
+              
             </div>
           </div>
         </div>
@@ -198,7 +199,7 @@ $row2 = mysqli_fetch_assoc($result2);
         <div class="container listCont">
           <div class="row rowlist">
             <div class="col-md-5 col-12 listcol">
-              <form action="./PHP/createList.php" method="post">
+              <form action="./PHP/createList.php" method="post" class="form2">
                 <label for="listName" class="listhead">Make List:</i></label>
                 <input type="text" id="listName" name="listName" class="form-control fc2" placeholder="List Name" />
                 <input type="submit" value="Create List" id="createSub3"></input>
@@ -216,6 +217,8 @@ $row2 = mysqli_fetch_assoc($result2);
       <div class="modal-footer"></div>
     </div>
   </div>
+
+
 
   <script>
     AOS.init();
