@@ -1,0 +1,388 @@
+:root {
+  --darkPurple: #0b0434;
+  --medPurple: #7848f4;
+  --lightPurple: #e0d3fb;
+  --orange: #f78f1e;
+  --grey: #e9eaeff6;
+  --white: #e9eaeff6;
+  --medBorder: 10px;
+  --per: Permanent Marker;
+  --exo: "Exo 2";
+  --sat: "Rock Salt";
+  --cater: "Carter One";
+  --cur: "Pacifico";
+}
+/* general */
+
+@keyframes smallshow {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.98);
+  }
+}
+
+.hoverClass {
+  /* animation: smallshow 0.5s; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px !important;
+}
+
+/* .hovAn {
+  animation: smallshow 0.5s;
+} */
+
+body {
+  font-family: var(--cater);
+  background-image: url("../Images/Background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* back */
+#logo {
+  font-size: 30px;
+  color: var(--darkPurple);
+}
+
+#homeBTN {
+  font-size: 30px;
+  color: var(--darkPurple);
+  position: absolute;
+  right: 10%;
+  top: 10%;
+  text-decoration: none;
+}
+
+#editBTN {
+  font-size: 30px;
+  color: var(--darkPurple);
+  position: absolute;
+  right: 10%;
+  top: 35%;
+  text-decoration: none;
+}
+
+#Alogo {
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  text-decoration: none;
+}
+
+.backbtn {
+  position: relative;
+}
+
+/* Containers */
+
+.outside {
+  background-color: var(--darkPurple) !important;
+  margin: 50px;
+  padding: 50px 50px !important;
+  border-radius: var(--medBorder);
+}
+
+.leftside {
+  background-color: var(--white);
+  padding: 20px;
+  margin-left: 50px;
+}
+
+.rightside {
+  background-color: var(--white);
+  padding: 20px;
+}
+
+.rightside:first-child {
+  margin-bottom: 50px;
+}
+
+.pannel {
+  border-radius: var(--medBorder);
+}
+
+/* image HERE */
+
+.profileImg {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: relative;
+  border: var(--darkPurple) solid 5px;
+}
+
+.imgDiv {
+  padding: 20px;
+}
+
+.centerDiv {
+  display: flex;
+  justify-content: center;
+}
+
+/* user INFO */
+
+.leftBottem {
+  margin: 50px 0;
+  background-color: var(--medPurple);
+}
+.UserName {
+  font-family: var(--per);
+  font-size: 70px;
+  color: var(--darkPurple);
+}
+
+.UserDescription {
+  font-family: var(--exo);
+  font-size: 20px;
+  color: var(--darkPurple);
+}
+
+.hrTag {
+  background-color: var(--darkPurple);
+  padding: 2px;
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+  /* margin: 20px 0 !important; */
+}
+
+/* User info halfs */
+
+.btns {
+  display: flex;
+  justify-content: space-around;
+  font-size: 30px;
+  font-family: var(--exo);
+}
+
+.btns button {
+  /* background-color: var(--medPurple); */
+  padding: 10px;
+  border-radius: var(--medBorder);
+  border: none;
+  color: var(--white);
+  /* font-size: 20px; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#followOut {
+  background-color: var(--medPurple);
+}
+
+#chatOut {
+  background-color: var(--medPurple);
+}
+
+.active {
+  background-color: gold !important;
+  color: var(--darkPurple) !important;
+}
+
+.btns i {
+  margin-right: 10px;
+}
+
+.userInfoHalfs {
+  background-color: var(--white);
+  margin: 30px 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px 20px 20px;
+  border-radius: var(--medBorder);
+
+  /* border: var(--darkPurple) solid 5px; */
+}
+
+.title {
+  font-family: var(--per);
+  font-size: 30px;
+  color: var(--darkPurple);
+}
+
+.value {
+  /* background-color: var(--darkPurple); */
+  font-family: var(--exo);
+  font-size: 20px;
+  color: var(--darkPurple);
+}
+
+/* friends section*/
+
+.friendscont {
+  margin: 50px 0 !important;
+}
+
+.friendspfp {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: var(--darkPurple) solid 5px;
+  margin-left: 20px;
+}
+
+.outerCenter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px 0px !important;
+  padding: 10px;
+  background-color: var(--medPurple);
+  border-radius: var(--medBorder);
+  padding: 20px;
+}
+
+.friendsTiles {
+  scale: 0.9;
+}
+
+.appendFriends {
+  margin: 0 20px !important;
+}
+
+.friendsName {
+  margin-left: 20px !important;
+  font-family: var(--exo);
+  color: var(--white);
+  font-size: 30px;
+}
+
+.friendTitle {
+  font-size: 50px;
+  /* border-bottom: var(--darkPurple) solid 5px; */
+  font-family: var(--per);
+  padding: 10px;
+}
+
+/* right Side More */
+.rightsideHead {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--per);
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.AEPannel {
+  margin: 30px 0;
+}
+
+/* EVENTS */
+.Events {
+  margin: 20px 0;
+  background-color: var(--white);
+  border-radius: var(--medBorder);
+  padding: 20px;
+  background-color: var(--medPurple);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px;
+}
+
+.Events p {
+  font-family: var(--exo);
+  font-size: 30px;
+  color: var(--white);
+  margin-left: 20px !important;
+}
+
+.eventImg {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: var(--darkPurple) solid 5px;
+  margin-left: 20px !important;
+}
+
+p {
+  margin: 0 !important;
+}
+
+/* MODAL */
+
+/* MODAL to create a review*/
+.modal2 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 8px;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content */
+.modal-content2 {
+  /* background-color: var(--darkPurple);
+  border-radius: var(--medBorder); */
+  border: 0px;
+  padding: 50px;
+}
+.CreateReview {
+  background-color: var(--darkPurple);
+  border-radius: var(--medBorder);
+  padding: 20px;
+}
+
+/* The Close Button */
+.close2 {
+  color: var(--medPurple);
+  position: absolute;
+  font-size: 60px;
+  top: 10%;
+  left: 25% !important;
+  font-weight: bold;
+}
+
+.close2:hover,
+.close2:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.CRHead {
+  font-size: 70px;
+  text-align: center;
+  font-family: var(--per);
+  color: var(--medPurple);
+}
+
+.CRInput {
+  background-color: var(--white);
+  border: 0px;
+  border-radius: var(--medBorder);
+  color: var(--darkPurple);
+  font-family: var(--exo);
+  font-size: 30px;
+  padding: 10px 30px 30px 30px !important;
+  margin-top: 30px !important;
+}
+
+.CRInput input {
+  width: 100%;
+  border: 0px;
+  border-radius: var(--medBorder);
+  padding: 10px;
+}
+
+.CRSub {
+  margin-top: 30px !important;
+  padding: 0 !important;
+}
+
+.sendBTN {
+  background-color: var(--medPurple);
+  border-radius: var(--medBorder);
+  padding: 20px;
+  font-size: 30px;
+}

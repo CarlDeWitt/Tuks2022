@@ -14,15 +14,13 @@ function getProfileInfo() {
 
       //   data
       const pfpImg = data.pfpImg;
-      const followers = data.followers; 
+      const followers = data.followers;
       const following = data.following;
       let friends = data.friends;
       const description = data.description;
       getFriends();
 
-      console.log(`./Media/Images/profile/${pfpImg}`);
       $(`.profileImg`).attr("src", `./Media/Images/profile/${pfpImg}`);
-      
       $(`.UserDescription`).html(description);
       $(`#followers`).html(followers);
       $(`#following`).html(following);
@@ -263,3 +261,35 @@ $(`#chatBTN`).on("click", function () {
     window.location.href = `./chat.php?UID=${UID}`;
   }
 });
+
+// MODAL
+
+// Create review MODAL
+var modal2 = document.getElementById("myModal2");
+
+// Get the button that opens the modal
+var btn2 = document.getElementById("myBtn2");
+
+// Get the <span> element that closes the modal
+var span2 = document.getElementsByClassName("close2")[0];
+
+// When the user clicks the button, open the modal
+// btn2.onclick = function () {};
+editBTN = () => {
+  if (UID == actualUID) {
+    modal2.style.display = "block";
+    return;
+  }
+};
+
+// When the user clicks on <span> (x), close the modal
+span2.onclick = function () {
+  modal2.style.display = "none";
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == modal2) {
+    modal2.style.display = "none";
+  }
+};

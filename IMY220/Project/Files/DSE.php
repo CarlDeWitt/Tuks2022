@@ -15,21 +15,9 @@
   <link rel="icon" type="image/png" sizes="16x16" href="Media/Fav/favicon-16x16.png" />
   <link rel="manifest" href="Media/Fav/site.webmanifest" />
 
-  <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Exo+2&family=Roboto:wght@100&display=swap" rel="stylesheet" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Exo+2&family=Roboto:wght@100&display=swap" rel="stylesheet" /> -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Exo+2&family=Permanent+Marker&display=swap" rel="stylesheet">
-  <!-- AOS -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2&family=Pacifico&family=Permanent+Marker&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <!-- font Awesome -->
@@ -80,8 +68,8 @@ $eventCreator = $row2['id'];
         <div class="container-fluid inner">
           <!-- user name -->
           <div class="row">
-            <div class="col-10 offset-1 data hoverClass" onclick="GoToProfile(<?php echo $row2['id'] ?>)">
-              <i class="fa-solid fa-user spacer"></i><?php echo $row2["name"] ?>
+            <div class="col-10 offset-1 data hoverClass" onclick="GoToProfile(<?php echo $row2['id']?>)">
+            <i class="fa-solid fa-user spacer"></i><?php echo $row2["name"] ?>
             </div>
           </div>
           <!-- date -->
@@ -101,9 +89,9 @@ $eventCreator = $row2['id'];
           <div class="row">
             <div class="col-10 offset-1 data">
               <i class="fa-solid fa-hashtag spacer"></i></i><?php
-                                                            $str =  $row["hastags"];
-                                                            echo substr($str, 1, strlen($str));
-                                                            ?>
+                                                      $str =  $row["hastags"];
+                                                      echo substr($str, 1, strlen($str));
+                                                      ?>
             </div>
           </div>
 
@@ -111,8 +99,8 @@ $eventCreator = $row2['id'];
           <div class="row">
             <div class="col-10 offset-1 data buttons">
               <i class="fa-solid fa-heart" onclick="heart()"></i><i class="fa-solid fa-clipboard-user" onclick="addlist(<?php echo $EID; ?>)"></i>
-              <i class="fa-solid fa-trash" onclick="Del(<?php echo $EID; ?>,<?php echo $_SESSION['UserIndex']; ?>)"></i>
-              <i class="fa-solid fa-bell-concierge" onclick="attend(<?php echo $EID; ?>,<?php echo $_SESSION['UserIndex']; ?>)"></i>
+              <i class="fa-solid fa-trash" onclick="Del(<?php echo $EID;?>,<?php echo $_SESSION['UserIndex'];?>)"></i>
+              <i class="fa-solid fa-bell-concierge" onclick="attend(<?php echo $EID;?>,<?php echo $_SESSION['UserIndex'];?>)"></i>
             </div>
           </div>
         </div>
@@ -127,7 +115,7 @@ $eventCreator = $row2['id'];
   <div class="container reviewsCont">
     <div class="row appendReview">
       <div class="col-12 ReviewsHead">Reviews<i id="myBtn2" class="fa-solid fa-square-plus AddReview"></i></div>
-      <div id="myModal2" class="modal2">
+            <div id="myModal2" class="modal2">
 
         <!-- Modal content -->
         <div class="modal-content2">
@@ -136,43 +124,43 @@ $eventCreator = $row2['id'];
             <div class="row">
               <div class="col-12 CRHead">Create Review</div>
               <form action="./PHP/createReview.php" method="POST" enctype="multipart/form-data">
-                <input type="hidden" id="EID" name="EID" value="<?php echo $EID; ?>">
-                <input type="hidden" id="UID" name="UID" value="<?php echo $UID; ?>">
+                <input type="hidden" id="EID" name="EID" value="<?php echo $EID;?>">
+                <input type="hidden" id="UID" name="UID" value="<?php echo $UID;?>">
 
                 <div class="col-6 offset-3 CRInput">
                   <label for="Rating">Rating:</label>
-                  <input type="text" id="Rating" name="Rating" placeholder="3" />
+                  <input type="text" id="Rating" name="Rating" placeholder="3"/>
                 </div>
-
+                
                 <div class="col-6 offset-3 CRInput">
-
+                  
                   <label for="Decsription">Description:</label>
-                  <input type="text" id="Decsription" name="Decsription" placeholder="was a good event" />
-
+                  <input type="text" id="Decsription" name="Decsription" placeholder="was a good event"/>
+                  
                 </div>
-
+                
                 <div class="col-6 offset-3 CRInput">
-
+                  
                   <label for="Rateimg">Review Image:</label>
                   <input type="file" class="form-control" name="Rateimg" id="fileToUpload" />
-
+                  
                 </div>
-
+                
                 <div class="col-3 offset-3 CRSub">
-
+                  
                   <button type="submit" class="sendBTN">
                     Submit <i class="fa-solid fa-paper-plane"></i>
                   </button>
                 </div>
               </form>
 
-
+              
             </div>
           </div>
         </div>
 
       </div>
-
+      
       <!-- <div class="col-lg-6 col-md-12 ReviewsEvent">
         <div class="ReviewL">
           <img src="Media/Images/reviews/rev1.jpg" class="ReviewsIMG"/>
@@ -227,63 +215,63 @@ $eventCreator = $row2['id'];
 
   <div id="myModal3" class="modal3">
 
-    <!-- Modal content -->
-    <div class="modal-content3">
-      <span class="close3">&times;</span>
-      <div class="container CreateReview">
-        <div class="row">
-          <div class="col-12 CRHead">Update Event</div>
-          <form action="./PHP/UpdateEvent.php" method="POST" enctype="multipart/form-data">
-            <input type="hidden" id="EID" name="EID" value="<?php echo $EID; ?>">
+<!-- Modal content -->
+<div class="modal-content3">
+  <span class="close3">&times;</span>
+  <div class="container CreateReview">
+    <div class="row">
+      <div class="col-12 CRHead">Update Event</div>
+      <form action="./PHP/UpdateEvent.php" method="POST" enctype="multipart/form-data">
+        <input type="hidden" id="EID" name="EID" value="<?php echo $EID;?>">
 
-            <div class="col-6 offset-3 CRInput">
-              <label for="Name">Name:</label>
-              <input type="text" id="Name" name="Name" placeholder="Name" />
-            </div>
-
-            <div class="col-6 offset-3 CRInput">
-
-              <label for="Decsription">Description:</label>
-              <input type="text" id="Decsription" name="Decsription" placeholder="was a good event" />
-
-            </div>
-
-            <div class="col-6 offset-3 CRInput">
-
-              <label for="Date">date:</label>
-              <input type="date" id="Date" name="Date" />
-
-            </div>
-
-            <div class="col-6 offset-3 CRInput">
-
-              <label for="Location">Location:</label>
-              <input type="text" id="Location" name="Location" placeholder="was a good event" />
-
-            </div>
-
-            <div class="col-6 offset-3 CRInput">
-
-              <label for="hashtag">Hashtag:</label>
-              <input type="text" id="hashtag" name="hashtag" placeholder="was a good event" />
-
-            </div>
-
-
-            <div class="col-3 offset-3 CRSub">
-
-              <button type="submit" class="sendBTN">
-                Submit <i class="fa-solid fa-paper-plane"></i>
-              </button>
-            </div>
-          </form>
-
-
+        <div class="col-6 offset-3 CRInput">
+          <label for="Name">Name:</label>
+          <input type="text" id="Name" name="Name" placeholder="Name"/>
         </div>
-      </div>
-    </div>
+        
+        <div class="col-6 offset-3 CRInput">
+          
+          <label for="Decsription">Description:</label>
+          <input type="text" id="Decsription" name="Decsription" placeholder="was a good event"/>
+          
+        </div>
 
+        <div class="col-6 offset-3 CRInput">
+          
+          <label for="Date">date:</label>
+          <input type="date" id="Date" name="Date"/>
+          
+        </div>
+
+        <div class="col-6 offset-3 CRInput">
+          
+          <label for="Location">Location:</label>
+          <input type="text" id="Location" name="Location" placeholder="was a good event"/>
+          
+        </div>
+
+        <div class="col-6 offset-3 CRInput">
+          
+          <label for="hashtag">Hashtag:</label>
+          <input type="text" id="hashtag" name="hashtag" placeholder="was a good event"/>
+          
+        </div>
+        
+        
+        <div class="col-3 offset-3 CRSub">
+          
+          <button type="submit" class="sendBTN">
+            Submit <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </div>
+      </form>
+
+      
+    </div>
   </div>
+</div>
+
+</div>
 
 
 
