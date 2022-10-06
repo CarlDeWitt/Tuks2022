@@ -12,24 +12,34 @@ class UsernamePasswordInput extends React.Component {
     let password = this.passwordInput.current.value;
     // console.log(username, password);
     /*PASSWORD*/
-    if (password.length <= 8) {
+    if (password.length < 7) {
       alert("Password must be at least 8 characters long");
     }
-    const upperCheck = password[0].toUpperCase();
-    if (password[0] !== upperCheck) {
-      alert("Password must start with a capital letter");
-    }
 
+    const upperCaseInLetter = /[A-Z]/;
+
+    if(!password.match(upperCaseInLetter)){
+      alert("You need an Upper Case letter in Password")
+    }
+    
     const didgitCheck = /[0-9]/gm;
     if (!password.match(didgitCheck)) {
       alert("Password must contain at least one digit");
     }
 
-    // /*USERNAME*/
-    // const specialChar = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
-    // if (specialChar.test(password)) {
-    //   alert("Password must contain a special character");
-    // }
+    /*USERNAME*/
+    const specialChar = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+    if (specialChar.test(username)) {
+      alert("username must not contain a special character");
+    }
+    const upperCheck = username[0].toUpperCase();
+    if (username[0] !== upperCheck) {
+      alert("username must start with a capital letter");
+    }
+    if(username.length < 2 ){
+      alert("username must be longer than 2 chars")
+    }
+    
   }
 
   render() {
@@ -45,4 +55,12 @@ class UsernamePasswordInput extends React.Component {
   }
 }
 
-ReactDOM.render(<UsernamePasswordInput />, document.getElementById("root"));
+class LoginForm extends React.Component{
+  constructor(e){
+    
+  }
+}
+
+ReactDOM.render(<UsernamePasswordInput validatePass={someFunctionHere}
+  validateUsername={someFunctionHere}/>, document.getElementById("root"));
+

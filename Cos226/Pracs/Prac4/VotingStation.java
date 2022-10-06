@@ -30,7 +30,7 @@ public class VotingStation {
 			}
 		} else {
 			for (int i = 1; i <= 5; i++) {
-				t.tryLock(200, TimeUnit.MILLISECONDS);
+				t.tryLock(1000, TimeUnit.MILLISECONDS);
 				try {
 					System.out.println(
 							"[" + Thread.currentThread().getName() + "]" + "[" + i + "] entered the voting station");
