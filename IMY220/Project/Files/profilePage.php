@@ -9,12 +9,17 @@
 
   <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
+
   <link rel="apple-touch-icon" sizes="180x180" href="Media/Fav/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="Media/Fav/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="Media/Fav/favicon-16x16.png" />
   <link rel="manifest" href="Media/Fav/site.webmanifest" />
+  <!-- <link rel="apple-touch-icon" sizes="180x180" href="Media/Fav/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="Media/Fav/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="Media/Fav/favicon-16x16.png" />
+  <link rel="manifest" href="Media/Fav/site.webmanifest" /> -->
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Exo+2&family=Roboto:wght@100&display=swap" rel="stylesheet" />
 
@@ -24,7 +29,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Exo+2&family=Roboto:wght@100&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2&family=Roboto:wght@100&display=swap" rel="stylesheet" /> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2&family=Permanent+Marker&display=swap" rel="stylesheet">
   <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

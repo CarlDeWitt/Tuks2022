@@ -6,7 +6,7 @@
   --grey: #e9eaeff6;
   --white: #e9eaeff6;
   --medBorder: 10px;
-  --per: Permanent Marker;
+  --per: "Permanent Marker";
   --exo: "Exo 2";
   --sat: "Rock Salt";
   --cater: "Carter One";
@@ -69,7 +69,7 @@ i {
   border-radius: var(--medBorder);
 }
 .name {
-  font-family: var(--cur);
+  font-family: var(--per);
   font-size: 100px;
   color: var(--medPurple);
   text-align: center;
@@ -347,7 +347,7 @@ img {
 .ReviewsHead {
   font-size: 70px;
   text-align: center;
-  font-family: var(--per);
+  font-family: var(--per) !important;
   color: var(--medPurple);
   margin-bottom: 40px;
   position: relative;

@@ -14,13 +14,15 @@ function getProfileInfo() {
 
       //   data
       const pfpImg = data.pfpImg;
-      const followers = data.followers;
+      const followers = data.followers; 
       const following = data.following;
       let friends = data.friends;
       const description = data.description;
       getFriends();
 
+      console.log(`./Media/Images/profile/${pfpImg}`);
       $(`.profileImg`).attr("src", `./Media/Images/profile/${pfpImg}`);
+      
       $(`.UserDescription`).html(description);
       $(`#followers`).html(followers);
       $(`#following`).html(following);
