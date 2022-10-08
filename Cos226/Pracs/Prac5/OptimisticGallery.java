@@ -6,8 +6,9 @@ public class OptimisticGallery<T> extends Thread {
         head.next = new Node(Integer.MAX_VALUE);
     }
 
-    public boolean add(T item, int accesTime) {
-        int key = item.hashCode();
+    public boolean add(int i, T item, int accesTime) {
+        String s = i + item.toString();
+        int key = s.hashCode();
         while (true) {
             Node pred = head;
             Node curr = pred.next;
@@ -24,6 +25,7 @@ public class OptimisticGallery<T> extends Thread {
                     } else { // try to add new node
                         Node node = new Node(item);
                         node.time = accesTime;
+                        node.number = i;
                         node.next = curr;
                         pred.next = node;
                         return true;
@@ -37,7 +39,36 @@ public class OptimisticGallery<T> extends Thread {
     }
 
     private boolean validate(Node pred, Node curr) {
+        Node node = head;
+        while (node.key <= pred.key) {
+            if (node == pred) {
+                return pred.next == curr;
+            }
+            node = node.next;
+        }
         return false;
+    }
+
+    private boolean contains(T item) {
+        int key = item.hashCode();
+        while (true) {
+            Node pred = this.head; // sentinel node;
+            Node curr = pred.next;
+            while (curr.key < key) {
+                pred = curr;
+                curr = curr.next;
+            }
+            pred.lock();
+            curr.lock();
+            try {
+                if (validate(pred, curr)) {
+                    return (curr.key == key);
+                }
+            } finally { // always unlock
+                pred.unlock();
+                curr.unlock();
+            }
+        }
     }
 
     public boolean remove(T item, String name) {
@@ -57,7 +88,7 @@ public class OptimisticGallery<T> extends Thread {
                     System.out.print(Thread.currentThread().getName() + ":");
                     Node it = curr;
                     while (it != null) {
-                        System.out.print("\u001B[32m(P-" + item + ", " + it.time + "ms)\u001B[0m");
+                        System.out.print("\u001B[32m(P-" + it.number + ", " + it.time + "ms)\u001B[0m");
                         it = it.next;
                     }
                     System.out.println();

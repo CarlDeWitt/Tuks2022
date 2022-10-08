@@ -6,6 +6,7 @@ public class Node<T> {
     Node<T> next;
     int key;
     int time;
+    int number;
 
     public Node(T item) {
         this.item = item;

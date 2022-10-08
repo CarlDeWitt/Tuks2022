@@ -1,6 +1,7 @@
 public class Popo extends Thread {
     private CoarseGrainedGallery p;
     private FineGrainedGallery f;
+    private OptimisticGallery o;
 
     public Popo(CoarseGrainedGallery p) {
         this.p = p;
@@ -10,13 +11,19 @@ public class Popo extends Thread {
         this.f = f;
     }
 
+    public Popo(OptimisticGallery o) {
+        this.o = o;
+    }
+
     public void run() {
         for (int i = 0; i < 5; i++) {
             int accesTime = Random();
             if (p != null)
-                p.add(i + Thread.currentThread().getName(), accesTime);
+                p.add(i, Thread.currentThread().getName(), accesTime);
             else if (f != null)
-                f.add(i + Thread.currentThread().getName(), accesTime);
+                f.add(i, Thread.currentThread().getName(), accesTime);
+            else
+                o.add(i, Thread.currentThread().getName(), accesTime);
             System.out.println("[" + Thread.currentThread().getName() + "] added ([P-" +
                     i + "],["
                     + accesTime + "ms])");
@@ -29,6 +36,8 @@ public class Popo extends Thread {
                 p.remove(i, Thread.currentThread().getName());
             else if (f != null)
                 f.remove(i, Thread.currentThread().getName());
+            else
+                o.remove(i, Thread.currentThread().getName());
         }
 
     }

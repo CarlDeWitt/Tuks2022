@@ -14,6 +14,7 @@ class UsernamePasswordInput extends React.Component {
     const specialChar = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
     if (specialChar.test(username)) {
       console.log("username must not contain a special character");
+      casecheck = false;
     }
     const upperCheck = username[0].toUpperCase();
     if (username[0] !== upperCheck) {
@@ -26,7 +27,7 @@ class UsernamePasswordInput extends React.Component {
     }
 
     if (casecheck) {
-      this.props.validateUser();
+      this.props.validateUser(username);
     }
   }
 
@@ -59,13 +60,23 @@ class UsernamePasswordInput extends React.Component {
 
   render() {
     return (
-      <div>
-        <input type="text" ref={this.nameInput} onChange={this.checkUsername} />
-        <input
-          type="text"
-          ref={this.passwordInput}
-          onChange={this.checkPassword}
-        />
+      <div className="row">
+        <div className="col-6">
+          <input
+            type="text"
+            placeholder="username"
+            ref={this.nameInput}
+            onChange={this.checkUsername}
+          />
+        </div>
+        <div className="col-6">
+          <input
+            type="text"
+            placeholder="password"
+            ref={this.passwordInput}
+            onChange={this.checkPassword}
+          />
+        </div>
       </div>
     );
   }
@@ -74,23 +85,26 @@ class UsernamePasswordInput extends React.Component {
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
-    this.submit = this.submit.bind(this);
+
     this.validateUserfunction = this.validateUserfunction.bind(this);
     this.validatePassfunction = this.validatePassfunction.bind(this);
-    this.state = { state1: false, state2: false };
+    this.sendFunction = this.sendFunction.bind(this);
+    this.state = { state1: false, state2: false, username: "" };
   }
 
-  submit(e) {
-    if (this.state.stat1 == true && this.state.stat2 == true) {
-      console.log("submit");
-    } else {
-      console.log("not submit");
-      e.preventDefault();
+  sendFunction(e) {
+    e.preventDefault();
+    if (this.state.state1 && this.state.state2) {
+      ReactDOM.render(
+        <ProfilePage insertUsername={this.state.username} />,
+        document.getElementById("root")
+      );
     }
   }
 
-  validateUserfunction() {
+  validateUserfunction(name) {
     this.setState({ state1: true });
+    this.setState({ username: name });
   }
 
   validatePassfunction() {
@@ -99,15 +113,44 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <form>
+      <div>
         <UsernamePasswordInput
           validateUser={this.validateUserfunction}
           validatePass={this.validatePassfunction}
         />
-        <button type="submit" value="Add">
+        <button
+          type="submit"
+          value="Add"
+          onClick={this.sendFunction}
+          disabled={this.state.state1 && this.state.state2 ? false : true}
+        >
           Submit
         </button>
-      </form>
+      </div>
+    );
+  }
+}
+
+class ProfilePage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { username: "" };
+    this.logout = this.logout.bind(this);
+  }
+
+  logout() {
+    this.setState({ username: "" });
+    ReactDOM.render(<LoginForm />, document.getElementById("root"));
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Hi, welcome back {this.props.insertUsername}</h1>
+        <button type="submit" value="Add" onClick={this.logout}>
+          Log out
+        </button>
+      </div>
     );
   }
 }

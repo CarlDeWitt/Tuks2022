@@ -11,9 +11,10 @@ public class CoarseGrainedGallery<T> extends Thread {
         head.next = new Node(Integer.MAX_VALUE);
     }
 
-    public boolean add(T item, int accesTime) {
+    public boolean add(int i, T item, int accesTime) {
         Node pred, curr;
-        int key = item.hashCode();
+        String s = i + item.toString();
+        int key = s.hashCode();
         lock.lock();
         try {
             pred = head;
@@ -27,6 +28,7 @@ public class CoarseGrainedGallery<T> extends Thread {
             } else { // try to add new node
                 Node node = new Node(item);
                 node.time = accesTime;
+                node.number = i;
                 node.next = curr;
                 pred.next = node;
                 return true;
@@ -52,7 +54,7 @@ public class CoarseGrainedGallery<T> extends Thread {
             System.out.print(Thread.currentThread().getName() + ":");
             Node it = curr;
             while (it != null) {
-                System.out.print("\u001B[32m(P-" + item + ", " + it.time + "ms)\u001B[0m");
+                System.out.print("\u001B[32m(P-" + it.number + ", " + it.time + "ms)\u001B[0m");
                 it = it.next;
             }
             System.out.println();
@@ -65,10 +67,6 @@ public class CoarseGrainedGallery<T> extends Thread {
         } finally {
             lock.unlock();
         }
-    }
-
-    private int Random() {
-        return 100 + (int) (Math.random() * 1000);
     }
 
 }

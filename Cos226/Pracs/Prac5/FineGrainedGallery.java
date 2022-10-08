@@ -6,8 +6,9 @@ public class FineGrainedGallery<T> extends Thread {
         head.next = new Node(Integer.MAX_VALUE);
     }
 
-    public boolean add(T item, int accesTime) {
-        int key = item.hashCode();
+    public boolean add(int i, T item, int accesTime) {
+        String s = i + item.toString();
+        int key = s.hashCode();
         head.lock();
         Node pred = head;
         try {
@@ -25,6 +26,7 @@ public class FineGrainedGallery<T> extends Thread {
                 } else { // try to add new node
                     Node node = new Node(item);
                     node.time = accesTime;
+                    node.number = i;
                     node.next = curr;
                     pred.next = node;
                     return true;
@@ -56,7 +58,7 @@ public class FineGrainedGallery<T> extends Thread {
                 System.out.print(Thread.currentThread().getName() + ":");
                 Node it = curr;
                 while (it != null) {
-                    System.out.print("\u001B[32m(P-" + item + ", " + it.time + "ms)\u001B[0m");
+                    System.out.print("\u001B[32m(P-" + it.number + ", " + it.time + "ms)\u001B[0m");
                     it = it.next;
                 }
                 System.out.println();
