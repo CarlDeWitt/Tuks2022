@@ -18,12 +18,13 @@ public class Popo extends Thread {
     public void run() {
         for (int i = 0; i < 5; i++) {
             int accesTime = Random();
+            String hashname = i + Thread.currentThread().getName();
             if (p != null)
-                p.add(i, Thread.currentThread().getName(), accesTime);
+                p.add(i, hashname, accesTime);
             else if (f != null)
-                f.add(i, Thread.currentThread().getName(), accesTime);
+                f.add(i, hashname, accesTime);
             else
-                o.add(i, Thread.currentThread().getName(), accesTime);
+                o.add(i, hashname, accesTime);
             System.out.println("[" + Thread.currentThread().getName() + "] added ([P-" +
                     i + "],["
                     + accesTime + "ms])");
@@ -33,11 +34,11 @@ public class Popo extends Thread {
                 e.printStackTrace();
             }
             if (p != null)
-                p.remove(i, Thread.currentThread().getName());
+                p.remove(i, hashname);
             else if (f != null)
-                f.remove(i, Thread.currentThread().getName());
+                f.remove(i, hashname);
             else
-                o.remove(i, Thread.currentThread().getName());
+                o.remove(i, hashname);
         }
 
     }
