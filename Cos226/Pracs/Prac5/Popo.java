@@ -33,12 +33,16 @@ public class Popo extends Thread {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            if (p != null)
-                p.remove(i, hashname);
-            else if (f != null)
-                f.remove(i, hashname);
-            else
-                o.remove(i, hashname);
+            if (p != null) {
+                p.remove(hashname);
+                p.print();
+            } else if (f != null) {
+                f.remove(hashname);
+                f.print();
+            } else {
+                o.remove(hashname);
+                o.print();
+            }
         }
 
     }

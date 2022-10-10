@@ -6,9 +6,8 @@ public class OptimisticGallery<T> extends Thread {
         head.next = new Node(Integer.MAX_VALUE);
     }
 
-    public boolean add(int i, T item, int accesTime) {
-        String s = i + item.toString();
-        int key = s.hashCode();
+    public boolean add(int i, T name, int accesTime) {
+        int key = name.hashCode();
         while (true) {
             Node pred = head;
             Node curr = pred.next;
@@ -23,7 +22,7 @@ public class OptimisticGallery<T> extends Thread {
                     if (key == curr.key) { // duplicates not allowed
                         return false;
                     } else { // try to add new node
-                        Node node = new Node(item);
+                        Node node = new Node(name);
                         node.time = accesTime;
                         node.number = i;
                         node.next = curr;
@@ -71,9 +70,8 @@ public class OptimisticGallery<T> extends Thread {
         }
     }
 
-    public boolean remove(T item, String name) {
-        String s = item + name;
-        int key = s.hashCode();
+    public boolean remove(String name) {
+        int key = name.hashCode();
         while (true) {
             Node pred = head, curr = pred.next;
             while (curr.key < key) {
@@ -85,13 +83,6 @@ public class OptimisticGallery<T> extends Thread {
             try {
                 if (validate(pred, curr)) {
                     pred.next = curr.next;
-                    System.out.print(Thread.currentThread().getName() + ":");
-                    Node it = curr;
-                    while (it != null) {
-                        System.out.print("\u001B[32m(P-" + it.number + ", " + it.time + "ms)\u001B[0m");
-                        it = it.next;
-                    }
-                    System.out.println();
                     return true;
                 }
             } finally {
@@ -99,5 +90,21 @@ public class OptimisticGallery<T> extends Thread {
                 curr.unlock();
             }
         }
+    }
+
+    public void print() {
+        Node itHead = head.next;
+        itHead.lock();
+        try {
+            Node it = itHead;
+            System.out.print(Thread.currentThread().getName() + ":");
+            while (it != null) {
+                System.out.print("\u001B[32m(P-" + it.number + ", " + it.time + "ms)\u001B[0m");
+                it = it.next;
+            }
+        } finally {
+            itHead.unlock();
+        }
+        System.out.println();
     }
 }

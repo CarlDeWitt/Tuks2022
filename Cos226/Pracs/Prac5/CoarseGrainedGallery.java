@@ -37,25 +37,17 @@ public class CoarseGrainedGallery<T> extends Thread {
         }
     }
 
-    public boolean remove(T item, String name) {
+    public boolean remove(String name) {
         Node pred, curr;
         int key = name.hashCode();
         lock.lock();
         try {
-
             pred = head;
             curr = pred.next;
             while (curr.key < key) {
                 pred = curr;
                 curr = curr.next;
             }
-            System.out.print(Thread.currentThread().getName() + ":");
-            Node it = curr;
-            while (it != null) {
-                System.out.print("\u001B[32m(P-" + it.number + ", " + it.time + "ms)\u001B[0m");
-                it = it.next;
-            }
-            System.out.println();
             if (key == curr.key) {
                 pred.next = curr.next;
                 return true;
@@ -65,6 +57,22 @@ public class CoarseGrainedGallery<T> extends Thread {
         } finally {
             lock.unlock();
         }
+    }
+
+    public void print() {
+        lock.lock();
+        try {
+
+            Node it = head.next;
+            System.out.print(Thread.currentThread().getName() + ":");
+            while (it != null) {
+                System.out.print("\u001B[32m(P-" + it.number + ", " + it.time + "ms)\u001B[0m");
+                it = it.next;
+            }
+        } finally {
+            lock.unlock();
+        }
+        System.out.println();
     }
 
 }

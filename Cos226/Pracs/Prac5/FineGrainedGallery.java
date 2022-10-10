@@ -6,9 +6,8 @@ public class FineGrainedGallery<T> extends Thread {
         head.next = new Node(Integer.MAX_VALUE);
     }
 
-    public boolean add(int i, T item, int accesTime) {
-        String s = i + item.toString();
-        int key = s.hashCode();
+    public boolean add(int i, String name, int accesTime) {
+        int key = name.hashCode();
         head.lock();
         Node pred = head;
         try {
@@ -24,7 +23,7 @@ public class FineGrainedGallery<T> extends Thread {
                 if (key == curr.key) { // duplicates not allowed
                     return false;
                 } else { // try to add new node
-                    Node node = new Node(item);
+                    Node node = new Node(name);
                     node.time = accesTime;
                     node.number = i;
                     node.next = curr;
@@ -39,10 +38,9 @@ public class FineGrainedGallery<T> extends Thread {
         }
     }
 
-    public boolean remove(T item, String name) {
+    public boolean remove(String name) {
         Node pred = null, curr = null;
-        String s = item + name;
-        int key = s.hashCode();
+        int key = name.hashCode();
         head.lock();
         try {
             pred = head;
@@ -55,13 +53,6 @@ public class FineGrainedGallery<T> extends Thread {
                     curr = curr.next;
                     curr.lock();
                 }
-                System.out.print(Thread.currentThread().getName() + ":");
-                Node it = curr;
-                while (it != null) {
-                    System.out.print("\u001B[32m(P-" + it.number + ", " + it.time + "ms)\u001B[0m");
-                    it = it.next;
-                }
-                System.out.println();
                 if (key == curr.key) {
                     pred.next = curr.next;
                     return true;
@@ -74,5 +65,21 @@ public class FineGrainedGallery<T> extends Thread {
         } finally {
             pred.unlock();
         }
+    }
+
+    public void print() {
+        Node itHead = head.next;
+        itHead.lock();
+        try {
+            Node it = itHead;
+            System.out.print(Thread.currentThread().getName() + ":");
+            while (it != null) {
+                System.out.print("\u001B[32m(P-" + it.number + ", " + it.time + "ms)\u001B[0m");
+                it = it.next;
+            }
+        } finally {
+            itHead.unlock();
+        }
+        System.out.println();
     }
 }
