@@ -1,15 +1,31 @@
 public class Popo extends Thread {
-    private GalleryQueue p;
+    private CoarseGrainedGallery p;
+    private FineGrainedGallery f;
+    private OptimisticGallery o;
 
-    public Popo(GalleryQueue p) {
+    public Popo(CoarseGrainedGallery p) {
         this.p = p;
+    }
+
+    public Popo(FineGrainedGallery f) {
+        this.f = f;
+    }
+
+    public Popo(OptimisticGallery o) {
+        this.o = o;
     }
 
     public void run() {
         for (int i = 0; i < 5; i++) {
-            p.add(i + Thread.currentThread().getId());
             int accesTime = Random();
-            System.out.println("[" + Thread.currentThread().getName() + "] added ([" +
+            String hashname = i + Thread.currentThread().getName();
+            if (p != null)
+                p.add(i, hashname, accesTime);
+            else if (f != null)
+                f.add(i, hashname, accesTime);
+            else
+                o.add(i, hashname, accesTime);
+            System.out.println("[" + Thread.currentThread().getName() + "] added ([P-" +
                     i + "],["
                     + accesTime + "ms])");
             try {
@@ -17,11 +33,18 @@ public class Popo extends Thread {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            p.remove(i);
-            System.out.println("[" + Thread.currentThread().getName() + "] removed ([" +
-                    i + "],["
-                    + accesTime + "ms])");
+            if (p != null) {
+                p.remove(hashname);
+                p.print();
+            } else if (f != null) {
+                f.remove(hashname);
+                f.print();
+            } else {
+                o.remove(hashname);
+                o.print();
+            }
         }
+
     }
 
     private int Random() {

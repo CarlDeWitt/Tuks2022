@@ -1,7 +1,12 @@
 class main {
     public static void main(String[] args) {
-        GalleryQueue g = new GalleryQueue();
-        Popo p = new Popo(g);
+        CoarseGrainedGallery g = new CoarseGrainedGallery();
+        FineGrainedGallery f = new FineGrainedGallery();
+        OptimisticGallery o = new OptimisticGallery();
+
+        // Popo p = new Popo(g);
+        // Popo p = new Popo(f);
+        Popo p = new Popo(o);
 
         Thread ACCESSPOINT1 = new Thread(p);
         Thread ACCESSPOINT2 = new Thread(p);
