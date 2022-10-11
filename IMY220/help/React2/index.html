@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+  </head>
+  <body>
+    <h1>Carls special react playlist queue</h1>
+    <div id="root"></div>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.19.3/babel.js"></script>
+
+    <script type="text/babel" async defer>
+      class Playlistqueue extends React.Component {
+        constructor(props) {
+          super(props);
+          this.check = this.check.bind(this);
+          this.songInput = React.createRef();
+        }
+
+        check(e) {
+          if (e.keyCode == 13) {
+            let input = this.songInput.current.value;
+            console.log(input);
+          }
+        }
+
+        render() {
+          return (
+            <div>
+              <h3>Sogns in queue num</h3>
+              <ul></ul>
+              <input type="text" ref={this.sognName} onKeyUp={this.check} />
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(<Playlistqueue />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
