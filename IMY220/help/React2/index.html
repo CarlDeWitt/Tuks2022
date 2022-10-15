@@ -24,6 +24,32 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.19.3/babel.js"></script>
 
     <script type="text/babel" async defer>
+      class DisplaySongs extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = { song: this.props.songs };
+          this.addSong = this.addSong.bind(this);
+        }
+
+        addSong(name) {
+          console.log("here");
+          this.setState({ song: [...this.state.song, name] });
+        }
+
+        render() {
+          return (
+            <div>
+              <h2>Display Songs</h2>
+              <ul>
+                {this.state.song.map((s, i = 0) => (
+                  <li key={i++}>{s.name}</li>
+                ))}
+              </ul>
+            </div>
+          );
+        }
+      }
+
       class Playlistqueue extends React.Component {
         constructor(props) {
           super(props);
@@ -34,7 +60,8 @@
         check(e) {
           if (e.keyCode == 13) {
             let input = this.songInput.current.value;
-            console.log(input);
+            SongList.push({ name: input });
+            this.props.songs;
           }
         }
 
@@ -42,12 +69,16 @@
           return (
             <div>
               <h3>Sogns in queue num</h3>
-              <ul></ul>
-              <input type="text" ref={this.sognName} onKeyUp={this.check} />
+              <ul>
+                <DisplaySongs songs={SongList} addSong={this.check} />
+              </ul>
+              <input type="text" ref={this.songInput} onKeyUp={this.check} />
             </div>
           );
         }
       }
+
+      let SongList = [{ name: "yess Sir" }, { name: "Baby cakes" }];
 
       ReactDOM.render(<Playlistqueue />, document.getElementById("root"));
     </script>
