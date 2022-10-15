@@ -162,8 +162,20 @@
       id="hero"
       class="d-flex flex-column justify-content-center align-items-center"
     >
-      <div class="hero-container" data-aos="fade-in">
-        <h1>Carl de Witt</h1>
+      <img
+        src="./assets/img/mefront.png"
+        alt=""
+        id="myPfp"
+        data-aos="fade-right"
+      />
+      <img
+        src="assets/img/logoDark.png"
+        alt=""
+        id="logo"
+        data-aos="fade-left"
+      />
+      <div class="hero-container" data-aos="fade-right">
+        <h1 id="myName">Carl de Witt</h1>
         <p>
           I'm
           <span
@@ -173,12 +185,6 @@
           <!-- <div id="logo"></div> -->
         </p>
       </div>
-      <img
-        src="assets/img/logoDark.png"
-        alt=""
-        id="logo"
-        data-aos="fade-left"
-      />
     </section>
     <!-- End Hero -->
 
@@ -464,20 +470,83 @@
       <!-- End Skills Section -->
 
       <!-- ======= Resume Section ======= -->
+      <!-- https://alvarotrigo.com/blog/html-css-timelines/ -->
       <section id="resume" class="resume">
         <div class="container">
           <div class="section-title">
             <h2>VIO</h2>
-            <p>
-              Magnam dolores commodi suscipit. Necessitatibus eius consequatur
-              ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam
-              quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
-              Quia fugiat sit in iste officiis commodi quidem hic quas.
-            </p>
-          </div>
 
-          <div class="row">
-            <div class="col-12">hello vio</div>
+            <section id="timeline">
+              <div class="tl-item">
+                <div
+                  class="tl-bg"
+                  style="
+                    background-image: url(https://placeimg.com/801/801/nature);
+                  "
+                ></div>
+
+                <div class="tl-year">
+                  <p class="f2 heading--sanSerif">Prj 1</p>
+                </div>
+
+                <div class="tl-content">
+                  <h1>vio project 1</h1>
+                  <p>this is a trailer for my comic</p>
+                </div>
+              </div>
+
+              <div class="tl-item">
+                <div
+                  class="tl-bg"
+                  style="background-image: url(./assets/img/VIO/prj2.png)"
+                ></div>
+
+                <div class="tl-year">
+                  <p class="f2 heading--sanSerif">Prj 2</p>
+                </div>
+
+                <div class="tl-content">
+                  <h1 class="f3 text--accent ttu">vio prjoect 3</h1>
+                  <p>THis is an info graphic about the my comic</p>
+                </div>
+              </div>
+
+              <div class="tl-item">
+                <div
+                  class="tl-bg"
+                  style="
+                    background-image: url(https://placeimg.com/803/803/nature);
+                  "
+                ></div>
+
+                <div class="tl-year">
+                  <p class="f2 heading--sanSerif">prj 3</p>
+                </div>
+
+                <div class="tl-content">
+                  <h1 class="f3 text--accent ttu">VIO project 3</h1>
+                  <p>interactive comic with sounds and animations</p>
+                </div>
+              </div>
+
+              <div class="tl-item">
+                <div
+                  class="tl-bg"
+                  style="
+                    background-image: url(https://placeimg.com/800/800/nature);
+                  "
+                ></div>
+
+                <div class="tl-year">
+                  <p class="f2 heading--sanSerif">prj 4</p>
+                </div>
+
+                <div class="tl-content">
+                  <h1 class="f3 text--accent ttu">VIO project 4</h1>
+                  <p>this is my vio comic</p>
+                </div>
+              </div>
+            </section>
           </div>
         </div>
       </section>
