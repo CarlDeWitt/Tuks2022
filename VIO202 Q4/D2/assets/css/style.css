@@ -23,7 +23,14 @@
 --------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
+  /* font-family: Arial;
+  font-size: 37px;
+  line-height: 35px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-weight: 700; */
   color: var(--darkGrey);
+  /* overflow: hidden; */
 }
 
 a {
@@ -239,6 +246,57 @@ h6 {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+.icon-scroll,
+.icon-scroll:before {
+  position: absolute;
+  left: 50%;
+}
+.icon-scroll {
+  position: absolute;
+  width: 40px;
+  height: 70px;
+  margin-left: -20px;
+  top: 94%;
+  left: 73% !important;
+  margin-top: -35px;
+  box-shadow: inset 0 0 0 1px #fff;
+  border-radius: 25px;
+  z-index: 5;
+}
+.icon-scroll:before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  margin-left: -4px;
+  top: 8px;
+  border-radius: 4px;
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: scroll;
+  animation-name: scroll;
+}
+@-webkit-keyframes scroll {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(46px);
+  }
+}
+@keyframes scroll {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(46px);
+  }
+}
+
 #hero {
   width: 100%;
   height: 100vh;
@@ -270,7 +328,7 @@ h6 {
 #logo {
   position: absolute;
   right: 0%;
-  top: 73% !important;
+  top: 75% !important;
   width: 300px;
   z-index: 0;
   animation: MoveUpDown 2s linear infinite;
@@ -918,9 +976,12 @@ button:focus::after {
 }
 .tl-content h1 {
   text-transform: uppercase;
+  font-size: 40px !important;
   color: #1779cf;
-  font-size: 1.44rem;
-  font-weight: normal;
+}
+
+.tl-content p {
+  font-size: 20px !important;
 }
 
 .tl-year {
@@ -929,8 +990,8 @@ button:focus::after {
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   z-index: 1;
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
+  /* border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff; */
 }
 .tl-year p {
   font-family: "Pathway Gothic One", Helvetica Neue, Helvetica, Arial,

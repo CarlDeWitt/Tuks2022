@@ -401,3 +401,20 @@ class VerticalMouseDrivenCarousel {
 }
 
 new VerticalMouseDrivenCarousel();
+
+/* VIO section */
+$(`.tl1`).on(`clcik`, function () {
+  window.location.href = `https://effortless-faun-8e1b92.netlify.app/`;
+});
+
+$(`.tl2`).on(`click`, function () {
+  window.location.href = `https://resplendent-syrniki-f643de.netlify.app/`;
+});
+
+$(`.tl3`).on(`click`, function () {
+  window.location.href = `bob.html`;
+});
+
+$(`.tl4`).on(`click`, function () {
+  window.location.href = `bob.html`;
+});
