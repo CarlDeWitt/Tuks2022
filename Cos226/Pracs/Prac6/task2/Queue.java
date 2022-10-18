@@ -28,19 +28,34 @@ class Queue<T> {
             last = tail.get();
             // get next of tail
             next = (last + 1);
-            // if tail is still pointing to last
+            // // System.out.println("After****");
+            // for (int i = 0; i < capacity; i++) {
+            // System.out.println("index: " + i + " =" + queue[i]);
+            // }
+            // System.out.println("size is: " + size.get());
+            // System.out.println("tail is at: " + tail);
+            // System.out.println("------------------------------");
+            // is still pointing to last
             if (last == tail.get()) {
                 // add x to queue
+
+                if (next >= capacity) {
+                    next = capacity - 1;
+                    // System.out.println("Value of next is " + next + " and capacity is " +
+                    // capacity);
+                }
                 if (queue[next] == null) {
-                    if (queue[last + 1] == queue[next]) {
-                        queue[last] = x;
+                    // System.out.println("Value of next is " + (last + 1));
+                    // if (last + 1 >= capacity) {
+                    // last = capacity - 1;
+                    // }
+                    if (queue[(last + 1) % capacity] == queue[next]) {
+                        queue[(last + 1) % capacity] = x;
                         tail.getAndIncrement();
                         size.getAndIncrement();
                         System.out.println("\033[0;31m" + x + " is ordering food \033[0m");
                         break;
                     }
-                } else {
-                    System.out.println("TBH i dunno");
                 }
             }
         }
@@ -88,5 +103,4 @@ class Queue<T> {
 
         }
     }
-
 }
