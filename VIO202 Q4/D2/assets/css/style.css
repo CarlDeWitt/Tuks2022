@@ -100,6 +100,11 @@ h6 {
   padding: 0 15px;
   background: var(--darkGrey);
   overflow-y: auto;
+  overflow: hidden;
+}
+
+.flex-column {
+  position: relative;
 }
 
 #header .profile img {
@@ -160,9 +165,19 @@ h6 {
   }
 }
 
+#logo2 {
+  position: absolute;
+  right: 0%;
+  top: 72% !important;
+  width: 300px;
+  z-index: 0;
+  animation: MoveUpDown 2s linear infinite;
+}
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
+
 /* Desktop Navigation */
 
 .nav-menu {
@@ -257,7 +272,7 @@ h6 {
   height: 70px;
   margin-left: -20px;
   top: 94%;
-  left: 73% !important;
+  left: 95% !important;
   margin-top: -35px;
   box-shadow: inset 0 0 0 1px #fff;
   border-radius: 25px;
@@ -348,8 +363,8 @@ h6 {
   position: absolute;
   z-index: 2;
   min-width: 300px;
-  top: 28%;
-  left: 57% !important;
+  top: 29%;
+  left: 63% !important;
 }
 
 #hero h1 {
