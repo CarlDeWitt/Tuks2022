@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+xmlns:nf="https://realbooks.cn/ns/1.0/nf"
+xmlns:f="https://realbooks.cn/ns/1.0/f">
+<xs:import namespace="https://realbooks.cn/ns/1.0/nf" schemaLocation="val2.xsd">	</xs:import>
+<xs:import namespace="https://realbooks.cn/ns/1.0/f"  schemaLocation="val1.xsd">	</xs:import>
+ <xs:element name="note">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="nf:notes"/>
+            <xs:element ref="f:notes"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+</xs:schema>

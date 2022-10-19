@@ -1,1 +1,0 @@
-fop -xml xslt-xml.xml -xsl xsl.xsl -pdf ans.pdf

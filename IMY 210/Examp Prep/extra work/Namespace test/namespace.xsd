@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+xmlns:al="www.al.com" 
+xmlns:no="www.no.com"
+>
+
+	<xs:import namespace="www.al.com" schemaLocation="al.xsd">	</xs:import>
+	
+	<xs:import namespace="www.no.com" schemaLocation="no.xsd">	</xs:import>
+	
+	<xs:element name="cups">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="al:cup"/>
+				<xs:element ref="no:cup"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

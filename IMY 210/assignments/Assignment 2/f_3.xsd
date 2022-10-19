@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://realbooks.cn/ns/1.0/f" >
+<xs:import schemaLocation= "sample.xsd"></xs:import>
+	<xs:element name="book">
+		<xs:complexType>
+			<xs:sequence>
+			<!--SCETION1-->
+			 <xs:element name="section">
+			 	<xs:complexType>
+			 		<xs:sequence>
+			 		
+			 		<!--TITLE elemnt-->
+			 			<xs:element name="title" type="limit250"/>
+			 			
+			 			
+			 		<!--authors elemnt-->
+			 		<xs:element name="authors">
+			 			<xs:complexType>			 			
+			 				<xs:sequence minOccurs="0" maxOccurs="3">
+			 					<xs:element name="author" type="LimitedString"/>
+			 					 
+			 				</xs:sequence>
+			 			</xs:complexType>
+			 		</xs:element>
+			 		
+			 		<!--publisher elemnt-->
+			 		<xs:element name="publisher">
+			 			<xs:complexType>
+			 				<xs:simpleContent>
+			 					<xs:extension base="LimitedString">			 					
+					 				<xs:attribute name="year">
+					 					<xs:simpleType>
+					 						<xs:restriction base="xs:integer">
+					 							<xs:minInclusive value="1900"/>
+												<xs:maxInclusive value="2100"/>
+					 						</xs:restriction>
+					 					</xs:simpleType>
+					 				</xs:attribute>
+					 			</xs:extension>
+			 				</xs:simpleContent>
+			 			</xs:complexType>
+			 		</xs:element>
+			 		</xs:sequence>
+			 	</xs:complexType>
+			 </xs:element>
+			 
+			 <!--SCETION2-->
+			 <xs:element name="section">
+			 	<xs:complexType>			 	
+				 	<xs:sequence maxOccurs="unbounded">
+				 		<xs:element name="rating">
+				 			<xs:complexType>
+			 					<xs:simpleContent>
+			 						<xs:extension base="limitNumber">			 					
+					 					<xs:attribute name="source" type="LimitedString">
+					 					<!ATTLIST pokemon 
+										 name CDATA #REQUIRED
+										 type CDATA #REQUIRED
+										 number CDATA #REQUIRED
+										 evolution CDATA #REQUIRED
+										 >
+					 					</xs:attribute>
+					 			</xs:extension>
+			 				</xs:simpleContent>
+			 			</xs:complexType>
+				 		</xs:element>
+				 	</xs:sequence>
+			 	</xs:complexType>
+			 </xs:element>
+			 
+			 <!--SCETION3-->
+			 <xs:element name="section">
+			 	<xs:complexType>			 	
+				 	<xs:sequence>
+				 	
+				 		<!--description-->
+				 		<xs:element name="description">
+				 			<xs:complexType>	
+					 			<xs:sequence>
+					 			
+						 			<!--pages-->
+						 				<xs:element name="pages" type="xs:integer"/>
+						 					
+						 			<!--dimension-->
+						 				<xs:element name="dimension" type="limitNumber">
+							 
+						 				</xs:element>
+						 				
+						 			<!--format-->
+						 				<xs:element name="format" type="LimitedString">
+				 				 	
+						 				</xs:element>
+						 			
+						 			
+						 				<xs:element name="edition" type="limitNumber">
+	 												 
+						 				</xs:element>
+						 		
+					 			</xs:sequence>
+					 		</xs:complexType>	
+				 		</xs:element>
+				 		<!--genres-->
+				 		<xs:element name="genres">
+				 			<xs:complexType>				 			
+				 				<xs:sequence maxOccurs="10">
+					 				<!--genre-->
+					 					<xs:element name="genre" type="LimitedString"/>			 					
+	
+				 				</xs:sequence>
+				 			</xs:complexType>
+				 		</xs:element>			 			
+				 		
+				 		<!--summary-->
+				 		<xs:element name="summary" type="xs:string"/>
+				 	</xs:sequence>
+			 	</xs:complexType>
+			 </xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
+
+<!-- THisis the 50 chars restriction-->
+
+ 

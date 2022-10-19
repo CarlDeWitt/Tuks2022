@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<note xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="valAll.xsd"
+ xmlns:f="https://realbooks.cn/ns/1.0/f" 
+xmlns:nf="https://realbooks.cn/ns/1.0/nf">
+	<nf:notes>	
+	  <todo category="sport">event</todo>
+	  <date>2022-07-05</date>
+	  <title>F1</title>
+	  <priority reminder="hour">high</priority>
+  	</nf:notes>
+	<f:notes>	
+		<todo category="sport">event</todo>
+		<date>2022-07-05</date>
+		<title>F1</title>
+		<priority reminder="hour">high</priority>
+	</f:notes>
+</note>

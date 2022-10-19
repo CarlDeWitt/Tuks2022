@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<f:fish xsi:schemaLocation="fish.com ns_f.xsd" xmlns:f="fish.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<name>Popeye Catalufa Soldierfish</name>
-	<diet>Carnivore</diet>
-	<species>Priacanthidae</species>
-</f:fish>

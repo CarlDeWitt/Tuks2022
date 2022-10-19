@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<cups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-xsi:noNamespaceSchemaLocation="namespace.xsd"
-xmlns:al="www.al.com" 
-xmlns:no="www.no.com">
-	<al:cup/>
-	<xo:cup/>
-	<no:cup/>
-</cups>
