@@ -35,7 +35,7 @@ class FactorialChecker
 				break; 
 		  }
 		}
-		return (fac) ? `The values that make up the factorial ${num}: ${arr}` : `This is not a factorial`;
+	return (fac) ? `The values that make up the factorial ${num}: ${arr}` : `This is not a factorial`;
 	}//end function
 
 }//end FactorialChecer
