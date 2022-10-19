@@ -7,8 +7,8 @@
 <h2>How to use the website</h2>
 <ol>
   <li>
-    Download all the files from the repository or you can Click here to go to a
-    Google drive link (Do not change the any file names or the linking will be
+    Download all the files from the repository or you can <a href="https://drive.google.com/drive/folders/1BEy4grxsmbxStS3JhRagqQo6ZfLup4Bo?usp=sharing">Click here</a> to go to a
+    Google drive link or <a href="https://github.com/CarlDeWitt/Tuks2022/tree/main/IMY220/Project">here</a> is the zip file on the current repository (Do not change the any file names or the linking will be
     affected)
   </li>
   <li>
