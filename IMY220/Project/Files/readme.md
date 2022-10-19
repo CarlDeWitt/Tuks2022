@@ -12,7 +12,7 @@
     affected)
   </li>
   <li>
-    Set up localhost (skip if localhost is setup)
+    Set up localhost (skip if localhost is setup) <a href="https://www.youtube.com/watch?v=-f8N4FEQWyY">Here is a tutorial</a>
     <ul>
       <li>Donwload XAMPP <a href="https://www.apachefriends.org/download.html">Here</a></li>
       <li>Copy the files under your new XAMPP directory called htdocs/</li>
