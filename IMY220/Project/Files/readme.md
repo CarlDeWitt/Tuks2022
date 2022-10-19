@@ -36,7 +36,7 @@
     Launch the website by typeing in the following url
     <a href="http://localhost/Files/index.html"
       >http://localhost/Files/index.html</a
-    >/li>
+    </li>
   </li>
 </ol>
 
