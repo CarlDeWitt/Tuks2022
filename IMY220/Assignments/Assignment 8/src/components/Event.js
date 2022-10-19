@@ -14,7 +14,3 @@ export class Event extends React.Component {
     );
   }
 }
-
-Event.propTypes = {
-  event: PropTypes.object,
-};

@@ -1,0 +1,135 @@
+[
+	{
+		"id": 23985677,
+		"name": "Jeff",
+		"surname": "Winger",
+		"age": 47,
+		"position": "student",
+		"enrolled":[
+			"ESP102","ANT101","BIO101"
+		],
+		"passed":[
+			"ESP101"
+		]
+	},
+	{
+		"id": 39485881,
+		"name": "Britta",
+		"surname": "Perry",
+		"age": 41,
+		"position": "student",
+		"enrolled":[
+			"ESP102","DRM103","ANT101","BIO101"
+		],
+		"passed":[
+			"ESP101","PSY201","HST101"
+		]
+	},
+	{
+		"id": 19381454,
+		"name": "Abed",
+		"surname": "Nadir",
+		"age": 29,
+		"position": "student",
+		"enrolled":[
+			"ESP102","ANT101","BIO101"
+		],
+		"passed":[
+			"ESP101"
+		]
+	},
+	{
+		"id": 87458431,
+		"name": "Troy",
+		"surname": "Barnes",
+		"age": 32,
+		"position": "student",
+		"enrolled":[
+			"ESP102","DRM103","ANT101","BIO101"
+		],
+		"passed":[
+			"ESP101","HST101"
+		]
+	},
+	{
+		"id": 29387581,
+		"name": "Pierce",
+		"surname": "Hawthorne",
+		"age": 77,
+		"position": "student",
+		"enrolled":[
+			"ESP102","ANT101"
+		],
+		"passed":[
+			"ESP101","HST101"
+		]
+	},
+	{
+		"id": 23438768,
+		"name": "Shirley",
+		"surname": "Bennett",
+		"age": 50,
+		"position": "student",
+		"enrolled":[
+			"ESP102","ANT101","BIO101"
+		],
+		"passed":[
+			"ESP101"
+		]
+	},
+	{
+		"id": 20398548,
+		"name": "Annie",
+		"surname": "Edison",
+		"age": 31,
+		"position": "student",
+		"enrolled":[
+			"ESP102","ANT101","BIO101"
+		],
+		"passed":[
+			"ESP101","HST101"
+		]
+	},
+	{
+		"id": 12151612,
+		"name": "Benjamin",
+		"surname": "Chang",
+		"age": 52,
+		"position": "teacher"
+	},
+	{
+		"id": 85716758,
+		"name": "Craig",
+		"surname": "Pelton",
+		"age": 47,
+		"position": "dean"
+	},
+	{
+		"id": 85462651,
+		"name": "Ian",
+		"surname": "Duncan",
+		"age": 48,
+		"position": "teacher"
+	},
+	{
+		"id": 56472819,
+		"name": "Marshall",
+		"surname": "Kane",
+		"age": 52,
+		"position": "teacher"
+	},
+	{
+		"id": 37561905,
+		"name": "Noel",
+		"surname": "Cornwallis",
+		"age": 72,
+		"position": "teacher"
+	},
+	{
+		"id": 49671845,
+		"name": "Sean",
+		"surname": "Garrity",
+		"age": 50,
+		"position": "teacher"
+	}
+]
