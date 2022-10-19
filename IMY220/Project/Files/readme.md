@@ -14,7 +14,7 @@
   <li>
     Set up localhost (skip if localhost is setup)
     <ul>
-      <li>Donwload XAMPP <a href="">Here</a></li>
+      <li>Donwload XAMPP <a href="https://www.apachefriends.org/download.html">Here</a></li>
       <li>Copy the files under your new XAMPP directory called htdocs/</li>
       <li>Launch the XAMPP app</li>
       <li>Start the Apache and MySQL modules</li>
