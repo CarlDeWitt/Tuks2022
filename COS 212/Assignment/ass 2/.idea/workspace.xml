@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="75144b56-df5d-44cb-aea3-26be0009836e" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="27YIfLbIPBY1Oe60mXigoCqlZb4" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="shared-indexes" />
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="2" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="main2" />
+      <module name="ass 2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="ass 2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.2" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="75144b56-df5d-44cb-aea3-26be0009836e" name="Changes" comment="" />
+      <created>1649490699219</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1649490699219</updated>
+      <workItem from="1649490704146" duration="9334000" />
+      <workItem from="1649501655784" duration="12275000" />
+      <workItem from="1649879301809" duration="218000" />
+      <workItem from="1650119843661" duration="32000" />
+      <workItem from="1650121766250" duration="33000" />
+      <workItem from="1650121819734" duration="6606000" />
+      <workItem from="1650137304852" duration="10000" />
+      <workItem from="1650137360442" duration="17000" />
+      <workItem from="1650137465890" duration="3828000" />
+      <workItem from="1650180535280" duration="10000" />
+      <workItem from="1650180583844" duration="23000" />
+      <workItem from="1650180831933" duration="7653000" />
+      <workItem from="1650262972105" duration="75000" />
+      <workItem from="1650263108738" duration="6000" />
+      <workItem from="1650263260976" duration="4357000" />
+      <workItem from="1650347454422" duration="2269000" />
+      <workItem from="1650353240893" duration="113000" />
+      <workItem from="1650365797875" duration="5000" />
+      <workItem from="1650366382627" duration="3797000" />
+      <workItem from="1650373136235" duration="7824000" />
+      <workItem from="1650391462421" duration="3709000" />
+      <workItem from="1650645663061" duration="5617000" />
+      <workItem from="1650651367071" duration="3296000" />
+      <workItem from="1650656352644" duration="3749000" />
+      <workItem from="1650815651119" duration="6933000" />
+      <workItem from="1650828658214" duration="1480000" />
+      <workItem from="1650865214963" duration="34000" />
+      <workItem from="1650865266433" duration="4839000" />
+      <workItem from="1650871929928" duration="3000" />
+      <workItem from="1650955268883" duration="7000" />
+      <workItem from="1650955603500" duration="3867000" />
+      <workItem from="1651128050548" duration="178000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Main.java</url>
+          <line>85</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Main.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Node" memberName="left" />
+        <PinnedItemInfo parentTag="AvlTree" memberName="root" />
+        <PinnedItemInfo parentTag="Node" memberName="right" />
+      </pinned-members>
+    </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="tree.root.right.left" />
+        <watch expression="tree.root.left" />
+        <watch expression="tree.root.right" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ass_2$Main.ic" NAME="Main Coverage Results" MODIFIED="1650369424353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>
