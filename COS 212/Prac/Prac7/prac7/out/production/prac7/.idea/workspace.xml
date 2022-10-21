@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ce2f471e-41ff-4f46-8709-84ddcbabd1c4" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="28w3JAo2croedhezWOvWOYFyVc6" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Application.Unnamed (1)">
+    <configuration name="Unnamed (1)" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MAIN2" />
+      <module name="prac7" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Unnamed (1)SADSADAASDSDSSVDVRFVDFAGG" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="MAIN2" />
+      <module name="prac7" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="prac7" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Unnamed" />
+      <item itemvalue="Application.Unnamed (1)SADSADAASDSDSSVDVRFVDFAGG" />
+      <item itemvalue="Application.Unnamed (1)" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ce2f471e-41ff-4f46-8709-84ddcbabd1c4" name="Changes" comment="" />
+      <created>1652113747249</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1652113747249</updated>
+      <workItem from="1652113750565" duration="6309000" />
+      <workItem from="1652170849727" duration="5739000" />
+      <workItem from="1652181108304" duration="3844000" />
+      <workItem from="1652185619910" duration="6624000" />
+      <workItem from="1652202226221" duration="134000" />
+      <workItem from="1652202444065" duration="2773000" />
+      <workItem from="1652208377221" duration="2707000" />
+      <workItem from="1652248050007" duration="3443000" />
+      <workItem from="1652258892200" duration="1037000" />
+      <workItem from="1652259940371" duration="273000" />
+      <workItem from="1652260227869" duration="2103000" />
+      <workItem from="1652263362948" duration="4857000" />
+      <workItem from="1652270856723" duration="4407000" />
+      <workItem from="1652278764820" duration="1251000" />
+      <workItem from="1652284172013" duration="2318000" />
+      <workItem from="1652286579314" duration="1307000" />
+      <workItem from="1652294974565" duration="4068000" />
+      <workItem from="1652366892842" duration="5430000" />
+      <workItem from="1652420991420" duration="261000" />
+      <workItem from="1652433120689" duration="2094000" />
+      <workItem from="1652454156214" duration="217000" />
+      <workItem from="1652682075317" duration="2000" />
+      <workItem from="1654504847726" duration="55000" />
+      <workItem from="1654844633375" duration="134000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Vertex" memberName="edges" />
+      </pinned-members>
+    </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="TBC.Q" />
+        <watch expression="curr" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>
