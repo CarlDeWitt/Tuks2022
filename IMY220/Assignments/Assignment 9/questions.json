@@ -1,0 +1,20 @@
+[
+	{
+		"name": "q1", 
+		"question": "Is jQuery a front-end or back-end framework?",
+		"answers": [
+			{"answer": "Front-end", "correct": true},
+			{"answer": "Back-end", "correct": false}
+		]
+	},
+	{
+		"name": "q2", 
+		"question": "In the context of writing code, what does DRY stand for?",
+		"answers": [
+			{"answer": "Don't repeat yourself", "correct": true},
+			{"answer": "Direct relay Y", "correct": false},
+			{"answer": "Didn't receive yes", "correct": false},
+			{"answer": "Death ray yeet", "correct": false}
+		]
+	}
+]
