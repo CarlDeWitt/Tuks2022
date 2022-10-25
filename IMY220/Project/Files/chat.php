@@ -1,8 +1,8 @@
 <!-- <?php 
     require './PHP/master.php';
     session_start();
-    $AID = $_SESSION['UserIndex'];
-    $UID = $_GET['UID'];
+    $AID = $_SESSION['UserIndex']; // the user who is logged in
+    $UID = $_GET['UID']; // the user who is being viewed or sent the message to
 
     // echo "AID: ", $AID, " UID: ", $UID;
 
@@ -119,7 +119,7 @@
             <div class="last">18:09</div>
         </div>
     <ol class="chat">
-    <li class="other">
+    <!-- <li class="other">
         <div class="avatar"><img src="./Media/Images/profile/<?php echo $TOimg; ?>" draggable="false"/></div>
       <div class="msg">
         <p>Hello!</p>
@@ -132,7 +132,7 @@
         <p>Hellooooo 🥰</p>
         <time>20:18</time>
       </div>
-    </li>
+    </li> -->
    
     </ol>
     <input class="textarea" type="text" placeholder="Type here!"/></div>

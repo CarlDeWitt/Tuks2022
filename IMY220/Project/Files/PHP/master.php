@@ -1,9 +1,9 @@
 <?php
 /* DataBase Connection */
 //localhost
-// $mysqli = mysqli_connect("localhost", "root", "", "eventsurley");
+$mysqli = mysqli_connect("localhost", "root", "", "eventsurley");
 // MM server 
-$mysqli = mysqli_connect("localhost", "u21444928", "euuviouc", "u21444928");
+// $mysqli = mysqli_connect("localhost", "u21444928", "euuviouc", "u21444928");
 
 // e_users query
 $S_e_users = "SELECT * FROM e_users";
@@ -38,3 +38,9 @@ $S_review = "SELECT * FROM `review`";
 $I_review = "INSERT INTO `review`";
 $U_review = "UPDATE `review`";
 $D_review = "DELETE FROM `review`";
+
+// Chat 
+$S_chat = "SELECT * FROM `chat`";
+$I_chat = "INSERT INTO `chat`";
+$U_chat = "UPDATE `chat`";
+$D_chat = "DELETE FROM `chat`";

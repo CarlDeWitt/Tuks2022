@@ -73,21 +73,13 @@ $UID = $_SESSION['UserIndex'];
               Search
             </div> -->
             <!-- Name -->
-            <div class="col-md-4">
-              <label for="Ename">Event Name:</label>
-              <input type="text" id="Ename" class="form-control" placeholder="Hazelwood" name="Ename" />
+            <div class="col-md-10 offset-md-1">
+              <input type="text" id="SearchBTN" class="form-control" placeholder="Search" name="SearchBTN" />
             </div>
 
-            <!-- Date -->
-            <div class="col-md-4">
-              <label for="Edate">Event Date:</label>
-              <input type="date" id="Edate" class="form-control" name="Edate" />
+            <div class="col-md-4 offset-md-1" id="SearchResults">
             </div>
 
-            <!-- time -->
-            <div class="col-md-4 searchBTNParent srchtxt btns">
-              <p>Search</p>
-            </div>
           </div>
 
           <div class="row">
@@ -223,6 +215,7 @@ $UID = $_SESSION['UserIndex'];
     </div>
   </div>
   <script src="Media/Script/Home.js"></script>
+  <script src="Media/Script/Search.js"></script>
   <footer>
     <div class="container-fluid">
       <div class="row">

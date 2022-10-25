@@ -350,10 +350,32 @@ button:hover i {
   }
   .srcrow {
     font-size: 15px !important;
+    position: relative;
   }
   .srchtxt {
     font-size: 35px !important;
   }
+}
+
+#SearchResults {
+  background-color: var(--medPurple);
+  border-radius: var(--medBorder);
+  margin-top: 2px;
+  /* margin-left: 5px !important; */
+  /* padding: 20px; */
+}
+
+.srchOption {
+  background-color: var(--medPurple);
+  color: var(--darkPurple);
+  /* padding: 20px; */
+  font-family: var(--exo);
+  font-size: 25px;
+  margin: 15px;
+}
+
+.srchOption i {
+  margin-right: 10px;
 }
 
 @media screen and (max-width: 770px) {
