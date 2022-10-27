@@ -1,0 +1,72 @@
+@startuml
+actor User
+participant Client
+participant WarEninge 
+participant Theatre 
+participant Faction
+
+create Client
+activate User
+
+User --> Client: Client()
+User -> Client: Rund:void()
+
+activate Client
+
+create WarEninge
+Client --> WarEninge: WarEninge()
+Client -> WarEninge: StartSimilation: void
+
+activate WarEninge
+
+create Theatre
+WarEninge --> Theatre: Theatre()
+create Faction
+WarEninge --> Faction: Faction()
+
+loop warInProgress
+
+WarEninge -> WarEninge: DisplayResources()
+activate WarEninge #DarkSalmon
+
+WarEninge -> Faction : getResourcesCount()
+activate Faction 
+Faction --> WarEninge
+deactivate Faction
+
+deactivate WarEninge
+
+WarEninge -> WarEninge: BuyUnits(county *Country)
+activate WarEninge #DarkSalmon
+loop factions buying units 
+
+WarEninge -> Faction : addUnit(unit: * Unit)
+activate Faction
+Faction --> WarEninge
+deactivate Faction
+
+deactivate WarEninge
+
+end
+
+WarEninge -> WarEninge: ChooseStrats()
+activate WarEninge #DarkSalmon
+loop factions choosing strats
+WarEninge -> Faction : chooseStrat(theatre *Theatre)
+activate Faction
+deactivate WarEninge
+deactivate Faction
+
+
+end
+
+WarEninge -> WarEninge: CommenceBattle()
+activate WarEninge #DarkSalmon
+deactivate WarEninge
+
+end
+
+deactivate WarEninge
+deactivate Client
+deactivate User
+@enduml

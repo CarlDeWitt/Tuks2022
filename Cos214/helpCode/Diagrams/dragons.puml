@@ -1,0 +1,27 @@
+@startuml
+participant "Agrgesive:Strategy"
+participant "Nobert:Dragon"
+participant "Smaug:Dragon"
+participant "Deffensive:Strategy"
+
+activate "Nobert:Dragon"
+"Nobert:Dragon" -> "Nobert:Dragon" : attack()
+
+"Nobert:Dragon" -> "Agrgesive:Strategy" : fight (enemy * Dragon,attackpower: int)
+activate "Agrgesive:Strategy"
+
+"Agrgesive:Strategy" -> "Smaug:Dragon" : RecieveInjury (meth)
+activate "Smaug:Dragon"
+
+"Smaug:Dragon" -> "Deffensive:Strategy" : gainExperrience ( attackPower , enemyPower ) ;
+activate "Deffensive:Strategy"
+
+"Deffensive:Strategy" --> "Smaug:Dragon" 
+
+"Nobert:Dragon" -> "Smaug:Dragon" : GetAttackPower()
+"Smaug:Dragon" --> "Nobert:Dragon"
+
+"Nobert:Dragon" -> "Agrgesive:Strategy" : Getrecoil(lifeForce, enemyPower)
+"Agrgesive:Strategy" --> "Nobert:Dragon"
+
+@enduml
