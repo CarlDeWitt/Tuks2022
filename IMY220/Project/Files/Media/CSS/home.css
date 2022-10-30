@@ -350,28 +350,45 @@ button:hover i {
   }
   .srcrow {
     font-size: 15px !important;
-    position: relative;
   }
   .srchtxt {
     font-size: 35px !important;
   }
 }
 
+.srcrow {
+  position: relative;
+}
+
 #SearchResults {
-  background-color: var(--medPurple);
+  background-color: var(--darkPurple);
   border-radius: var(--medBorder);
-  margin-top: 2px;
-  /* margin-left: 5px !important; */
-  /* padding: 20px; */
+  margin-top: 50px;
+  position: absolute !important;
 }
 
 .srchOption {
-  background-color: var(--medPurple);
-  color: var(--darkPurple);
-  /* padding: 20px; */
+  /* background-color: var(--medPurple); */
+  color: var(--white);
+  padding: 10px;
   font-family: var(--exo);
   font-size: 25px;
-  margin: 15px;
+  /* margin: 15px; */
+  z-index: 5 !important;
+}
+
+.helpInfo {
+  background-color: var(--darkPurple);
+  color: var(--white);
+  font-size: 20px;
+  padding: 20px;
+  position: absolute;
+  margin-top: 45px;
+  border-radius: var(--medBorder);
+}
+
+.hideInfo {
+  display: none;
 }
 
 .srchOption i {

@@ -76,8 +76,17 @@ $UID = $_SESSION['UserIndex'];
             <div class="col-md-10 offset-md-1">
               <input type="text" id="SearchBTN" class="form-control" placeholder="Search" name="SearchBTN" />
             </div>
-
-            <div class="col-md-4 offset-md-1" id="SearchResults">
+            <!-- <div class="col-md-4 offset-md-1" id="SearchResults">
+            </div> -->
+            <div class="row col-md-9 offset-md-1" id="SearchResults">
+            </div>
+            <div class="col-md-4 offset-md-1 helpInfo hideInfo">
+              <p>@ = Username</p>
+              <p>@@= Email</p> 
+              <p># = Hastags</p>
+              <p>! = Location</p>
+              <p>* = All</p>
+              <p>$ = Description</p>
             </div>
 
           </div>

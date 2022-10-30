@@ -1,7 +1,11 @@
 $(`#SearchBTN`).keyup(function (e) {
   // if (e.which == 13) {
+  $(`.helpInfo`).addClass("hideInfo");
+
   $(`#SearchResults`).empty();
   var text = $(this).val();
+  text = text.toLowerCase();
+
   if (text == "") {
     return;
   }
@@ -21,9 +25,9 @@ $(`#SearchBTN`).keyup(function (e) {
         // console.log(data[0].name.includes(text));
 
         for (let i = 0; i < data.length; i++) {
-          if (data[i].email.includes(text)) {
+          if (data[i].email.toLowerCase().includes(text)) {
             $(`#SearchResults`).append(
-              `<div class="srchOption" onClick="JumptoUser(${data[i].id})"><i class="fa-solid fa-user"></i>${data[i].name}</div>`
+              `<div class="col-6 srchOption" onClick="JumptoUser(${data[i].id})"><i class="fa-solid fa-user"></i>${data[i].name}</div>`
             );
           }
         }
@@ -45,9 +49,9 @@ $(`#SearchBTN`).keyup(function (e) {
         // console.log(data[0].name.includes(text));
 
         for (let i = 0; i < data.length; i++) {
-          if (data[i].name.includes(text)) {
+          if (data[i].name.toLowerCase().includes(text)) {
             $(`#SearchResults`).append(
-              `<div class="srchOption" onClick="JumptoUser(${data[i].id})"><i class="fa-solid fa-user"></i>${data[i].name}</div>`
+              `<div class="col-6 srchOption" onClick="JumptoUser(${data[i].id})"><i class="fa-solid fa-user"></i>${data[i].name}</div>`
             );
           }
         }
@@ -61,14 +65,16 @@ $(`#SearchBTN`).keyup(function (e) {
         type: "events",
       },
       success: function (data, textStatus, jqXHR) {
-        // data = JSON.parse(data);
-        console.log(data);
+        data = JSON.parse(data);
+
+        // console.log(text);
+        // console.log(data);
+        // console.log(text + "->" + data[0].hastags);
         if (text[0] == "#") {
-          // HASHTAG SEARCH
           for (let i = 0; i < data.length; i++) {
-            if (data[i].hastags.includes(text)) {
+            if (data[i].hastags.toLowerCase().includes(text)) {
               $(`#SearchResults`).append(
-                `<div class="srchOption" onClick="jumptoEvent(${data[i].id})"><i class="fa-solid fa-hashtag"></i>${data[i].name}</div>`
+                `<div class="col-6 srchOption" onClick="jumptoEvent(${data[i].id})"><i class="fa-solid fa-hashtag"></i>${data[i].name}</div>`
               );
             }
           }
@@ -76,21 +82,29 @@ $(`#SearchBTN`).keyup(function (e) {
         } else if (text[0] == "/") {
           // DATE SEARCH
           text = text.slice(1);
-          // console.log(text);
+
           for (let i = 0; i < data.length; i++) {
-            if (data[i].date.includes(text)) {
+            if (data[i].date.toLowerCase().includes(text)) {
               $(`#SearchResults`).append(
-                `<div class="srchOption" onClick="jumptoEvent(${data[i].id})"><i class="fa-solid fa-calendar-days"></i>${data[i].name}</div>`
+                `<div class="col-6 srchOption" onClick="jumptoEvent(${data[i].id})"><i class="fa-solid fa-calendar-days"></i>${data[i].name}</div>`
               );
             }
           }
         } else if (text[0] == "!") {
           // LOCATION SEARCH
-          text = text.slice(1);
-          for (let i = 0; i < data.length; i++) {
-            if (data[i].location.includes(text)) {
+          if (text.length == 1) {
+            for (let i = 0; i < data.length; i++) {
               $(`#SearchResults`).append(
-                `<div class="srchOption" onClick="jumptoEvent(${data[i].id})"><i class="fa-solid fa-map-pin"></i>${data[i].name}</div>`
+                `<div class="col-6 srchOption" onClick="jumptoEvent(${data[i].id})"><i class="fa-solid fa-map-pin"></i>${data[i].name}</div>`
+              );
+            }
+          } else {
+            text = text.slice(1);
+          }
+          for (let i = 0; i < data.length; i++) {
+            if (data[i].location.toLowerCase().includes(text)) {
+              $(`#SearchResults`).append(
+                `<div class="col-6 srchOption" onClick="jumptoEvent(${data[i].id})"><i class="fa-solid fa-map-pin"></i>${data[i].name}</div>`
               );
             }
           }
@@ -98,9 +112,9 @@ $(`#SearchBTN`).keyup(function (e) {
           // DESCRIPTION SEARCH
           text = text.slice(1);
           for (let i = 0; i < data.length; i++) {
-            if (data[i].description.includes(text)) {
+            if (data[i].description.toLowerCase().includes(text)) {
               $(`#SearchResults`).append(
-                `<div class="srchOption" onClick="jumptoEvent(${data[i].id})"><i class="fa-regular fa-comment-dots"></i>${data[i].name}</div>`
+                `<div class="col-6 srchOption" onClick="jumptoEvent(${data[i].id})"><i class="fa-regular fa-comment-dots"></i>${data[i].name}</div>`
               );
             }
           }
@@ -110,9 +124,9 @@ $(`#SearchBTN`).keyup(function (e) {
             text = "";
           }
           for (let i = 0; i < data.length; i++) {
-            if (data[i].name.includes(text)) {
+            if (data[i].name.toLowerCase().includes(text)) {
               $(`#SearchResults`).append(
-                `<div class="srchOption" onClick="jumptoEvent(${data[i].id})"><i class="fa-solid fa-tent"></i>${data[i].name}</div>`
+                `<div class="col-6 srchOption" onClick="jumptoEvent(${data[i].id})"><i class="fa-solid fa-tent"></i>${data[i].name}</div>`
               );
             }
           }
@@ -134,4 +148,12 @@ jumptoEvent = (id) => {
 
 $(`body`).click(function (e) {
   $(`#SearchResults`).empty();
+});
+
+$(`#SearchBTN`).mouseover(function (e) {
+  $(`.helpInfo`).removeClass("hideInfo");
+});
+
+$(`body`).click(function (e) {
+  $(`.helpInfo`).addClass("hideInfo");
 });

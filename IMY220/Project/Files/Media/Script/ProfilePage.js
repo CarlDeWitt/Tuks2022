@@ -3,6 +3,12 @@ getProfileInfo();
 // console.log(UID);
 // console.log(actualUID);
 
+if (UID == actualUID) {
+  console.log("same");
+  $(`#chatOut`).addClass("greyOut");
+  $(`#followOut`).addClass("greyOut");
+}
+
 function getProfileInfo() {
   $.ajax({
     type: "POST", // Method type GET/POST
@@ -293,3 +299,15 @@ window.onclick = function (event) {
     modal2.style.display = "none";
   }
 };
+
+// Hover animation
+// $(".hoverClass").hover(
+//   function () {
+//     console.log("hover");
+//     $this.addClass("hovAn");
+//   },
+//   function () {
+//     console.log("offHover");
+//     $this.removeClass("hovAn");
+//   }
+// );

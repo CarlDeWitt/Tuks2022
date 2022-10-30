@@ -28,10 +28,14 @@
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px !important;
 }
+.greyOut {
+  background-color: #828282b3 !important;
+  cursor: not-allowed !important;
+}
 
-/* .hovAn {
+.hovAn {
   animation: smallshow 0.5s;
-} */
+}
 
 body {
   font-family: var(--cater);

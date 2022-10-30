@@ -577,3 +577,13 @@ img {
   color: var(--medPurple);
   font-size: 30px;
 }
+
+@media (max-width: 992px) {
+  #logo {
+    top: 3% !important;
+  }
+
+  #homeBTN {
+    top: 8% !important;
+  }
+}

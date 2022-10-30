@@ -179,10 +179,6 @@ function deleteList(listid) {
 
 const srchBtn = document.querySelector(".srchtxt");
 
-srchBtn.onclick = () => {
-  console.log("search does not work yet");
-};
-
 // goToProfile
 
 GoToProfile = (userid) => {

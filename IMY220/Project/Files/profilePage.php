@@ -92,7 +92,7 @@ if(isset($UID) && $UID != ""){
     <div class="container outside">
       <div class="row">
         <!-- left side -->
-        <div class="col-md-6 col-sm-12 leftCont">
+        <div class="col-lg-6 col-md-12 leftCont">
           <div class="container leftside pannel">
             <!-- profile Img -->
             <div class="row backbtn">
@@ -153,7 +153,7 @@ if(isset($UID) && $UID != ""){
               <!-- Num events -->
 
               <!-- Num friends -->
-              <div class="col-md-5 col-sm-12 offset-md-1 NumFriends centerDiv">
+              <div class="col-lg-5 col-md-12 NumFriends centerDiv">
                 <div class="userInfoHalfs">
                   <div class="title">Followers</div>
                   <div id="followers" class="value">420</div>
@@ -161,7 +161,7 @@ if(isset($UID) && $UID != ""){
               </div>
 
               <!-- Num friends -->
-              <div class="col-md-5 col-sm-12 NumFriends centerDiv">
+              <div class="col-lg-5 col-md-12 offset-lg-2 NumFriends centerDiv">
                 <div class="userInfoHalfs">
                   <div class="title">Following</div>
                   <div id="following" class="value">420</div>
@@ -177,7 +177,7 @@ if(isset($UID) && $UID != ""){
         </div>
 
         <!-- right side -->
-        <div class="col-md-6 col-sm-12">
+        <div class="col-lg-6 col-md-12">
           <div class="container rightside pannel">
             <div class="row appendCE">
               <!-- created events header-->
