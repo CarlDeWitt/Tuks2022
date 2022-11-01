@@ -1,0 +1,37 @@
+[
+	{
+		"name": "Spanish 101",
+		"code": "ESP101",
+		"teacher": 12151612
+	},
+	{
+		"name": "Spanish 102",
+		"code": "ESP102",
+		"teacher": 12151612
+	},
+	{
+		"name": "Drama 103",
+		"code": "DRM103",
+		"teacher": 49671845
+	},
+	{
+		"name": "Psychology 201",
+		"code": "PSY201",
+		"teacher": 10012547
+	},
+	{
+		"name": "Anthropology 101",
+		"code": "ANT101",
+		"teacher": 85462651
+	},
+	{
+		"name": "Biology 101",
+		"code": "BIO101",
+		"teacher": 56472819
+	},
+	{
+		"name": "History 101",
+		"code": "HST101",
+		"teacher": 37561905
+	}
+]

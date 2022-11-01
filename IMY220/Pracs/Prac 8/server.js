@@ -1,0 +1,155 @@
+import express from "express";
+import http from "http";
+import socketIo from "socket.io";
+import "regenerator-runtime/runtime";
+const app = express();
+
+import { MongoClient } from "mongodb";
+const uri =
+  "mongodb+srv://Carl:C%40llaDW2022@demo.akcfpk9.mongodb.net/?retryWrites=true&w=majority";
+// remeber to install socket.io-cleint
+const client = new MongoClient(uri);
+
+//SERVE A STATIC PAGE IN THE PUBLIC DIRECTORY
+app.use(express.static("public"));
+const server = http.createServer(app);
+const io = socketIo(server);
+
+server.listen(3000, async (err) => {
+  let results = await runFindQuery(
+     "events",
+    {
+      locations: {
+        $elemMatch: {
+          area: "Brooklyn",
+          date: { $gt: "2022/10/08", $lt: "2022/10/26" },
+        },
+      },
+    },{projection : {_id : 0, "name" : 1, "description" : 1}}
+  );
+//  let results = await runFindQuery(
+//      "events",
+//     {"locations.area": "Brooklyn"
+//   }, // query
+//     {}
+//   );
+  results.map((data) => {
+    console.log(data);
+  });
+  console.log("Listening on localhost:3000");
+});
+
+async function runFindQuery(collection, query, options) {
+  try {
+    await client.connect();
+    const database = client.db("DBExample");
+    const col = database.collection(collection);
+    const cursor = col.find(query, options);
+    return await cursor.toArray();
+  } finally {
+    await client.close();
+  }
+}
+// [
+//     {
+//         "name": "Picnic in the park",
+//         "description":"Picnic at a local park",
+//         "locations": 
+//         [
+//             {
+//                 "area": "Brooklyn",
+//                 "date": "2022/10/09"
+//             },
+//             {
+//                 "area": "Rosebank",
+//                 "date": "2022/11/06"
+//             }
+//         ]
+//     },
+//     {
+//         "name": "Festival",
+//         "description":"Festival of lights",
+//         "locations": 
+//         [
+//             {
+//                 "area": "Hatfield",
+//                 "date": "2022/11/05"
+//             },
+//             {
+//                 "area": "Benoni",
+//                 "date": "2022/11/07"
+//             }
+//         ]
+//     },
+//     {
+//         "name": "Pumpkin picking",
+//         "description":"Pumpkin picking with friends",
+//         "locations": 
+//         [
+//             {
+//                 "area": "Brooklyn",
+//                 "date": "2022/10/18"
+//             }
+//         ]
+//     },
+//     {
+//         "name": "Charity marathon",
+//         "description":"Fundraiser 5KM marathon",
+//         "locations": 
+//         [
+//             {
+//                 "area": "Brooklyn",
+//                 "date": "2022/10/08"
+//             },
+//             {
+//                 "area": "Hatfield",
+//                 "date": "2022/11/08"
+//             }
+//         ]
+//     },
+//     {
+//         "name": "Concert",
+//         "description":"Rock and roll concert with a few artists performing",
+//         "locations": 
+//         [
+//             {
+//                 "area": "Sandton",
+//                 "date": "2022/12/06"
+//             },
+//             {
+//                 "area": "Rosebank",
+//                 "date": "2022/11/10"
+//             }
+//         ]
+//     },
+//     {
+//         "name": "Farmers market",
+//         "description":"Farmers market with musicians and good food",
+//         "locations": 
+//         [
+//             {
+//                 "area": "Brooklyn",
+//                 "date": "2022/10/25"
+//             },
+//             {
+//                 "area": "Rustenburg",
+//                 "date": "2022/10/26"
+//             }
+//         ]
+//     },
+//     {
+//         "name": "Quiz night",
+//         "description":"Quiz night at a local bar",
+//         "locations": 
+//         [
+//             {
+//                 "area": "Brooklyn",
+//                 "date": "2022/10/26"
+//             },
+//             {
+//                 "area": "Moreleta Park",
+//                 "date": "2022/12/13"
+//             }
+//         ]
+//     }    
+// ]

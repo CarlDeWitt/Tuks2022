@@ -3,56 +3,77 @@
 
 using namespace std;
 
-Product :: Product(string n, string d, double c):
-        name(n),
-        description(d),
-        cost(c)
+Product ::Product(string n, string d, double c) : name(n),
+                                                  description(d),
+                                                  cost(c)
 {
     state = new State();
 }
-    
-string Product :: getName()
+
+string Product ::getName()
 {
-	return name;
+    return name;
 }
 
-void Product :: setName(string n)
+void Product ::setName(string n)
 {
-	name = n;
+    name = n;
 }
-     
-string Product :: getDescription(){ return description;}
 
-void Product :: setDescription(string d)
+string Product ::getDescription() { return description; }
+
+void Product ::setDescription(string d)
 {
     description = d;
     state->setDescriptionChanged();
 }
-       
-double Product :: getCost(){ return cost; }
 
-void Product :: setCost(double c)
+double Product ::getCost() { return cost; }
+
+void Product ::setCost(double c)
 {
     cost = c;
     state->setCostChanged();
 }
 
-void Product :: display()
+void Product ::display()
 {
-    cout << "\n" << name << ": " << description;
+    cout << "\n"
+         << name << ": " << description;
     cout << "  R" << cost << endl;
     state->showState();
-}    
- 
-ProductBackup* Product :: makeBackup()
+}
+
+ProductBackup *Product ::makeBackup()
 {
     return new ProductBackup(name, description, cost, state);
 }
 
-void Product :: restore(ProductBackup* mem)
+void Product ::restore(ProductBackup *mem)
 {
-        name = mem->getName();
-        description = mem->getDescription();
-        cost = mem->getCost();
-        state = mem->getState();
+    name = mem->getName();
+    description = mem->getDescription();
+    cost = mem->getCost();
+    state = mem->getState();
 }
+
+// public
+// interface FireAction()
+// {
+//     while (trigger == true)
+//     {
+//         if (ammo == 0)
+//         {
+//             reload();
+//         }
+//         bulletHit = fireBullet();
+//         if (bulletHit == true)
+//         {
+//             points = points + 100;
+//         }
+//     }
+// }
+
+// SaneWrapper::SaneWrapper() : InaneWrapper(), wrapper()
+// {
+// }

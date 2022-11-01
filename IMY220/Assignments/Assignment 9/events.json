@@ -1,0 +1,103 @@
+[
+    {
+        "name": "Picnic in the park",
+        "description":"Picnic at a local park",
+        "locations": 
+        [
+            {
+                "area": "Brooklyn",
+                "date": "2022/10/09"
+            },
+            {
+                "area": "Rosebank",
+                "date": "2022/11/06"
+            }
+        ]
+    },
+    {
+        "name": "Festival",
+        "description":"Festival of lights",
+        "locations": 
+        [
+            {
+                "area": "Hatfield",
+                "date": "2022/11/05"
+            },
+            {
+                "area": "Benoni",
+                "date": "2022/11/07"
+            }
+        ]
+    },
+    {
+        "name": "Pumpkin picking",
+        "description":"Pumpkin picking with friends",
+        "locations": 
+        [
+            {
+                "area": "Brooklyn",
+                "date": "2022/10/18"
+            }
+        ]
+    },
+    {
+        "name": "Charity marathon",
+        "description":"Fundraiser 5KM marathon",
+        "locations": 
+        [
+            {
+                "area": "Brooklyn",
+                "date": "2022/10/08"
+            },
+            {
+                "area": "Hatfield",
+                "date": "2022/11/08"
+            }
+        ]
+    },
+    {
+        "name": "Concert",
+        "description":"Rock and roll concert with a few artists performing",
+        "locations": 
+        [
+            {
+                "area": "Sandton",
+                "date": "2022/12/06"
+            },
+            {
+                "area": "Rosebank",
+                "date": "2022/11/10"
+            }
+        ]
+    },
+    {
+        "name": "Farmers market",
+        "description":"Farmers market with musicians and good food",
+        "locations": 
+        [
+            {
+                "area": "Brooklyn",
+                "date": "2022/10/25"
+            },
+            {
+                "area": "Rustenburg",
+                "date": "2022/10/26"
+            }
+        ]
+    },
+    {
+        "name": "Quiz night",
+        "description":"Quiz night at a local bar",
+        "locations": 
+        [
+            {
+                "area": "Brooklyn",
+                "date": "2022/10/26"
+            },
+            {
+                "area": "Moreleta Park",
+                "date": "2022/12/13"
+            }
+        ]
+    }    
+]

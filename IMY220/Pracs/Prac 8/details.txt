@@ -1,0 +1,2 @@
+string: mongosh "mongodb+srv://demo.akcfpk9.mongodb.net/myFirstDatabase" --apiVersion 1 --username Carl
+passwrd: C@llaDW2022
