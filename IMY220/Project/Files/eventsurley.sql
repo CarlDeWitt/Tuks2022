@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 30, 2022 at 04:03 PM
+-- Generation Time: Nov 01, 2022 at 08:09 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -129,7 +129,8 @@ CREATE TABLE `e_users` (
 INSERT INTO `e_users` (`id`, `name`, `surname`, `email`, `DOB`, `password`) VALUES
 (1, 'Carl', 'De witt', 'carlisworldoftanks@gmail.com', '2022-08-21', '1'),
 (2, 'Max ', 'Verstappen', 'maxisworldchamp@gmail.com', '2021-12-17', '1'),
-(3, 'Ida', 'De witt', 'ida@gmail.com', '2022-10-26', '1');
+(3, 'Ida', 'De witt', 'ida@gmail.com', '2022-10-26', '1'),
+(4, 'Admin', 'Admin', 'admin@gmail.com', '2022-06-16', 'admin');
 
 -- --------------------------------------------------------
 
@@ -199,7 +200,8 @@ CREATE TABLE `profilepage` (
 INSERT INTO `profilepage` (`id`, `pfpImg`, `followers`, `following`, `userID`, `friends`, `description`, `userName`) VALUES
 (1, 'pfp3.jpg', 2, 1, 1, '[2,3]', 'legit like php', 'Carl'),
 (2, 'pfp1.png', 2, 1, 2, '[1,3]', 'I own lewis ', 'Max'),
-(3, 'pfp2.jpg', 1, 3, 3, '[1]', 'sjooooooooooo', 'Ida');
+(3, 'pfp2.jpg', 1, 3, 3, '[1]', 'sjooooooooooo', 'Ida'),
+(4, 'pfp.jpg', 0, 0, 4, '[]', '', 'Admin');
 
 -- --------------------------------------------------------
 
@@ -298,13 +300,13 @@ ALTER TABLE `chat`
 -- AUTO_INCREMENT for table `e_event`
 --
 ALTER TABLE `e_event`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `e_users`
 --
 ALTER TABLE `e_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `list`
@@ -322,7 +324,7 @@ ALTER TABLE `list_events`
 -- AUTO_INCREMENT for table `profilepage`
 --
 ALTER TABLE `profilepage`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `review`

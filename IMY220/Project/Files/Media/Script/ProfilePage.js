@@ -282,7 +282,7 @@ var span2 = document.getElementsByClassName("close2")[0];
 // When the user clicks the button, open the modal
 // btn2.onclick = function () {};
 editBTN = () => {
-  if (UID == actualUID) {
+  if (UID == actualUID || actualUID == 4) {
     modal2.style.display = "block";
     return;
   }

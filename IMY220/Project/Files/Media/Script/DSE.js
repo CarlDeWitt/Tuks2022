@@ -72,8 +72,6 @@ setTimeout(function () {
 
 //DElete Event
 Del = (eventid, userid) => {
-  // function deleteEvent(eventid, element, userid) {
-  console.log(eventid, userid);
   $.ajax({
     type: "POST", // Method type GET/POST
     url: "./PHP/deleteEvent.php", //Ajax Action url
@@ -82,8 +80,8 @@ Del = (eventid, userid) => {
       console.log(data);
     },
   });
-  location.reload();
   location.href = "./home.php";
+  location.reload();
   // }
 };
 
@@ -316,7 +314,7 @@ DelReview = (RID) => {
 var modal3 = document.getElementById("myModal3");
 
 edit = () => {
-  if (creatorID == UID) {
+  if (creatorID == UID || UID == 4) {
     console.log("here");
     modal3.style.display = "block";
   }
