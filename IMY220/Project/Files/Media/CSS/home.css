@@ -365,6 +365,7 @@ button:hover i {
   border-radius: var(--medBorder);
   margin-top: 50px;
   position: absolute !important;
+  z-index: 1 !important;
 }
 
 .srchOption {
