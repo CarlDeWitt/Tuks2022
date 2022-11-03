@@ -403,21 +403,22 @@ class VerticalMouseDrivenCarousel {
 new VerticalMouseDrivenCarousel();
 
 /* VIO section */
-$(`.tl1`).on(`clcik`, function () {
+$(`.tl2`).on(`click`, function () {
+  console.log(`clicked`);
   window.location.href = `https://effortless-faun-8e1b92.netlify.app/`;
 });
 
-$(`.tl2`).on(`click`, function () {
-  window.location.href = `https://resplendent-syrniki-f643de.netlify.app/`;
-});
-
 $(`.tl3`).on(`click`, function () {
-  window.location.href = `bob.html`;
+  window.location.href = `https://lustrous-lebkuchen-1cd442.netlify.app`;
 });
 
 $(`.tl4`).on(`click`, function () {
-  window.location.href = `bob.html`;
+  window.location.href = `https://friendly-valkyrie-2634ac.netlify.app/`;
 });
+
+// $(`.tl4`).on(`click`, function () {
+//   window.location.href = `bob.html`;
+// });
 // this is the progress
 (function ($) {
   $(function () {
