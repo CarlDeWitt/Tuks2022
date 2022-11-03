@@ -997,6 +997,7 @@ button:focus::after {
 
 .tl-content p {
   font-size: 20px !important;
+  color: white;
 }
 
 .tl-year {
@@ -1013,6 +1014,7 @@ button:focus::after {
     sans-serif;
   font-size: 1.728rem;
   line-height: 0;
+  color: white;
 }
 
 .tl-bg {
@@ -1156,10 +1158,12 @@ button:focus::after {
 }
 .ag-timeline-card_meta {
   margin: 10px 0 0;
-
-  font-family: "ESL Legend", sans-serif;
-  font-weight: bold;
-  font-size: 28px;
+  font-family: Arial;
+  font-size: 30px;
+  line-height: 35px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-weight: 700;
   color: var(--blue1);
 }
 .ag-timeline-card_item {
