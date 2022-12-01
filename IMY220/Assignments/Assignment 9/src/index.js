@@ -9,7 +9,7 @@ const getDATA = () => {
     console.log(data);
     ReactDOM.render(
       <div>
-        <EnrolmentList codes={data} />
+        {/* <EnrolmentList codes={data} /> */}
       </div>,
       document.getElementById("root")
     );

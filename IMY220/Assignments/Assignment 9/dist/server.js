@@ -27,13 +27,7 @@ server.listen(3000, /*#__PURE__*/function () {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return runFindQuery("classes", {}, {
-              projection: {
-                name: 1,
-                code: 1,
-                _id: 0
-              }
-            });
+            return runFindQuery("academicRecord", {}, {});
           case 2:
             results = _context.sent;
             results.map(function (data) {
@@ -68,7 +62,7 @@ function _runFindQuery() {
             _context2.next = 3;
             return client.connect();
           case 3:
-            database = client.db("DBExample");
+            database = client.db("Exam");
             col = database.collection(collection);
             cursor = col.find(query, options);
             _context2.next = 8;

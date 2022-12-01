@@ -16,10 +16,15 @@ const server = http.createServer(app);
 const io = socketIo(server);
 
 server.listen(3000, async (err) => {
+  // let results = await runFindQuery(
+  //   "academicRecord",
+  //   {},
+  //   { projection: { name: 1, code: 1, _id: 0 } }
+  // );
   let results = await runFindQuery(
-    "classes",
+    "academicRecord",
     {},
-    { projection: { name: 1, code: 1, _id: 0 } }
+    {}
   );
   results.map((data) => {
     console.log(data);
@@ -33,7 +38,7 @@ server.listen(3000, async (err) => {
 async function runFindQuery(collection, query, options) {
   try {
     await client.connect();
-    const database = client.db("DBExample");
+    const database = client.db("Exam");
     const col = database.collection(collection);
     const cursor = col.find(query, options);
     return await cursor.toArray();

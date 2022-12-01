@@ -110,3 +110,13 @@ Array.prototype.getSummary = function () {
 
 var eventHandler = new EventHandler(events);
 /*--------------DO Testing here----------------*/
+
+let a = 10, b = 20, rest;
+
+const arr = [30,40,50];
+
+rest = [a,b,...arr];
+console.log(rest);
+
+
+
